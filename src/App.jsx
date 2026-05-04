@@ -154,22 +154,22 @@ const skillsData = [
 
 const testimonialsData = [
     {
-        name: 'Sarah Chen',
-        role: 'Tech Lead @ InnovateX',
+        name: 'Indigo Zulu',
+        role: 'AI Orchestrator @ Sovereign Systems',
         content: 'Koketso is an exceptional developer who understands both the logic and the aesthetics of a product. His work on high-performance systems is truly impressive.',
-        avatar: 'https://i.pravatar.cc/150?u=sarah'
+        avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&h=150&auto=format&fit=crop'
     },
     {
-        name: 'James Wilson',
-        role: 'Founder of CloudFlow',
+        name: 'Jade Chen',
+        role: 'Systems Architect @ Neo-Tech',
         content: 'The attention to detail in the CyberFlow platform was beyond our expectations. A reliable developer who delivers clean, scalable code.',
-        avatar: 'https://i.pravatar.cc/150?u=james'
+        avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&h=150&auto=format&fit=crop'
     },
     {
-        name: 'Linda Mbeki',
-        role: 'Client at Kid of Dynamics Technologies',
+        name: 'Amber Smith',
+        role: 'Tech Lead @ InnovateX',
         content: 'One of the most diligent and proactive associates we\'ve had. His AI proficiency and problem-solving skills are top-tier.',
-        avatar: 'https://i.pravatar.cc/150?u=linda'
+        avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&h=150&auto=format&fit=crop'
     }
 ];
 
