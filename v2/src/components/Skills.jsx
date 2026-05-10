@@ -5,42 +5,42 @@ import { Icon } from './Icons';
 const skills = [
   {
     cat: "UI/UX & Design",
-    icon: "layout",
+    emoji: "🎨",
     tags: ["Figma", "High-Fidelity", "Prototyping", "Aesthetics"],
     pct: 95,
     color: "bg-pink-500"
   },
   {
     cat: "Mobile Development",
-    icon: "androidStudio",
+    emoji: "📱",
     tags: ["Android Studio", "React Native", "Flutter", "iOS/Android"],
     pct: 90,
     color: "bg-blue-400"
   },
   {
     cat: "Systems Programming",
-    icon: "terminal",
+    emoji: "🖥️",
     tags: ["C", "Go", "Rust", "Memory Management"],
     pct: 88,
     color: "bg-blue-600"
   },
   {
     cat: "Python & AI/ML",
-    icon: "cpu",
+    emoji: "🧠",
     tags: ["Python", "FastAPI", "TensorFlow", "LangChain"],
     pct: 92,
     color: "bg-green-500"
   },
   {
     cat: "Databases & Ecosystem",
-    icon: "database",
+    emoji: "🗄️",
     tags: ["PostgreSQL", "MongoDB", "Redis", "Vector DB"],
     pct: 94,
     color: "bg-indigo-500"
   },
   {
     cat: "Cloud & Deployment",
-    icon: "cloud",
+    emoji: "☁️",
     tags: ["Vercel", "Netlify", "GitHub Actions", "Docker"],
     pct: 88,
     color: "bg-orange-500"
@@ -60,8 +60,8 @@ const Skills = () => {
           <div key={i} className="space-y-2">
             <div className="flex justify-between items-center">
               <div className="flex items-center gap-2">
-                <div className="text-green-400">
-                  <Icon name={s.icon} size={14} />
+                <div className="text-lg">
+                  {s.emoji}
                 </div>
                 <span className="text-[10px] font-bold">{s.cat}</span>
               </div>
@@ -84,13 +84,19 @@ const Skills = () => {
         ))}
       </div>
 
-      {/* Real Logos / Tech Stack Icons Row */}
+      {/* Real Logos / Tech Stack Emojis Row */}
       <div className="pt-4 border-t border-white/5">
         <div className="text-[8px] font-bold text-text-dim uppercase tracking-widest mb-3 text-center">Core Infrastructure</div>
-        <div className="flex justify-center gap-4 items-center opacity-60 hover:opacity-100 transition-opacity">
-          {["postgresql", "mongodb", "redis", "androidStudio", "vercel"].map((icon, i) => (
-            <div key={i} className="w-8 h-8 rounded-lg glass flex items-center justify-center text-white/80 hover:text-green-400 hover:scale-110 transition-all border border-white/5 shadow-lg" title={icon}>
-              <Icon name={icon} size={18} />
+        <div className="flex justify-center gap-4 items-center">
+          {[
+            { name: "PostgreSQL", emoji: "🐘" },
+            { name: "MongoDB", emoji: "🍃" },
+            { name: "Redis", emoji: "🔴" },
+            { name: "Android Studio", emoji: "🤖" },
+            { name: "Vercel", emoji: "🚀" }
+          ].map((item, i) => (
+            <div key={i} className="w-10 h-10 rounded-lg glass flex items-center justify-center text-xl hover:scale-125 transition-all border border-white/5 shadow-lg cursor-default" title={item.name}>
+              {item.emoji}
             </div>
           ))}
         </div>

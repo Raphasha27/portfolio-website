@@ -15,7 +15,7 @@ html {
 @layer base {
   @media (pointer: fine) {
     body, a, button {
-      cursor: none;
+      /* Restore default cursor for better usability */
     }
   }
   body {
