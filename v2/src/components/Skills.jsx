@@ -2,101 +2,110 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Icon } from './Icons';
 
-const skills = [
+const skillGroups = [
   {
-    cat: "UI/UX & Design",
+    title: "Front End",
     emoji: "🎨",
-    tags: ["Figma", "High-Fidelity", "Prototyping", "Aesthetics"],
-    pct: 95,
-    color: "bg-pink-500"
-  },
-  {
-    cat: "Mobile Development",
-    emoji: "📱",
-    tags: ["Android Studio", "React Native", "Flutter", "iOS/Android"],
-    pct: 90,
+    skills: [
+      { name: "React & Vite", pct: 95 },
+      { name: "Tailwind CSS", pct: 92 },
+      { name: "Next.js", pct: 88 },
+      { name: "Framer Motion", pct: 90 }
+    ],
     color: "bg-blue-400"
   },
   {
-    cat: "Systems Programming",
-    emoji: "🖥️",
-    tags: ["C", "Go", "Rust", "Memory Management"],
-    pct: 88,
-    color: "bg-blue-600"
-  },
-  {
-    cat: "Python & AI/ML",
-    emoji: "🧠",
-    tags: ["Python", "FastAPI", "TensorFlow", "LangChain"],
-    pct: 92,
+    title: "Back End",
+    emoji: "⚙️",
+    skills: [
+      { name: "Node.js & Express", pct: 90 },
+      { name: "Python & FastAPI", pct: 92 },
+      { name: "LangChain (AI)", pct: 85 },
+      { name: "RESTful APIs", pct: 94 }
+    ],
     color: "bg-green-500"
   },
   {
-    cat: "Databases & Ecosystem",
+    title: "Database",
     emoji: "🗄️",
-    tags: ["PostgreSQL", "MongoDB", "Redis", "Vector DB"],
-    pct: 94,
+    skills: [
+      { name: "PostgreSQL", pct: 94 },
+      { name: "MongoDB", pct: 88 },
+      { name: "Redis", pct: 85 },
+      { name: "Vector DBs", pct: 82 }
+    ],
     color: "bg-indigo-500"
   },
   {
-    cat: "Cloud & Deployment",
-    emoji: "☁️",
-    tags: ["Vercel", "Netlify", "GitHub Actions", "Docker"],
-    pct: 88,
+    title: "Infrastructure",
+    emoji: "🚀",
+    skills: [
+      { name: "Vercel & Netlify", pct: 96 },
+      { name: "Docker & Linux", pct: 85 },
+      { name: "GitHub Actions", pct: 90 },
+      { name: "Nginx & Server", pct: 82 }
+    ],
     color: "bg-orange-500"
   }
 ];
 
 const Skills = () => {
   return (
-    <div id="skills" className="glass p-6 h-full flex flex-col">
-      <div className="flex justify-between items-center mb-6">
-        <h2 className="text-xl font-bold">Tech <span className="text-green-400">Arsenals</span></h2>
-        <div className="text-[8px] text-green-400 font-bold uppercase tracking-[0.2em]">Deployment Ready</div>
+    <div id="skills" className="glass p-8 h-full flex flex-col">
+      <div className="flex justify-between items-center mb-10">
+        <h2 className="text-2xl font-bold">Tech <span className="text-green-400">Arsenals</span></h2>
+        <div className="text-[10px] text-green-400 font-bold uppercase tracking-[0.4em] bg-green-400/10 px-3 py-1 rounded-full border border-green-400/20">
+          Operational: 100%
+        </div>
       </div>
 
-      <div className="flex-1 space-y-4 overflow-y-auto pr-2 custom-scroll mb-6">
-        {skills.map((s, i) => (
-          <div key={i} className="space-y-2">
-            <div className="flex justify-between items-center">
-              <div className="flex items-center gap-2">
-                <div className="text-lg">
-                  {s.emoji}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 flex-1 overflow-y-auto pr-4 custom-scroll mb-8">
+        {skillGroups.map((group, i) => (
+          <div key={i} className="space-y-6">
+            <div className="flex items-center gap-4 border-b border-white/10 pb-2">
+              <span className="text-2xl">{group.emoji}</span>
+              <h3 className="text-sm font-bold uppercase tracking-widest text-text-dim">{group.title}</h3>
+            </div>
+            <div className="space-y-5">
+              {group.skills.map((s, j) => (
+                <div key={j} className="space-y-2">
+                  <div className="flex justify-between items-center text-[11px] font-bold">
+                    <span className="text-white/80">{s.name}</span>
+                    <span className="text-green-400 font-mono">{s.pct}%</span>
+                  </div>
+                  <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden border border-white/5">
+                    <motion.div 
+                      initial={{ width: 0 }}
+                      whileInView={{ width: `${s.pct}%` }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 1, delay: i * 0.1 + j * 0.05 }}
+                      className={`h-full ${group.color} shadow-[0_0_10px_rgba(0,229,160,0.15)]`}
+                    />
+                  </div>
                 </div>
-                <span className="text-[10px] font-bold">{s.cat}</span>
-              </div>
-              <span className="text-[10px] text-green-400 font-mono">{s.pct}%</span>
-            </div>
-            <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
-              <div 
-                className={`h-full ${s.color} shadow-[0_0_8px_rgba(0,229,160,0.2)]`} 
-                style={{ width: `${s.pct}%` }}
-              ></div>
-            </div>
-            <div className="flex flex-wrap gap-1">
-              {s.tags.slice(0, 4).map((tag, j) => (
-                <span key={j} className="text-[7px] px-1 py-0.5 rounded bg-white/5 border border-white/10 text-text-dim">
-                  {tag}
-                </span>
               ))}
             </div>
           </div>
         ))}
       </div>
 
-      {/* Real Logos / Tech Stack Emojis Row */}
-      <div className="pt-4 border-t border-white/5">
-        <div className="text-[8px] font-bold text-text-dim uppercase tracking-widest mb-3 text-center">Core Infrastructure</div>
-        <div className="flex justify-center gap-4 items-center">
+      {/* Core Infrastructure / Real Emoji Arsenal */}
+      <div className="pt-6 border-t border-white/10">
+        <div className="text-[9px] font-bold text-text-dim uppercase tracking-[0.3em] mb-4 text-center">Core Systems & Ecosystem</div>
+        <div className="flex justify-center gap-6 items-center">
           {[
+            { name: "React", emoji: "⚛️" },
+            { name: "Python", emoji: "🐍" },
             { name: "PostgreSQL", emoji: "🐘" },
-            { name: "MongoDB", emoji: "🍃" },
-            { name: "Redis", emoji: "🔴" },
-            { name: "Android Studio", emoji: "🤖" },
-            { name: "Vercel", emoji: "🚀" }
+            { name: "Node.js", emoji: "🌿" },
+            { name: "Docker", emoji: "🐳" },
+            { name: "Vercel", emoji: "▲" }
           ].map((item, i) => (
-            <div key={i} className="w-10 h-10 rounded-lg glass flex items-center justify-center text-xl hover:scale-125 transition-all border border-white/5 shadow-lg cursor-default" title={item.name}>
-              {item.emoji}
+            <div key={i} className="flex flex-col items-center gap-2 group">
+              <div className="w-12 h-12 rounded-2xl glass flex items-center justify-center text-2xl group-hover:scale-125 transition-all duration-300 border border-white/5 shadow-2xl group-hover:border-green-500/50" title={item.name}>
+                {item.emoji}
+              </div>
+              <span className="text-[8px] text-text-dim font-bold opacity-0 group-hover:opacity-100 transition-opacity uppercase tracking-tighter">{item.name}</span>
             </div>
           ))}
         </div>
