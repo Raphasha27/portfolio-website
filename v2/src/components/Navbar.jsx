@@ -4,6 +4,7 @@ import { Icon } from './Icons';
 
 const Navbar = () => {
   const [copied, setCopied] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -46,24 +47,63 @@ const Navbar = () => {
           <a href="#projects" className="hover:text-green-400 transition-all">Projects</a>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2 md:gap-4">
           <button 
             onClick={handleShare}
-            className="w-10 h-10 glass flex items-center justify-center text-text-dim hover:text-green-400 hover:border-green-500/30 transition-all relative group"
+            className="w-10 h-10 glass hidden sm:flex items-center justify-center text-text-dim hover:text-green-400 transition-all relative"
             title="Share Link"
           >
             <Icon name={copied ? "check" : "share"} size={18} />
-            {copied && (
-              <span className="absolute -bottom-10 left-1/2 -translate-x-1/2 px-2 py-1 bg-green-500 text-bg text-[8px] font-bold rounded uppercase whitespace-nowrap">
-                Copied!
-              </span>
-            )}
           </button>
-          <a href="#contact" className="px-6 py-2 bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-bold rounded-lg hover:bg-green-500 hover:text-bg transition-all shadow-lg shadow-green-500/5 flex items-center">
-            Get Started <Icon name="arrowRight" size={14} className="ml-2" />
+          
+          <a href="#contact" className="hidden sm:flex px-6 py-2 bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-bold rounded-lg hover:bg-green-500 hover:text-bg transition-all">
+            Get Started
           </a>
+
+          {/* Mobile Menu Toggle */}
+          <button 
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            className="md:hidden w-10 h-10 glass flex items-center justify-center text-green-400"
+          >
+            <Icon name={isMobileMenuOpen ? "close" : "menu"} size={24} />
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            className="fixed inset-0 z-40 bg-bg/95 backdrop-blur-xl md:hidden flex flex-col items-center justify-center gap-8"
+          >
+            <div className="flex flex-col items-center gap-8 text-lg font-bold uppercase tracking-widest">
+              {['home', 'about', 'experience', 'skills', 'projects', 'contact'].map((item) => (
+                <a 
+                  key={item}
+                  href={`#${item}`} 
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-text-dim hover:text-green-400 transition-all"
+                >
+                  {item}
+                </a>
+              ))}
+            </div>
+            
+            <div className="flex gap-4 mt-8">
+               <button 
+                onClick={handleShare}
+                className="px-6 py-3 glass flex items-center gap-2 text-green-400 font-bold uppercase text-xs"
+              >
+                <Icon name={copied ? "check" : "share"} size={18} />
+                {copied ? "Copied!" : "Share Link"}
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };

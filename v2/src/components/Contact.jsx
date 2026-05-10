@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Icon } from './Icons';
+import MobileScan from './MobileScan';
 
 const Contact = () => {
   return (
@@ -33,22 +34,26 @@ const Contact = () => {
             </div>
           </div>
 
-          <div className="flex flex-col items-center md:items-end gap-8 flex-shrink-0">
-            <a href="mailto:raphashakoketso99@gmail.com" className="px-10 py-5 bg-green-500 hover:bg-green-400 text-bg font-bold rounded-2xl transition-all flex items-center gap-3 text-lg shadow-[0_0_30px_rgba(0,201,136,0.3)] group">
-              Get In Touch <Icon name="arrowRight" size={20} className="group-hover:translate-x-2 transition-transform" />
-            </a>
+          <div className="flex flex-col items-center md:items-end gap-12 flex-shrink-0">
+            <MobileScan />
             
-            <div className="flex gap-6">
-              {[
-                { icon: "github", link: "https://github.com/raphasha27" },
-                { icon: "linkedin", link: "https://linkedin.com/in/koketso-raphasha" },
-                { icon: "twitter", link: "https://twitter.com/raphasha27" },
-                { icon: "mail", link: "mailto:raphashakoketso99@gmail.com" }
-              ].map((social, i) => (
-                <a key={i} href={social.link} target="_blank" className="w-12 h-12 glass rounded-xl flex items-center justify-center text-text-dim hover:text-green-400 hover:border-green-500/50 transition-all">
-                  <Icon name={social.icon} size={24} />
-                </a>
-              ))}
+            <div className="flex flex-col items-center md:items-end gap-6">
+              <a href="mailto:raphashakoketso99@gmail.com" className="px-10 py-5 bg-green-500 hover:bg-green-400 text-bg font-bold rounded-2xl transition-all flex items-center gap-3 text-lg shadow-[0_0_30px_rgba(0,201,136,0.3)] group">
+                Get In Touch <Icon name="arrowRight" size={20} className="group-hover:translate-x-2 transition-transform" />
+              </a>
+              
+              <div className="flex gap-6">
+                {[
+                  { icon: "github", link: "https://github.com/raphasha27" },
+                  { icon: "linkedin", link: "https://linkedin.com/in/koketso-raphasha" },
+                  { icon: "twitter", link: "https://twitter.com/raphasha27" },
+                  { icon: "mail", link: "mailto:raphashakoketso99@gmail.com" }
+                ].map((social, i) => (
+                  <a key={i} href={social.link} target="_blank" className="w-12 h-12 glass rounded-xl flex items-center justify-center text-text-dim hover:text-green-400 hover:border-green-500/50 transition-all">
+                    <Icon name={social.icon} size={24} />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
