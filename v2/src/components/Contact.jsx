@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Icon } from './Icons';
 import MobileScan from './MobileScan';
+import gautengMap from '../assets/gauteng-map.png';
 
 const Contact = () => {
   return (
@@ -21,7 +22,7 @@ const Contact = () => {
             {/* Pretoria Location Card */}
             <div className="glass p-6 rounded-3xl border border-white/5 inline-flex items-center gap-6 relative overflow-hidden group">
               <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
-                <img src="/src/assets/gauteng-map.png" alt="Pretoria Map" className="w-full h-full object-cover scale-150 grayscale" />
+                <img src={gautengMap} alt="Pretoria Map" className="w-full h-full object-cover scale-150 grayscale" />
               </div>
               <div className="w-12 h-12 rounded-2xl bg-green-500/10 flex items-center justify-center text-green-400 relative z-10 shadow-[0_0_15px_rgba(0,201,136,0.1)]">
                 <Icon name="globe" size={24} />

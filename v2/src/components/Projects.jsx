@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icons';
+import experienceBg from '../assets/experience-bg.png';
+import heroBg from '../assets/hero-bg.png';
 
 const projects = [
   {
@@ -123,7 +125,7 @@ const Projects = () => {
             {/* Subtle Background Overlay */}
             <div className="absolute inset-0 opacity-[0.1] group-hover:opacity-[0.2] transition-opacity duration-300 pointer-events-none mix-blend-overlay">
               <img 
-                src={i % 2 === 0 ? "/src/assets/experience-bg.png" : "/src/assets/hero-bg.png"} 
+                src={i % 2 === 0 ? experienceBg : heroBg} 
                 alt="" 
                 className="w-full h-full object-cover grayscale scale-105 group-hover:scale-100 transition-transform duration-700" 
               />

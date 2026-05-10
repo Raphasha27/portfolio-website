@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Icon } from './Icons';
+import experienceBg from '../assets/experience-bg.png';
 
 const services = [
   { title: "Mobile App Development", desc: "High-performance mobile apps with beautiful UI and smooth UX.", icon: "smartphone" },
@@ -29,7 +30,7 @@ const Services = () => {
           <div key={i} className="glass p-8 text-center group hover:border-green-500/50 transition-all duration-500 rounded-[32px] relative overflow-hidden shadow-[0_0_15px_rgba(0,0,0,0.5)] hover:shadow-[0_0_40px_rgba(0,229,160,0.15)] hover:-translate-y-2">
             {/* Subtle Background Image Overlay */}
             <div className="absolute inset-0 opacity-[0.1] group-hover:opacity-[0.3] transition-opacity duration-500 pointer-events-none mix-blend-overlay">
-              <img src="/src/assets/experience-bg.png" alt="" className="w-full h-full object-cover grayscale scale-110 group-hover:scale-100 transition-transform duration-700" />
+              <img src={experienceBg} alt="" className="w-full h-full object-cover grayscale scale-110 group-hover:scale-100 transition-transform duration-700" />
             </div>
             
             {/* Animated Gradient Glow */}
