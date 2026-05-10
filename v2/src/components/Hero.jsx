@@ -38,12 +38,12 @@ const Hero = () => {
   }, [typedText, isDeleting, phraseIdx]);
 
   const techStack = [
-    { name: 'Figma', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg' },
-    { name: 'React Native', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
-    { name: 'Flutter', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg' },
-    { name: 'Python', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
-    { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
-    { name: 'Swift', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg' }
+    { name: 'Figma', icon: '🎨' },
+    { name: 'React Native', icon: '⚛️' },
+    { name: 'Flutter', icon: '💙' },
+    { name: 'Python', icon: '🐍' },
+    { name: 'Node.js', icon: '🟢' },
+    { name: 'Swift', icon: '🍎' }
   ];
 
   return (
@@ -237,7 +237,7 @@ const Hero = () => {
                 >
                   {[...techStack, ...techStack].map((tech, i) => (
                     <div key={i} className="flex flex-col items-center gap-1">
-                      <img src={tech.icon} alt={tech.name} className="h-8 w-8 hover:scale-125 transition-all cursor-pointer" title={tech.name} />
+                      <span className="text-2xl hover:scale-125 transition-all cursor-pointer select-none" title={tech.name}>{tech.icon}</span>
                       <span className="text-[7px] text-text-dim font-bold uppercase">{tech.name}</span>
                     </div>
                   ))}
