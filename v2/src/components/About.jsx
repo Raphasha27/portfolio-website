@@ -63,7 +63,6 @@ const About = () => {
             >
               <div className="text-[8px] font-bold text-blue-400 uppercase tracking-widest mb-1">Based In</div>
               <div className="flex items-center gap-2">
-                <Icon name="flagSA" size={18} className="rounded-sm shadow-sm" />
                 <span className="text-xs font-bold text-white">South Africa</span>
               </div>
             </motion.div>
