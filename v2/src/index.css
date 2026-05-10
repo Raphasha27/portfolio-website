@@ -103,3 +103,14 @@ section {
 .glow-hover:hover {
   box-shadow: 0 0 30px rgba(0, 229, 160, 0.1);
 }
+
+/* Typing Indicator Animation */
+@keyframes typing-bounce {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-4px); }
+}
+.typing-dot {
+  animation: typing-bounce 1.4s infinite ease-in-out both;
+}
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
