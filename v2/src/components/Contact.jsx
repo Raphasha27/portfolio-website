@@ -79,6 +79,7 @@ const Contact = () => {
           </div>
         </div>
       </div>
+    </div>
 
       <div className="overflow-hidden border-y border-white/5 py-4 bg-white/[0.02]">
         <motion.div 
