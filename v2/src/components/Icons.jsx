@@ -344,29 +344,24 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     );
   }
 
-  // Priority 2: Emoji Fallback (Favors high-fidelity emoji for "right emoji" request)
-  if (emoji) {
-    return (
-      <div 
-        style={{ fontSize: size }} 
-        className={`flex items-center justify-center select-none ${className}`}
-      >
-        {emoji}
-      </div>
-    );
-  }
-
-  // Priority 3: Brand Logos
+  // Priority 2: Brand Logos with Neon Green Filter
   const logoUrl = techLogos[finalName];
   if (logoUrl) {
     return (
-      <img
-        src={logoUrl}
-        alt={name}
-        style={{ width: size, height: size }}
-        className={`inline-block object-contain select-none pointer-events-none brightness-110 contrast-110 ${className}`}
-        loading="lazy"
-      />
+      <div 
+        style={{ width: size, height: size }} 
+        className={`flex items-center justify-center ${className}`}
+      >
+        <img
+          src={logoUrl}
+          alt={name}
+          className="w-full h-full object-contain select-none pointer-events-none"
+          style={{ 
+            filter: 'brightness(0) saturate(100%) invert(67%) sepia(93%) saturate(382%) hue-rotate(107deg) brightness(101%) contrast(105%) drop-shadow(0 0 4px rgba(0,229,160,0.6))',
+          }}
+          loading="lazy"
+        />
+      </div>
     );
   }
 
