@@ -232,15 +232,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Ambient Floating Chat Bubble */}
-      <motion.div 
-        animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 4, repeat: Infinity }}
-        className="fixed bottom-10 right-10 z-50 w-16 h-16 rounded-full bg-green-400 text-[#050d12] flex items-center justify-center shadow-[0_0_40px_rgba(0,229,160,0.4)] cursor-pointer hover:scale-110 transition-transform group"
-      >
-        <div className="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-20" />
-        <Icon name="chat" size={32} />
-      </motion.div>
     </div>
   );
 };
