@@ -58,7 +58,6 @@ function App() {
                                      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)`,
                     backgroundSize: '40px 40px'
                  }} />
-            <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-[#050d12] to-transparent" />
           </div>
 
           <div className="container mx-auto px-6 lg:px-12 relative z-10 grid lg:grid-cols-2 gap-12">

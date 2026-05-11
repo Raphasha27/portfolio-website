@@ -127,9 +127,9 @@ const About = () => {
           {/* Stats */}
           <div className="grid grid-cols-3 gap-4">
             {[
-              { value: 3, suffix: '+', label: 'Years Exp.' },
-              { value: 20, suffix: '+', label: 'Projects' },
-              { value: 100, suffix: '%', label: 'Dedication' },
+              { value: 10, suffix: '+', label: 'Certifications' },
+              { value: 4, suffix: '+', label: 'Ecosystems' },
+              { value: 100, suffix: '%', label: 'Quality' },
             ].map((stat, i) => (
               <div key={i} className="glass p-4 text-center rounded-2xl border border-white/5 group hover:border-green-500/30 transition-colors">
                 <div className="text-2xl font-bold text-green-400">
@@ -156,9 +156,9 @@ const About = () => {
                 { name: "IBM", sub: "Enterprise", icon: "ibm", color: "bg-[#006699]/10" },
               ].map((partner, i) => (
                 <div key={i} className="flex flex-col items-center gap-3 group">
-                  <div className={`w-14 h-14 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center ${partner.color} group-hover:scale-110 transition-transform shadow-lg border border-white/5 overflow-hidden`}>
+                  <div className={`w-14 h-14 lg:w-20 lg:h-20 rounded-2xl flex items-center justify-center ${partner.color} group-hover:scale-110 transition-transform shadow-lg border border-white/5 overflow-hidden p-0`}>
                     {partner.logo ? (
-                      <img src={partner.logo} alt={partner.name} className={`w-full h-full object-contain ${partner.p || ''}`} />
+                      <img src={partner.logo} alt={partner.name} className="w-full h-full object-contain" />
                     ) : (
                       <Icon name={partner.icon} size={32} />
                     )}

@@ -130,7 +130,7 @@ const Projects = () => {
         </div>
       </div>
 
-      <div className="flex-1 space-y-3 overflow-y-auto pr-2 custom-scroll relative z-10">
+      <div className="flex-1 space-y-3 relative z-10">
         {projects.map((p, i) => (
           <motion.div 
             whileHover={{ scale: 1.02, rotateX: -2, rotateY: 2 }}
@@ -138,15 +138,16 @@ const Projects = () => {
             key={i} id={`project-${i}`} className="glass p-4 border-white/5 hover:border-green-500/50 hover:shadow-[0_0_20px_rgba(0,229,160,0.15)] transition-all duration-300 group relative overflow-hidden rounded-xl"
             style={{ perspective: 1000 }}
           >
-            {/* Subtle Background Overlay */}
-            <div className="absolute inset-0 opacity-[0.25] group-hover:opacity-[0.4] transition-opacity duration-500 pointer-events-none mix-blend-overlay">
+            {/* Real Color Background Overlay with Visibility Filter */}
+            <div className="absolute inset-0 opacity-[0.5] group-hover:opacity-[0.7] transition-opacity duration-500 pointer-events-none">
               <img 
                 src={p.bgImage ? assetMap[p.bgImage] : (i % 2 === 0 ? experienceBg : heroBg)} 
                 alt="" 
-                className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000" 
+                className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000 brightness-[0.6] contrast-125" 
               />
             </div>
-            <div className="absolute inset-0 bg-gradient-to-br from-bg/40 to-bg/95 group-hover:to-bg/80 pointer-events-none transition-colors duration-300" />
+            {/* Deepened Text Protection Gradient */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#050d12] via-[#050d12]/95 to-transparent pointer-events-none" />
             
             {/* Highlight Glow Effect */}
             <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${p.color} blur-3xl opacity-20 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none`}></div>
@@ -157,7 +158,7 @@ const Projects = () => {
                   <Icon name={p.icon} size={28} />
                 </div>
                 <div>
-                  <h3 className="text-[12px] font-bold group-hover:text-white transition-colors">{p.title}</h3>
+                  <h3 className="text-[13px] font-bold text-white group-hover:text-green-400 transition-colors drop-shadow-lg">{p.title}</h3>
                   <div className="text-[7px] text-green-400/80 uppercase font-bold tracking-wider">{p.tagline}</div>
                 </div>
               </div>
@@ -166,7 +167,7 @@ const Projects = () => {
               </div>
             </div>
             
-            <p className="relative z-10 text-[9px] text-text-dim mb-3 line-clamp-2 leading-relaxed group-hover:text-text/90 transition-colors transform-gpu">
+            <p className="relative z-10 text-[10px] text-white/80 font-medium mb-3 line-clamp-2 leading-relaxed group-hover:text-white transition-colors transform-gpu drop-shadow-md">
               {p.desc}
             </p>
             

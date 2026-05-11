@@ -45,7 +45,7 @@ const skillGroups = [
   {
     title: "INFRASTRUCTURE",
     id: "infrastructure",
-    iconName: "rocket",
+    iconName: "zap", // Infrastructure as energy/zap
     color: "orange",
     neonColor: "#f97316",
     skills: [
@@ -104,10 +104,10 @@ const Skills = () => {
               {group.skills.map((s, j) => (
                 <div key={j} className="space-y-3">
                   <div className="flex justify-between items-center px-1">
-                    <span className="text-[13px] font-bold text-white/70 font-mono tracking-tight uppercase">{s.name}</span>
-                    <span className="text-[13px] font-bold font-mono" style={{ color: group.neonColor }}>{s.pct}%</span>
+                    <span className="text-[14px] font-bold text-white font-mono tracking-tight uppercase drop-shadow-md">{s.name}</span>
+                    <span className="text-[14px] font-bold font-mono drop-shadow-lg" style={{ color: group.neonColor }}>{s.pct}%</span>
                   </div>
-                  <div className="h-2.5 w-full bg-white/5 rounded-full relative border border-white/5 overflow-hidden">
+                  <div className="h-3 w-full bg-white/5 rounded-full relative border border-white/5 overflow-hidden shadow-inner">
                     <motion.div 
                       initial={{ width: 0 }}
                       whileInView={{ width: `${s.pct}%` }}
@@ -116,7 +116,7 @@ const Skills = () => {
                       className="h-full relative z-10 rounded-full"
                       style={{ 
                         backgroundColor: group.neonColor,
-                        boxShadow: `0 0 15px ${group.neonColor}80`
+                        boxShadow: `0 0 20px ${group.neonColor}cc`
                       }}
                     />
                   </div>

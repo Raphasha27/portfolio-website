@@ -50,7 +50,7 @@ const experiences = [
     logo: wtcLogo
   },
   {
-    period: "2023 – 2025",
+    period: "2022 – 2025",
     role: "BSc Computer Science Graduate",
     company: "Richfield Graduate Institute · Distinction",
     desc: "Graduated with distinction. Specialized in systems programming, data structures, algorithms, and software architecture. Recipient of academic excellence recognition.",
@@ -88,12 +88,13 @@ const Experience = () => {
                 transition={{ duration: 0.5, delay: i * 0.1 }}
                 className="relative flex gap-8 items-start group"
               >
-                {/* Icon/Logo Circle */}
-                <div className="relative z-10 w-12 h-12 glass rounded-2xl flex items-center justify-center text-green-400 shrink-0 shadow-lg group-hover:scale-110 transition-transform duration-300 border border-green-500/20 group-hover:border-green-500/50">
+                <div className="relative z-10 w-20 h-20 bg-white rounded-2xl flex items-center justify-center overflow-hidden shadow-[0_0_30px_rgba(255,255,255,0.15)] shrink-0 border border-white/20 group-hover:scale-110 transition-transform duration-500 p-0">
                   {exp.logo ? (
-                    <img src={exp.logo} alt={exp.company} className="w-8 h-8 object-contain" />
+                    <img src={exp.logo} alt={exp.company} className="w-full h-full object-contain" />
                   ) : (
-                    <Icon name={exp.icon} size={24} />
+                    <div className="w-full h-full glass flex items-center justify-center text-green-400">
+                      <Icon name={exp.icon} size={24} />
+                    </div>
                   )}
                 </div>
 

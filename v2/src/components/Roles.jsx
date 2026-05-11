@@ -25,7 +25,7 @@ const Roles = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-3 gap-3 flex-1 overflow-y-auto pr-1 custom-scroll">
+      <div className="grid grid-cols-3 gap-3 flex-1 relative">
         {roles.map((role, i) => (
           <div key={i} className="glass p-4 border-white/5 hover:border-green-500/50 hover:shadow-[0_0_15px_rgba(0,229,160,0.2)] transition-all duration-300 group flex flex-col items-center text-center relative overflow-hidden rounded-xl">
             {/* Thematic AI Background Overlay */}
