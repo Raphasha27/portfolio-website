@@ -141,24 +141,7 @@ const Hero = () => {
               ))}
             </div>
 
-            {/* Integrated Compact Engine Bar (Moved here for better organization) */}
-            <motion.div 
-              initial={{ opacity: 0, y: 10 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 }}
-              className="glass px-6 py-3 rounded-2xl border border-white/10 flex items-center gap-6 shadow-xl w-fit"
-            >
-              <div className="text-[8px] font-bold text-green-400 uppercase tracking-[0.3em] opacity-60 border-r border-white/10 pr-6">Engine</div>
-              <div className="flex gap-4 items-center">
-                {techStack.map((tech, i) => (
-                  <div key={i} className="group relative">
-                    <div className="w-5 h-5 group-hover:scale-125 transition-all duration-300">
-                       <Icon name={tech.id} size={18} />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
+            </div>
           </motion.div>
 
           {/* RIGHT COLUMN: Performance & Stack Dashboard */}
@@ -223,6 +206,25 @@ const Hero = () => {
               <a href="#projects" className="w-full px-6 py-4 bg-green-500/10 border border-green-500/20 text-green-400 text-[10px] font-bold rounded-2xl hover:bg-green-500 hover:text-bg transition-all flex items-center justify-center gap-3 uppercase tracking-[0.3em] shadow-lg shadow-green-500/5">
                 Launch Inventory <Icon name="rocket" size={16} />
               </a>
+
+              {/* Engine Bar (Positioned under the button) */}
+              <motion.div 
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 }}
+                className="glass w-full px-6 py-3 rounded-2xl border border-white/10 flex items-center justify-between shadow-xl"
+              >
+                <div className="text-[8px] font-bold text-green-400 uppercase tracking-[0.3em] opacity-60">Engine</div>
+                <div className="flex gap-4 items-center">
+                  {techStack.map((tech, i) => (
+                    <div key={i} className="group relative">
+                      <div className="w-5 h-5 group-hover:scale-125 transition-all duration-300">
+                         <Icon name={tech.id} size={18} />
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
