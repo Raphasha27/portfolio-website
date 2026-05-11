@@ -4,13 +4,14 @@ import { Icon } from './Icons';
 
 const KB = {
   'tech stack': "My core stack: C# / .NET 8, Rust, C, Python, React, Vite. AI/ML: PyTorch, TensorFlow, LangChain. Cloud: Azure, AWS, Docker, Kubernetes.",
-  'projects': "I've built 9 real projects mapped to 9 AI Roles including FlowSentinel, CyberShield SOC, and NoShowIQ.",
+  'projects': "I've built 9 real projects mapped to 9 AI Roles including FlowSentinel, CyberShield SOC, and NoShowIQ. I've also built Sovereign-AI-Nexus.",
   'hire': "I am available for freelance and full-time opportunities. 📩 raphashakoketso99@gmail.com | 📞 0781172470",
-  'about': "I am a South African software engineer building 'the foundational infrastructure for the African Digital Future'.",
+  'about': "I am a South African software engineer building 'the foundational infrastructure for the African Digital Future'. I graduated from Richfield with distinction.",
+  'experience': "My background includes roles at Kirov Dynamics, Open Source contributions on GitHub, and institutional training from YES, CAPACITI, and WeThinkCode_.",
   'latest': "The latest highlight is Sovereign-AI-Nexus — a global agentic infrastructure platform for autonomous professional branding. Check it out in the Projects section!",
   'recommend': "I highly recommend exploring the Sovereign-AI-Nexus project. It represents the pinnacle of my work in autonomous agentic systems.",
   'contact': "You can reach me directly via email at raphashakoketso99@gmail.com or through my LinkedIn.",
-  'hello': "Hello there! I'm Koketso's Digital Twin. I can tell you about his technical expertise, projects, and how to hire him.",
+  'hello': "Hello there! I'm Koketso's Digital Twin. I can tell you about his technical expertise, projects, and professional timeline.",
   'hi': "Hi! I'm Koketso's Digital Twin. What would you like to know about his engineering background?"
 };
 

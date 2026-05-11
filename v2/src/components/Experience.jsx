@@ -4,13 +4,6 @@ import { Icon } from './Icons';
 
 const experiences = [
   {
-    period: "2024 – PRESENT",
-    role: "Open Source Contributor",
-    company: "GitHub · raphasha27",
-    desc: "Maintaining multiple open-source repositories including SupportHive-C (C engine), FlowSentinel (.NET 8), and RepoPulse.",
-    icon: "github"
-  },
-  {
     period: "2025 – PRESENT",
     role: "Autonomous Systems Engineer",
     company: "Kirov Dynamics Technology · Self-Employed",
@@ -18,11 +11,39 @@ const experiences = [
     icon: "cpu"
   },
   {
+    period: "2024 – PRESENT",
+    role: "Open Source Contributor",
+    company: "GitHub · raphasha27",
+    desc: "Maintaining multiple open-source repositories including SupportHive-C (C engine), FlowSentinel (.NET 8), and RepoPulse. Enforcing automated CI/CD and repository health standards.",
+    icon: "github"
+  },
+  {
+    period: "2024 – 2025",
+    role: "YES Programme Developer",
+    company: "YES · Youth Employment Service",
+    desc: "Participated in South Africa's Youth Employment Service programme, gaining hands-on industry experience in software development and contributing to real-world digital projects.",
+    icon: "graduationCap"
+  },
+  {
+    period: "2024",
+    role: "Tech Accelerator Graduate",
+    company: "CAPACITI · Digital Skills Accelerator",
+    desc: "Completed an intensive digital skills accelerator focused on cloud computing, agile development, and enterprise software delivery. Ranked in top cohort for technical output.",
+    icon: "rocket"
+  },
+  {
+    period: "2023 – 2024",
+    role: "Software Engineering Student",
+    company: "WeThinkCode_ · Johannesburg Campus",
+    desc: "Trained in peer-driven, problem-based software engineering. Built real-world applications in Java and Python, mastering algorithmic thinking and collaborative development workflows.",
+    icon: "code"
+  },
+  {
     period: "2023 – 2025",
     role: "BSc Computer Science Graduate",
     company: "Richfield Graduate Institute · Distinction",
-    desc: "Graduated with distinction. Specialized in systems programming, data structures, algorithms, and software architecture.",
-    icon: "graduationCap"
+    desc: "Graduated with distinction. Specialized in systems programming, data structures, algorithms, and software architecture. Recipient of academic excellence recognition.",
+    icon: "bookOpen"
   }
 ];
 
