@@ -9,10 +9,10 @@ const skillGroups = [
     iconName: "palette",
     neonColor: "#00e5a0",
     skills: [
-      { name: "React & Vite", pct: 95 },
-      { name: "Tailwind CSS", pct: 92 },
-      { name: "Next.js", pct: 88 },
-      { name: "Framer Motion", pct: 90 }
+      { name: "React & Vite", pct: 95, icon: "react" },
+      { name: "Tailwind CSS", pct: 92, icon: "tailwindcss" },
+      { name: "Next.js", pct: 88, icon: "nextjs" },
+      { name: "Framer Motion", pct: 90, icon: "framer" }
     ]
   },
   {
@@ -21,10 +21,10 @@ const skillGroups = [
     iconName: "gear",
     neonColor: "#00e5a0",
     skills: [
-      { name: "Node.js & Express", pct: 90 },
-      { name: "Python & FastAPI", pct: 92 },
-      { name: "LangChain (AI)", pct: 85 },
-      { name: "RESTful APIs", pct: 94 }
+      { name: "Node.js & Express", pct: 90, icon: "node" },
+      { name: "Python & FastAPI", pct: 92, icon: "python" },
+      { name: "LangChain (AI)", pct: 85, icon: "langchain" },
+      { name: "RESTful APIs", pct: 94, icon: "code" }
     ]
   },
   {
@@ -33,10 +33,10 @@ const skillGroups = [
     iconName: "cabinet",
     neonColor: "#00e5a0",
     skills: [
-      { name: "PostgreSQL", pct: 94 },
-      { name: "MongoDB", pct: 88 },
-      { name: "Redis", pct: 85 },
-      { name: "Vector DBs", pct: 82 }
+      { name: "PostgreSQL", pct: 94, icon: "postgres" },
+      { name: "MongoDB", pct: 88, icon: "mongodb" },
+      { name: "Redis", pct: 85, icon: "redis" },
+      { name: "Vector DBs", pct: 82, icon: "database" }
     ]
   },
   {
@@ -45,10 +45,10 @@ const skillGroups = [
     iconName: "zap",
     neonColor: "#00e5a0",
     skills: [
-      { name: "Vercel & Netlify", pct: 96 },
-      { name: "Docker & Linux", pct: 85 },
-      { name: "GitHub Actions", pct: 90 },
-      { name: "Nginx & Server", pct: 82 }
+      { name: "Vercel & Netlify", pct: 96, icon: "vercel" },
+      { name: "Docker & Linux", pct: 85, icon: "docker" },
+      { name: "GitHub Actions", pct: 90, icon: "github" },
+      { name: "Nginx & Server", pct: 82, icon: "cloud" }
     ]
   }
 ];
@@ -100,7 +100,12 @@ const Skills = () => {
               {group.skills.map((s, j) => (
                 <div key={j} className="space-y-4">
                   <div className="flex justify-between items-center px-1">
-                    <span className="text-[15px] font-bold text-white/90 font-mono tracking-wide uppercase">{s.name}</span>
+                    <div className="flex items-center gap-3">
+                      <div className="w-6 h-6 flex items-center justify-center opacity-90">
+                        <Icon name={s.icon} size={22} />
+                      </div>
+                      <span className="text-[15px] font-bold text-white/90 font-mono tracking-wide uppercase">{s.name}</span>
+                    </div>
                     <span className="text-[15px] font-bold font-mono text-green-400">{s.pct}%</span>
                   </div>
                   <div className="h-4 w-full bg-white/5 rounded-full relative overflow-hidden border border-white/5 shadow-inner">

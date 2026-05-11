@@ -315,16 +315,41 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     coursera:      "https://logo.clearbit.com/coursera.org",
   }), []);
 
-  // Priority 1: Themed Line Icons (Favors neon-green system style requested by user)
-  const themedIcon = themedIcons[name] || themedIcons[finalName];
-  if (themedIcon) {
-    const isSolid = ["github"].includes(finalName);
+  const emojiMap = useMemo(() => ({
+    palette: "🎨",
+    gear: "⚙️",
+    cabinet: "🗄️",
+    database: "🗄️",
+    infrastructure: "☁️",
+    zap: "⚡",
+    rocket: "🚀",
+    heart: "❤️",
+    thumbsup: "👍",
+    star: "⭐",
+    bot: "🤖",
+    target: "🎯",
+    brain: "🧠",
+    cpu: "💻",
+    graduationcap: "🎓",
+    terminal: "💻",
+    langchain: "🦜",
+    smartphone: "📱",
+    layout: "🎨",
+    cloud: "☁️",
+  }), []);
+
+  const highFidelityKeys = ["palette", "gear", "cabinet", "database", "infrastructure", "thumbsup", "heart", "star", "rocket", "zap", "bot", "target", "brain", "cpu", "graduationcap", "langchain", "smartphone", "layout", "cloud"];
+  const isHighFidelity = highFidelityKeys.includes(finalName);
+  const emoji = emojiMap[finalName];
+
+  // Priority 1: High-Fidelity 3D Emojis (Categories & Metrics)
+  if (isHighFidelity && emoji) {
     return (
       <div 
-        style={{ width: size, height: size }} 
-        className={`flex items-center justify-center text-green-400 drop-shadow-[0_0_8px_rgba(0,229,160,0.4)] ${className}`}
+        style={{ fontSize: size }} 
+        className={`flex items-center justify-center select-none drop-shadow-[0_0_10px_rgba(255,255,255,0.2)] ${className}`}
       >
-        {themedIcon}
+        {emoji}
       </div>
     );
   }
@@ -343,6 +368,19 @@ export const Icon = ({ name, size = 16, className = "" }) => {
           className="w-full h-full object-contain select-none pointer-events-none brightness-110 contrast-110"
           loading="lazy"
         />
+      </div>
+    );
+  }
+
+  // Priority 3: Themed Line Icons (UI Actions)
+  const themedIcon = themedIcons[name] || themedIcons[finalName];
+  if (themedIcon) {
+    return (
+      <div 
+        style={{ width: size, height: size }} 
+        className={`flex items-center justify-center text-green-400 drop-shadow-[0_0_8px_rgba(0,229,160,0.4)] ${className}`}
+      >
+        {themedIcon}
       </div>
     );
   }
