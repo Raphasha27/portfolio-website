@@ -16,10 +16,13 @@ import Map from './components/Map';
 
 function App() {
   return (
-    <div className="bg-[#050d12] text-[#e0f2f1] min-h-screen selection:bg-green-500/30 selection:text-green-200 cursor-none">
+    <div className="bg-[#050d12] text-[#e0f2f1] min-h-screen selection:bg-green-500/30 selection:text-green-200 cursor-none relative">
+      {/* Global Grain Overlay for Cinematic Texture */}
+      <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-[9999] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+      
       <CustomCursor />
       <Navbar />
-      <main className="pb-24">
+      <main className="pb-24 relative z-10">
         {/* Section 1: Hero — full page, no container */}
         <section>
           <Hero />
@@ -43,7 +46,6 @@ function App() {
           transition={{ duration: 0.8 }}
           className="relative py-24 overflow-hidden"
         >
-          {/* Nocturnal Cityscape Overlay (Simulated) */}
           <div className="absolute inset-0 bg-[#050d12]">
             <div className="absolute inset-0 opacity-20" 
                  style={{ 
@@ -54,9 +56,8 @@ function App() {
                  style={{ 
                    backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px), 
                                      linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px)`,
-                   backgroundSize: '40px 40px'
+                    backgroundSize: '40px 40px'
                  }} />
-            {/* Cinematic Bottom Shadow */}
             <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-[#050d12] to-transparent" />
           </div>
 
