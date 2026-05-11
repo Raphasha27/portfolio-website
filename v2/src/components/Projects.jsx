@@ -163,9 +163,6 @@ const Projects = () => {
                   </span>
                 ))}
               </div>
-ed-sm bg-white/5 border border-white/10 text-text-dim group-hover:border-white/20 transition-colors">{t}</span>
-                ))}
-              </div>
               <div className="flex gap-3">
                 <button 
                   onClick={() => {
