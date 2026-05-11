@@ -8,6 +8,7 @@ import yesLogo from '../assets/yes-badge.png';
 import ciscoLogo from '../assets/cisco-logo.svg';
 import courseraLogo from '../assets/coursera-logo.svg';
 import googleLogo from '../assets/google-logo.svg';
+import ibmLogo from '../assets/ibm-logo.svg';
 
 const partners = [
   { name: "Richfield", sub: "BSc Computer Science · Distinction", logo: richfieldLogo, bg: "bg-white" },
@@ -17,7 +18,7 @@ const partners = [
   { name: "Cisco",       sub: "Networking & Security",       logo: ciscoLogo,    bg: "bg-white" },
   { name: "Coursera",    sub: "Specialized Certifications",   logo: courseraLogo, bg: "bg-white" },
   { name: "Google",      sub: "Data & AI Certification",     logo: googleLogo,   bg: "bg-white" },
-  { name: "IBM",         sub: "Enterprise Technology",       inlineSvg: true,  bg: "bg-white" },
+  { name: "IBM",         sub: "Enterprise Technology",       logo: ibmLogo,      bg: "bg-white" },
 ];
 
 const CountUp = ({ to, duration = 2 }) => {
@@ -128,11 +129,6 @@ const About = () => {
                           <div className="text-4xl font-black text-green-400 tracking-widest drop-shadow-[0_0_20px_rgba(0,229,160,0.5)]">{partner.badge}</div>
                           <div className="text-[8px] font-mono text-green-400/60 uppercase tracking-[0.3em]">Programme</div>
                         </div>
-                      ) : partner.inlineSvg ? (
-                        /* IBM inline SVG — always renders, no CDN */
-                        <svg viewBox="0 0 80 32" xmlns="http://www.w3.org/2000/svg" className="w-24 h-12">
-                          <path fill="#1F70C1" d="M0 4h8v2H2v2h6v2H2v2h6v2H0V4zm10 0h10v2h-4v8h-2V6h-4V4zm12 0h8l2 5 2-5h8v10h-2V6h-2l-2.5 6h-3L30.5 6h-2v8h-2V4zm22 0h8v2h-6v2h6v2h-6v2h6v2h-8V4z"/>
-                        </svg>
                       ) : (
                         <div className="w-20 h-20 flex items-center justify-center">
                           <Icon name={partner.icon} size={64} />
