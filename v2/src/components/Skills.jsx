@@ -6,6 +6,7 @@ const skillGroups = [
   {
     title: "FRONT END",
     id: "frontend",
+    desc: "Crafting immersive user interfaces",
     iconName: "palette",
     neonColor: "#00e5a0",
     skills: [
@@ -18,6 +19,7 @@ const skillGroups = [
   {
     title: "BACK END",
     id: "backend",
+    desc: "Architecting scalable logic & APIs",
     iconName: "gear",
     neonColor: "#00e5a0",
     skills: [
@@ -30,6 +32,7 @@ const skillGroups = [
   {
     title: "DATABASE",
     id: "database",
+    desc: "Storing & managing data",
     iconName: "cabinet",
     neonColor: "#00e5a0",
     skills: [
@@ -42,6 +45,7 @@ const skillGroups = [
   {
     title: "INFRASTRUCTURE",
     id: "infrastructure",
+    desc: "Deploying resilient ecosystems",
     iconName: "zap",
     neonColor: "#00e5a0",
     skills: [
@@ -79,8 +83,8 @@ const Skills = () => {
                 <div 
                   className="w-20 h-20 rounded-3xl border flex items-center justify-center relative transition-all duration-500 group-hover:scale-110"
                   style={{ 
-                    borderColor: 'rgba(0, 229, 160, 0.3)', 
-                    boxShadow: '0 0 30px rgba(0, 229, 160, 0.1), inset 0 0 15px rgba(0, 229, 160, 0.05)' 
+                    borderColor: 'rgba(0, 229, 160, 0.4)', 
+                    boxShadow: '0 0 30px rgba(0, 229, 160, 0.15), inset 0 0 15px rgba(0, 229, 160, 0.1)' 
                   }}
                 >
                   <div className="relative z-10">
@@ -89,7 +93,10 @@ const Skills = () => {
                   <div className="absolute -top-1 -left-1 w-3 h-3 border-t-2 border-l-2 border-green-400"></div>
                   <div className="absolute -bottom-1 -right-1 w-3 h-3 border-b-2 border-r-2 border-green-400"></div>
                 </div>
-                <h3 className="text-3xl font-bold tracking-[0.4em] uppercase font-mono text-white/95 leading-none">{group.title}</h3>
+                <div>
+                  <h3 className="text-3xl font-bold tracking-[0.4em] uppercase font-mono text-white/95 leading-none">{group.title}</h3>
+                  <div className="text-green-400/80 text-[11px] font-mono mt-3 uppercase tracking-[0.2em]">{group.desc}</div>
+                </div>
               </div>
 
               {/* Skill Bars */}
@@ -99,7 +106,7 @@ const Skills = () => {
                     <div key={j} className="space-y-4">
                       <div className="flex justify-between items-center px-1">
                         <div className="flex items-center gap-3">
-                          <div className="w-6 h-6 flex items-center justify-center opacity-90">
+                          <div className="w-6 h-6 flex items-center justify-center opacity-90 drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]">
                             <Icon name={s.icon} size={22} />
                           </div>
                           <span className="text-[15px] font-bold text-white/90 font-mono tracking-wide uppercase">{s.name}</span>
@@ -116,7 +123,11 @@ const Skills = () => {
                           style={{ 
                             boxShadow: '0 0 20px rgba(0, 229, 160, 0.5)'
                           }}
-                        />
+                        >
+                          {/* Glowing Flare Tip */}
+                          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-8 h-8 bg-green-300 blur-md opacity-60 rounded-full" />
+                          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1.5 h-6 bg-white blur-[2px] opacity-80 rounded-full" />
+                        </motion.div>
                       </div>
                     </div>
                   );
