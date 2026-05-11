@@ -60,7 +60,7 @@ function App() {
                  }} />
           </div>
 
-          <div className="container mx-auto px-6 lg:px-12 relative z-10 grid lg:grid-cols-2 gap-12">
+          <div className="container mx-auto px-6 lg:px-12 relative z-10 flex flex-col gap-24">
             <Skills />
             <Roles />
           </div>

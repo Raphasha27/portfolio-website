@@ -249,13 +249,13 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     nextjs:        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg",
     pytorch:       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg",
     tensorflow:    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg",
-    cisco:         "https://logo.clearbit.com/cisco.com",
-    ibm:           "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ibm/ibm-plain.svg",
+    cisco:         "https://cdn.simpleicons.org/cisco/049fd9",
+    ibm:           "https://cdn.simpleicons.org/ibm",
     go:            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg",
     csharp:        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
     c:             "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg",
     google:        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/google/google-original.svg",
-    coursera:      "https://logo.clearbit.com/coursera.org",
+    coursera:      "https://cdn.simpleicons.org/coursera/0056D2",
     framer:        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/framermotion/framermotion-original.svg",
   }), []);
 
