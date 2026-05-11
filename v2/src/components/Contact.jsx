@@ -48,6 +48,8 @@ const Contact = () => {
                   { icon: "github", link: "https://github.com/raphasha27" },
                   { icon: "linkedin", link: "https://linkedin.com/in/koketso-raphasha" },
                   { icon: "twitter", link: "https://twitter.com/raphasha27" },
+                  { icon: "slack", link: "#" }, // Placeholder for Slack
+                  { icon: "whop", link: "https://whop.com/kirovdynamicstechnology/" },
                   { icon: "mail", link: "mailto:raphashakoketso99@gmail.com" }
                 ].map((social, i) => (
                   <a key={i} href={social.link} target="_blank" className="w-12 h-12 glass rounded-xl flex items-center justify-center text-text-dim hover:text-green-400 hover:border-green-500/50 transition-all">

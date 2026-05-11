@@ -6,8 +6,9 @@ const skillGroups = [
   {
     title: "FRONT END",
     id: "frontend",
-    iconName: "cpu",
+    iconName: "palette",
     color: "blue",
+    neonColor: "#3b82f6",
     skills: [
       { name: "React & Vite", pct: 95 },
       { name: "Tailwind CSS", pct: 92 },
@@ -18,8 +19,9 @@ const skillGroups = [
   {
     title: "BACK END",
     id: "backend",
-    iconName: "cloud",
+    iconName: "gear",
     color: "green",
+    neonColor: "#22c55e",
     skills: [
       { name: "Node.js & Express", pct: 90 },
       { name: "Python & FastAPI", pct: 92 },
@@ -30,8 +32,9 @@ const skillGroups = [
   {
     title: "DATABASE",
     id: "database",
-    iconName: "database",
+    iconName: "cabinet",
     color: "purple",
+    neonColor: "#a855f7",
     skills: [
       { name: "PostgreSQL", pct: 94 },
       { name: "MongoDB", pct: 88 },
@@ -42,8 +45,9 @@ const skillGroups = [
   {
     title: "INFRASTRUCTURE",
     id: "infrastructure",
-    iconName: "terminal", // Using terminal as an approximation for rack
-    color: "cyan",
+    iconName: "rocket",
+    color: "orange",
+    neonColor: "#f97316",
     skills: [
       { name: "Vercel & Netlify", pct: 96 },
       { name: "Docker & Linux", pct: 85 },
@@ -55,58 +59,65 @@ const skillGroups = [
 
 const Skills = () => {
   return (
-    <div id="skills" className="glass p-10 h-full flex flex-col border border-white/5 relative overflow-hidden bg-[#050d12]">
-      {/* Background patterns could go here */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none bg-[radial-gradient(circle_at_50%_50%,_rgba(0,255,160,0.05),_transparent_70%)]"></div>
+    <div id="skills" className="p-10 h-full flex flex-col bg-[#050d12] relative overflow-hidden border border-white/5 rounded-3xl">
+      {/* Subtle scanline effect */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]"></div>
+      
+      {/* Header with Title and Status */}
+      <div className="flex justify-between items-center mb-12 relative z-10">
+        <h2 className="text-3xl font-bold tracking-tighter">
+          Tech <span className="text-green-400">Arsenals</span>
+        </h2>
+        <div className="px-4 py-1.5 rounded-full bg-green-500/10 border border-green-500/30 flex items-center gap-2">
+          <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></div>
+          <span className="text-[10px] font-bold text-green-400 uppercase tracking-[0.2em]">Operational: 100%</span>
+        </div>
+      </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 flex-1 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-12 flex-1 items-start relative z-10">
         {skillGroups.map((group, i) => (
-          <div key={i} className="space-y-8 group">
-            {/* Header with Glowing Icon */}
+          <div key={i} className="space-y-10 group">
+            {/* Header with Neon Outlined Icon + 3D Emoji */}
             <div className="flex items-center gap-6">
-              <div className={`w-16 h-16 rounded-2xl border-2 flex items-center justify-center relative transition-all duration-500
-                ${group.color === 'blue' ? 'border-blue-500/50 shadow-[0_0_20px_rgba(59,130,246,0.3)]' : 
-                  group.color === 'green' ? 'border-green-500/50 shadow-[0_0_20px_rgba(34,197,94,0.3)]' :
-                  group.color === 'purple' ? 'border-purple-500/50 shadow-[0_0_20px_rgba(168,85,247,0.3)]' :
-                  'border-cyan-500/50 shadow-[0_0_20px_rgba(6,182,212,0.3)]'}
-                group-hover:scale-110`}>
-                <div className={`absolute inset-0 rounded-2xl blur-md opacity-40 
-                  ${group.color === 'blue' ? 'bg-blue-500' : 
-                    group.color === 'green' ? 'bg-green-500' :
-                    group.color === 'purple' ? 'bg-purple-500' :
-                    'bg-cyan-500'}`} />
-                <Icon name={group.iconName} size={32} className={`relative z-10 
-                  ${group.color === 'blue' ? 'text-blue-400' : 
-                    group.color === 'green' ? 'text-green-400' :
-                    group.color === 'purple' ? 'text-purple-400' :
-                    'text-cyan-400'}`} />
+              <div 
+                className="w-16 h-16 rounded-2xl border-2 flex items-center justify-center relative transition-all duration-500 group-hover:scale-110"
+                style={{ 
+                  borderColor: `${group.neonColor}80`, 
+                  boxShadow: `0 0 20px ${group.neonColor}30, inset 0 0 10px ${group.neonColor}20` 
+                }}
+              >
+                {/* 3D Emoji Icon */}
+                <div className="relative z-10">
+                   <Icon name={group.iconName} size={38} />
+                </div>
+                
+                {/* Corner Accents */}
+                <div className="absolute -top-1 -left-1 w-2 h-2 border-t-2 border-l-2" style={{ borderColor: group.neonColor }}></div>
+                <div className="absolute -bottom-1 -right-1 w-2 h-2 border-b-2 border-r-2" style={{ borderColor: group.neonColor }}></div>
               </div>
-              <h3 className="text-2xl font-bold tracking-[0.2em] uppercase font-mono">{group.title}</h3>
+              
+              <h3 className="text-2xl font-bold tracking-[0.2em] uppercase font-mono text-white/90">{group.title}</h3>
             </div>
 
-            {/* Skill Bars */}
-            <div className="space-y-6 pl-2">
+            {/* Skill Bars with Glow */}
+            <div className="space-y-8 pl-2">
               {group.skills.map((s, j) => (
                 <div key={j} className="space-y-3">
-                  <div className="flex justify-between items-center">
-                    <span className="text-sm font-bold text-white/90 font-mono tracking-tight">{s.name}</span>
-                    <span className={`text-sm font-bold font-mono 
-                      ${group.color === 'blue' ? 'text-blue-400' : 
-                        group.color === 'green' ? 'text-green-400' :
-                        group.color === 'purple' ? 'text-purple-400' :
-                        'text-cyan-400'}`}>{s.pct}%</span>
+                  <div className="flex justify-between items-center px-1">
+                    <span className="text-[13px] font-bold text-white/70 font-mono tracking-tight uppercase">{s.name}</span>
+                    <span className="text-[13px] font-bold font-mono" style={{ color: group.neonColor }}>{s.pct}%</span>
                   </div>
-                  <div className="h-2 w-full bg-white/5 rounded-full relative overflow-hidden">
+                  <div className="h-2.5 w-full bg-white/5 rounded-full relative border border-white/5 overflow-hidden">
                     <motion.div 
                       initial={{ width: 0 }}
                       whileInView={{ width: `${s.pct}%` }}
                       viewport={{ once: true }}
-                      transition={{ duration: 1.2, ease: "easeOut", delay: i * 0.2 + j * 0.1 }}
-                      className={`h-full relative z-10 rounded-full
-                        ${group.color === 'blue' ? 'bg-blue-500 shadow-[0_0_15px_rgba(59,130,246,0.5)]' : 
-                          group.color === 'green' ? 'bg-green-500 shadow-[0_0_15px_rgba(34,197,94,0.5)]' :
-                          group.color === 'purple' ? 'bg-purple-500 shadow-[0_0_15px_rgba(168,85,247,0.5)]' :
-                          'bg-cyan-500 shadow-[0_0_15px_rgba(6,182,212,0.5)]'}`}
+                      transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1], delay: i * 0.2 + j * 0.1 }}
+                      className="h-full relative z-10 rounded-full"
+                      style={{ 
+                        backgroundColor: group.neonColor,
+                        boxShadow: `0 0 15px ${group.neonColor}80`
+                      }}
                     />
                   </div>
                 </div>
@@ -116,14 +127,11 @@ const Skills = () => {
         ))}
       </div>
 
-      {/* Arsenal Footer */}
-      <div className="mt-12 pt-8 border-t border-white/5 flex flex-wrap justify-center gap-6 opacity-40 hover:opacity-100 transition-opacity duration-700">
-        {[
-          "react", "python", "typescript", "node", "nextjs", 
-          "tailwindcss", "postgres", "mongodb", "docker", "vercel"
-        ].map((id, i) => (
-          <div key={i} className="w-8 h-8 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
-            <Icon name={id} size={24} />
+      {/* Mini Arsenal Footer */}
+      <div className="mt-16 pt-8 border-t border-white/5 flex flex-wrap justify-center gap-8 opacity-20 hover:opacity-100 transition-opacity duration-1000">
+        {["react", "python", "typescript", "node", "nextjs", "tailwindcss", "postgres", "mongodb"].map((id, i) => (
+          <div key={i} className="w-6 h-6 grayscale hover:grayscale-0 transition-all duration-500 cursor-pointer">
+            <Icon name={id} size={20} />
           </div>
         ))}
       </div>

@@ -62,6 +62,11 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     cpu: "Microchip",
     code: "Laptop",
     server: "Computer",
+    whop: "Shopping_bag",
+    slack: "Speech_balloon",
+    palette: "Artist_palette",
+    gear: "Gear",
+    cabinet: "Card_file_box",
   }), []);
 
   const techLogos = useMemo(() => ({
@@ -100,6 +105,7 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     grafana: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg",
     prometheus: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg",
     langchain: "https://raw.githubusercontent.com/langchain-ai/langchain/master/docs/static/img/langchain_logo.png",
+    slack: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/slack/slack-original.svg",
   }), []);
 
   const finalName = name?.toLowerCase();

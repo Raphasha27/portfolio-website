@@ -5,17 +5,22 @@ import richfieldLogo from '../assets/richfield-logo.png';
 import profileImg from '../assets/koketso_transparent.png';
 import wethinkcodeLogo from '../assets/wethinkcode-logo.png';
 import capacitiLogo from '../assets/capaciti-logo.png';
+import yesLogo from '../assets/yes-logo.png';
 import { Icon } from './Icons';
 
-const CountUp = ({ to }) => {
+const CountUp = ({ to, duration = 2 }) => {
   const nodeRef = useRef(null);
-  const isInView = useInView(nodeRef, { once: true });
-  const count = useSpring(0, { stiffness: 100, damping: 30, restDelta: 0.001 });
+  const isInView = useInView(nodeRef, { once: true, margin: "-100px" });
+  const count = useSpring(0, { stiffness: 50, damping: 20 });
   const rounded = useTransform(count, (latest) => Math.round(latest));
 
   useEffect(() => {
     if (isInView) {
-      count.set(to);
+      // Small delay to ensure the component is fully visible
+      const timeout = setTimeout(() => {
+        count.set(to);
+      }, 200);
+      return () => clearTimeout(timeout);
     }
   }, [isInView, to, count]);
 
@@ -23,15 +28,6 @@ const CountUp = ({ to }) => {
 };
 
 const About = () => {
-  const techStack = [
-    { name: 'Figma', id: 'figma' },
-    { name: 'React', id: 'react' },
-    { name: 'Flutter', id: 'flutter' },
-    { name: 'Python', id: 'python' },
-    { name: 'Node.js', id: 'node' },
-    { name: 'Vercel', id: 'vercel' }
-  ];
-
   return (
     <div id="about" className="relative min-h-screen overflow-hidden flex items-center">
       {/* Map overlay */}
@@ -42,96 +38,68 @@ const About = () => {
       {/* Radial glow */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-green-500/5 to-transparent pointer-events-none" />
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10 grid lg:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-6 lg:px-12 relative z-10 grid lg:grid-cols-2 gap-0 items-center">
 
-        {/* LEFT — SWAPPED: Premium UI Dashboard Preview (formerly in Hero) */}
+        {/* LEFT — Profile Image (REVERTED BACK) */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="flex justify-center"
+          className="flex justify-center lg:justify-start"
         >
-          <div className="relative w-full max-w-[440px] space-y-4">
-            {/* Main Dashboard Card */}
-            <motion.div
-              animate={{ y: [0, -6, 0] }}
-              transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-              className="glass p-6 rounded-2xl border border-green-500/20 shadow-[0_0_40px_rgba(0,201,136,0.15)] bg-bg/80 backdrop-blur-xl"
-            >
-              <div className="flex justify-between items-center mb-6">
-                <div className="text-[10px] font-bold text-green-400 uppercase tracking-widest">System Metrics</div>
-                <div className="flex gap-2">
-                  <div className="w-2.5 h-2.5 rounded-full bg-red-500/40 border border-red-500/20"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/40 border border-yellow-500/20"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-500/40 border border-green-500/20"></div>
-                </div>
-              </div>
+          <div className="relative w-80 h-80 lg:w-[480px] lg:h-[480px] -mt-10 lg:-mt-20">
+            {/* Main Glowing Border */}
+            <div className="absolute inset-0 rounded-full border-2 border-green-500/30 shadow-[0_0_50px_rgba(0,229,160,0.2)] z-0" />
+            <div className="absolute inset-[10px] rounded-full border border-white/10 z-0" />
+            
+            {/* Ambient Backglow */}
+            <div className="absolute inset-0 rounded-full bg-green-500/10 blur-[100px] animate-pulse" />
+            
+            {/* The Image Container */}
+            <div className="absolute inset-[15px] rounded-full overflow-hidden bg-[#050d12]/50 backdrop-blur-sm z-10">
+              <motion.img
+                initial={{ scale: 1.1, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
+                src={profileImg}
+                alt="Koketso Raphasha"
+                className="w-full h-full object-cover"
+                style={{ filter: 'brightness(1.05) contrast(1.05)' }}
+              />
               
-              <div className="mb-6">
-                <div className="text-lg font-bold mb-1">Kirov Dynamics v2.0</div>
-                <div className="text-[10px] text-text-dim uppercase tracking-wider">Mobile & UI Infrastructure</div>
-              </div>
+              {/* Subtle inner shadow for depth */}
+              <div className="absolute inset-0 shadow-[inset_0_0_60px_rgba(0,0,0,0.6)] pointer-events-none" />
+            </div>
 
-              <div className="space-y-4">
-                {[
-                  { label: 'UI/UX Design', val: 92, color: 'from-green-500 to-green-400' },
-                  { label: 'Mobile Dev', val: 88, color: 'from-blue-500 to-blue-400' },
-                  { label: 'Autonomous Systems', val: 80, color: 'from-purple-500 to-purple-400' },
-                ].map((item, i) => (
-                  <div key={i}>
-                    <div className="flex justify-between text-[9px] font-bold text-text-dim mb-1.5 uppercase tracking-tight">
-                      <span>{item.label}</span><span className="text-green-400">{item.val}%</span>
-                    </div>
-                    <div className="h-1.5 bg-white/5 rounded-full overflow-hidden border border-white/5">
-                      <motion.div
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${item.val}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1.2, delay: 0.5 + i * 0.2 }}
-                        className={`h-full bg-gradient-to-r ${item.color} rounded-full`}
-                      />
-                    </div>
-                  </div>
-                ))}
+            {/* Orbital Rings */}
+            <div className="absolute -inset-4 rounded-full border border-green-500/10 animate-[spin_20s_linear_infinite] pointer-events-none" />
+            <div className="absolute -inset-8 rounded-full border border-blue-500/5 animate-[spin_15s_linear_infinite_reverse] pointer-events-none" />
+
+            {/* Floating badge — top left */}
+            <motion.div
+              animate={{ y: [0, -8, 0] }}
+              transition={{ duration: 4, repeat: Infinity }}
+              className="absolute -top-4 -left-8 glass px-4 py-3 rounded-2xl border border-green-500/30 z-20 shadow-xl"
+            >
+              <div className="text-[8px] font-bold text-green-400 uppercase tracking-widest mb-1">Status</div>
+              <div className="flex items-center gap-2">
+                <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                <span className="text-xs font-bold">Open to Work</span>
               </div>
             </motion.div>
 
-            {/* Stat Cards Grid */}
-            <div className="grid grid-cols-2 gap-4">
-              <div className="glass p-5 rounded-2xl border border-blue-500/20 text-center hover:border-blue-500/50 transition-colors">
-                <Icon name="smartphone" size={24} className="text-blue-400 mx-auto mb-3" />
-                <div className="text-xl font-bold">Mobile</div>
-                <div className="text-[8px] text-text-dim uppercase tracking-widest mt-1">Primary Engine</div>
+            {/* Floating badge — bottom right */}
+            <motion.div
+              animate={{ y: [0, 8, 0] }}
+              transition={{ duration: 5, repeat: Infinity, delay: 1 }}
+              className="absolute bottom-16 -right-4 glass px-4 py-3 rounded-2xl border border-blue-500/30 z-20 shadow-xl"
+            >
+              <div className="text-[8px] font-bold text-blue-400 uppercase tracking-widest mb-1">Based In</div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs font-bold text-white">South Africa</span>
               </div>
-              <div className="glass p-5 rounded-2xl border border-green-500/20 text-center hover:border-green-500/50 transition-colors">
-                <Icon name="layout" size={24} className="text-green-400 mx-auto mb-3" />
-                <div className="text-xl font-bold">UI/UX</div>
-                <div className="text-[8px] text-text-dim uppercase tracking-widest mt-1">Core Logic</div>
-              </div>
-            </div>
-
-            {/* Tech Stack Marquee */}
-            <div className="glass p-5 rounded-3xl border border-white/5 overflow-hidden shadow-2xl relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-bg via-transparent to-bg z-10 pointer-events-none" />
-              <div className="text-[9px] font-bold text-green-400 text-center mb-5 tracking-[0.4em] uppercase opacity-60">Tech Ecosystem</div>
-              <div className="flex relative overflow-hidden py-1">
-                <motion.div 
-                  animate={{ x: ["0%", "-50%"] }}
-                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                  className="flex gap-12 items-center whitespace-nowrap"
-                >
-                  {[...techStack, ...techStack].map((tech, i) => (
-                    <div key={i} className="flex flex-col items-center gap-2 group/icon">
-                      <div className="w-10 h-10 flex items-center justify-center group-hover/icon:scale-110 transition-transform duration-300 bg-white/5 rounded-xl border border-white/5">
-                        <Icon name={tech.id} size={28} />
-                      </div>
-                      <span className="text-[7px] text-text-dim font-bold uppercase tracking-tighter">{tech.name}</span>
-                    </div>
-                  ))}
-                </motion.div>
-              </div>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
 
@@ -172,104 +140,35 @@ const About = () => {
             ))}
           </div>
 
-          {/* Badges */}
-          <div className="grid grid-cols-2 gap-3">
-            {[
-              { text: 'Mobile & UI/UX Specialist', icon: 'smartphone' },
-              { text: 'Autonomous Systems', icon: 'cpu' },
-              { text: 'High-Performance Apps', icon: 'rocket' },
-              { text: 'Clean Architecture', icon: 'code' },
-            ].map((item, i) => (
-              <div key={i} className="glass flex items-center gap-4 px-5 py-4 rounded-2xl border border-white/5 hover:border-green-500/30 transition-all group overflow-visible">
-                <div className="w-12 h-12 rounded-xl bg-[#0a161d] flex items-center justify-center text-green-400 group-hover:scale-110 transition-transform shadow-[0_0_15px_rgba(0,201,136,0.1)] border border-white/5 shrink-0">
-                  <Icon name={item.icon} size={28} className="overflow-visible" />
-                </div>
-                <span className="text-[11px] font-bold tracking-tight">{item.text}</span>
-              </div>
-            ))}
-          </div>
-
-          {/* Academic & Institutional Credentials */}
+          {/* Institutional Partners */}
           <div className="pt-12 border-t border-white/5 space-y-8">
             <div className="text-[10px] text-green-400 font-bold uppercase tracking-[0.4em] opacity-60 mb-8 text-center lg:text-left">Certification & Institutional Partners</div>
             
-            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-7 gap-4 lg:gap-6 items-start">
-              {/* Richfield */}
-              <div className="flex flex-col items-center gap-3 group">
-                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-white flex items-center justify-center p-0 group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.05)] border border-white/5 overflow-hidden">
-                  <img src={richfieldLogo} alt="Richfield" className="w-full h-full object-cover" />
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-4 lg:gap-6 items-start">
+              {[
+                { name: "Richfield", sub: "BSc CS", logo: richfieldLogo, color: "bg-white" },
+                { name: "WeThinkCode_", sub: "Software Eng", logo: wethinkcodeLogo, color: "bg-[#0a161d]" },
+                { name: "CAPACITI", sub: "Accelerator", logo: capacitiLogo, color: "bg-white", p: "p-1" },
+                { name: "YES", sub: "Youth Service", logo: yesLogo, color: "bg-white", p: "p-0.5" },
+                { name: "Cisco", sub: "Networking", icon: "cisco", color: "bg-[#00bceb]/10" },
+                { name: "Coursera", sub: "Specialized", icon: "coursera", color: "bg-[#0056D2]/10" },
+                { name: "Google", sub: "Data & AI", icon: "google", color: "bg-white" },
+                { name: "IBM", sub: "Enterprise", icon: "ibm", color: "bg-[#006699]/10" },
+              ].map((partner, i) => (
+                <div key={i} className="flex flex-col items-center gap-3 group">
+                  <div className={`w-14 h-14 lg:w-16 lg:h-16 rounded-2xl flex items-center justify-center ${partner.color} group-hover:scale-110 transition-transform shadow-lg border border-white/5 overflow-hidden`}>
+                    {partner.logo ? (
+                      <img src={partner.logo} alt={partner.name} className={`w-full h-full object-contain ${partner.p || ''}`} />
+                    ) : (
+                      <Icon name={partner.icon} size={32} />
+                    )}
+                  </div>
+                  <div className="text-center">
+                    <div className="font-bold text-[9px] tracking-tight">{partner.name}</div>
+                    <div className="text-[7px] text-text-dim uppercase tracking-wider leading-tight">{partner.sub}</div>
+                  </div>
                 </div>
-                <div className="text-center">
-                  <div className="font-bold text-[9px] tracking-tight">Richfield</div>
-                  <div className="text-[7px] text-text-dim uppercase tracking-wider leading-tight">BSc CS</div>
-                </div>
-              </div>
-
-              {/* WeThinkCode */}
-              <div className="flex flex-col items-center gap-3 group">
-                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-[#0a161d] flex items-center justify-center p-0 group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(0,201,136,0.05)] border border-white/5 overflow-hidden">
-                  <img src={wethinkcodeLogo} alt="WeThinkCode_" className="w-full h-full object-cover" />
-                </div>
-                <div className="text-center">
-                  <div className="font-bold text-[9px] tracking-tight">WeThinkCode_</div>
-                  <div className="text-[7px] text-text-dim uppercase tracking-wider leading-tight">Software Eng</div>
-                </div>
-              </div>
-
-              {/* CAPACITI */}
-              <div className="flex flex-col items-center gap-3 group">
-                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-white flex items-center justify-center p-2 group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.1)] border border-white/5 overflow-hidden">
-                  <img src={capacitiLogo} alt="CAPACITI" className="w-full h-auto" />
-                </div>
-                <div className="text-center">
-                  <div className="font-bold text-[9px] tracking-tight">CAPACITI</div>
-                  <div className="text-[7px] text-text-dim uppercase tracking-wider leading-tight">Accelerator</div>
-                </div>
-              </div>
-
-              {/* Cisco */}
-              <div className="flex flex-col items-center gap-3 group">
-                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-[#00bceb]/10 flex items-center justify-center p-0 group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(0,188,235,0.1)] border border-[#00bceb]/20 overflow-hidden">
-                  <Icon name="cisco" size={32} />
-                </div>
-                <div className="text-center">
-                  <div className="font-bold text-[9px] tracking-tight">Cisco</div>
-                  <div className="text-[7px] text-text-dim uppercase tracking-wider leading-tight">Networking</div>
-                </div>
-              </div>
-
-              {/* Coursera */}
-              <div className="flex flex-col items-center gap-3 group">
-                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-[#0056D2]/10 flex items-center justify-center p-0 group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(0,86,210,0.1)] border border-[#0056D2]/20 overflow-hidden">
-                  <Icon name="coursera" size={32} />
-                </div>
-                <div className="text-center">
-                  <div className="font-bold text-[9px] tracking-tight">Coursera</div>
-                  <div className="text-[7px] text-text-dim uppercase tracking-wider leading-tight">Specialized</div>
-                </div>
-              </div>
-
-              {/* Google */}
-              <div className="flex flex-col items-center gap-3 group">
-                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-white flex items-center justify-center p-0 group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(255,255,255,0.05)] border border-white/5 overflow-hidden">
-                  <Icon name="google" size={32} />
-                </div>
-                <div className="text-center">
-                  <div className="font-bold text-[9px] tracking-tight">Google</div>
-                  <div className="text-[7px] text-text-dim uppercase tracking-wider leading-tight">Data & AI</div>
-                </div>
-              </div>
-
-              {/* IBM */}
-              <div className="flex flex-col items-center gap-3 group">
-                <div className="w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-[#006699]/10 flex items-center justify-center p-0 group-hover:scale-110 transition-transform shadow-[0_0_20px_rgba(0,102,153,0.1)] border border-[#006699]/20 overflow-hidden">
-                  <Icon name="ibm" size={32} />
-                </div>
-                <div className="text-center">
-                  <div className="font-bold text-[9px] tracking-tight">IBM</div>
-                  <div className="text-[7px] text-text-dim uppercase tracking-wider leading-tight">Enterprise</div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </motion.div>

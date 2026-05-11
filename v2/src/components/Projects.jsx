@@ -13,6 +13,7 @@ const projects = [
     icon: "globe",
     role: "Agentic Infra Dev",
     color: "from-blue-600/20 to-cyan-400/20",
+    bgImage: "project-os.png",
     featured: true,
     latest: true
   },
@@ -23,7 +24,8 @@ const projects = [
     tech: ["C#", "redis", "activity", "docker"],
     icon: "zap",
     role: "Traffic Architect",
-    color: "from-blue-500/20 to-green-500/20"
+    color: "from-blue-500/20 to-green-500/20",
+    bgImage: "project-finance.png"
   },
   {
     title: "CyberShield Modern",
@@ -77,7 +79,8 @@ const projects = [
     tech: ["C#", "node", "redis", "docker"],
     icon: "ticket",
     role: "Backend specialist",
-    color: "from-red-500/20 to-purple-500/20"
+    color: "from-red-500/20 to-purple-500/20",
+    bgImage: "project-logistics.png"
   },
   {
     title: "EduStream-Pro-ICT",
@@ -86,9 +89,22 @@ const projects = [
     tech: ["react", "python", "brain", "aws"],
     icon: "graduationCap",
     role: "EdTech AI Dev",
-    color: "from-blue-500/20 to-indigo-500/20"
+    color: "from-blue-500/20 to-indigo-500/20",
+    bgImage: "project-edutech.png"
   }
 ];
+
+import projectEdutech from '../assets/project-edutech.png';
+import projectOs from '../assets/project-os.png';
+import projectFinance from '../assets/project-finance.png';
+import projectLogistics from '../assets/project-logistics.png';
+
+const assetMap = {
+  "project-edutech.png": projectEdutech,
+  "project-os.png": projectOs,
+  "project-finance.png": projectFinance,
+  "project-logistics.png": projectLogistics,
+};
 
 const Projects = () => {
   const [copied, setCopied] = useState(false);
@@ -123,11 +139,11 @@ const Projects = () => {
             style={{ perspective: 1000 }}
           >
             {/* Subtle Background Overlay */}
-            <div className="absolute inset-0 opacity-[0.1] group-hover:opacity-[0.2] transition-opacity duration-500 pointer-events-none mix-blend-overlay">
+            <div className="absolute inset-0 opacity-[0.25] group-hover:opacity-[0.4] transition-opacity duration-500 pointer-events-none mix-blend-overlay">
               <img 
-                src={i % 2 === 0 ? experienceBg : heroBg} 
+                src={p.bgImage ? assetMap[p.bgImage] : (i % 2 === 0 ? experienceBg : heroBg)} 
                 alt="" 
-                className="w-full h-full object-cover grayscale scale-105 group-hover:scale-100 transition-transform duration-700" 
+                className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000" 
               />
             </div>
             <div className="absolute inset-0 bg-gradient-to-br from-bg/40 to-bg/95 group-hover:to-bg/80 pointer-events-none transition-colors duration-300" />
