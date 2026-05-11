@@ -6,8 +6,26 @@ import gautengMap from '../assets/gauteng-map.png';
 
 const Contact = () => {
   return (
-    <div id="contact" className="pt-24 border-t border-white/5 space-y-16">
-      <div className="glass p-12 md:p-20 rounded-[40px] relative overflow-hidden text-center md:text-left">
+    <div id="contact" className="pt-24 border-t border-white/5 space-y-16 bg-[#050d12] relative overflow-hidden">
+      {/* Subtle scanline effect */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]"></div>
+
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+        {/* Header with Wide Typography and Status Pill */}
+        <div className="flex justify-between items-center mb-20">
+          <div className="space-y-4">
+            <h2 className="text-4xl lg:text-5xl font-bold tracking-[0.8em] uppercase font-mono text-white leading-none drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+              Initialize <span className="text-green-400">Contact</span>
+            </h2>
+            <div className="text-[#00e5a0] text-[10px] font-mono uppercase tracking-[0.5em] font-black opacity-60">Communication Protocol 7.4</div>
+          </div>
+          <div className="px-5 py-2 rounded-full bg-green-500/10 border border-green-500/30 flex items-center gap-2">
+            <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+            <span className="text-[11px] font-bold text-green-400 uppercase tracking-[0.3em]">Link: Ready</span>
+          </div>
+        </div>
+
+        <div className="glass p-12 md:p-20 rounded-[40px] relative overflow-hidden text-center md:text-left border border-white/5 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
         <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
           <div className="grid-lines"></div>
         </div>

@@ -88,11 +88,15 @@ const Hero = () => {
             <div className="grid grid-cols-3 gap-3 pt-6 border-t border-white/5">
               {stats.map((stat, i) => (
                 <div key={i} className="glass p-3 rounded-2xl border border-white/5 group hover:border-green-500/30 transition-all">
-                   <div className="text-green-400 mb-1 flex items-center gap-2">
-                     <Icon name={stat.icon} size={16} />
-                     <span className="text-xl font-bold"><CountUp to={stat.val} />{stat.suffix}</span>
+                   <div className="text-green-400 mb-1 flex items-center gap-3">
+                     <div className="w-8 h-10 rounded-full border border-green-500/20 flex items-center justify-center relative group-hover:scale-110 transition-transform">
+                        <Icon name={stat.icon} size={14} />
+                        <div className="absolute -top-1 -left-1 w-2 h-2 border-t border-l border-green-400/40"></div>
+                        <div className="absolute -bottom-1 -right-1 w-2 h-2 border-b border-r border-green-400/40"></div>
+                     </div>
+                     <span className="text-xl font-bold tracking-tight"><CountUp to={stat.val} />{stat.suffix}</span>
                    </div>
-                   <div className="text-[9px] text-text-dim uppercase tracking-widest">{stat.label}</div>
+                   <div className="text-[9px] text-text-dim uppercase tracking-[0.2em] font-mono">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -108,8 +112,8 @@ const Hero = () => {
             <div className="glass p-8 rounded-[40px] border border-green-500/20 shadow-[0_0_80px_rgba(0,229,160,0.1)] relative overflow-hidden">
               <div className="flex justify-between items-center mb-8 pb-4 border-b border-white/5">
                 <div className="flex items-center gap-3">
-                  <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
-                  <span className="font-mono text-xs font-bold text-green-400 tracking-[0.2em] uppercase">Tech Stack Overview</span>
+                  <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse shadow-[0_0_10px_rgba(0,229,160,0.8)]" />
+                  <span className="text-[10px] font-mono text-green-400 uppercase tracking-[0.3em] font-black">CORE_SYSTEM_DASHBOARD</span>
                 </div>
                 <div className="flex gap-1.5">
                   <div className="w-2.5 h-2.5 rounded-full bg-white/10" />
@@ -120,15 +124,17 @@ const Hero = () => {
 
               <div className="grid grid-cols-2 gap-4">
                 {techStack.map((tech, i) => (
-                  <div key={i} className="p-4 rounded-3xl bg-white/5 border border-white/5 flex flex-col gap-3 hover:bg-white/10 transition-colors group">
+                  <div key={i} className="p-4 rounded-3xl bg-white/5 border border-white/5 flex flex-col gap-3 hover:bg-white/10 transition-colors group relative overflow-hidden">
                     <div className="flex justify-between items-start">
-                       <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center">
+                       <div className="w-10 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center relative group-hover:scale-110 transition-transform">
                          <Icon name={tech.id} size={24} />
+                         <div className="absolute -top-1 -left-1 w-2 h-2 border-t border-l border-green-400/40 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                         <div className="absolute -bottom-1 -right-1 w-2 h-2 border-b border-r border-green-400/40 opacity-0 group-hover:opacity-100 transition-opacity"></div>
                        </div>
-                       <span className="text-[10px] font-mono text-green-400/60 uppercase">Stable</span>
+                       <span className="text-[10px] font-mono text-green-400/60 uppercase tracking-widest">Active</span>
                     </div>
                     <div className="space-y-1">
-                      <div className="text-sm font-bold">{tech.name}</div>
+                      <div className="text-sm font-bold uppercase tracking-widest font-mono">{tech.name}</div>
                       <div className="h-1 w-full bg-white/5 rounded-full overflow-hidden">
                         <motion.div 
                           initial={{ width: 0 }}

@@ -118,15 +118,22 @@ const Projects = () => {
   };
 
   return (
-    <div id="projects" className="glass p-6 h-full flex flex-col border border-white/5 shadow-[0_0_20px_rgba(0,0,0,0.5)] relative overflow-hidden">
+    <div id="projects" className="glass p-10 h-full flex flex-col border border-white/5 shadow-[0_0_20px_rgba(0,0,0,0.5)] relative overflow-hidden rounded-3xl">
       {/* Decorative ambient background */}
       <div className="absolute inset-0 bg-gradient-to-br from-green-900/5 to-transparent pointer-events-none"></div>
+      {/* Subtle scanline effect */}
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]"></div>
 
-      <div className="flex justify-between items-center mb-6 relative z-10">
-        <h2 className="text-xl font-bold glow-text">Project <span className="text-green-400">Inventory</span></h2>
-        <div className="flex items-center gap-2">
-          <div className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></div>
-          <div className="text-[8px] text-green-400 font-bold uppercase tracking-[0.2em]">9 Active Deployments</div>
+      <div className="flex justify-between items-center mb-16 relative z-10">
+        <div className="space-y-4">
+          <h2 className="text-4xl lg:text-5xl font-bold tracking-[0.8em] uppercase font-mono text-white leading-none drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+            Project <span className="text-green-400">Inventory</span>
+          </h2>
+          <div className="text-[#00e5a0] text-[10px] font-mono uppercase tracking-[0.5em] font-black opacity-60">System Registry: 9 Active Nodes</div>
+        </div>
+        <div className="px-5 py-2 rounded-full bg-green-500/10 border border-green-500/30 flex items-center gap-2">
+          <div className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></div>
+          <span className="text-[11px] font-bold text-green-400 uppercase tracking-[0.3em]">Status: Online</span>
         </div>
       </div>
 
@@ -153,9 +160,20 @@ const Projects = () => {
             <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${p.color} blur-3xl opacity-20 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none`}></div>
             
             <div className="relative z-10 flex justify-between items-start mb-2">
-              <div className="flex items-center gap-2">
-                <div className="w-8 h-8 flex items-center justify-center group-hover:scale-110 transition-transform duration-300 drop-shadow-[0_0_5px_rgba(0,229,160,0)] group-hover:drop-shadow-[0_0_8px_rgba(0,229,160,0.5)]">
-                  <Icon name={p.icon} size={28} />
+              <div className="flex items-center gap-4">
+                <div 
+                  className="w-12 h-16 rounded-full border flex items-center justify-center relative transition-all duration-500 group-hover:scale-110 shrink-0 bg-[#0a161d]"
+                  style={{ 
+                    borderColor: 'rgba(0, 229, 160, 0.4)', 
+                    boxShadow: '0 0 20px rgba(0, 229, 160, 0.15), inset 0 0 10px rgba(0, 229, 160, 0.1)' 
+                  }}
+                >
+                  <div className="relative z-10 text-green-400">
+                    <Icon name={p.icon} size={24} />
+                  </div>
+                  {/* Outer Corner Accents */}
+                  <div className="absolute -top-1.5 -left-1.5 w-2.5 h-2.5 border-t border-l border-green-400 opacity-80 group-hover:scale-110 transition-transform"></div>
+                  <div className="absolute -bottom-1.5 -right-1.5 w-2.5 h-2.5 border-b border-r border-green-400 opacity-80 group-hover:scale-110 transition-transform"></div>
                 </div>
                 <div>
                   <h3 className="text-[13px] font-bold text-white group-hover:text-green-400 transition-colors drop-shadow-lg">{p.title}</h3>
