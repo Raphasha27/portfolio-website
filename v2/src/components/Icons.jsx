@@ -1,4 +1,9 @@
 import React, { useMemo } from 'react';
+import nodeLogo from '../assets/node-logo.svg';
+import mongodbLogo from '../assets/mongodb-logo.svg';
+import linkedinLogo from '../assets/linkedin-logo.svg';
+import whopLogo from '../assets/whop-logo.svg';
+import kaggleLogo from '../assets/kaggle-logo.svg';
 
 export const Icon = ({ name, size = 16, className = "" }) => {
   const finalName = name?.toLowerCase();
@@ -39,6 +44,16 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     whop: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+      </svg>
+    ),
+    kaggle: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M10 19l5-7-5-7M6 19l5-7-5-7"/>
+      </svg>
+    ),
+    streamlit: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM12 12L2 17l10 5 10-5-10-5z"/>
       </svg>
     ),
     globe: (
@@ -231,12 +246,12 @@ export const Icon = ({ name, size = 16, className = "" }) => {
   const techLogos = useMemo(() => ({
     react:         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
     python:        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
-    node:          "https://cdn.simpleicons.org/nodedotjs/339933",
+    node:          nodeLogo,
     docker:        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg",
     postgres:      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
     postgresql:    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg",
     redis:         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/redis/redis-original.svg",
-    mongodb:       "https://cdn.simpleicons.org/mongodb/47A248",
+    mongodb:       mongodbLogo,
     vercel:        "https://cdn.simpleicons.org/vercel/white",
     angular:       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-original.svg",
     aws:           "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/amazonwebservices/amazonwebservices-original.svg",
@@ -270,12 +285,14 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     grafana:       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg",
     prometheus:    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/prometheus/prometheus-original.svg",
     rabbitmq:      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rabbitmq/rabbitmq-original.svg",
-    linkedin:      "https://cdn.simpleicons.org/linkedin/0077B5",
+    linkedin:      linkedinLogo,
     twitter:       "https://cdn.simpleicons.org/x/white",
     slack:         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/slack/slack-original.svg",
-    whop:          "https://cdn.simpleicons.org/whop/FF5C00",
+    whop:          whopLogo,
     whatsapp:      "https://cdn.simpleicons.org/whatsapp/25D366",
     mail:          "https://cdn.simpleicons.org/gmail/EA4335",
+    kaggle:        "https://cdn.simpleicons.org/kaggle/white",
+    streamlit:     "https://cdn.simpleicons.org/streamlit/FF4B4B",
   }), []);
 
   // Priority 1: Brand Logos (Original Branding Colors)

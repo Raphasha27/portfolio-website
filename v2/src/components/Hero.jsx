@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icons';
-import profileImg from '../assets/koketso_no_wall.png';
+import profileImg from '../assets/koketso_new_profile.png';
 
 const stats = [
   { label: 'Reliability',    val: 100, suffix: '%', icon: 'thumbsup' },
@@ -19,6 +19,8 @@ const bannerTechs = [
   { name: "Go",              id: "go"         },
   { name: "Node.js",         id: "node"       },
   { name: "FastAPI",         id: "fastapi"    },
+  { name: "Streamlit",       id: "streamlit"  },
+  { name: "Kaggle",          id: "kaggle"     },
   { name: "PostgreSQL",      id: "postgres"   },
   { name: "TypeScript",      id: "typescript" },
   { name: "Next.js",         id: "nextjs"     },
@@ -257,7 +259,7 @@ const Hero = () => {
       </div>
 
       {/* Scrolling Tech Marquee */}
-      <div className="mt-12 py-10 border-y border-white/5 bg-black/20 backdrop-blur-sm relative overflow-hidden">
+      <div className="absolute bottom-0 left-0 right-0 py-6 border-t border-white/5 bg-black/20 backdrop-blur-md overflow-hidden z-20">
         <motion.div 
           initial={{ x: 0 }}
           animate={{ x: "-50%" }}
@@ -266,10 +268,10 @@ const Hero = () => {
         >
           {doubled.map((tech, i) => (
             <div key={i} className="flex items-center gap-2.5 shrink-0 group">
-              <div className="w-6 h-6 opacity-70 group-hover:opacity-100 transition-opacity">
-                <Icon name={tech.id} size={24} />
+              <div className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity">
+                <Icon name={tech.id} size={20} />
               </div>
-              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-white/40 group-hover:text-white/80 transition-colors font-mono whitespace-nowrap">
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 group-hover:text-white/80 transition-colors font-mono">
                 {tech.name}
               </span>
               <div className="w-1 h-1 rounded-full bg-blue-500/30 ml-4" />

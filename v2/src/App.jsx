@@ -16,7 +16,7 @@ import Map from './components/Map';
 
 function App() {
   return (
-    <div className="bg-[#050d12] text-[#e0f2f1] min-h-screen selection:bg-blue-500/30 selection:text-blue-200 cursor-none relative">
+    <div className="bg-[#050d12] text-[#e0f2f1] min-h-screen selection:bg-blue-500/30 selection:text-blue-200 relative">
       {/* Global Grain Overlay for Cinematic Texture */}
       <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-[9999] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
       
@@ -28,17 +28,29 @@ function App() {
           <Hero />
         </section>
 
-        {/* Section 2: About Me — full page */}
+        {/* Section 2: Projects — Impact First */}
         <motion.section 
           initial={{ opacity: 0, y: 50 }} 
           whileInView={{ opacity: 1, y: 0 }} 
           viewport={{ once: true, margin: "-100px" }} 
           transition={{ duration: 0.8 }}
+          className="container mx-auto px-6 lg:px-12 py-24"
         >
-          <About />
+          <Projects />
         </motion.section>
 
-        {/* Section 3: Tech Arsenal & Roles — Cinematic Dark Background */}
+        {/* Section 3: Work History */}
+        <motion.section 
+          initial={{ opacity: 0, y: 50 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true, margin: "-100px" }} 
+          transition={{ duration: 0.8 }}
+          className="container mx-auto px-6 lg:px-12 py-24"
+        >
+          <Experience />
+        </motion.section>
+
+        {/* Section 4: Tech Arsenal & Roles — Cinematic Dark Background */}
         <motion.section 
           initial={{ opacity: 0, y: 50 }} 
           whileInView={{ opacity: 1, y: 0 }} 
@@ -66,7 +78,7 @@ function App() {
           </div>
         </motion.section>
 
-        {/* Section 4: What I Do (Services) */}
+        {/* Section 5: What I Do (Services) */}
         <motion.section 
           initial={{ opacity: 0, y: 50 }} 
           whileInView={{ opacity: 1, y: 0 }} 
@@ -77,29 +89,17 @@ function App() {
           <Services />
         </motion.section>
 
-        {/* Section 5: Work History */}
+        {/* Section 6: About Me — detailed profile */}
         <motion.section 
           initial={{ opacity: 0, y: 50 }} 
           whileInView={{ opacity: 1, y: 0 }} 
           viewport={{ once: true, margin: "-100px" }} 
           transition={{ duration: 0.8 }}
-          className="container mx-auto px-6 lg:px-12 py-24"
         >
-          <Experience />
+          <About />
         </motion.section>
 
-        {/* Section 5: Projects */}
-        <motion.section 
-          initial={{ opacity: 0, y: 50 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
-          viewport={{ once: true, margin: "-100px" }} 
-          transition={{ duration: 0.8 }}
-          className="container mx-auto px-6 lg:px-12 py-24"
-        >
-          <Projects />
-        </motion.section>
-
-        {/* Section 5.5: Location Map */}
+        {/* Section 7: Location Map */}
         <motion.div
           initial={{ opacity: 0, y: 50 }} 
           whileInView={{ opacity: 1, y: 0 }} 
@@ -109,7 +109,7 @@ function App() {
           <Map />
         </motion.div>
 
-        {/* Section 6: Contact Footer */}
+        {/* Section 8: Contact Footer */}
         <motion.section 
           initial={{ opacity: 0, y: 50 }} 
           whileInView={{ opacity: 1, y: 0 }} 

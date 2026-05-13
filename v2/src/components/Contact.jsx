@@ -66,9 +66,11 @@ const Contact = () => {
                   { icon: "github", link: "https://github.com/raphasha27" },
                   { icon: "linkedin", link: "https://linkedin.com/in/koketso-raphasha" },
                   { icon: "twitter", link: "https://twitter.com/raphasha27" },
-                  { icon: "slack", link: "#" },
+                  { icon: "slack", link: "https://slack.com/Raphasha27" },
+                  { icon: "kaggle", link: "https://kaggle.com/Raphasha27" },
+                  { icon: "streamlit", link: "https://share.streamlit.io/user/raphasha27" },
                   { icon: "whop", link: "https://whop.com/kirovdynamicstechnology/" },
-                  { icon: "whatsapp", link: "https://wa.me/27793444002" }, // Update with real number if needed
+                  { icon: "whatsapp", link: "https://wa.me/27793444002" },
                   { icon: "mail", link: "mailto:raphashakoketso99@gmail.com" }
                 ].map((social, i) => (
                   <a key={i} href={social.link} target="_blank" className="w-12 h-12 glass rounded-xl flex items-center justify-center text-white/70 hover:text-white hover:border-blue-500/50 transition-all opacity-80 hover:opacity-100">

@@ -15,8 +15,8 @@ const experiences = [
     company: "Kirov Dynamics Technology · Self-Employed",
     desc: "Designing and deploying autonomous agentic infrastructure spanning multi-language systems (C, Python, Go, TypeScript). Building self-healing CI/CD pipelines and AI-augmented developer tooling.",
     icon: "cpu",
-    logo: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800",
-    logoBg: "bg-white",
+    logo: null,
+    logoBg: "bg-[#050d12]",
     logoPadding: "p-0",
     logoFit: "object-cover"
   },
