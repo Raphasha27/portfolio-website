@@ -32,15 +32,18 @@ const MobileScan = () => {
           Ready for Mobile Sync
         </div>
         
-        <div className="flex items-center gap-4 opacity-40 group-hover:opacity-100 transition-opacity">
-          <div className="flex items-center gap-1.5">
-            <Icon name="apple" size={12} />
-            <span className="text-[8px] font-mono uppercase tracking-tighter">iOS Support</span>
+        <div className="flex flex-col gap-2 w-full mt-2">
+          <div className="flex items-center gap-3 bg-[#0a0a0a] border border-white/5 px-4 py-2.5 rounded-full group/btn hover:border-blue-500/30 transition-all justify-center cursor-default">
+            <div className="text-white group-hover/btn:text-blue-400 transition-colors">
+              <Icon name="android" size={18} />
+            </div>
+            <span className="text-[10px] font-bold text-white/80 uppercase tracking-widest font-mono">for android</span>
           </div>
-          <div className="w-[1px] h-3 bg-white/10" />
-          <div className="flex items-center gap-1.5">
-            <Icon name="android" size={12} />
-            <span className="text-[8px] font-mono uppercase tracking-tighter">Android Support</span>
+          <div className="flex items-center gap-3 bg-[#0a0a0a] border border-white/5 px-4 py-2.5 rounded-full group/btn hover:border-blue-500/30 transition-all justify-center cursor-default">
+            <div className="text-white group-hover/btn:text-blue-400 transition-colors">
+              <Icon name="apple" size={18} />
+            </div>
+            <span className="text-[10px] font-bold text-white/80 uppercase tracking-widest font-mono">for iOS</span>
           </div>
         </div>
       </div>

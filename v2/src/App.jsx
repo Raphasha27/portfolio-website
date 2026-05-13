@@ -29,15 +29,14 @@ function App() {
           <Hero />
         </section>
 
-        {/* Section 2: Projects — Impact First */}
+        {/* Section 2: About Me — detailed profile */}
         <motion.section 
           initial={{ opacity: 0, y: 50 }} 
           whileInView={{ opacity: 1, y: 0 }} 
           viewport={{ once: true, margin: "-100px" }} 
           transition={{ duration: 0.8 }}
-          className="container mx-auto px-6 lg:px-12 py-24"
         >
-          <Projects />
+          <About />
         </motion.section>
 
         {/* Section 3: Work History */}
@@ -90,14 +89,15 @@ function App() {
           <Services />
         </motion.section>
 
-        {/* Section 6: About Me — detailed profile */}
+        {/* Section 6: Projects — Impact First */}
         <motion.section 
           initial={{ opacity: 0, y: 50 }} 
           whileInView={{ opacity: 1, y: 0 }} 
           viewport={{ once: true, margin: "-100px" }} 
           transition={{ duration: 0.8 }}
+          className="container mx-auto px-6 lg:px-12 py-24"
         >
-          <About />
+          <Projects />
         </motion.section>
 
         {/* Section 7: Location Map */}
