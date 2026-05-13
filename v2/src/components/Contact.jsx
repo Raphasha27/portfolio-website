@@ -100,7 +100,7 @@ const Contact = () => {
             <React.Fragment key={i}>
               <div className="flex items-center gap-2 text-blue-400">
                 <Icon name="code" size={16} />
-                <span>Portfolio_Koketso_Raphasha27.Dev</span>
+                <span>Koketso_Raphasha_Portfolio_Dev</span>
               </div>
               <div className="flex gap-8">
                 <a href="#home" className="hover:text-white transition-colors">Home</a>

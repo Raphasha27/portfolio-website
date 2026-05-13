@@ -31,7 +31,7 @@ const Navbar = () => {
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-2 text-blue-400 font-bold">
             <Icon name="code" size={20} />
-            <span className="text-sm tracking-tighter">Portfolio_Koketso_Raphasha27.Dev</span>
+            <span className="text-sm tracking-tighter">Koketso_Raphasha_Portfolio_Dev</span>
           </div>
           <div className="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[9px] font-bold text-text-dim">
             <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
