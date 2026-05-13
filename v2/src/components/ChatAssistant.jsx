@@ -47,14 +47,14 @@ const ChatAssistant = () => {
   };
 
   return (
-    <div className="fixed bottom-8 right-8 z-50">
+    <div className="fixed bottom-4 right-4 sm:bottom-8 sm:right-8 z-50">
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, y: 20, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
-            className="glass w-80 h-[400px] mb-4 flex flex-col overflow-hidden border border-blue-500/30 shadow-[0_0_30px_rgba(37,99,235,0.15)]"
+            className="glass w-[calc(100vw-2rem)] sm:w-80 max-w-sm h-[400px] mb-4 flex flex-col overflow-hidden border border-blue-500/30 shadow-[0_0_30px_rgba(37,99,235,0.15)] rounded-2xl"
           >
             <div className="p-4 border-b border-white/5 flex justify-between items-center bg-blue-500/5 backdrop-blur-md">
               <div className="flex items-center gap-3">

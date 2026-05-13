@@ -16,7 +16,7 @@ const roles = [
 
 const Roles = () => {
   return (
-    <div id="roles" className="relative py-16 px-6 lg:px-12 bg-[#050d12] overflow-hidden rounded-[40px] border border-white/5">
+    <div id="roles" className="relative py-10 sm:py-16 px-4 sm:px-6 lg:px-12 bg-[#050d12] overflow-hidden rounded-2xl sm:rounded-[40px] border border-white/5">
       {/* Background Neural Network Overlay */}
       <div className="absolute inset-0 opacity-[0.08] pointer-events-none mix-blend-screen">
         <img 
@@ -28,22 +28,21 @@ const Roles = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-[#050d12] via-transparent to-[#050d12] pointer-events-none" />
 
       {/* Section Header */}
-      <div className="relative z-10 flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
-        <div className="text-center md:text-left">
-          <h2 className="text-4xl lg:text-5xl font-bold tracking-tight text-white mb-2">
+      <div className="relative z-10 flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10 sm:mb-16 gap-4">
+        <div className="text-left">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white mb-2">
             The 9 <span className="text-blue-400 drop-shadow-[0_0_15px_rgba(37,99,235,0.5)]">AI Roles</span>
           </h2>
-          <p className="text-[10px] text-white/40 font-mono tracking-[0.3em] uppercase mt-2">Specialized Autonomous Functionality</p>
+          <p className="text-[9px] sm:text-[10px] text-white/40 font-mono tracking-[0.2em] sm:tracking-[0.3em] uppercase mt-1 sm:mt-2">Specialized Autonomous Functionality</p>
         </div>
-        
-        <div className="px-5 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center gap-2 h-fit">
-           <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse shadow-[0_0_8px_rgba(37,99,235,0.8)]" />
-           <span className="text-[10px] font-bold text-blue-400 uppercase tracking-[0.3em]">Operational: 100%</span>
+        <div className="px-4 sm:px-5 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center gap-2 h-fit self-start">
+          <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse shadow-[0_0_8px_rgba(37,99,235,0.8)]" />
+          <span className="text-[10px] font-bold text-blue-400 uppercase tracking-[0.3em]">Operational: 100%</span>
         </div>
       </div>
 
       {/* Roles Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 relative z-10 max-w-7xl mx-auto">
         {roles.map((role, i) => (
           <motion.div 
             key={i}

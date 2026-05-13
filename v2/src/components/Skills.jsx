@@ -79,18 +79,18 @@ const skillGroups = [
 
 const Skills = () => {
   return (
-    <div id="skills" className="relative py-10">
+    <div id="skills" className="relative py-6 sm:py-10">
       {/* Section Header */}
-      <div className="flex justify-between items-end mb-12 border-b border-white/5 pb-6">
+      <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-8 sm:mb-12 border-b border-white/5 pb-4 sm:pb-6 gap-3">
         <div>
-          <h2 className="text-3xl font-bold tracking-tighter uppercase">
+          <h2 className="text-2xl sm:text-3xl font-bold tracking-tighter uppercase">
             Tech <span className="text-blue-400">Arsenals</span>
           </h2>
-          <p className="text-[10px] text-white/40 font-mono tracking-[0.3em] uppercase mt-2">Core Technical Proficiency</p>
+          <p className="text-[9px] sm:text-[10px] text-white/40 font-mono tracking-[0.2em] sm:tracking-[0.3em] uppercase mt-1 sm:mt-2">Core Technical Proficiency</p>
         </div>
         <div className="flex items-center gap-4">
           <div className="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></div>
+            <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
             <span className="text-[9px] font-bold text-blue-400 uppercase tracking-widest">Operational: 100%</span>
           </div>
         </div>
@@ -163,26 +163,26 @@ const Skills = () => {
         ))}
       </div>
 
-      {/* Values Footer Bar */}
-      <div className="mt-12 p-6 glass rounded-2xl border border-white/5 flex justify-center items-center gap-8 lg:gap-16 relative overflow-hidden">
-        {/* Subtle background circuit line */}
+      {/* Values Footer Bar — scrollable on mobile */}
+      <div className="mt-8 sm:mt-12 glass rounded-2xl border border-white/5 relative overflow-hidden">
         <div className="absolute inset-x-0 top-1/2 h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-y-1/2" />
-        
-        {[
-          { id: "scale", label: "ETHICAL AI" },
-          { id: "shield", label: "SECURE ARCH" },
-          { id: "bookopen", label: "SYSTEM LOGIC" },
-          { id: "refreshcw", label: "ADAPTIVE CI/CD" },
-          { id: "target", label: "PRECISION OPS" },
-          { id: "check", label: "QUALITY CORE" }
-        ].map((item, i) => (
-          <div key={i} className="flex flex-col items-center gap-3 group cursor-help relative z-10">
-            <div className="text-blue-400/40 group-hover:text-cyan-400 group-hover:scale-110 transition-all duration-500">
-              <Icon name={item.id} size={24} />
+        <div className="flex items-center gap-6 sm:gap-8 lg:gap-16 p-4 sm:p-6 overflow-x-auto scrollbar-hide justify-start sm:justify-center">
+          {[
+            { id: "scale",     label: "ETHICAL AI"    },
+            { id: "shield",    label: "SECURE ARCH"   },
+            { id: "bookopen",  label: "SYSTEM LOGIC"  },
+            { id: "refreshcw", label: "ADAPTIVE CI/CD"},
+            { id: "target",    label: "PRECISION OPS" },
+            { id: "check",     label: "QUALITY CORE"  }
+          ].map((item, i) => (
+            <div key={i} className="flex flex-col items-center gap-2 sm:gap-3 group cursor-help relative z-10 shrink-0">
+              <div className="text-blue-400/40 group-hover:text-cyan-400 group-hover:scale-110 transition-all duration-500">
+                <Icon name={item.id} size={20} />
+              </div>
+              <span className="text-[7px] sm:text-[8px] font-mono text-white/20 tracking-[0.3em] sm:tracking-[0.4em] uppercase group-hover:text-cyan-400 transition-colors whitespace-nowrap">{item.label}</span>
             </div>
-            <span className="text-[8px] font-mono text-white/20 tracking-[0.4em] uppercase group-hover:text-cyan-400 transition-colors">{item.label}</span>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );

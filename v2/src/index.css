@@ -10,6 +10,7 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 @layer base {
@@ -103,9 +104,11 @@ html {
 }
 
 .container {
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 section {
@@ -126,3 +129,25 @@ section {
 }
 .typing-dot:nth-child(1) { animation-delay: -0.32s; }
 .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+/* Hide scrollbar but keep scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* Prevent horizontal overflow on mobile — targeted, not global */
+@media (max-width: 640px) {
+  img, video, iframe, svg {
+    max-width: 100%;
+  }
+  /* Prevent wide letter-spacing from blowing out containers */
+  .tracking-\[0\.8em\],
+  .tracking-\[0\.5em\],
+  .tracking-\[0\.4em\] {
+    letter-spacing: 0.15em;
+  }
+}

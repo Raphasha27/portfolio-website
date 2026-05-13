@@ -5,19 +5,19 @@ const Map = () => {
   const [isLoaded, setIsLoaded] = React.useState(false);
 
   return (
-    <section id="location" className="py-24 relative overflow-hidden bg-[#050d12]">
-      <div className="container mx-auto px-6 lg:px-12">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
-          <div className="space-y-4">
+    <section id="location" className="py-16 sm:py-24 relative overflow-hidden bg-[#050d12]">
+      <div className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-8 sm:mb-12 gap-4">
+          <div className="space-y-2 sm:space-y-4">
             <div className="text-blue-400 font-bold text-xs tracking-[0.3em] uppercase">— PRESENCE —</div>
-            <h2 className="text-4xl font-bold text-white">Global Reach, <span className="text-blue-400">Local Roots</span></h2>
-            <p className="text-text-dim max-w-md">
+            <h2 className="text-2xl sm:text-4xl font-bold text-white">Global Reach, <span className="text-blue-400">Local Roots</span></h2>
+            <p className="text-text-dim text-sm sm:text-base max-w-md">
               Based in the heart of Gauteng, South Africa. Delivering high-performance solutions to the world.
             </p>
           </div>
-          <div className="glass px-6 py-4 rounded-2xl border border-blue-500/20 flex items-center gap-4">
+          <div className="glass px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border border-blue-500/20 flex items-center gap-3 sm:gap-4 self-start">
             <div className="w-3 h-3 rounded-full bg-blue-500 animate-ping" />
-            <span className="text-sm font-bold font-mono text-blue-400 uppercase tracking-widest">Pretoria, South Africa</span>
+            <span className="text-xs sm:text-sm font-bold font-mono text-blue-400 uppercase tracking-widest">Pretoria, South Africa</span>
           </div>
         </div>
 
@@ -25,7 +25,7 @@ const Map = () => {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="glass p-2 rounded-[40px] border border-blue-500/30 overflow-hidden h-[450px] relative group bg-white/5"
+          className="glass p-1.5 sm:p-2 rounded-2xl sm:rounded-[40px] border border-blue-500/30 overflow-hidden h-[280px] sm:h-[380px] lg:h-[450px] relative group bg-white/5"
         >
           {!isLoaded && (
             <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#050d12] z-20">

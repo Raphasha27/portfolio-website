@@ -143,27 +143,25 @@ const Projects = () => {
   };
 
   return (
-    <div className="space-y-12">
-      <div id="projects" className="glass p-10 h-full flex flex-col border border-white/5 shadow-[0_0_20px_rgba(0,0,0,0.5)] relative overflow-hidden rounded-3xl">
-        {/* Decorative ambient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/5 to-transparent pointer-events-none"></div>
-        {/* Subtle scanline effect */}
-        <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]"></div>
+    <div className="space-y-8 sm:space-y-12">
+      <div id="projects" className="glass p-5 sm:p-8 lg:p-10 flex flex-col border border-white/5 shadow-[0_0_20px_rgba(0,0,0,0.5)] relative overflow-hidden rounded-2xl sm:rounded-3xl">
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/5 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]" />
 
-        <div className="flex justify-between items-center mb-16 relative z-10">
-          <div className="space-y-4">
-            <h2 className="text-4xl lg:text-5xl font-bold tracking-[0.8em] uppercase font-mono text-white leading-none drop-shadow-[0_0_15px_rgba(255,255,255,0.1)]">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-8 sm:mb-16 gap-4 relative z-10">
+          <div className="space-y-2 sm:space-y-4">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-[0.3em] sm:tracking-[0.8em] uppercase font-mono text-white leading-none">
               Project <span className="text-blue-400">Inventory</span>
             </h2>
-            <div className="text-blue-400 text-[10px] font-mono uppercase tracking-[0.5em] font-black opacity-60">System Registry: 9 Active Nodes</div>
+            <div className="text-blue-400 text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.3em] sm:tracking-[0.5em] font-black opacity-60">System Registry: 9 Active Nodes</div>
           </div>
-          <div className="px-5 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></div>
-            <span className="text-[11px] font-bold text-blue-400 uppercase tracking-[0.3em]">Status: Online</span>
+          <div className="px-4 sm:px-5 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center gap-2 self-start">
+            <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+            <span className="text-[10px] sm:text-[11px] font-bold text-blue-400 uppercase tracking-[0.3em]">Status: Online</span>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 relative z-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 relative z-10">
           {projects.map((p, i) => (
             <motion.div 
               whileHover={{ scale: 1.02, y: -5 }}
@@ -191,7 +189,7 @@ const Projects = () => {
                     <div className="text-[8px] uppercase font-bold tracking-wider text-blue-400/80">{p.tagline}</div>
                   </div>
                 </div>
-                <div className="text-[7px] px-2 py-0.5 rounded-sm border uppercase font-bold whitespace-nowrap bg-blue-500/10 border-blue-500/30 text-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.1)]">
+                <div className="text-[7px] px-2 py-0.5 rounded-sm border uppercase font-bold bg-blue-500/10 border-blue-500/30 text-blue-400 shadow-[0_0_10px_rgba(59,130,246,0.1)] hidden sm:block">
                   {p.role}
                 </div>
               </div>
@@ -235,15 +233,15 @@ const Projects = () => {
         <motion.div 
           initial={{ x: 0 }}
           animate={{ x: "-50%" }}
-          transition={{ duration: 40, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
           className="flex gap-20 items-center whitespace-nowrap"
         >
           {doubled.map((tech, i) => (
             <div key={i} className="flex items-center gap-2.5 shrink-0 group">
-              <div className="w-5 h-5 opacity-70 group-hover:opacity-100 transition-opacity">
-                <Icon name={tech.id} size={20} />
+              <div className="w-7 h-7 opacity-80 group-hover:opacity-100 transition-opacity">
+                <Icon name={tech.id} size={28} />
               </div>
-              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 group-hover:text-white/80 transition-colors font-mono">
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50 group-hover:text-white/90 transition-colors font-mono">
                 {tech.name}
               </span>
               <div className="w-1 h-1 rounded-full bg-blue-500/30 ml-4" />

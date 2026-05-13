@@ -37,8 +37,8 @@ const services = [
 
 const Services = () => {
   return (
-    <div id="services" className="space-y-16 py-12">
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 relative max-w-7xl mx-auto">
+    <div id="services" className="space-y-8 sm:space-y-16 py-6 sm:py-12">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 relative max-w-7xl mx-auto">
         {services.map((service, i) => (
           <motion.div 
             key={i}
@@ -49,7 +49,7 @@ const Services = () => {
             className="group bg-[#050d12] border border-white/10 rounded-[24px] overflow-hidden flex flex-col hover:border-blue-500/30 transition-all duration-500 shadow-2xl"
           >
             {/* Top Image Section */}
-            <div className="relative h-64 overflow-hidden">
+            <div className="relative h-44 sm:h-64 overflow-hidden">
               <img 
                 src={service.image} 
                 alt={service.title} 

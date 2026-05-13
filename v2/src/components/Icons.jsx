@@ -100,11 +100,6 @@ export const Icon = ({ name, size = 16, className = "" }) => {
         <path d="M17.523 15.3414C17.0204 15.3414 16.6119 14.9333 16.6119 14.4312C16.6119 13.9291 17.0204 13.521 17.523 13.521C18.0256 13.521 18.4341 13.9291 18.4341 14.4312C18.4341 14.9333 18.0256 15.3414 17.523 15.3414ZM6.47703 15.3414C5.97442 15.3414 5.5659 14.9333 5.5659 14.4312C5.5659 13.9291 5.97442 13.521 6.47703 13.521C6.97964 13.521 7.38816 13.9291 7.38816 14.4312C7.38816 14.9333 6.97964 15.3414 6.47703 15.3414ZM17.9257 11.2332L19.7891 8.0058C19.9234 7.77341 19.8436 7.47545 19.6111 7.34125C19.3787 7.20704 19.0807 7.28682 18.9465 7.51934L17.0601 10.7871C15.6021 10.1234 13.8967 9.756 12 9.756C10.1033 9.756 8.39789 10.1234 6.93989 10.7871L5.05351 7.51934C4.91931 7.28682 4.62135 7.20704 4.38883 7.34125C4.15631 7.47545 4.07653 7.77341 4.21086 8.0058L6.07431 11.2332C2.58552 13.1118 0.160136 16.7196 0 20.934H24C23.8399 16.7196 21.4145 13.1118 17.9257 11.2332Z"/>
       </svg>
     ),
-    apple: (
-      <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M17.05 20.28c-.98.95-2.05 1.61-3.22 1.61-1.14 0-1.55-.67-2.85-.67-1.32 0-1.76.65-2.85.67-1.12.02-2.22-.68-3.22-1.61C2.86 18.33 1.34 14.17 1.34 10.8c0-3.38 2.08-5.18 4.05-5.18.99 0 1.93.44 2.62.44.67 0 1.66-.44 2.76-.44 3.73 0 5.48 2.67 5.48 2.67-3.05 1.54-2.56 5.69.45 6.84-.71 1.83-1.61 3.56-3.05 5.15zM12.08 5.15c-.14-2.48 2.05-4.57 4.33-4.9.23 2.63-2.19 4.88-4.33 4.9z"/>
-      </svg>
-    ),
 
     // Stats & Categories
     thumbsup: (
@@ -281,7 +276,7 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     tensorflow:    "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tensorflow/tensorflow-original.svg",
     cisco:         "https://cdn.simpleicons.org/cisco/049fd9",
     ibm:           "https://cdn.simpleicons.org/ibm",
-    go:            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg",
+    go:            "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original-wordmark.svg",
     csharp:        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/csharp/csharp-original.svg",
     c:             "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg",
     cplusplus:     "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg",
@@ -310,12 +305,16 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     streamlit:     "https://cdn.simpleicons.org/streamlit/FF4B4B",
     expo:          "https://cdn.simpleicons.org/expo/white",
     swift:         "https://cdn.simpleicons.org/swift/F05138",
-    androidstudio: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg",
+    android:       "https://cdn.simpleicons.org/android/3DDC84",
+    apple:         "https://cdn.simpleicons.org/apple/white",
     r:             "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg",
     jupyter:       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg",
     wireshark:     "https://cdn.simpleicons.org/wireshark/1679A7",
     kalilinux:     "https://cdn.simpleicons.org/kalilinux/white",
-    rust:          "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg",
+    rust:          "https://cdn.simpleicons.org/rust/white",
+    androidstudio: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg",
+    streamlit:     "https://cdn.simpleicons.org/streamlit/FF4B4B",
+    kaggle:        "https://cdn.simpleicons.org/kaggle/20BEFF",
   }), []);
 
   // Priority 1: Brand Logos (Original Branding Colors)
