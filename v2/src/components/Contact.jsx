@@ -61,10 +61,11 @@ const Contact = () => {
                 Get In Touch <Icon name="arrowRight" size={20} className="group-hover:translate-x-2 transition-transform" />
               </a>
               
-              <div className="grid grid-cols-5 gap-3 justify-items-end">
+              <div className="grid grid-cols-4 sm:grid-cols-5 gap-3 justify-items-center md:justify-items-end">
                 {[
                   { icon: "github", link: "https://github.com/raphasha27" },
                   { icon: "linkedin", link: "https://linkedin.com/in/koketso-raphasha" },
+                  { icon: "facebook", link: "https://www.facebook.com/kirovdynamicstechnology" },
                   { icon: "twitter", link: "https://twitter.com/raphasha27" },
                   { icon: "slack", link: "https://slack.com/Raphasha27" },
                   { icon: "kaggle", link: "https://kaggle.com/Raphasha27" },

@@ -40,6 +40,11 @@ export const Icon = ({ name, size = 16, className = "" }) => {
         <path d="M14.5 10c-.83 0-1.5.67-1.5 1.5v5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5v-5c0-.83-.67-1.5-1.5-1.5z"/><path d="M20.5 10c-.83 0-1.5.67-1.5 1.5s.67 1.5 1.5 1.5 1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M9.5 14c.83 0 1.5-.67 1.5-1.5v-5c0-.83-.67-1.5-1.5-1.5S8 6.67 8 7.5v5c0 .83.67 1.5 1.5 1.5z"/><path d="M3.5 14c.83 0 1.5-.67 1.5-1.5S4.33 11 3.5 11 2 11.67 2 12.5s.67 1.5 1.5 1.5z"/>
       </svg>
     ),
+    facebook: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+      </svg>
+    ),
     whop: (
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
@@ -97,7 +102,7 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     ),
     apple: (
       <svg viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12.152 6.896c-.548 0-1.711-.516-2.822-.516-1.157 0-2.314.516-3.471.516-1.468 0-3.337-.887-3.337-3.307 0-2.42 1.869-3.307 3.337-3.307 1.157 0 2.314.516 3.471.516 1.111 0 2.274-.516 2.822-.516 1.111 0 2.274.516 3.471.516.489 0 .978-.074 1.423-.193-.533 1.157-1.423 1.956-2.401 2.37.533.193 1.022.445 1.468.741-1.468.889-2.357 2.4-2.357 4.01 0 1.61.889 3.121 2.357 4.01-.445.296-.934.548-1.468.741.978.414 1.868 1.213 2.401 2.37-.445-.119-.934-.193-1.423-.193-1.197 0-2.36.516-3.471.516zM12.152 0c.267 1.779-1.245 3.337-2.934 3.337-.267-1.779 1.245-3.337 2.934-3.337z"/>
+        <path d="M17.05 20.28c-.98.95-2.05 1.61-3.22 1.61-1.14 0-1.55-.67-2.85-.67-1.32 0-1.76.65-2.85.67-1.12.02-2.22-.68-3.22-1.61C2.86 18.33 1.34 14.17 1.34 10.8c0-3.38 2.08-5.18 4.05-5.18.99 0 1.93.44 2.62.44.67 0 1.66-.44 2.76-.44 3.73 0 5.48 2.67 5.48 2.67-3.05 1.54-2.56 5.69.45 6.84-.71 1.83-1.61 3.56-3.05 5.15zM12.08 5.15c-.14-2.48 2.05-4.57 4.33-4.9.23 2.63-2.19 4.88-4.33 4.9z"/>
       </svg>
     ),
 
@@ -298,6 +303,7 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     twitter:       "https://cdn.simpleicons.org/x/white",
     slack:         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/slack/slack-original.svg",
     whop:          whopLogo,
+    facebook:      "https://cdn.simpleicons.org/facebook/1877F2",
     whatsapp:      "https://cdn.simpleicons.org/whatsapp/25D366",
     mail:          "https://cdn.simpleicons.org/gmail/EA4335",
     kaggle:        "https://cdn.simpleicons.org/kaggle/white",

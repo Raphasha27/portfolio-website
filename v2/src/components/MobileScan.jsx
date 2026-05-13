@@ -33,8 +33,8 @@ const MobileScan = () => {
         </div>
         
         <div className="flex flex-col gap-2 w-full mt-2">
-          <div className="flex items-center gap-3 bg-[#0a0a0a] border border-white/5 px-4 py-2.5 rounded-full group/btn hover:border-blue-500/30 transition-all justify-center cursor-default">
-            <div className="text-white group-hover/btn:text-blue-400 transition-colors">
+          <div className="flex items-center gap-3 bg-[#0a0a0a] border border-white/5 px-4 py-2.5 rounded-full group/btn hover:border-green-500/30 transition-all justify-center cursor-default">
+            <div className="text-[#3DDC84] transition-colors">
               <Icon name="android" size={18} />
             </div>
             <span className="text-[10px] font-bold text-white/80 uppercase tracking-widest font-mono">for android</span>
