@@ -243,31 +243,51 @@ const Hero = () => {
               </div>
             </div>
 
-            {/* Core Tech Stack Row */}
+            {/* Core Tech Stack Row - Scrolling Marquee */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 }}
-              className="mt-4 px-6 py-4 glass rounded-2xl border border-blue-500/30 flex items-center justify-between gap-4 max-w-[360px] ml-auto shadow-[0_0_30px_rgba(59,130,246,0.05)]"
+              className="mt-4 glass rounded-2xl border border-blue-500/30 overflow-hidden max-w-[360px] ml-auto shadow-[0_0_30px_rgba(59,130,246,0.05)] relative"
             >
-              {[
-                { name: "React", id: "react" },
-                { name: "Python", id: "python" },
-                { name: "Node.js", id: "node" },
-                { name: "TypeScript", id: "typescript" },
-                { name: "PostgreSQL", id: "postgres" },
-                { name: "Docker", id: "docker" }
-              ].map((tech, i) => (
-                <div key={i} className="group relative">
-                  <div className="w-8 h-8 opacity-70 group-hover:opacity-100 transition-all group-hover:scale-110 group-hover:-translate-y-1">
-                    <Icon name={tech.id} size={32} />
-                  </div>
-                  {/* Tooltip */}
-                  <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-blue-900/80 text-white text-[9px] px-2 py-1 rounded font-bold uppercase tracking-wider pointer-events-none whitespace-nowrap">
-                    {tech.name}
-                  </div>
-                </div>
-              ))}
+              <div className="absolute inset-0 bg-[#050d12]/50 pointer-events-none z-0" />
+              <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-[#0a161d] to-transparent z-10 pointer-events-none" />
+              <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-[#0a161d] to-transparent z-10 pointer-events-none" />
+              
+              <div className="py-4 flex overflow-hidden">
+                <motion.div
+                  initial={{ x: 0 }}
+                  animate={{ x: "-50%" }}
+                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                  className="flex gap-8 items-center px-4 relative z-0"
+                >
+                  {[
+                    { name: "React", id: "react" },
+                    { name: "Python", id: "python" },
+                    { name: "Node.js", id: "node" },
+                    { name: "TypeScript", id: "typescript" },
+                    { name: "PostgreSQL", id: "postgres" },
+                    { name: "Docker", id: "docker" },
+                    // Duplicated for seamless scrolling
+                    { name: "React", id: "react" },
+                    { name: "Python", id: "python" },
+                    { name: "Node.js", id: "node" },
+                    { name: "TypeScript", id: "typescript" },
+                    { name: "PostgreSQL", id: "postgres" },
+                    { name: "Docker", id: "docker" }
+                  ].map((tech, i) => (
+                    <div key={i} className="group relative shrink-0">
+                      <div className="w-8 h-8 opacity-70 group-hover:opacity-100 transition-all group-hover:scale-110 group-hover:-translate-y-1">
+                        <Icon name={tech.id} size={32} />
+                      </div>
+                      {/* Tooltip */}
+                      <div className="absolute -top-8 left-1/2 -translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity bg-blue-900/80 text-white text-[9px] px-2 py-1 rounded font-bold uppercase tracking-wider pointer-events-none whitespace-nowrap">
+                        {tech.name}
+                      </div>
+                    </div>
+                  ))}
+                </motion.div>
+              </div>
             </motion.div>
           </motion.div>
         </div>
