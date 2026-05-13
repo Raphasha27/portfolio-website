@@ -10,7 +10,7 @@ const Contact = () => {
       {/* Subtle scanline effect */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]"></div>
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+      <div className="container mx-auto px-4 lg:px-6 relative z-10">
         {/* Header with Wide Typography and Status Pill */}
         <div className="flex justify-between items-center mb-20">
           <div className="space-y-4">
@@ -25,12 +25,12 @@ const Contact = () => {
           </div>
         </div>
 
-        <div className="glass p-12 md:p-20 rounded-[40px] relative overflow-hidden text-center md:text-left border border-white/5 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
+        <div className="glass p-8 md:p-10 rounded-[40px] relative overflow-hidden text-center md:text-left border border-white/5 shadow-[0_0_40px_rgba(0,0,0,0.5)]">
         <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
           <div className="grid-lines"></div>
         </div>
         
-        <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-12">
+        <div className="relative z-10 flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex-1">
             <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">Let's Build Something <br /><span className="text-blue-400 glow-text">Extraordinary</span></h2>
             <p className="text-text-dim text-lg max-w-md leading-relaxed mb-8">
