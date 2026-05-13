@@ -90,6 +90,16 @@ export const Icon = ({ name, size = 16, className = "" }) => {
         <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
       </svg>
     ),
+    android: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 11v5m-4-3h8M5 10V6a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v4m-14 4v2a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-2M8 4l-1-2m9 2 1-2"/>
+      </svg>
+    ),
+    apple: (
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <path d="M12 20.94c1.88 0 3.05-.76 4.19-.76 1.15 0 2.35.76 4.19.76 1.88 0 3.05-.76 4.19-.76s2.35.76 4.19.76c.44 0 .81-.03 1.12-.08C21.84 18.06 18.3 15 14.5 15c-3.11 0-5.63 2.1-7.5 5.06-1.87-2.96-4.39-5.06-7.5-5.06-3.8 0-7.34 3.06-8.73 6.86.31.05.68.08 1.12.08 1.84 0 3.05-.76 4.19-.76 1.14 0 2.34.76 4.19.76h.23zM12 10c0-4.42 3.58-8 8-8s8 3.58 8 8-3.58 8-8 8-8-3.58-8-8z"/>
+      </svg>
+    ),
 
     // Stats & Categories
     thumbsup: (

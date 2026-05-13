@@ -26,9 +26,23 @@ const MobileScan = () => {
         />
       </div>
 
-      <div className="flex items-center gap-2 text-[10px] font-bold text-blue-400 uppercase tracking-widest bg-blue-500/5 px-4 py-2 rounded-full">
-        <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-ping"></span>
-        Ready for Mobile Sync
+      <div className="flex flex-col items-center gap-3">
+        <div className="flex items-center gap-2 text-[10px] font-bold text-blue-400 uppercase tracking-widest bg-blue-500/5 px-4 py-2 rounded-full">
+          <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-ping"></span>
+          Ready for Mobile Sync
+        </div>
+        
+        <div className="flex items-center gap-4 opacity-40 group-hover:opacity-100 transition-opacity">
+          <div className="flex items-center gap-1.5">
+            <Icon name="apple" size={12} />
+            <span className="text-[8px] font-mono uppercase tracking-tighter">iOS Support</span>
+          </div>
+          <div className="w-[1px] h-3 bg-white/10" />
+          <div className="flex items-center gap-1.5">
+            <Icon name="android" size={12} />
+            <span className="text-[8px] font-mono uppercase tracking-tighter">Android Support</span>
+          </div>
+        </div>
       </div>
     </div>
   );
