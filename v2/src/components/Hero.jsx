@@ -109,7 +109,6 @@ const Hero = () => {
               IT Graduate from <span className="text-white font-bold">Richfield Graduate Institute</span> majoring in <span className="text-blue-400 font-bold">Software Engineering</span>.
               Hands-on experience as an <span className="text-white font-bold">AI Intern at CAPACITI</span>.
               Member of YES4Youth (2025-2026). Co-Founder of <span className="text-blue-400 font-bold">Kirov Dynamics Technology</span>.
-              <span className="block mt-1 font-mono text-[8px] sm:text-[9px] opacity-60 uppercase tracking-widest">Seeking Employment · Freelance · Collaboration</span>
             </p>
 
             <div className="flex flex-wrap gap-3 pt-1">
