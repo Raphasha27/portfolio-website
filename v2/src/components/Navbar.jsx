@@ -31,11 +31,11 @@ const Navbar = () => {
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-2 text-blue-400 font-bold">
             <Icon name="code" size={20} />
-            <span className="text-sm tracking-tighter truncate max-w-[120px] sm:max-w-none">Koketso_Raphasha_Portfolio_Dev</span>
+            <span className="text-[10px] sm:text-sm tracking-tighter truncate max-w-[80px] sm:max-w-none">Koketso_Raphasha_Portfolio_Dev</span>
           </div>
-          <div className="hidden lg:flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[9px] font-bold text-text-dim">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
-            SYSTEM HEALTH: OPTIMAL
+          <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[7px] sm:text-[9px] font-bold text-text-dim shrink-0">
+            <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-blue-500 animate-pulse"></span>
+            <span className="whitespace-nowrap">SYSTEM HEALTH: OPTIMAL</span>
           </div>
         </div>
         
