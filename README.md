@@ -16,10 +16,6 @@ This repository recently underwent a major architectural refactor to achieve **P
 ## Repository Link
 [https://github.com/Raphasha27/Portfolio](https://github.com/Raphasha27/Portfolio)
 
-## Structure
-- `v2/` - **Active** React/Vite implementation (High-Fidelity)
-- `index.html` - Legacy static version (Deprecated)
-
 ## 🧠 Sovereign Intelligence: AI Assistant
 The core feature of this portfolio is the **Digital Twin AI Assistant**. It's not just a chatbot; it's a data-driven guide powered by my actual professional profile.
 - **Context-Aware:** Responds intelligently to questions about my technical arsenal, projects, and mission.
