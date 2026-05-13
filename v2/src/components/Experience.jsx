@@ -83,10 +83,16 @@ const Experience = () => {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 mb-12 sm:mb-20">
           <div className="space-y-2 sm:space-y-4 max-w-full">
-            <h2 className="text-[7vw] sm:text-4xl lg:text-5xl font-bold tracking-tighter lg:tracking-[0.8em] uppercase font-mono text-white leading-none break-words">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-bold tracking-[0.15em] sm:tracking-[0.8em] uppercase font-mono text-white leading-none break-words">
               Professional <span className="text-blue-400">Evolution</span>
             </h2>
-            <div className="text-blue-400 text-[9px] sm:text-[10px] font-mono uppercase tracking-[0.3em] sm:tracking-[0.5em] font-black opacity-60">Linear Timeline Analysis</div>
+            <div className="flex items-center gap-3 mt-4">
+              <div className="text-white/40 text-[9px] font-mono uppercase tracking-[0.4em]">Linear Timeline Analysis</div>
+            </div>
+            <div className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 w-fit mt-4">
+              <div className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+              <span className="text-[10px] font-bold text-blue-400 uppercase tracking-widest">Sync: Verified</span>
+            </div>
           </div>
           <div className="px-4 sm:px-5 py-2 rounded-full bg-blue-500/10 border border-blue-500/30 flex items-center gap-2 self-start">
             <div className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
@@ -106,7 +112,7 @@ const Experience = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="relative flex flex-col lg:flex-row gap-6 lg:gap-12 items-start group"
+                className="relative flex flex-col lg:flex-row gap-6 lg:gap-12 items-start group pb-8"
               >
                 {/* Logo Circle — smaller on mobile */}
                 <div 
