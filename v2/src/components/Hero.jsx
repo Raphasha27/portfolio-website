@@ -11,31 +11,39 @@ const stats = [
 
 // All tech stacks for the scrolling banner
 const bannerTechs = [
-  { name: "React",           id: "react"      },
-  { name: "C",              id: "c"          },
-  { name: "C++",            id: "cplusplus"  },
-  { name: "Python",          id: "python"     },
-  { name: "Java",            id: "java"       },
-  { name: "Go",              id: "go"         },
-  { name: "Node.js",         id: "node"       },
-  { name: "FastAPI",         id: "fastapi"    },
-  { name: "Streamlit",       id: "streamlit"  },
-  { name: "Kaggle",          id: "kaggle"     },
-  { name: "PostgreSQL",      id: "postgres"   },
-  { name: "TypeScript",      id: "typescript" },
-  { name: "Next.js",         id: "nextjs"     },
-  { name: "Docker",          id: "docker"     },
-  { name: "MongoDB",         id: "mongodb"    },
-  { name: "Tailwind CSS",    id: "tailwindcss"},
-  { name: "GitHub Actions",  id: "githubactions"},
-  { name: "LangChain",       id: "langchain"  },
-  { name: "Redis",           id: "redis"      },
-  { name: "Framer Motion",   id: "framer"     },
-  { name: "TensorFlow",     id: "tensorflow" },
-  { name: "PyTorch",        id: "pytorch"    },
-  { name: "Kubernetes",     id: "kubernetes" },
-  { name: "Linux",          id: "linux"      },
-  { name: "Vite",            id: "vite"       },
+  { name: "React",           id: "react"        },
+  { name: "C",               id: "c"            },
+  { name: "C++",             id: "cplusplus"    },
+  { name: "Python",          id: "python"       },
+  { name: "Java",            id: "java"         },
+  { name: "Go",              id: "go"           },
+  { name: "Rust",            id: "rust"         },
+  { name: "Swift",           id: "swift"        },
+  { name: "Node.js",         id: "node"         },
+  { name: "FastAPI",         id: "fastapi"      },
+  { name: "Expo",            id: "expo"         },
+  { name: "Android Studio",  id: "androidstudio"},
+  { name: "Streamlit",       id: "streamlit"    },
+  { name: "Kaggle",          id: "kaggle"       },
+  { name: "Jupyter",         id: "jupyter"      },
+  { name: "R",               id: "r"            },
+  { name: "PostgreSQL",      id: "postgres"     },
+  { name: "TypeScript",      id: "typescript"   },
+  { name: "Next.js",         id: "nextjs"       },
+  { name: "Docker",          id: "docker"       },
+  { name: "MongoDB",         id: "mongodb"      },
+  { name: "Tailwind CSS",    id: "tailwindcss"  },
+  { name: "GitHub Actions",  id: "githubactions" },
+  { name: "LangChain",       id: "langchain"    },
+  { name: "Redis",           id: "redis"        },
+  { name: "Framer Motion",   id: "framer"       },
+  { name: "TensorFlow",      id: "tensorflow"   },
+  { name: "PyTorch",         id: "pytorch"      },
+  { name: "Kubernetes",      id: "kubernetes"   },
+  { name: "Linux",           id: "linux"        },
+  { name: "Kali Linux",      id: "kalilinux"    },
+  { name: "Wireshark",       id: "wireshark"    },
+  { name: "Vite",            id: "vite"         },
 ];
 
 // Rolling terminal lines for the overlay strip
@@ -132,13 +140,13 @@ const Hero = () => {
   const doubled = [...bannerTechs, ...bannerTechs];
 
   return (
-    <div id="home" className="relative min-h-screen pt-12 flex flex-col justify-center overflow-hidden bg-[#050d12]">
+    <div id="home" className="relative h-screen flex flex-col justify-center overflow-hidden bg-[#050d12]">
       {/* Scanline + glow bg */}
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]" />
       <div className="absolute top-1/4 -right-20 w-96 h-96 bg-blue-500/10 blur-[120px] rounded-full" />
 
-      <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-10 items-center">
+      <div className="container mx-auto px-6 lg:px-12 relative z-10 pt-16">
+        <div className="grid lg:grid-cols-[1.2fr_0.8fr] gap-8 items-center">
 
           {/* ── LEFT: Identity & Mission ── */}
           <motion.div
@@ -187,11 +195,18 @@ const Hero = () => {
             </div>
 
             {/* Stats strip */}
-            <div className="grid grid-cols-3 gap-8 pt-10 border-t border-white/5">
-              {stats.map((s, i) => (
-                <div key={i} className="space-y-1">
-                  <div className="text-2xl font-bold text-white">
-                    <CountUp to={s.val} />{s.suffix}
+            <div className="grid grid-cols-3 gap-6 pt-4 border-t border-white/5">
+              {[
+                { emoji: '⚡', val: 100, suffix: '%', label: 'Reliability' },
+                { emoji: '🌍', val: 50,  suffix: '+', label: 'Global Clients' },
+                { emoji: '🛠️', val: 12,  suffix: '+', label: 'Core Projects' },
+              ].map((s, i) => (
+                <div key={i} className="space-y-0.5">
+                  <div className="flex items-center gap-2">
+                    <span className="text-lg">{s.emoji}</span>
+                    <div className="text-xl font-bold text-white">
+                      <CountUp to={s.val} />{s.suffix}
+                    </div>
                   </div>
                   <div className="text-[9px] font-mono text-cyan-400/40 uppercase tracking-widest">{s.label}</div>
                 </div>

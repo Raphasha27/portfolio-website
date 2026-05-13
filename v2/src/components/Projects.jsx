@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icons';
-import experienceBg from '../assets/experience-bg.png';
-import heroBg from '../assets/hero-bg.png';
 
 const projects = [
   {
@@ -94,17 +92,7 @@ const projects = [
   }
 ];
 
-import projectEdutech from '../assets/project-edutech.png';
-import projectOs from '../assets/project-os.png';
-import projectFinance from '../assets/project-finance.png';
-import projectLogistics from '../assets/project-logistics.png';
 
-const assetMap = {
-  "project-edutech.png": projectEdutech,
-  "project-os.png": projectOs,
-  "project-finance.png": projectFinance,
-  "project-logistics.png": projectLogistics,
-};
 
 const Projects = () => {
   const [copied, setCopied] = useState(false);
@@ -144,14 +132,7 @@ const Projects = () => {
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
             key={i} id={`project-${i}`} className="glass p-5 border-white/5 hover:border-blue-500/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] transition-all duration-300 group relative overflow-hidden rounded-2xl flex flex-col h-full"
           >
-            {/* Real Color Background Overlay with Visibility Filter */}
-            <div className="absolute inset-0 opacity-[0.4] group-hover:opacity-[0.6] transition-opacity duration-500 pointer-events-none">
-              <img 
-                src={p.bgImage ? assetMap[p.bgImage] : (i % 2 === 0 ? experienceBg : heroBg)} 
-                alt="" 
-                className="w-full h-full object-cover scale-105 group-hover:scale-110 transition-transform duration-1000 brightness-[0.7] contrast-125" 
-              />
-            </div>
+
             {/* Refined Visibility Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-[#050d12] via-[#050d12]/60 to-transparent pointer-events-none" />
             

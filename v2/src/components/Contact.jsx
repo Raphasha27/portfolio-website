@@ -61,7 +61,7 @@ const Contact = () => {
                 Get In Touch <Icon name="arrowRight" size={20} className="group-hover:translate-x-2 transition-transform" />
               </a>
               
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-3 justify-end md:justify-end max-w-[320px]">
                 {[
                   { icon: "github", link: "https://github.com/raphasha27" },
                   { icon: "linkedin", link: "https://linkedin.com/in/koketso-raphasha" },
@@ -73,8 +73,8 @@ const Contact = () => {
                   { icon: "whatsapp", link: "https://wa.me/27793444002" },
                   { icon: "mail", link: "mailto:raphashakoketso99@gmail.com" }
                 ].map((social, i) => (
-                  <a key={i} href={social.link} target="_blank" className="w-12 h-12 glass rounded-xl flex items-center justify-center text-white/70 hover:text-white hover:border-blue-500/50 transition-all opacity-80 hover:opacity-100">
-                    <Icon name={social.icon} size={24} />
+                  <a key={i} href={social.link} target="_blank" className="w-10 h-10 glass rounded-xl flex items-center justify-center text-white/70 hover:text-white hover:border-blue-500/50 transition-all opacity-80 hover:opacity-100">
+                    <Icon name={social.icon} size={20} />
                   </a>
                 ))}
               </div>

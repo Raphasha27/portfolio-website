@@ -292,6 +292,14 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     mail:          "https://cdn.simpleicons.org/gmail/EA4335",
     kaggle:        "https://cdn.simpleicons.org/kaggle/white",
     streamlit:     "https://cdn.simpleicons.org/streamlit/FF4B4B",
+    expo:          "https://cdn.simpleicons.org/expo/white",
+    swift:         "https://cdn.simpleicons.org/swift/F05138",
+    androidstudio: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg",
+    r:             "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/r/r-original.svg",
+    jupyter:       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/jupyter/jupyter-original.svg",
+    wireshark:     "https://cdn.simpleicons.org/wireshark/1679A7",
+    kalilinux:     "https://cdn.simpleicons.org/kalilinux/white",
+    rust:          "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rust/rust-original.svg",
   }), []);
 
   // Priority 1: Brand Logos (Original Branding Colors)

@@ -50,6 +50,30 @@ const skillGroups = [
       { name: "Redis", pct: 85, icon: "redis" },
       { name: "Vector DBs", pct: 82, icon: "database" }
     ]
+  },
+  {
+    title: "DATA ANALYTICS",
+    id: "analytics",
+    desc: "Insight Engineering",
+    iconName: "activity",
+    skills: [
+      { name: "Python / Pandas / NumPy", pct: 93, icon: "python" },
+      { name: "SQL & Databases", pct: 91, icon: "postgres" },
+      { name: "R & Statistics", pct: 78, icon: "code" },
+      { name: "Jupyter / Notebooks", pct: 88, icon: "code" }
+    ]
+  },
+  {
+    title: "CYBERSECURITY",
+    id: "cybersecurity",
+    desc: "Defense Architecture",
+    iconName: "shield",
+    skills: [
+      { name: "Python & Bash (Automation)", pct: 88, icon: "terminal" },
+      { name: "C / C++ (Exploit Analysis)", pct: 80, icon: "terminal" },
+      { name: "Web Security (JS/HTML)", pct: 85, icon: "code" },
+      { name: "Go & Rust (Cloud Sec)", pct: 75, icon: "signal" }
+    ]
   }
 ];
 
@@ -72,8 +96,8 @@ const Skills = () => {
         </div>
       </div>
 
-      {/* Skills Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Skills Grid — 3×2 for 6 groups */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {skillGroups.map((group, i) => (
           <motion.div 
             key={i}
