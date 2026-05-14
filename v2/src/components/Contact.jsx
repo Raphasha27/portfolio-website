@@ -81,7 +81,7 @@ const Contact = () => {
                   { icon: "kaggle",    link: "https://kaggle.com/Raphasha27" },
                   { icon: "streamlit", link: "https://share.streamlit.io/user/raphasha27" },
                   { icon: "whop",      link: "https://whop.com/kirovdynamicstechnology/" },
-                  { icon: "whatsapp",  link: "https://wa.me/27793444002" },
+                  { icon: "whatsapp",  link: "https://wa.me/27781172470" },
                   { icon: "mail",      link: "mailto:raphashakoketso99@gmail.com" }
                 ].map((social, i) => (
                   <a 
