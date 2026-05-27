@@ -18,6 +18,13 @@ const certifications = [
     icon: "cloud"
   },
   {
+    title: "Google Hustle Academy",
+    issuer: "Google",
+    date: "2024",
+    type: "Continuous Learning",
+    icon: "zap"
+  },
+  {
     title: "AI Practitioner (Intern)",
     issuer: "CAPACITI",
     date: "2024",
