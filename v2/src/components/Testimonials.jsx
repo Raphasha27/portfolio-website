@@ -34,7 +34,7 @@ const testimonials = [
 
 const Testimonials = () => {
   return (
-    <div id="testimonials" className="py-16 sm:py-24 bg-[#050d12] relative overflow-hidden">
+    <div id="testimonials" className="py-16 sm:py-24 bg-transparent relative overflow-hidden">
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto relative z-10">

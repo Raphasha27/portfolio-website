@@ -46,7 +46,7 @@ const Services = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: i * 0.1 }}
-            className="group bg-[#050d12] border border-white/10 rounded-[24px] overflow-hidden flex flex-col hover:border-blue-500/30 transition-all duration-500 shadow-2xl"
+            className="group bg-transparent border border-white/10 rounded-[24px] overflow-hidden flex flex-col hover:border-blue-500/30 transition-all duration-500 shadow-2xl"
           >
             {/* Top Image Section */}
             <div className="relative h-44 sm:h-64 overflow-hidden">
@@ -62,7 +62,7 @@ const Services = () => {
             {/* Content Section */}
             <div className="relative flex-1 px-8 pb-10 pt-12 flex flex-col items-center text-center">
               {/* Overlapping Icon Circle */}
-              <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full bg-[#050d12] border-2 flex items-center justify-center shadow-lg transition-all duration-500 z-20 border-blue-500/40 text-blue-400 shadow-[0_0_30_rgba(59,130,246,0.2)] group-hover:border-blue-400">
+              <div className="absolute top-0 -translate-y-1/2 left-1/2 -translate-x-1/2 w-20 h-20 rounded-full bg-transparent border-2 flex items-center justify-center shadow-lg transition-all duration-500 z-20 border-blue-500/40 text-blue-400 shadow-[0_0_30_rgba(59,130,246,0.2)] group-hover:border-blue-400">
                 <Icon name={service.icon} size={32} />
               </div>
 

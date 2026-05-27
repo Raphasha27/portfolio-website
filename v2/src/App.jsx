@@ -15,6 +15,7 @@ import Navbar from './components/Navbar';
 import CustomCursor from './components/CustomCursor';
 import Services from './components/Services';
 import Map from './components/Map';
+import cyberBg from './assets/cyber-bg.png';
 
 function App() {
   // Always scroll to top when the app first mounts
@@ -24,6 +25,11 @@ function App() {
 
   return (
     <div className="bg-[#050d12] text-[#e0f2f1] min-h-screen selection:bg-blue-500/30 selection:text-blue-200 relative overflow-x-hidden">
+      {/* Global Cyber Background */}
+      <div 
+        className="fixed inset-0 pointer-events-none z-[0] opacity-[0.15] bg-center bg-cover bg-no-repeat" 
+        style={{ backgroundImage: `url(${cyberBg})`, backgroundAttachment: 'fixed' }} 
+      />
       {/* Global Grain Overlay */}
       <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-[9999] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
       
@@ -66,7 +72,7 @@ function App() {
           transition={{ duration: 0.8 }}
           className="relative py-16 sm:py-24 overflow-hidden"
         >
-          <div className="absolute inset-0 bg-[#050d12]">
+          <div className="absolute inset-0 bg-transparent">
             <div className="absolute inset-0 opacity-20" 
                  style={{ 
                    backgroundImage: `radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.15) 0%, transparent 50%), 

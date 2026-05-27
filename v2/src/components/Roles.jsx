@@ -16,7 +16,7 @@ const roles = [
 
 const Roles = () => {
   return (
-    <div id="roles" className="relative py-10 sm:py-16 px-4 sm:px-6 lg:px-12 bg-[#050d12] overflow-hidden rounded-2xl sm:rounded-[40px] border border-white/5">
+    <div id="roles" className="relative py-10 sm:py-16 px-4 sm:px-6 lg:px-12 bg-transparent overflow-hidden rounded-2xl sm:rounded-[40px] border border-white/5">
       {/* Background Neural Network Overlay */}
       <div className="absolute inset-0 opacity-[0.08] pointer-events-none mix-blend-screen">
         <img 

@@ -45,7 +45,7 @@ const CountUp = ({ to, duration = 2 }) => {
 
 const About = () => {
   return (
-    <div id="about" className="py-16 sm:py-24 lg:py-32 relative overflow-hidden bg-[#050d12]">
+    <div id="about" className="py-16 sm:py-24 lg:py-32 relative overflow-hidden bg-transparent">
       <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]" />
 
       <div className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto relative z-10">

@@ -5,7 +5,7 @@ const Map = () => {
   const [isLoaded, setIsLoaded] = React.useState(false);
 
   return (
-    <section id="location" className="py-16 sm:py-24 relative overflow-hidden bg-[#050d12]">
+    <section id="location" className="py-16 sm:py-24 relative overflow-hidden bg-transparent">
       <div className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto">
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-8 sm:mb-12 gap-4">
           <div className="space-y-2 sm:space-y-4">
@@ -28,7 +28,7 @@ const Map = () => {
           className="glass p-1.5 sm:p-2 rounded-2xl sm:rounded-[40px] border border-blue-500/30 overflow-hidden h-[280px] sm:h-[380px] lg:h-[450px] relative group bg-white/5"
         >
           {!isLoaded && (
-            <div className="absolute inset-0 flex flex-col items-center justify-center bg-[#050d12] z-20">
+            <div className="absolute inset-0 flex flex-col items-center justify-center bg-transparent z-20">
               <div className="w-20 h-20 border-2 border-blue-500/20 rounded-full border-t-blue-500 animate-spin mb-4" />
               <div className="text-[10px] font-mono text-blue-400 uppercase tracking-[0.5em] animate-pulse">Initializing Map Data...</div>
               {/* Fake scan line */}

@@ -2,7 +2,7 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=0:00ffcc,100:B39DDB&height=200&section=header&text=Koketso%20Raphasha&fontSize=50&fontColor=ffffff&fontAlignY=40&desc=Autonomous%20AI%20Engineer%20%26%20Systems%20Architect&descAlignY=65" width="100%"/>
 
   [![Status](https://img.shields.io/badge/Status-Live-00ffcc?style=for-the-badge)](#)
-  [![Infrastructure](https://img.shields.io/badge/Infra-Vercel-000000?style=for-the-badge&logo=vercel)](#)
+  [![Infrastructure](https://img.shields.io/badge/Infra-Vercel-000000?style=for-the-badge&logo=vercel)](https://portfolio-iota-eight-90.vercel.app)
   [![React](https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react)](#)
   [![Tailwind](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwind-css)](#)
 </div>
