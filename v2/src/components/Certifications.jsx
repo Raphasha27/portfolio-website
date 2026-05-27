@@ -11,11 +11,25 @@ const certifications = [
     icon: "graduationcap"
   },
   {
+    title: "AI for Everyone",
+    issuer: "DeepLearning.AI",
+    date: "2024",
+    type: "Certification",
+    icon: "brain"
+  },
+  {
     title: "AWS Certified Developer",
     issuer: "Amazon Web Services",
     date: "2023",
     type: "Certification",
     icon: "cloud"
+  },
+  {
+    title: "AI & Professional Development",
+    issuer: "Coursera",
+    date: "2024",
+    type: "Continuous Learning",
+    icon: "coursera"
   },
   {
     title: "Google Hustle Academy",
