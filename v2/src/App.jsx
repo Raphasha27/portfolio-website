@@ -6,6 +6,7 @@ import About from './components/About';
 import Experience from './components/Experience';
 import Roles from './components/Roles';
 import Skills from './components/Skills';
+import Certifications from './components/Certifications';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Testimonials from './components/Testimonials';
@@ -84,7 +85,17 @@ function App() {
           </div>
         </motion.section>
 
-        {/* Section 5: Services */}
+        {/* Section 5: Certifications */}
+        <motion.section 
+          initial={{ opacity: 0, y: 50 }} 
+          whileInView={{ opacity: 1, y: 0 }} 
+          viewport={{ once: true, margin: "-100px" }} 
+          transition={{ duration: 0.8 }}
+        >
+          <Certifications />
+        </motion.section>
+
+        {/* Section 6: Services */}
         <motion.section 
           initial={{ opacity: 0, y: 50 }} 
           whileInView={{ opacity: 1, y: 0 }} 
@@ -95,7 +106,7 @@ function App() {
           <Services />
         </motion.section>
 
-        {/* Section 6: Projects */}
+        {/* Section 7: Projects */}
         <motion.section 
           initial={{ opacity: 0, y: 50 }} 
           whileInView={{ opacity: 1, y: 0 }} 
@@ -106,7 +117,7 @@ function App() {
           <Projects />
         </motion.section>
 
-        {/* Section 7: Map */}
+        {/* Section 8: Map */}
         <motion.div
           initial={{ opacity: 0, y: 50 }} 
           whileInView={{ opacity: 1, y: 0 }} 
@@ -116,7 +127,7 @@ function App() {
           <Map />
         </motion.div>
 
-        {/* Section 8: Testimonials */}
+        {/* Section 9: Testimonials */}
         <motion.section 
           initial={{ opacity: 0, y: 50 }} 
           whileInView={{ opacity: 1, y: 0 }} 
@@ -126,7 +137,7 @@ function App() {
           <Testimonials />
         </motion.section>
 
-        {/* Section 9: Contact — full-width, self-contained */}
+        {/* Section 10: Contact — full-width, self-contained */}
         <motion.section 
           initial={{ opacity: 0, y: 50 }} 
           whileInView={{ opacity: 1, y: 0 }} 
