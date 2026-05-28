@@ -78,9 +78,9 @@ const Hero = () => {
   const doubled = [...bannerTechs, ...bannerTechs];
   const [activeProfile, setActiveProfile] = useState(0);
   const profiles = [
-    { src: koketsoSuit, label: 'Executive Mode', badge: 'Business', color: 'bg-white text-black' },
-    { src: koketsoHoodie, label: 'Developer Mode', badge: 'Engineering', color: 'bg-[#00ffcc] text-black' },
-    { src: koketsoVR, label: 'Cyber Mode', badge: 'Virtual Reality', color: 'bg-[#ff00ff] text-white' }
+    { src: koketsoSuit },
+    { src: koketsoHoodie },
+    { src: koketsoVR }
   ];
 
   // Auto-slide profiles
@@ -173,7 +173,7 @@ const Hero = () => {
             <div className="relative group w-full max-w-[280px] lg:max-w-[320px]">
               {/* Dynamic decorative ring based on active profile */}
               <motion.div 
-                animate={{ borderColor: activeProfile === 0 ? 'rgba(255,255,255,0.2)' : 'rgba(0,255,204,0.3)' }}
+                animate={{ borderColor: 'rgba(0,255,204,0.3)' }}
                 className="absolute inset-0 rounded-full border-[4px] blur-sm transition-colors duration-500" 
               />
               
@@ -183,7 +183,7 @@ const Hero = () => {
                   <motion.img
                     key={activeProfile}
                     src={profiles[activeProfile].src}
-                    alt={`Koketso Raphasha - ${profiles[activeProfile].label}`}
+                    alt="Koketso Raphasha"
                     initial={{ opacity: 0, scale: 1.05, filter: 'blur(4px)' }}
                     animate={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
                     exit={{ opacity: 0, scale: 0.95, filter: 'blur(4px)' }}
@@ -192,23 +192,6 @@ const Hero = () => {
                   />
                 </AnimatePresence>
                 
-                {/* Mode Overlay Badge */}
-                <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-1 items-center bg-black/60 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <Icon name="activity" size={12} className={activeProfile === 0 ? 'text-white' : 'text-[#00ffcc]'} />
-                  <span className="text-[10px] font-mono text-white uppercase tracking-wider">{profiles[activeProfile].label}</span>
-                </div>
-              </div>
-              
-              {/* Manual Toggles */}
-              <div className="flex justify-center gap-2 mt-4 absolute -bottom-8 left-0 right-0 z-20">
-                {profiles.map((_, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => setActiveProfile(idx)}
-                    className={`w-10 h-1.5 rounded-full transition-all duration-300 ${activeProfile === idx ? 'bg-[#00ffcc] shadow-[0_0_10px_rgba(0,255,204,0.5)]' : 'bg-white/20 hover:bg-white/40'}`}
-                    aria-label={`Switch to profile ${idx + 1}`}
-                  />
-                ))}
               </div>
             </div>
             
