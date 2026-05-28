@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Icon } from './Icons';
-import richfieldLogo from '../assets/richfield-logo.svg';
+import richfieldLogo from '../assets/richfield-logo.png';
 import wethinkcodeLogo from '../assets/wethinkcode-logo.png';
 import capacitiLogo from '../assets/capaciti-logo.png';
 import yesLogo from '../assets/yes-badge.png';
