@@ -9,9 +9,11 @@ import ciscoLogo from '../assets/cisco-logo.svg';
 import courseraLogo from '../assets/coursera-logo.svg';
 import googleLogo from '../assets/google-logo.svg';
 import ibmLogo from '../assets/ibm-logo.svg';
+import kirovLogo from '../assets/kirov-logo.png';
 
 const partners = [
   { name: "Richfield", sub: "BSc CS · Distinction", logo: richfieldLogo, bg: "bg-[#003087]" },
+  { name: "Kirov Dynamics", sub: "Co-Founder & CTO", logo: kirovLogo, bg: "bg-white" },
   { name: "WeThinkCode_", sub: "Software Engineering", logo: wethinkcodeLogo, bg: "bg-white" },
   { name: "CAPACITI", sub: "Digital Skills Accelerator", logo: capacitiLogo, bg: "bg-white" },
   { name: "YES Programme", sub: "Youth Employment Service", logo: yesLogo, bg: "bg-white" },
