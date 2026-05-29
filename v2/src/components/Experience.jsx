@@ -6,7 +6,7 @@ import { Icon } from './Icons';
 import yesBadge from '../assets/yes-badge.png';
 import capacitiLogo from '../assets/capaciti-logo.png';
 import wtcLogo from '../assets/wethinkcode-logo.png';
-import richfieldLogo from '../assets/richfield-logo.svg';
+import richfieldLogo from '../assets/richfield-logo-new.png';
 
 const experiences = [
   {
