@@ -43,6 +43,20 @@ const projectsData = [
         image: 'https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=2070&auto=format&fit=crop',
         tags: ['ML', 'Healthcare', 'Predictive', 'Pandas'],
         github: 'https://github.com/Raphasha27/NoShowIQ'
+    },
+    {
+        name: 'Titanic ML (Kaggle)',
+        description: 'End-to-end ML pipeline scoring 78.5% on Kaggle. 7 model versions with KNN imputation, interaction features, and tuned GradientBoosting/XGBoost ensemble.',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+        tags: ['Kaggle', 'scikit-learn', 'XGBoost', 'Feature Engineering'],
+        github: 'https://github.com/Raphasha27/Raphasha27/tree/main/projects/titanic-ml'
+    },
+    {
+        name: 'ETL Pipeline Suite',
+        description: 'Three production-grade data pipelines: CSV→PostgreSQL ETL, PySpark distributed processing, and REST API extraction with auto-pagination.',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2070&auto=format&fit=crop',
+        tags: ['Python', 'PySpark', 'PostgreSQL', 'ETL'],
+        github: 'https://github.com/Raphasha27/data-engineering-kaggle'
     }
 ];
 
@@ -149,6 +163,11 @@ const skillsData = [
         category: 'Cloud & DevOps Architecture',
         tags: ['Docker', 'Kubernetes', 'AWS', 'Azure', 'GitHub Actions', 'Prometheus', 'Grafana', 'Linux'],
         proficiency: 92
+    },
+    {
+        category: 'Data Engineering & Analytics',
+        tags: ['Pandas', 'NumPy', 'scikit-learn', 'PySpark', 'PostgreSQL', 'ETL Pipelines', 'Kaggle', 'XGBoost'],
+        proficiency: 85
     }
 ];
 
@@ -472,6 +491,10 @@ function App() {
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
                                     <span>GitHub</span>
                                 </a>
+                                <a href="https://kaggle.com/Raphasha27" target="_blank" rel="noreferrer" className="hero-contact-item" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#94a3b8', textDecoration: 'none', fontSize: '14px', transition: 'color 0.3s' }}>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                                    <span>Kaggle 78.5%</span>
+                                </a>
                             </motion.div>
 
                             <motion.div 
@@ -527,7 +550,7 @@ function App() {
                         <div className="title-underline"></div>
                         <p className="section-description">"Building intelligent systems that bridge the gap between complex data and human intuition."</p>
                         <div style={{ maxWidth: '800px', margin: '30px auto', color: 'var(--text-secondary)', lineHeight: '1.8', textAlign: 'center' }}>
-                            I am a determined Software Developer and AI Specialist based in South Africa, passionate about creating high-impact, AI-driven solutions that solve real-world problems. Whether it's building sovereign AI nodes, modernizing SOC platforms, or developing enterprise-grade systems, I thrive at the intersection of performance, innovation, and aesthetics.
+                            I am a determined Software Developer, AI Specialist, and Data Engineer based in South Africa, passionate about creating high-impact, AI-driven solutions that solve real-world problems. Whether it's building sovereign AI nodes, modernizing SOC platforms, engineering data pipelines, or competing on Kaggle (78.5% on Titanic), I thrive at the intersection of performance, innovation, and aesthetics.
                         </div>
                     </motion.div>
                     

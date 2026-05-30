@@ -98,6 +98,26 @@ const projects = [
     color: "from-emerald-500/20 to-cyan-500/20",
     bgImage: "project-edutech.png",
     link: "https://github.com/Raphasha27/EduStream-Pro-ICT"
+  },
+  {
+    title: "Titanic ML (Kaggle)",
+    tagline: "78.5% Public LB · Ensemble",
+    desc: "End-to-end ML pipeline scoring 78.5% on Kaggle Titanic. KNN imputation, interaction features, tuned GradientBoosting/XGBoost across 7 model versions.",
+    tech: ["python", "kaggle", "jupyter", "postgres"],
+    icon: "brain",
+    role: "Data Scientist",
+    color: "from-[#00FF9C]/20 to-blue-500/20",
+    link: "https://github.com/Raphasha27/Raphasha27/tree/main/projects/titanic-ml"
+  },
+  {
+    title: "ETL Pipeline Suite",
+    tagline: "3 Pipelines · Production Grade",
+    desc: "Three production data pipelines: CSV→PostgreSQL ETL with validation, PySpark distributed processing, and REST API extraction with auto-pagination.",
+    tech: ["python", "postgres", "docker", "streamlit"],
+    icon: "database",
+    role: "Data Engineer",
+    color: "from-emerald-500/20 to-purple-500/20",
+    link: "https://github.com/Raphasha27/data-engineering-kaggle"
   }
 ];
 
