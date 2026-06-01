@@ -22,7 +22,14 @@ const Map = lazy(() => import('./components/Map'));
 function App() {
   // Always scroll to top when the app first mounts
   useEffect(() => {
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    const id = requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    });
+    return () => cancelAnimationFrame(id);
   }, []);
 
   return (
