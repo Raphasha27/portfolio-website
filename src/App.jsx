@@ -836,7 +836,7 @@ function App() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 className="engagement-card"
                             >
-                                <div className="engagement-icon" dangerouslySetInnerHTML={{ __html: item.icon }}></div>
+                                <div className="engagement-icon" dangerouslySetInnerHTML={{ __html: item.icon.replace(/<script[\s\S]*?>[\s\S]*?<\/script>/gi, '') }}></div>
                                 <h3 className="engagement-title">{item.title}</h3>
                                 <p className="engagement-subtitle">{item.subtitle}</p>
                                 <p className="engagement-description">{item.description}</p>
