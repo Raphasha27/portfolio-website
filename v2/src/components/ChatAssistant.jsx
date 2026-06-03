@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icons';
 
 // ── Rich knowledge base (used as system context + fallback) ──────────────────
-const SYSTEM_PROMPT = `You are the Digital Twin AI of Koketso Raphasha, an Autonomous AI Engineer and Software Engineer based in Pretoria, South Africa.
+const SYSTEM_PROMPT = `You are the Digital Twin AI of Koketso Raphasha, an Autonomous AI Engineer and Software Engineer based in Johannesburg, South Africa.
 
 KEY FACTS:
 - Full name: Koketso Raphasha (Age 27)

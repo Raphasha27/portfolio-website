@@ -18,7 +18,7 @@ const Map = () => {
           </div>
           <div className="glass px-4 sm:px-6 py-3 sm:py-4 rounded-xl sm:rounded-2xl border border-blue-500/20 flex items-center gap-3 sm:gap-4 self-start">
             <div className="w-3 h-3 rounded-full bg-blue-500 animate-ping" />
-            <span className="text-xs sm:text-sm font-bold font-mono text-blue-400 uppercase tracking-widest">Pretoria, South Africa</span>
+            <span className="text-xs sm:text-sm font-bold font-mono text-blue-400 uppercase tracking-widest">Johannesburg, South Africa</span>
           </div>
         </div>
 
@@ -40,7 +40,8 @@ const Map = () => {
           {/* Static Map Image */}
           <img 
             src={gautengMap} 
-            alt="Map of Pretoria, South Africa" 
+            alt="Map of Johannesburg, South Africa" 
+            style={{ filter: 'invert(90%) hue-rotate(200deg) brightness(0.8) contrast(1.2)' }}
             className={`w-full h-full object-cover rounded-[32px] transition-opacity duration-1000 ${isLoaded ? 'opacity-80 group-hover:opacity-100' : 'opacity-0'}`}
             onLoad={() => setIsLoaded(true)}
           />

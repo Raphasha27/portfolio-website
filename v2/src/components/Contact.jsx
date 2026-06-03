@@ -89,14 +89,14 @@ const Contact = () => {
                 {/* Location Card */}
                 <div className="glass p-4 sm:p-6 rounded-2xl sm:rounded-3xl border border-white/5 inline-flex items-center gap-4 sm:gap-6 relative overflow-hidden group self-start">
                   <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
-                    <img src={gautengMap} alt="Pretoria Map" className="w-full h-full object-cover scale-150 grayscale" />
+                    <img src={gautengMap} alt="Johannesburg Map" className="w-full h-full object-cover scale-150 grayscale" />
                   </div>
                   <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-400 relative z-10">
                     <Icon name="globe" size={22} />
                   </div>
                   <div className="relative z-10 text-left">
                     <div className="text-[8px] font-bold text-blue-400 uppercase tracking-[0.3em] mb-1">Current Coordinates</div>
-                    <div className="text-sm font-bold text-white tracking-tight">Pretoria, Gauteng</div>
+                    <div className="text-sm font-bold text-white tracking-tight">Johannesburg, Gauteng</div>
                     <div className="text-[9px] text-white/40 font-medium uppercase tracking-wider">South Africa · SAST (UTC+2)</div>
                   </div>
                 </div>
