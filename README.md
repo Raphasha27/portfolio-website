@@ -1,21 +1,46 @@
-# Portfolio
+<div align="center">
+  <h1>Koketso Raphasha — Portfolio</h1>
+  <p>
+    <a href="https://portfolio-iota-eight-90.vercel.app/"><img src="https://img.shields.io/badge/Live_Demo-Visit_Site-0EA5E9?style=for-the-badge&logo=vercel&logoColor=white" /></a>
+    <a href="#"><img src="https://img.shields.io/badge/Status-Deployed-22C55E?style=for-the-badge" /></a>
+  </p>
+</div>
 
-Luxury 3D portfolio built with React, Framer Motion, and interactive visualizations
+## Overview
 
-## Getting Started
+Immersive 3D portfolio built with React, Framer Motion, and interactive visualizations. Showcases projects, technical skills, and professional journey in an engaging experience.
 
-Clone the repository:
+**Live:** https://portfolio-iota-eight-90.vercel.app/
+
+## Stack
+
+- **Framework:** React + Vite
+- **Animation:** Framer Motion, 3D transforms
+- **Styling:** CSS3
+- **Deployment:** Vercel
+
+## Local Development
 
 ```bash
 git clone https://github.com/Raphasha27/Portfolio.git
 cd Portfolio
+npm install
+npm run dev
 ```
 
-## Language
+## Features
 
-![Language](https://img.shields.io/badge/language-JavaScript-blue)
+- Interactive 3D hero section
+- Project showcase with live links
+- Skills visualization
+- Responsive design
+- Dark theme
+- Docker support
+
+## Deployment
+
+The site deploys automatically via Vercel on push to `main`.
 
 ## License
 
-Distributed under the MIT License.
-
+MIT
