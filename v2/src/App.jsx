@@ -6,7 +6,6 @@ import Navbar from './components/Navbar';
 import CustomCursor from './components/CustomCursor';
 import cyberBg from './assets/cyber-bg.png';
 
-// Lazy load below-the-fold components
 const Terminal = lazy(() => import('./components/Terminal'));
 const Experience = lazy(() => import('./components/Experience'));
 const Roles = lazy(() => import('./components/Roles'));
@@ -20,16 +19,20 @@ const Services = lazy(() => import('./components/Services'));
 const Map = lazy(() => import('./components/Map'));
 
 function App() {
-  // Always scroll to top when the app first mounts
   useEffect(() => {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    const id = requestAnimationFrame(() => {
+    const scrollToTop = () => {
       window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    });
-    return () => cancelAnimationFrame(id);
+    };
+    scrollToTop();
+    requestAnimationFrame(scrollToTop);
+    const timer = setTimeout(scrollToTop, 100);
+    return () => {
+      cancelAnimationFrame(0);
+      clearTimeout(timer);
+    };
   }, []);
 
   const { scrollYProgress } = useScroll();
@@ -37,26 +40,20 @@ function App() {
 
   return (
     <div className="bg-[#050d12] text-[#e0f2f1] min-h-screen selection:bg-blue-500/30 selection:text-blue-200 relative overflow-x-hidden">
-      {/* Global Cyber Background — parallax */}
       <motion.div 
         className="fixed inset-0 pointer-events-none z-[0] opacity-[0.15] bg-center bg-cover bg-no-repeat" 
         style={{ backgroundImage: `url(${cyberBg})`, y: bgY }} 
       />
-      {/* Global Grain Overlay */}
       <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-[9999] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
       
-      {/* Custom cursor only on non-touch devices */}
       <CustomCursor />
       <Navbar />
 
       <main className="pb-16 sm:pb-24 relative z-10">
-
-        {/* Section 1: Hero */}
         <section>
           <Hero />
         </section>
 
-        {/* Section 2: About */}
         <motion.section 
           initial={{ opacity: 0, y: 50 }} 
           whileInView={{ opacity: 1, y: 0 }} 
@@ -66,12 +63,7 @@ function App() {
           <About />
         </motion.section>
 
-        <Suspense fallback={
-          <div className="w-full py-32 flex items-center justify-center">
-            <div className="w-8 h-8 border-2 border-blue-500/20 border-t-blue-500 rounded-full animate-spin" />
-          </div>
-        }>
-          {/* Section 3: Experience — full-width, self-contained */}
+        <Suspense fallback={<div className="w-full min-h-[50vh] flex items-center justify-center"><div className="w-8 h-8 border-2 border-blue-500/20 border-t-blue-500 rounded-full animate-spin" /></div>}>
           <motion.section 
             initial={{ opacity: 0, y: 50 }} 
             whileInView={{ opacity: 1, y: 0 }} 
@@ -81,7 +73,6 @@ function App() {
             <Experience />
           </motion.section>
 
-          {/* Section 4: Skills & Roles */}
           <motion.section 
             initial={{ opacity: 0, y: 50 }} 
             whileInView={{ opacity: 1, y: 0 }} 
@@ -108,7 +99,6 @@ function App() {
             </div>
           </motion.section>
 
-          {/* Section 5: Certifications */}
           <motion.section 
             initial={{ opacity: 0, y: 50 }} 
             whileInView={{ opacity: 1, y: 0 }} 
@@ -118,7 +108,6 @@ function App() {
             <Certifications />
           </motion.section>
 
-          {/* Section 6: Services */}
           <motion.section 
             initial={{ opacity: 0, y: 50 }} 
             whileInView={{ opacity: 1, y: 0 }} 
@@ -129,7 +118,6 @@ function App() {
             <Services />
           </motion.section>
 
-          {/* Section 7: Projects */}
           <motion.section 
             initial={{ opacity: 0, y: 50 }} 
             whileInView={{ opacity: 1, y: 0 }} 
@@ -140,12 +128,10 @@ function App() {
             <Projects />
           </motion.section>
 
-          {/* Section 7.5: Terminal */}
           <section className="px-4 sm:px-6 lg:px-12 pb-16 sm:pb-24">
             <Terminal />
           </section>
 
-          {/* Section 8: Map */}
           <motion.div
             initial={{ opacity: 0, y: 50 }} 
             whileInView={{ opacity: 1, y: 0 }} 
@@ -155,7 +141,6 @@ function App() {
             <Map />
           </motion.div>
 
-          {/* Section 9: Testimonials */}
           <motion.section 
             initial={{ opacity: 0, y: 50 }} 
             whileInView={{ opacity: 1, y: 0 }} 
@@ -165,7 +150,6 @@ function App() {
             <Testimonials />
           </motion.section>
 
-          {/* Section 10: Contact — full-width, self-contained */}
           <motion.section 
             initial={{ opacity: 0, y: 50 }} 
             whileInView={{ opacity: 1, y: 0 }} 
