@@ -60,3 +60,22 @@ The site deploys automatically via Vercel on push to `main`.
 ## License
 
 MIT
+---
+
+## Product Ladder
+
+```
+GitHub (this repo)
+    ↓
+Portfolio → https://portfolio-iota-eight-90.vercel.app/
+    ↓
+Case Study → (coming soon)
+    ↓
+Live Demo → https://portfolio-iota-eight-90.vercel.app/
+    ↓
+Contact → https://github.com/Raphasha27
+```
+
+Part of the [Kirov Dynamics Technology](https://github.com/Raphasha27) ecosystem.
+
+**Built by Koketso Raphasha — Practical AI for Africa**
