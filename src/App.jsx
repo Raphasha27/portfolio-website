@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Helper for resilient asset paths (GitHub Pages / Vercel compatibility)
@@ -256,6 +256,23 @@ function App() {
     const [rating, setRating] = useState(0);
     const particleRef = useRef(null);
 
+    // Smooth scroll with navbar offset compensation
+    const scrollToSection = useCallback((id) => {
+        const el = document.getElementById(id);
+        if (!el) return;
+        const navHeight = 80; // navbar is 70px + 10px breathing room
+        const top = el.getBoundingClientRect().top + window.pageYOffset - navHeight;
+        window.scrollTo({ top, behavior: 'smooth' });
+    }, []);
+
+    // Clear any URL hash on load so the browser doesn't auto-scroll to a section
+    useEffect(() => {
+        if (window.location.hash) {
+            history.replaceState(null, '', window.location.pathname);
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+    }, []);
+
     // Typing Effect
     useEffect(() => {
         const titles = ['Full-Stack Developer', 'Tech Innovator', 'AI/ML Engineer', 'Cloud Architect', 'Problem Solver'];
@@ -406,15 +423,16 @@ function App() {
                         </div>
                     </div>
                     <ul className="nav-menu">
-                        <li><a href="#home" className="nav-link">Home</a></li>
-                        <li><a href="#about" className="nav-link">About</a></li>
-                        <li><a href="#experience" className="nav-link">Experience</a></li>
-                        <li><a href="#skills" className="nav-link">Skills</a></li>
-                        <li><a href="#projects" className="nav-link">Projects</a></li>
-                        <li><a href="#contact" className="nav-link">Contact</a></li>
+                        <li><a href="#home" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>Home</a></li>
+                        <li><a href="#about" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a></li>
+                        <li><a href="#experience" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('experience'); }}>Experience</a></li>
+                        <li><a href="#skills" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('skills'); }}>Skills</a></li>
+                        <li><a href="#projects" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>Projects</a></li>
+                        <li><a href="#contact" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }}>Contact</a></li>
                     </ul>
                     <div className="nav-actions">
-                        <a href="#contact" className="cta-nav-btn" style={{ marginRight: '20px', textDecoration: 'none', fontSize: '14px' }}>Hire Me</a>
+                        <button className="nav-link presence-nav-btn" onClick={() => scrollToSection('presence')} style={{ background: 'none', border: '1px solid rgba(16,185,129,0.4)', borderRadius: '8px', padding: '6px 14px', color: 'var(--green-primary)', fontSize: '14px', fontWeight: '600', cursor: 'pointer', marginRight: '12px', transition: 'all 0.3s' }}>Presence</button>
+                        <a href="#contact" className="cta-nav-btn" onClick={(e) => { e.preventDefault(); scrollToSection('contact'); }} style={{ marginRight: '20px', textDecoration: 'none', fontSize: '14px' }}>Hire Me</a>
                         <button className="mobile-menu-toggle" onClick={() => setIsMenuOpen(true)}>
                             <span></span><span></span><span></span>
                         </button>
@@ -438,11 +456,12 @@ function App() {
                             <button className="mobile-menu-close" onClick={() => setIsMenuOpen(false)}>✕</button>
                         </div>
                         <div className="mobile-nav-links">
-                            <a href="#about" className="mobile-link" onClick={() => setIsMenuOpen(false)}>01. About</a>
-                            <a href="#experience" className="mobile-link" onClick={() => setIsMenuOpen(false)}>02. Experience</a>
-                            <a href="#skills" className="mobile-link" onClick={() => setIsMenuOpen(false)}>03. Skills</a>
-                            <a href="#projects" className="mobile-link" onClick={() => setIsMenuOpen(false)}>04. Projects</a>
-                            <a href="#contact" className="mobile-link" onClick={() => setIsMenuOpen(false)}>05. Contact</a>
+                            <a href="#about" className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('about'); }}>01. About</a>
+                            <a href="#experience" className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('experience'); }}>02. Experience</a>
+                            <a href="#skills" className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('skills'); }}>03. Skills</a>
+                            <a href="#projects" className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('projects'); }}>04. Projects</a>
+                            <a href="#contact" className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('contact'); }}>05. Contact</a>
+                            <a href="#about" className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('presence'); }} style={{ color: 'var(--green-primary)' }}>06. Presence</a>
                         </div>
                     </motion.div>
                 )}
@@ -454,6 +473,7 @@ function App() {
                         <motion.div 
                             initial={{ opacity: 0, x: -50 }}
                             whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
                             className="hero-text"
                         >
                             <div className="hero-status-wrapper">
@@ -468,8 +488,8 @@ function App() {
                                 Determining Software Developer and AI Specialist. Building intelligent systems that bridge the gap between complex data and human intuition.
                             </p>
                             <div className="hero-buttons">
-                                <a href="#projects" className="btn-primary">View My Work</a>
-                                <a href="#experience" className="btn-secondary">Professional Background</a>
+                                <a href="#projects" className="btn-primary" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>View My Work</a>
+                                <a href="#experience" className="btn-secondary" onClick={(e) => { e.preventDefault(); scrollToSection('experience'); }}>Professional Background</a>
                             </div>
 
                             <motion.div 
@@ -529,6 +549,7 @@ function App() {
                         <motion.div 
                             initial={{ opacity: 0, scale: 0.8 }}
                             whileInView={{ opacity: 1, scale: 1 }}
+                            viewport={{ once: true }}
                             className="hero-image"
                         >
                             <div className="profile-wrapper">
@@ -545,7 +566,7 @@ function App() {
 
             <section id="about" className="about-section">
                 <div className="container">
-                    <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} className="section-header">
+                    <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="section-header">
                         <h2 className="section-title">About Me</h2>
                         <div className="title-underline"></div>
                         <p className="section-description">"Building intelligent systems that bridge the gap between complex data and human intuition."</p>
@@ -592,6 +613,82 @@ function App() {
                                 </div>
                             </motion.div>
                         ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* ── PRESENCE SECTION ── */}
+            <section id="presence" className="presence-section">
+                <div className="container">
+                    <motion.div
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 0.6 }}
+                        className="section-header"
+                    >
+                        <p className="section-eyebrow">— PRESENCE —</p>
+                        <h2 className="section-title">Global Reach, <span style={{ color: 'var(--green-primary)' }}>Local Roots</span></h2>
+                        <div className="title-underline" style={{ margin: '0 auto 20px' }}></div>
+                        <p className="section-description">Based in the heart of Gauteng, South Africa. Delivering high-performance solutions to the world.</p>
+                    </motion.div>
+
+                    <div className="presence-grid">
+                        {/* Map card */}
+                        <motion.div
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.1 }}
+                            className="presence-map-card"
+                        >
+                            <div className="presence-map-overlay">
+                                <img
+                                    src={getAssetPath('gauteng-map.png')}
+                                    alt="Gauteng, South Africa"
+                                    className="presence-map-img"
+                                    onError={(e) => {
+                                        e.target.src = 'https://images.unsplash.com/photo-1580060839134-75a5edca2e99?q=80&w=800&auto=format&fit=crop';
+                                    }}
+                                />
+                                <div className="presence-map-pin">
+                                    <span className="pin-dot"></span>
+                                    <span className="pin-label">Johannesburg, South Africa</span>
+                                </div>
+                            </div>
+                        </motion.div>
+
+                        {/* Stats column */}
+                        <motion.div
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="presence-stats"
+                        >
+                            {[
+                                { icon: '🌍', label: 'Remote Clients', value: 'Global' },
+                                { icon: '📍', label: 'Base Location', value: 'Gauteng, ZA' },
+                                { icon: '⏱️', label: 'Timezone', value: 'UTC +2 (SAST)' },
+                                { icon: '💬', label: 'Languages', value: 'English · Sepedi' },
+                                { icon: '🚀', label: 'Available for', value: 'Remote & On-site' },
+                            ].map((item, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: 0.1 * i + 0.3 }}
+                                    className="presence-stat-item"
+                                >
+                                    <span className="presence-stat-icon">{item.icon}</span>
+                                    <div>
+                                        <p className="presence-stat-label">{item.label}</p>
+                                        <p className="presence-stat-value">{item.value}</p>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </motion.div>
                     </div>
                 </div>
             </section>
