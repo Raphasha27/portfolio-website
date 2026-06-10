@@ -735,21 +735,17 @@ function App() {
                                 </motion.div>
                             ))}
 
-                            {/* Action Buttons */}
+                            {/* Scroll Down Button */}
                             <div className="presence-actions">
                                 <button
-                                    className="presence-btn-primary"
-                                    onClick={() => scrollToSection('presence')}
+                                    className="presence-scroll-btn"
+                                    onClick={() => scrollToSection('experience')}
+                                    aria-label="Scroll to Experience section"
                                 >
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-                                    View Global Presence
-                                </button>
-                                <button
-                                    className="presence-btn-secondary"
-                                    onClick={() => scrollToSection('contact')}
-                                >
-                                    Let's Build Together
-                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                                        <polyline points="6 9 12 15 18 9"/>
+                                    </svg>
+                                    Scroll Down
                                 </button>
                             </div>
                         </motion.div>

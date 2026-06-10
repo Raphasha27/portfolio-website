@@ -5554,28 +5554,8 @@ body {
     flex-wrap: wrap;
 }
 
-.presence-btn-primary {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: var(--green-primary);
-    color: #0a0f1a;
-    border: none;
-    border-radius: 10px;
-    padding: 12px 22px;
-    font-size: 14px;
-    font-weight: 700;
-    cursor: pointer;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
-}
-
-.presence-btn-primary:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
-    background: var(--green-light);
-}
-
-.presence-btn-secondary {
+/* ── Scroll Down button ── */
+.presence-scroll-btn {
     display: inline-flex;
     align-items: center;
     gap: 8px;
@@ -5583,18 +5563,29 @@ body {
     color: var(--green-primary);
     border: 1px solid rgba(16, 185, 129, 0.4);
     border-radius: 10px;
-    padding: 12px 22px;
+    padding: 12px 24px;
     font-size: 14px;
     font-weight: 700;
     cursor: pointer;
-    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease,
+                border-color 0.25s ease, background 0.25s ease;
+    margin-top: 8px;
 }
 
-.presence-btn-secondary:hover {
+.presence-scroll-btn svg {
+    animation: bounce-arrow 1.6s ease-in-out infinite;
+}
+
+@keyframes bounce-arrow {
+    0%, 100% { transform: translateY(0);   }
+    50%       { transform: translateY(4px); }
+}
+
+.presence-scroll-btn:hover {
     transform: translateY(-2px);
     border-color: var(--green-primary);
     background: rgba(16, 185, 129, 0.08);
-    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.1);
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.12);
 }
 
 /* Active nav highlight for Presence */
