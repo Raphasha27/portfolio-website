@@ -285,12 +285,14 @@ const Terminal = () => {
   const [cmdHistory, setCmdHistory] = useState([]);
   const [histIdx, setHistIdx]   = useState(-1);
   const [suggestion, setSuggestion] = useState('');
-  const bottomRef = useRef(null);
+  const containerRef = useRef(null);
   const inputRef  = useRef(null);
 
   // auto-scroll
   useEffect(() => {
-    bottomRef.current?.scrollIntoView({ behavior: 'smooth' });
+    if (containerRef.current) {
+      containerRef.current.scrollTop = containerRef.current.scrollHeight;
+    }
   }, [history]);
 
   // autocomplete suggestion
@@ -368,7 +370,7 @@ const Terminal = () => {
         </div>
 
         {/* ── Body ── */}
-        <div className="p-4 sm:p-5 font-mono text-xs sm:text-sm h-72 sm:h-80 overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#00ffcc]/20">
+        <div ref={containerRef} className="p-4 sm:p-5 font-mono text-xs sm:text-sm h-72 sm:h-80 overflow-y-auto scrollbar-thin scrollbar-track-transparent scrollbar-thumb-[#00ffcc]/20">
           <AnimatePresence initial={false}>
             {history.map((line, i) => (
               <motion.div
@@ -411,8 +413,6 @@ const Terminal = () => {
               />
             </div>
           </div>
-
-          <div ref={bottomRef} />
         </div>
 
         {/* ── Footer hint ── */}
