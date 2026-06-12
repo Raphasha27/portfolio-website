@@ -16,6 +16,7 @@ const Contact = lazy(() => import('./components/Contact'));
 const Testimonials = lazy(() => import('./components/Testimonials'));
 const ChatAssistant = lazy(() => import('./components/ChatAssistant'));
 const Services = lazy(() => import('./components/Services'));
+const HireMe = lazy(() => import('./components/HireMe'));
 const Map = lazy(() => import('./components/Map'));
 
 function App() {
@@ -138,6 +139,15 @@ function App() {
             transition={{ duration: 0.8 }}
           >
             <Testimonials />
+          </motion.section>
+
+          <motion.section 
+            initial={{ opacity: 0, y: 50 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true, margin: "-100px" }} 
+            transition={{ duration: 0.8 }}
+          >
+            <HireMe />
           </motion.section>
 
           <motion.section 
