@@ -407,7 +407,6 @@ const Terminal = () => {
                 className="absolute inset-0 w-full bg-transparent border-none outline-none text-transparent caret-transparent"
                 autoComplete="off"
                 spellCheck={false}
-                autoFocus
                 aria-label="Terminal input"
               />
             </div>

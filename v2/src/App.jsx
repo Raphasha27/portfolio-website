@@ -23,16 +23,6 @@ function App() {
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
-    const scrollToTop = () => {
-      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    };
-    scrollToTop();
-    requestAnimationFrame(scrollToTop);
-    const timer = setTimeout(scrollToTop, 100);
-    return () => {
-      cancelAnimationFrame(0);
-      clearTimeout(timer);
-    };
   }, []);
 
   const { scrollYProgress } = useScroll();
