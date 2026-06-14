@@ -1,185 +1,195 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Icon } from './Icons';
 
 const skillGroups = [
   {
-    title: "LANGUAGES",
-    id: "languages",
-    desc: "Core Dev Engine",
-    iconName: "code",
+    title: 'LANGUAGES', id: 'languages', desc: 'Core Dev Engine', iconName: 'code', color: '#00FF9C',
     skills: [
-      { name: "C & C++", pct: 85, icon: "terminal" },
-      { name: "Python", pct: 95, icon: "python" },
-      { name: "Java", pct: 88, icon: "gear" },
-      { name: "Go / Golang", pct: 82, icon: "signal" }
+      { name: 'Python',     pct: 95, icon: 'python'   },
+      { name: 'C & C++',    pct: 85, icon: 'terminal' },
+      { name: 'Java',       pct: 88, icon: 'gear'     },
+      { name: 'Go / Golang',pct: 82, icon: 'signal'   },
     ]
   },
   {
-    title: "FRONT END",
-    id: "frontend",
-    desc: "Immersive UI/UX",
-    iconName: "palette",
+    title: 'FRONT END', id: 'frontend', desc: 'Immersive UI/UX', iconName: 'palette', color: '#3b82f6',
     skills: [
-      { name: "React & Vite", pct: 95, icon: "react" },
-      { name: "Tailwind CSS", pct: 92, icon: "tailwindcss" },
-      { name: "Next.js", pct: 88, icon: "nextjs" },
-      { name: "Framer Motion", pct: 90, icon: "framer" }
+      { name: 'React & Vite',    pct: 95, icon: 'react'       },
+      { name: 'Tailwind CSS',    pct: 92, icon: 'tailwindcss'  },
+      { name: 'Next.js',         pct: 88, icon: 'nextjs'       },
+      { name: 'Framer Motion',   pct: 90, icon: 'framer'       },
     ]
   },
   {
-    title: "BACK END",
-    id: "backend",
-    desc: "Scalable Logic",
-    iconName: "gear",
+    title: 'BACK END', id: 'backend', desc: 'Scalable Logic', iconName: 'gear', color: '#06b6d4',
     skills: [
-      { name: "Node & Express", pct: 90, icon: "node" },
-      { name: "Python & FastAPI", pct: 92, icon: "python" },
-      { name: "LangChain (AI)", pct: 85, icon: "langchain" },
-      { name: "RESTful APIs", pct: 94, icon: "code" }
+      { name: 'Node & Express',  pct: 90, icon: 'node'     },
+      { name: 'Python & FastAPI',pct: 92, icon: 'python'   },
+      { name: 'LangChain (AI)',  pct: 85, icon: 'langchain'},
+      { name: 'RESTful APIs',    pct: 94, icon: 'code'     },
     ]
   },
   {
-    title: "DATABASE",
-    id: "database",
-    desc: "Data Persistence",
-    iconName: "cabinet",
+    title: 'DATABASE', id: 'database', desc: 'Data Persistence', iconName: 'cabinet', color: '#a855f7',
     skills: [
-      { name: "PostgreSQL", pct: 94, icon: "postgres" },
-      { name: "MongoDB", pct: 88, icon: "mongodb" },
-      { name: "Redis", pct: 85, icon: "redis" },
-      { name: "Vector DBs", pct: 82, icon: "database" }
+      { name: 'PostgreSQL', pct: 94, icon: 'postgres'  },
+      { name: 'MongoDB',    pct: 88, icon: 'mongodb'   },
+      { name: 'Redis',      pct: 85, icon: 'redis'     },
+      { name: 'Vector DBs', pct: 82, icon: 'database'  },
     ]
   },
   {
-    title: "DATA ANALYTICS",
-    id: "analytics",
-    desc: "Insight Engineering",
-    iconName: "activity",
+    title: 'DATA & AI', id: 'analytics', desc: 'Insight Engineering', iconName: 'activity', color: '#f59e0b',
     skills: [
-      { name: "Python / Pandas / NumPy", pct: 93, icon: "python" },
-      { name: "SQL & Databases", pct: 91, icon: "postgres" },
-      { name: "R & Statistics", pct: 78, icon: "code" },
-      { name: "Jupyter / Notebooks", pct: 88, icon: "code" }
+      { name: 'Pandas / NumPy',  pct: 93, icon: 'python'  },
+      { name: 'SQL & Databases', pct: 91, icon: 'postgres' },
+      { name: 'R & Statistics',  pct: 78, icon: 'code'     },
+      { name: 'Jupyter',         pct: 88, icon: 'code'     },
     ]
   },
   {
-    title: "CYBERSECURITY",
-    id: "cybersecurity",
-    desc: "Defense Architecture",
-    iconName: "shield",
+    title: 'CYBERSECURITY', id: 'cybersecurity', desc: 'Defense Architecture', iconName: 'shield', color: '#ef4444',
     skills: [
-      { name: "Python & Bash (Automation)", pct: 88, icon: "terminal" },
-      { name: "C / C++ (Exploit Analysis)", pct: 80, icon: "terminal" },
-      { name: "Web Security (JS/HTML)", pct: 85, icon: "code" },
-      { name: "Go & Rust (Cloud Sec)", pct: 75, icon: "signal" }
+      { name: 'Python & Bash',    pct: 88, icon: 'terminal' },
+      { name: 'C / C++ Exploit',  pct: 80, icon: 'terminal' },
+      { name: 'Web Security',     pct: 85, icon: 'code'     },
+      { name: 'Go & Rust (Cloud)',pct: 75, icon: 'signal'   },
     ]
-  }
+  },
 ];
 
+/* ── Circular progress ring ── */
+const Ring = ({ pct, color, size = 56, stroke = 5 }) => {
+  const r = (size - stroke) / 2;
+  const circ = 2 * Math.PI * r;
+  return (
+    <svg width={size} height={size} className="-rotate-90">
+      <circle cx={size / 2} cy={size / 2} r={r} fill="none" stroke="rgba(255,255,255,0.05)" strokeWidth={stroke} />
+      <motion.circle
+        cx={size / 2} cy={size / 2} r={r} fill="none"
+        stroke={color} strokeWidth={stroke}
+        strokeLinecap="round"
+        strokeDasharray={circ}
+        initial={{ strokeDashoffset: circ }}
+        whileInView={{ strokeDashoffset: circ * (1 - pct / 100) }}
+        viewport={{ once: true }}
+        transition={{ duration: 1.4, ease: 'easeOut', delay: 0.2 }}
+        style={{ filter: `drop-shadow(0 0 6px ${color}88)` }}
+      />
+    </svg>
+  );
+};
+
 const Skills = () => {
+  const [activeGroup, setActiveGroup] = useState(null);
+
   return (
     <div id="skills" className="relative py-6 sm:py-10">
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:justify-between sm:items-end mb-8 sm:mb-12 border-b border-white/5 pb-4 sm:pb-6 gap-3">
         <div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tighter uppercase">
-            Tech <span className="text-blue-400">Arsenals</span>
+            Tech <span className="text-[#00FF9C]">Arsenals</span>
           </h2>
-          <p className="text-[9px] sm:text-[10px] text-white/40 font-mono tracking-[0.2em] sm:tracking-[0.3em] uppercase mt-1 sm:mt-2">Core Technical Proficiency</p>
+          <p className="text-[9px] sm:text-[10px] text-white/40 font-mono tracking-[0.2em] sm:tracking-[0.3em] uppercase mt-1 sm:mt-2">
+            Core Technical Proficiency
+          </p>
         </div>
         <div className="flex items-center gap-4">
-          <div className="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" />
-            <span className="text-[9px] font-bold text-blue-400 uppercase tracking-widest">Operational: 100%</span>
+          <div className="px-3 py-1 rounded-full bg-[#00FF9C]/10 border border-[#00FF9C]/20 flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-[#00FF9C] animate-pulse" />
+            <span className="text-[9px] font-bold text-[#00FF9C] uppercase tracking-widest">Operational: 100%</span>
           </div>
         </div>
       </div>
 
-      {/* Skills Grid — 3×2 for 6 groups */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {/* Skills Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
         {skillGroups.map((group, i) => (
-          <motion.div 
+          <motion.div
             key={i}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="glass p-5 rounded-2xl border border-white/5 relative group hover:border-blue-500/30 transition-all duration-500 overflow-hidden"
+            transition={{ delay: i * 0.08 }}
+            onClick={() => setActiveGroup(activeGroup === i ? null : i)}
+            className="glass p-5 rounded-2xl border border-white/5 relative group cursor-pointer transition-all duration-500 overflow-hidden"
+            style={{ borderColor: activeGroup === i ? `${group.color}40` : undefined,
+                     boxShadow: activeGroup === i ? `0 0 25px ${group.color}18` : undefined }}
           >
-            {/* Background Glow Overlay */}
-            <div className="absolute top-0 right-0 w-24 h-24 bg-blue-500/5 blur-[40px] group-hover:bg-blue-500/10 transition-all pointer-events-none" />
-            
-            {/* Group Header */}
-            <div className="flex items-center gap-4 mb-8">
-              <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-cyan-400 group-hover:scale-110 transition-transform">
-                <Icon name={group.iconName} size={24} />
+            {/* BG Glow */}
+            <div className="absolute top-0 right-0 w-28 h-28 blur-[50px] opacity-10 pointer-events-none transition-all duration-500 group-hover:opacity-20"
+              style={{ background: group.color }} />
+
+            {/* Header */}
+            <div className="flex items-center gap-3 mb-5">
+              <div className="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center transition-transform group-hover:scale-110"
+                style={{ color: group.color }}>
+                <Icon name={group.iconName} size={22} />
               </div>
               <div>
                 <h3 className="text-[11px] font-bold tracking-[0.2em] text-white uppercase">{group.title}</h3>
-                <div className="text-[8px] text-blue-400/60 font-mono uppercase tracking-widest mt-0.5">{group.desc}</div>
+                <div className="text-[8px] font-mono uppercase tracking-widest mt-0.5" style={{ color: `${group.color}80` }}>{group.desc}</div>
+              </div>
+              <div className="ml-auto text-[10px] font-mono text-white/20 group-hover:text-white/40 transition-colors">
+                {group.skills.length} skills
               </div>
             </div>
 
-            {/* Skills List */}
-            <div className="space-y-6">
+            {/* Skill Rings Grid */}
+            <div className="grid grid-cols-2 gap-4">
               {group.skills.map((s, j) => (
-                <div key={j} className="space-y-2">
-                  <div className="flex justify-between items-center px-0.5">
-                    <div className="flex items-center gap-2">
-                      <div className="w-4 h-4 flex items-center justify-center opacity-40 group-hover:opacity-100 transition-opacity">
-                        <Icon name={s.icon} size={14} />
-                      </div>
-                      <span className="text-[10px] font-bold text-white/60 group-hover:text-white transition-colors uppercase tracking-wider">{s.name}</span>
+                <div key={j} className="flex items-center gap-3">
+                  <div className="relative shrink-0">
+                    <Ring pct={s.pct} color={group.color} size={48} stroke={4} />
+                    <div className="absolute inset-0 flex items-center justify-center text-[8px] font-bold font-mono" style={{ color: group.color }}>
+                      {s.pct}
                     </div>
-                    <span className="text-[9px] font-mono text-cyan-400/50 group-hover:text-cyan-400">{s.pct}%</span>
                   </div>
-                  
-                  {/* Progress Bar Container */}
-                  <div className="h-1 w-full bg-white/5 rounded-full relative overflow-hidden">
-                    <motion.div 
-                      initial={{ width: 0 }}
-                      whileInView={{ width: `${s.pct}%` }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 1.5, ease: "easeOut", delay: 0.5 + i * 0.1 + j * 0.05 }}
-                      className="h-full bg-gradient-to-r from-blue-600 to-cyan-400 relative"
-                    >
-                      {/* Animated Glow Tip */}
-                      <motion.div 
-                        animate={{ opacity: [0.4, 1, 0.4] }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                        className="absolute right-0 top-0 bottom-0 w-4 bg-cyan-200 blur-[4px] opacity-60"
+                  <div>
+                    <div className="text-[9px] font-bold text-white/70 uppercase tracking-wide leading-tight">{s.name}</div>
+                    <div className="w-full h-[2px] mt-1 rounded-full bg-white/5">
+                      <motion.div
+                        className="h-full rounded-full"
+                        style={{ background: group.color }}
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${s.pct}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1.2, ease: 'easeOut', delay: 0.4 + j * 0.1 }}
                       />
-                    </motion.div>
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Corner Accents */}
-            <div className="absolute top-2 left-2 w-2 h-2 border-t border-l border-white/10 group-hover:border-blue-500/40 transition-colors" />
-            <div className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-white/10 group-hover:border-blue-500/40 transition-colors" />
+            {/* Corner accents */}
+            <div className="absolute top-2 left-2 w-2 h-2 border-t border-l border-white/10 group-hover:border-current transition-colors" style={{ color: group.color }} />
+            <div className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-white/10 group-hover:border-current transition-colors" style={{ color: group.color }} />
           </motion.div>
         ))}
       </div>
 
-      {/* Values Footer Bar — scrollable on mobile */}
+      {/* Values Footer */}
       <div className="mt-8 sm:mt-12 glass rounded-2xl border border-white/5 relative overflow-hidden">
         <div className="absolute inset-x-0 top-1/2 h-[1px] bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-y-1/2" />
         <div className="flex items-center gap-6 sm:gap-8 lg:gap-16 p-4 sm:p-6 overflow-x-auto scrollbar-hide justify-start sm:justify-center">
           {[
-            { id: "scale",     label: "ETHICAL AI"    },
-            { id: "shield",    label: "SECURE ARCH"   },
-            { id: "bookopen",  label: "SYSTEM LOGIC"  },
-            { id: "refreshcw", label: "ADAPTIVE CI/CD"},
-            { id: "target",    label: "PRECISION OPS" },
-            { id: "check",     label: "QUALITY CORE"  }
+            { id: 'scale',     label: 'ETHICAL AI'     },
+            { id: 'shield',    label: 'SECURE ARCH'    },
+            { id: 'bookopen',  label: 'SYSTEM LOGIC'   },
+            { id: 'refreshcw', label: 'ADAPTIVE CI/CD' },
+            { id: 'target',    label: 'PRECISION OPS'  },
+            { id: 'check',     label: 'QUALITY CORE'   },
           ].map((item, i) => (
             <div key={i} className="flex flex-col items-center gap-2 sm:gap-3 group cursor-help relative z-10 shrink-0">
-              <div className="text-blue-400/40 group-hover:text-cyan-400 group-hover:scale-110 transition-all duration-500">
+              <div className="text-[#00FF9C]/30 group-hover:text-[#00FF9C] group-hover:scale-110 transition-all duration-500">
                 <Icon name={item.id} size={20} />
               </div>
-              <span className="text-[7px] sm:text-[8px] font-mono text-white/20 tracking-[0.3em] sm:tracking-[0.4em] uppercase group-hover:text-cyan-400 transition-colors whitespace-nowrap">{item.label}</span>
+              <span className="text-[7px] sm:text-[8px] font-mono text-white/20 tracking-[0.3em] sm:tracking-[0.4em] uppercase group-hover:text-[#00FF9C] transition-colors whitespace-nowrap">
+                {item.label}
+              </span>
             </div>
           ))}
         </div>
