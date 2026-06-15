@@ -5,28 +5,28 @@ import { Icon } from './Icons';
 
 const projects = [
   {
-    title: "Sovereign-AI-Nexus",
-    tagline: "Global Agentic Infra",
-    desc: "Decentralized multi-agent infrastructure for autonomous professional branding and automated repository hardening. The flagship of the Kirov ecosystem.",
-    tech: ["python", "langchain", "postgresql", "docker"],
+    title: "DevForge AI",
+    tagline: "Autonomous Workflow Engine",
+    desc: "AI-powered development workflow engine with automated scaffolding, static analysis, and self-healing infrastructure orchestration.",
+    tech: ["python", "fastapi", "docker", "react"],
     icon: "globe",
-    role: "Agentic Infra Dev",
+    role: "AI Systems Dev",
     color: "from-[#00FF9C]/20 to-emerald-400/20",
     bgImage: "project-os.png",
     featured: true,
     latest: true,
-    link: "https://github.com/Raphasha27/Sovereign-AI-Nexus-v2"
+    link: "https://github.com/Raphasha27/devforge-ai"
   },
   {
-    title: "FlowSentinel",
-    tagline: "Traffic Governance · 2.4M Req/s",
-    desc: "Enterprise traffic governance engine with distributed rate-limiting, sub-millisecond overhead, and Fail-Open resilience.",
-    tech: ["csharp", "redis", "activity", "docker"],
+    title: "AI Job Market Intelligence",
+    tagline: "RAG Analytics · 10K+ Jobs",
+    desc: "Premium analytics platform utilizing RAG and Vector Embeddings for real-time market trends, salary insights, and intelligent candidate matching.",
+    tech: ["python", "fastapi", "react", "docker"],
     icon: "zap",
-    role: "Traffic Architect",
+    role: "AI Engineer",
     color: "from-emerald-500/20 to-teal-500/20",
     bgImage: "project-finance.png",
-    link: "https://github.com/Raphasha27/FlowSentinel"
+    link: "https://github.com/Raphasha27/ai-job-market-intelligence"
   },
   {
     title: "CyberShield Modern",
@@ -79,26 +79,26 @@ const projects = [
     link: "https://github.com/Raphasha27/Github-Harden"
   },
   {
-    title: "SeatLock",
-    tagline: "Reservations · Zero Downtime",
-    desc: "High-reliability seat reservation system with zero-downtime performance guarantees, built for enterprise event management.",
-    tech: ["csharp", "node", "redis", "docker"],
+    title: "Autonomous Dev Factory",
+    tagline: "Multi-Agent Pipeline · CI/CD",
+    desc: "Autonomous development factory with multi-agent orchestration, continuous integration pipelines, and self-healing deployment infrastructure.",
+    tech: ["python", "docker", "github", "fastapi"],
     icon: "ticket",
-    role: "Backend specialist",
+    role: "Platform Engineer",
     color: "from-red-500/20 to-[#00FF9C]/20",
     bgImage: "project-logistics.png",
-    link: "https://github.com/Raphasha27/SeatLock"
+    link: "https://github.com/Raphasha27/autonomous-dev-factory-v7"
   },
   {
-    title: "EduStream-Pro-ICT",
-    tagline: "EdTech · AI Curriculum Engine",
-    desc: "AI-augmented educational platform deploying adaptive curriculum delivery for ICT learners across distributed environments.",
-    tech: ["react", "python", "fastapi", "aws"],
+    title: "Gauteng Transport Dashboard",
+    tagline: "Geospatial · ML Analytics",
+    desc: "Interactive geospatial dashboard analyzing Gauteng public transport data with predictive ML models for route optimization and delay forecasting.",
+    tech: ["python", "streamlit", "docker", "fastapi"],
     icon: "graduationCap",
-    role: "EdTech AI Dev",
+    role: "Data Engineer",
     color: "from-emerald-500/20 to-cyan-500/20",
     bgImage: "project-edutech.png",
-    link: "https://github.com/Raphasha27/EduStream-Pro-ICT"
+    link: "https://github.com/Raphasha27/gauteng-transport-dashboard"
   },
   {
     title: "Titanic ML (Kaggle)",

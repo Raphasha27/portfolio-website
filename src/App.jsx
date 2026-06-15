@@ -1,5 +1,7 @@
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+/* eslint-enable no-unused-vars */
 
 // Helper for resilient asset paths (GitHub Pages / Vercel compatibility)
 const getAssetPath = (path) => {
@@ -10,32 +12,46 @@ const getAssetPath = (path) => {
 
 const projectsData = [
     {
-        name: 'FlowSentinel',
-        description: 'Enterprise-grade traffic governance engine with distributed rate-limiting, sub-millisecond overhead, and Fail-Open resilience.',
+        name: 'DevForge AI',
+        description: 'Autonomous development workflow engine with AI-powered scaffolding, static analysis, and self-healing infrastructure orchestration.',
         image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop',
-        tags: ['.NET 8', 'Redis Lua', 'OpenTelemetry', 'Docker'],
-        github: 'https://github.com/Raphasha27/FlowSentinel'
+        tags: ['.NET 8', 'FastAPI', 'OpenTelemetry', 'Docker'],
+        github: 'https://github.com/Raphasha27/devforge-ai'
+    },
+    {
+        name: 'AI Agent Framework',
+        description: 'Autonomous agentic framework for cross-repository orchestration and self-improving infrastructure management with multi-service architecture.',
+        image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop',
+        tags: ['Python', 'FastAPI', 'Node.js', 'C (libuv)'],
+        github: 'https://github.com/Raphasha27/AI-Agent'
     },
     {
         name: 'AI Job Market Intelligence',
         description: 'Premium analytics platform utilizing RAG and Vector Embeddings for real-time market trends and candidate matching.',
         image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop',
         tags: ['React', 'FastAPI', 'RAG', 'Vector Search'],
-        github: 'https://github.com/Raphasha27/AI-Job-Intelligence'
+        github: 'https://github.com/Raphasha27/ai-job-market-intelligence'
     },
     {
-        name: 'CyberShield Modern',
-        description: 'Next-gen SOC dashboard handling thousands of security events per second via WebSockets and WebGL visualizations.',
+        name: 'Kirov Security Core',
+        description: 'Unified authentication and authorization framework with 18-layer security, SSO, and role-based access control for enterprise microservices.',
+        image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2070&auto=format&fit=crop',
+        tags: ['Go', 'Rust', 'JWT', 'RBAC'],
+        github: 'https://github.com/Raphasha27/kirov-security-core'
+    },
+    {
+        name: 'CyberShield SOC',
+        description: 'Next-gen SOC dashboard handling thousands of security events per second via WebSockets, WebGL visualizations, and heuristic threat detection.',
         image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop',
         tags: ['Angular', 'D3.js', 'WebSockets', 'CyberSec'],
-        github: 'https://github.com/Raphasha27/CyberShield-Modern'
+        github: 'https://github.com/Raphasha27/cybershield_soc'
     },
     {
-        name: 'Sovereign AI Nexus',
-        description: 'Decentralized AI computing ecosystem with P2P orchestration and Rust-optimized kernel performance.',
+        name: 'InsightForge AI',
+        description: 'Advanced analytics engine with predictive modeling, trend forecasting, and self-improving intelligence pipelines for enterprise decision-making.',
         image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop',
         tags: ['Rust', 'Python', 'gRPC', 'P2P'],
-        github: 'https://github.com/Raphasha27/Sovereign-AI-Nexus'
+        github: 'https://github.com/Raphasha27/InsightForge-AI'
     },
     {
         name: 'NoShowIQ',
@@ -43,6 +59,20 @@ const projectsData = [
         image: 'https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=2070&auto=format&fit=crop',
         tags: ['ML', 'Healthcare', 'Predictive', 'Pandas'],
         github: 'https://github.com/Raphasha27/NoShowIQ'
+    },
+    {
+        name: 'Go RAG System',
+        description: 'Production-ready Retrieval-Augmented Generation system built in Go, featuring vector embeddings, semantic search, and LLM integration.',
+        image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop',
+        tags: ['Go', 'RAG', 'Vector DB', 'LLM'],
+        github: 'https://github.com/Raphasha27/Go-RAG-System'
+    },
+    {
+        name: 'Aura Weather AI',
+        description: 'Hyper-visual weather forecasting application with climate impact risk assessments and atmospheric pattern analysis using heuristic AI.',
+        image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?q=80&w=2070&auto=format&fit=crop',
+        tags: ['Vite', 'Framer Motion', 'AI', 'Weather'],
+        github: 'https://github.com/Raphasha27/aura-weather-ai'
     },
     {
         name: 'Titanic ML (Kaggle)',
@@ -57,6 +87,13 @@ const projectsData = [
         image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2070&auto=format&fit=crop',
         tags: ['Python', 'PySpark', 'PostgreSQL', 'ETL'],
         github: 'https://github.com/Raphasha27/data-engineering-kaggle'
+    },
+    {
+        name: 'Afro Fashion Mobile',
+        description: 'Premium mobile fashion hub for the African digital economy, featuring high-fidelity asset showcasing and seamless e-commerce integration.',
+        image: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=2074&auto=format&fit=crop',
+        tags: ['Flutter', 'Dart', 'E-commerce', 'Mobile'],
+        github: 'https://github.com/Raphasha27/afro_fashion_mobile'
     }
 ];
 
@@ -189,6 +226,60 @@ const testimonialsData = [
         role: 'Tech Lead @ InnovateX',
         content: 'One of the most diligent and proactive associates we\'ve had. His AI proficiency and problem-solving skills are top-tier.',
         avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&h=150&auto=format&fit=crop'
+    }
+];
+
+const servicesData = [
+    {
+        title: 'AI & Machine Learning',
+        description: 'End-to-end ML pipeline design, LLM fine-tuning, RAG systems, computer vision, and predictive modeling for enterprise applications.',
+        icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 1 0 10 10h-10V2z"/><path d="M12 12 2 12a10 10 0 0 0 10 10V12z"/><path d="M12 2v10l10 0A10 10 0 0 0 12 2z"/></svg>`,
+        features: ['LLM Integration', 'RAG Pipelines', 'Computer Vision', 'Predictive Analytics', 'MLOps']
+    },
+    {
+        title: 'Full-Stack Development',
+        description: 'Modern web and mobile applications built with React, Node.js, Flutter, and .NET — designed for scale, performance, and maintainability.',
+        icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>`,
+        features: ['React / Next.js', 'Flutter / Dart', '.NET 8 / C#', 'REST & gRPC APIs', 'Database Design']
+    },
+    {
+        title: 'Cloud & DevOps',
+        description: 'Infrastructure automation, CI/CD pipelines, container orchestration, and observability stacks for production-grade systems.',
+        icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 22 8.5 22 15.5 12 22 2 15.5 2 8.5"/><line x1="12" y1="22" x2="12" y2="15.5"/><polyline points="22 8.5 12 15.5 2 8.5"/></svg>`,
+        features: ['Docker / K8s', 'AWS / Azure', 'GitHub Actions', 'Prometheus / Grafana', 'Terraform']
+    },
+    {
+        title: 'Data Engineering & Analytics',
+        description: 'Scalable data pipelines, ETL processes, business intelligence dashboards, and Kaggle competitions with top-tier scores.',
+        icon: `<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>`,
+        features: ['PySpark / ETL', 'PostgreSQL', 'BI Dashboards', 'Kaggle (78.5%)', 'Real-time Analytics']
+    }
+];
+
+const blogPostsData = [
+    {
+        title: 'Building Autonomous AI Agents with LangChain',
+        excerpt: 'A deep dive into creating multi-agent systems that collaborate, learn, and execute complex workflows autonomously.',
+        date: 'June 2026',
+        readTime: '8 min read',
+        tags: ['AI', 'LangChain', 'Agents'],
+        url: 'https://dev.to/Raphasha27'
+    },
+    {
+        title: 'Mastering .NET 8: High-Performance API Design',
+        excerpt: 'Best practices for building resilient, scalable APIs with .NET 8, including rate limiting, caching, and OpenTelemetry.',
+        date: 'May 2026',
+        readTime: '12 min read',
+        tags: ['.NET', 'C#', 'API Design'],
+        url: 'https://dev.to/Raphasha27'
+    },
+    {
+        title: 'From Data to Decisions: ML Pipeline Engineering',
+        excerpt: 'How to design robust ML pipelines that handle real-world data chaos and deliver production-ready predictions.',
+        date: 'April 2026',
+        readTime: '10 min read',
+        tags: ['ML', 'Python', 'Data Engineering'],
+        url: 'https://dev.to/Raphasha27'
     }
 ];
 
@@ -425,9 +516,11 @@ function App() {
                     <ul className="nav-menu">
                         <li><a href="#home"       className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}>Home</a></li>
                         <li><a href="#about"      className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('about'); }}>About</a></li>
+                        <li><a href="#services"   className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('services'); }}>Services</a></li>
                         <li><a href="#experience" className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('experience'); }}>Experience</a></li>
                         <li><a href="#skills"     className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('skills'); }}>Skills</a></li>
                         <li><a href="#projects"   className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>Projects</a></li>
+                        <li><a href="#blog"       className="nav-link" onClick={(e) => { e.preventDefault(); scrollToSection('blog'); }}>Blog</a></li>
                         <li><a href="#presence"   className="nav-link presence-nav-item" onClick={(e) => { e.preventDefault(); scrollToSection('presence'); }}>Presence</a></li>
                     </ul>
                     <div className="nav-actions">
@@ -457,10 +550,12 @@ function App() {
                         <div className="mobile-nav-links">
                             <a href="#home"       className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('home'); }}>01. Home</a>
                             <a href="#about"      className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('about'); }}>02. About</a>
-                            <a href="#experience" className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('experience'); }}>03. Experience</a>
-                            <a href="#skills"     className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('skills'); }}>04. Skills</a>
-                            <a href="#projects"   className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('projects'); }}>05. Projects</a>
-                            <a href="#presence"   className="mobile-link presence-mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('presence'); }}>06. Presence</a>
+                            <a href="#services"   className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('services'); }}>03. Services</a>
+                            <a href="#experience" className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('experience'); }}>04. Experience</a>
+                            <a href="#skills"     className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('skills'); }}>05. Skills</a>
+                            <a href="#projects"   className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('projects'); }}>06. Projects</a>
+                            <a href="#blog"       className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('blog'); }}>07. Blog</a>
+                            <a href="#presence"   className="mobile-link presence-mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('presence'); }}>08. Presence</a>
                             <a href="#contact"    className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('contact'); }}>07. Hire Me</a>
                         </div>
                     </motion.div>
@@ -490,6 +585,10 @@ function App() {
                             <div className="hero-buttons">
                                 <a href="#projects" className="btn-primary" onClick={(e) => { e.preventDefault(); scrollToSection('projects'); }}>View My Work</a>
                                 <a href="#experience" className="btn-secondary" onClick={(e) => { e.preventDefault(); scrollToSection('experience'); }}>Professional Background</a>
+                                <a href="/koketso_raphasha_cv.pdf" download className="btn-outline" style={{ padding: '14px 32px', background: 'transparent', color: 'var(--text-primary)', border: '2px solid var(--green-primary)', borderRadius: '8px', fontWeight: '600', fontSize: '14px', textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: '8px', cursor: 'pointer', transition: 'var(--transition)' }}>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                    Resume
+                                </a>
                             </div>
 
                             <motion.div 
@@ -885,6 +984,92 @@ function App() {
                 </div>
             </section>
 
+            {/* ── SERVICES SECTION ── */}
+            <section id="services" className="services-section">
+                <div className="container">
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        className="section-header"
+                    >
+                        <h2 className="section-title">What I <span style={{ color: 'var(--green-primary)' }}>Deliver</span></h2>
+                        <div className="title-underline"></div>
+                        <p className="section-description">End-to-end solutions engineered for performance, scale, and impact.</p>
+                    </motion.div>
+
+                    <motion.div 
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        className="services-grid"
+                    >
+                        {servicesData.map((service, idx) => (
+                            <motion.div key={idx} variants={itemVariants} className="service-card">
+                                <div className="service-icon" dangerouslySetInnerHTML={{ __html: service.icon }}></div>
+                                <h3>{service.title}</h3>
+                                <p>{service.description}</p>
+                                <ul className="service-features">
+                                    {service.features.map((f, i) => (
+                                        <li key={i}>{f}</li>
+                                    ))}
+                                </ul>
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                </div>
+            </section>
+
+            {/* ── BLOG / ARTICLES SECTION ── */}
+            <section id="blog" className="blog-section">
+                <div className="container">
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        className="section-header"
+                    >
+                        <h2 className="section-title">Latest <span style={{ color: 'var(--green-primary)' }}>Articles</span></h2>
+                        <div className="title-underline"></div>
+                        <p className="section-description">Thoughts on AI, engineering, and building for the future.</p>
+                    </motion.div>
+
+                    <motion.div 
+                        variants={containerVariants}
+                        initial="hidden"
+                        whileInView="visible"
+                        className="blog-grid"
+                    >
+                        {blogPostsData.map((post, idx) => (
+                            <motion.a
+                                key={idx}
+                                variants={itemVariants}
+                                href={post.url}
+                                target="_blank"
+                                rel="noreferrer"
+                                className="blog-card"
+                            >
+                                <div className="blog-meta">
+                                    <span className="blog-date">{post.date}</span>
+                                    <span className="blog-read-time">{post.readTime}</span>
+                                </div>
+                                <h3 className="blog-title">{post.title}</h3>
+                                <p className="blog-excerpt">{post.excerpt}</p>
+                                <div className="blog-tags">
+                                    {post.tags.map((tag, i) => (
+                                        <span key={i} className="blog-tag">{tag}</span>
+                                    ))}
+                                </div>
+                            </motion.a>
+                        ))}
+                    </motion.div>
+
+                    <div className="view-all-projects">
+                        <a href="https://dev.to/Raphasha27" target="_blank" rel="noreferrer" className="btn-primary">
+                            Read All Articles &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
             <section id="projects" className="projects-section">
                 <div className="container">
                     <div className="section-header">
@@ -1034,6 +1219,96 @@ function App() {
                             </motion.div>
                         ))}
                     </div>
+                </div>
+            </section>
+
+            {/* ── GITHUB STATS SECTION ── */}
+            <section id="github" className="github-section">
+                <div className="container">
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        className="section-header"
+                    >
+                        <h2 className="section-title">GitHub <span style={{ color: 'var(--green-primary)' }}>Activity</span></h2>
+                        <div className="title-underline"></div>
+                        <p className="section-description">Open source contributions, commits, and community impact.</p>
+                    </motion.div>
+
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        className="github-stats-grid"
+                    >
+                        <div className="github-stat-card">
+                            <div className="github-stat-icon">📦</div>
+                            <div className="github-stat-value">60+</div>
+                            <div className="github-stat-label">Repositories</div>
+                        </div>
+                        <div className="github-stat-card">
+                            <div className="github-stat-icon">⭐</div>
+                            <div className="github-stat-value">100+</div>
+                            <div className="github-stat-label">Stars Earned</div>
+                        </div>
+                        <div className="github-stat-card">
+                            <div className="github-stat-icon">🍴</div>
+                            <div className="github-stat-value">15+</div>
+                            <div className="github-stat-label">Forks</div>
+                        </div>
+                        <div className="github-stat-card">
+                            <div className="github-stat-icon">🔀</div>
+                            <div className="github-stat-value">500+</div>
+                            <div className="github-stat-label">Contributions</div>
+                        </div>
+                    </motion.div>
+
+                    <motion.div 
+                        initial={{ opacity: 0 }}
+                        whileInView={{ opacity: 1 }}
+                        className="github-contribution-wrapper"
+                    >
+                        <img 
+                            src="https://ghchart.rshah.org/Raphasha27" 
+                            alt="Raphasha27's GitHub Contribution Chart"
+                            className="github-contribution-img"
+                            onError={(e) => {
+                                e.target.style.display = 'none';
+                            }}
+                        />
+                    </motion.div>
+
+                    <div className="github-links">
+                        <a href="https://github.com/Raphasha27" target="_blank" rel="noreferrer" className="btn-primary">
+                            Explore All Repositories &rarr;
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            {/* ── DOWNLOAD CV SECTION ── */}
+            <section id="cv" className="cv-section">
+                <div className="container">
+                    <motion.div 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        className="cv-card"
+                    >
+                        <h2 className="cv-title">Want the Full Picture?</h2>
+                        <p className="cv-description">
+                            Download my comprehensive CV detailing my professional experience, 
+                            technical skills, academic achievements, and project portfolio.
+                        </p>
+                        <div className="cv-buttons">
+                            <a href="/koketso_raphasha_cv.pdf" download className="cv-btn cv-btn-primary">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                                Download CV (PDF)
+                            </a>
+                            <a href="https://za.linkedin.com/in/koketso-raphasha-517954387" target="_blank" rel="noreferrer" className="cv-btn cv-btn-secondary">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                                View LinkedIn
+                            </a>
+                        </div>
+                    </motion.div>
                 </div>
             </section>
 
