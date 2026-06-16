@@ -64,6 +64,18 @@ The site deploys automatically via Vercel on push to `main`.
 MIT
 ---
 
+## Cybersecurity Portfolio
+
+| Project | Description |
+|---------|-------------|
+| [Network Port Scanner](https://github.com/Raphasha27/Network-Port-Scanner) | Multi-threaded scanning with banner grabbing |
+| [Password Analyzer](https://github.com/Raphasha27/Password-Analyzer) | Entropy calculation and NIST scoring |
+| [Password Hasher](https://github.com/Raphasha27/Password-Hasher) | bcrypt, Argon2, PBKDF2 comparison |
+| [Suspicious URL Checker](https://github.com/Raphasha27/Suspicious-URL-Checker) | Phishing URL and homograph detection |
+| [Phishing Awareness Game](https://github.com/Raphasha27/Phishing-Awareness-Game) | Gamified security awareness training |
+| [DDoS Detection Simulator](https://github.com/Raphasha27/DDOS-Detection-Simulator) | Traffic simulation and alert generation |
+| [Insider Threat Detector](https://github.com/Raphasha27/Insider-Threat-Detector) | Behavioral analytics for threat simulation |
+
 ## Product Ladder
 
 ```
@@ -81,7 +93,3 @@ Contact → https://github.com/Raphasha27
 Part of the [Kirov Dynamics](https://github.com/Raphasha27/kirov-dynamics) ecosystem.
 
 **Built by Koketso Raphasha — Practical AI for Africa**
-
----
-
-> ✨ Portfolio features enhanced & SEO-optimized by [opencode](https://opencode.ai) — AI-assisted software engineering.
