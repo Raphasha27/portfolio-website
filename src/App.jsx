@@ -311,7 +311,9 @@ function CV() {
             PostgreSQL, Kafka, Docker, JWT/BCrypt, System Design.
           </p>
           <div className="cv-download">
-            <a href="#" className="btn btn-primary">Download CV (PDF) →</a>
+            <a href="/cv.md" className="btn btn-primary" download>Download CV (Markdown) →</a>
+            <a href="/job-plan.md" className="btn btn-outline" download>Job Plan</a>
+            <a href="/outreach-scripts.md" className="btn btn-outline" download>Outreach Scripts</a>
             <a href="https://github.com/Raphasha27" className="btn btn-outline" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
           </div>
         </div>
