@@ -1,6 +1,6 @@
 # Koketso Raphasha
 
-**Java Backend Developer** | Fintech Systems | Spring Boot | Microservices
+**Java Backend Developer** | Spring Boot | Microservices | Fintech Systems | API Development
 
 📍 South Africa · ✉ koketso@kirovdynamics.com  
 🔗 [github.com/Raphasha27](https://github.com/Raphasha27) · [linkedin.com/in/koketso-raphasha](https://za.linkedin.com/in/koketso-raphasha-517954387)
@@ -9,7 +9,7 @@
 
 ## Summary
 
-Backend developer focused on building distributed fintech systems using Java and Spring Boot with microservices architecture, secure authentication, and event-driven design.
+Backend developer focused on designing and implementing scalable fintech-grade systems using Java, Spring Boot, and microservices architecture. Experienced in building secure transaction systems, authentication services, and distributed backend applications with a focus on system design, reliability, and scalability.
 
 ---
 
@@ -17,39 +17,37 @@ Backend developer focused on building distributed fintech systems using Java and
 
 | Category | Technologies |
 |----------|-------------|
-| **Languages** | Java 21, Python, JavaScript |
-| **Frameworks** | Spring Boot 3.4, Spring Security, Spring Data JPA |
-| **APIs & Design** | REST APIs, Microservices, API Gateway, Event-Driven Architecture |
-| **Databases** | PostgreSQL, H2, SQL |
-| **Security** | JWT, BCrypt, RBAC, OAuth2 |
-| **DevOps** | Docker, Docker Compose, Maven, Git, GitHub Actions |
+| **Backend** | Java, Spring Boot, REST APIs, Microservices, API Gateway |
+| **Security** | Spring Security, JWT, OAuth2, BCrypt, RBAC |
+| **Databases** | PostgreSQL, SQL, H2 |
+| **DevOps** | Docker, Docker Compose, Git, GitHub Actions, Maven |
 | **Event Streaming** | Apache Kafka |
+| **System Design** | Distributed Systems, Event-Driven Architecture, Saga Pattern |
 
 ---
 
-## Featured Project
+## Flagship Project
 
 ### SmartBank Enterprise Platform | Java, Spring Boot, Kafka, PostgreSQL, Docker
 
-*Distributed fintech backend simulating real banking infrastructure*
+*Designed and developed a fintech-style backend system simulating banking infrastructure using Java and Spring Boot with microservices architecture for account management, secure transactions, fraud detection, and audit logging.*
 
-- Built a distributed banking backend system with 7 microservices (Auth, Accounts, Transactions, Loans, Audit, Notifications, API Gateway)
-- Implemented secure JWT authentication with BCrypt password hashing and role-based access control
-- Designed transaction processing engine with optimistic locking, idempotency keys, and saga-based reconciler for consistency
-- Developed audit logging and fraud detection components consuming events via Apache Kafka
-- Containerized the full system using Docker Compose for one-command local deployment
+- Secure transaction processing with ACID principles and optimistic locking
+- JWT-based authentication with BCrypt password hashing and role-based access control
+- Microservices architecture (7 services) with API Gateway and service isolation
+- Event-driven communication via Apache Kafka for audit, fraud, and ledger services
+- Kafka-driven saga reconciler for distributed failure recovery
+- Idempotency keys preventing duplicate transactions under retry
+- Docker-based deployment with cloud-ready design (stateless services, env-based config)
 
 **GitHub:** https://github.com/Raphasha27/smartbank-enterprise-platform
 
 ---
 
-## Other Projects
+## Additional Projects
 
-**14 Java Banking Systems** — securebank-360, fraud-detection-system, secure-auth-service, banking-api-gateway, loan-management-system, kyc-platform, aml-monitoring-platform, enterprise-iam-platform, payment-gateway, real-time-payments-platform, core-banking-system, regulatory-reporting-platform
-
-**14 Cybersecurity Platforms** — sentinel-ai-platform, mini-siem-platform, security-admin-portal, incident-response-platform, vulnerability-management-platform, security-posture-dashboard, patch-management-tracker, endpoint-inventory-system, security-asset-register, threat-modeling-studio, ai-log-analyzer, ai-vulnerability-assistant, ai-security-chatbot, security-project-template
-
-**Security SaaS** — kirov-security-api-suite (FastAPI password analyzer, URL checker, hash service, email classifier)
+- **Kirov Security API Suite** — Python/FastAPI password analyzer, URL checker, hash service, email classifier
+- **Portfolio Website** — Vite/React site showcasing all projects with CV and architecture docs
 
 ---
 
