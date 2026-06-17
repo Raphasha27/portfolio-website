@@ -3,7 +3,7 @@
 **Java Backend Developer** | Spring Boot | Microservices | Fintech Systems | API Development
 
 📍 South Africa · ✉ koketso@kirovdynamics.com  
-🔗 [github.com/Raphasha27](https://github.com/Raphasha27) · [linkedin.com/in/koketso-raphasha](https://za.linkedin.com/in/koketso-raphasha-517954387)
+🔗 [github.com/Raphasha27](https://github.com/Raphasha27) · [linkedin.com/in/koketso-raphasha](https://za.linkedin.com/in/koketso-raphasha-517954387) · [gitpay.app/Raphasha27](https://gitpay.app/Raphasha27)
 
 ---
 

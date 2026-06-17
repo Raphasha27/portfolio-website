@@ -363,6 +363,9 @@ function Contact() {
           <a href="mailto:koketso@kirovdynamics.com" className="contact-link">
             <span className="contact-link-icon">✉</span> koketso@kirovdynamics.com
           </a>
+          <a href='https://gitpay.app/Raphasha27' className='contact-link' target='_blank' rel='noopener noreferrer'>
+            <span className='contact-link-icon'>💳</span> GitPay /Support
+          </a>
         </div>
       </div>
     </section>
