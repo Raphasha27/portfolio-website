@@ -182,3 +182,93 @@
     border-right-color: var(--border);
   }
 }
+
+/* Architecture Diagram */
+.arch-diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 20px;
+  background: var(--bg-secondary);
+  border-radius: 12px;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.arch-layer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.arch-box {
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: 0.3px;
+  text-align: center;
+}
+
+.arch-client { background: #1e3a5f; color: #e3f2fd; }
+.arch-gateway { background: #1b5e20; color: #c8e6c9; padding: 10px 24px; font-size: 13px; }
+.arch-auth { background: #4a148c; color: #f3e5f5; }
+.arch-acc { background: #1b5e20; color: #e8f5e9; }
+.arch-tx { background: #0d47a1; color: #e3f2fd; }
+.arch-loan { background: #e65100; color: #fff3e0; }
+.arch-audit { background: #880e4f; color: #fce4ec; }
+.arch-notif { background: #004d40; color: #e0f2f1; }
+.arch-ledger { background: #33691e; color: #f1f8e9; }
+
+.arch-arrow {
+  color: var(--text-secondary);
+  font-size: 11px;
+  letter-spacing: 2px;
+}
+
+.arch-db {
+  padding: 6px 16px;
+  background: var(--bg-primary);
+  border: 2px dashed var(--accent);
+  border-radius: 8px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.arch-divider {
+  color: var(--text-tertiary);
+  font-size: 11px;
+  letter-spacing: 4px;
+  padding: 4px 0;
+}
+
+.arch-kafka-item {
+  padding: 4px 12px;
+  background: rgba(255, 152, 0, 0.15);
+  border: 1px solid rgba(255, 152, 0, 0.3);
+  border-radius: 20px;
+  color: #ffb74d;
+  font-size: 10px;
+  font-weight: 600;
+}
+
+.arch-badge-row {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.arch-badge {
+  padding: 3px 10px;
+  background: var(--accent-bg);
+  border-radius: 12px;
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--accent);
+}

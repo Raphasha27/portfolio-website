@@ -108,18 +108,18 @@ function Hero() {
           <a href="#featured" className="btn btn-primary">View Featured Project</a>
           <a href="#projects" className="btn btn-outline">All Projects</a>
         </div>
-        <div className="hero-stats">
+          <div className="hero-stats">
           <div>
-            <div className="hero-stat-value gradient-text">30+</div>
-            <div className="hero-stat-label">Repositories</div>
+            <div className="hero-stat-value gradient-text">50+</div>
+            <div className="hero-stat-label">Public Repositories</div>
           </div>
           <div>
             <div className="hero-stat-value gradient-text">14</div>
             <div className="hero-stat-label">Java Banking Systems</div>
           </div>
           <div>
-            <div className="hero-stat-value gradient-text">7</div>
-            <div className="hero-stat-label">Microservices (SmartBank)</div>
+            <div className="hero-stat-value gradient-text">8</div>
+            <div className="hero-stat-label">SmartBank Microservices</div>
           </div>
         </div>
       </div>
@@ -143,52 +143,74 @@ function SmartBankSection() {
               <h3 className="featured-name">smartbank-enterprise-platform</h3>
               <p className="featured-tagline">Spring Boot · Kafka · PostgreSQL · Docker · JWT</p>
             </div>
-            <a href="https://github.com/Raphasha27/smartbank-enterprise-platform" className="btn btn-outline" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+            <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
+              <a href="https://github.com/Raphasha27/smartbank-enterprise-platform" className="btn btn-outline" target="_blank" rel="noopener noreferrer">View on GitHub →</a>
+              <a href="https://render.com/deploy?repo=https://github.com/Raphasha27/smartbank-enterprise-platform" className="btn btn-primary" target="_blank" rel="noopener noreferrer">Deploy to Render</a>
+            </div>
           </div>
           <div className="featured-tech">
-            {['Java 21', 'Spring Boot 3.4', 'JWT/BCrypt', 'Kafka', 'PostgreSQL', 'Docker Compose', 'Maven'].map(t => (
+            {['Java 21', 'Spring Boot 3.4', 'JWT/BCrypt', 'Kafka', 'PostgreSQL', 'Docker Swarm', 'Maven'].map(t => (
               <span key={t} className="tech-tag">{t}</span>
             ))}
           </div>
           <div className="featured-diagram">
-            <pre>{`
-  Client
-    │
-    ▼
-  ┌─────────────────────────────────────────────────────────┐
-  │                   API Gateway (:8080)                   │
-  └────┬──────────┬──────────┬──────────┬──────────┬───────┘
-       │          │          │          │          │
-       ▼          ▼          ▼          ▼          ▼
-  ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐
-  │ Auth   │ │Account │ │Transact│ │ Loan   │ │ Audit  │
-  │ (:8081)│ │(:8082) │ │(:8083) │ │(:8084) │ │(:8085) │
-  └───┬────┘ └───┬────┘ └───┬────┘ └───┬────┘ └───┬────┘
-      │          │          │          │          │
-      ▼          ▼          ▼          ▼          ▼
-  ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐ ┌────────┐
-  │Postgres│ │Postgres│ │Postgres│ │Postgres│ │Postgres│
-  └────────┘ └────────┘ └────────┘ └────────┘ └────────┘
-
-  Event Bus (Kafka) — Transaction → Audit → Notification
-            `}</pre>
+            <div className="arch-diagram">
+              <div className="arch-layer">
+                <div className="arch-box arch-client">🌐 Client</div>
+                <div className="arch-arrow">↓ HTTPS</div>
+              </div>
+              <div className="arch-layer">
+                <div className="arch-box arch-gateway">API Gateway :8080</div>
+                <div className="arch-row">
+                  <span className="arch-label">JWT validation, routing, rate limiting</span>
+                </div>
+                <div className="arch-arrow">↓ ↓ ↓ ↓ ↓ ↓</div>
+              </div>
+              <div className="arch-layer arch-services">
+                <div className="arch-box arch-auth">Auth :8081</div>
+                <div className="arch-box arch-acc">Account :8082</div>
+                <div className="arch-box arch-tx">Transact :8083</div>
+                <div className="arch-box arch-loan">Loan :8084</div>
+                <div className="arch-box arch-audit">Audit :8085</div>
+                <div className="arch-box arch-notif">Notify :8086</div>
+                <div className="arch-box arch-ledger">Ledger :8087</div>
+              </div>
+              <div className="arch-arrow">↓ ↓ ↓ ↓ ↓ ↓ ↓</div>
+              <div className="arch-layer arch-dbs">
+                <span className="arch-db">PostgreSQL (×7)</span>
+              </div>
+              <div className="arch-divider">━━━━━ Kafka Event Bus ━━━━━</div>
+              <div className="arch-layer arch-kafka">
+                <span className="arch-kafka-item">Audit Consumer</span>
+                <span className="arch-kafka-item">Fraud Detector</span>
+                <span className="arch-kafka-item">Ledger Journal</span>
+                <span className="arch-kafka-item">Notification</span>
+                <span className="arch-kafka-item">Reconciler</span>
+              </div>
+              <div className="arch-badge-row">
+                <span className="arch-badge">✅ Saga Pattern</span>
+                <span className="arch-badge">✅ Optimistic Locking</span>
+                <span className="arch-badge">✅ Idempotency Keys</span>
+                <span className="arch-badge">✅ OpenTelemetry</span>
+              </div>
+            </div>
           </div>
           <div className="featured-details">
             <div className="featured-detail">
               <h4>Architecture</h4>
-              <p>7 microservices with API Gateway pattern, each with dedicated PostgreSQL database</p>
+              <p>8 microservices with API Gateway pattern, each with dedicated PostgreSQL database, event bus</p>
             </div>
             <div className="featured-detail">
               <h4>Security</h4>
-              <p>JWT-based authentication with BCrypt password hashing, JwtFilter for endpoint protection, RBAC</p>
+              <p>JWT authentication with BCrypt hashing, RBAC, Spring Security filter chain</p>
             </div>
             <div className="featured-detail">
-              <h4>Events</h4>
-              <p>Kafka-ready event bus for async transaction processing, audit logging, and notification dispatch</p>
+              <h4>Consistency</h4>
+              <p>Saga pattern with Kafka reconciler, optimistic locking via @Version, idempotency keys for safe retries</p>
             </div>
             <div className="featured-detail">
-              <h4>Data</h4>
-              <p>ACID transactions, per-service database isolation, idempotency keys for safe retries</p>
+              <h4>Observability</h4>
+              <p>OpenTelemetry tracing across all services, Zipkin export, Spring Boot Actuator health checks</p>
             </div>
           </div>
         </div>
