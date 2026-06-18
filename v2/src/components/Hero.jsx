@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Icon } from './Icons';
 import ParticleCanvas from './ParticleCanvas';
-import koketsoSuit from '../assets/koketso_studio.jpg';
+import koketsoSuit from '../assets/koketso_transparent.png';
 
 /* ── Typewriter cycling through roles ── */
 const ROLES = ['AI ENGINEER', 'SYSTEMS ARCHITECT', 'CO-FOUNDER', 'FULL STACK DEV'];
@@ -116,8 +116,22 @@ const STATS = [
 const Hero = () => (
   <div id="home" className="relative min-h-screen flex flex-col justify-center overflow-hidden bg-transparent">
     <ParticleCanvas />
-    {/* Scanline overlay */}
+      {/* Scanline overlay */}
     <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]" />
+      {/* Building/skyline decorative silhouette */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 pointer-events-none opacity-10 z-0">
+        <svg viewBox="0 0 1440 180" fill="none" className="w-full h-full" preserveAspectRatio="none">
+          <path d="M0 180V120L60 100L120 130L180 80L240 110L300 60L360 90L420 50L480 100L540 70L600 120L660 90L720 40L780 80L840 60L900 110L960 50L1020 90L1080 70L1140 120L1200 80L1260 100L1320 60L1380 110L1440 90V180H0Z" fill="url(#buildingGrad)" />
+          <rect x="60" y="100" width="8" height="20" fill="#00FF9C" opacity="0.3" /><rect x="80" y="100" width="8" height="15" fill="#00FF9C" opacity="0.2" /><rect x="140" y="80" width="10" height="40" fill="#00FF9C" opacity="0.15" /><rect x="160" y="80" width="8" height="25" fill="#00FF9C" opacity="0.3" />
+          <rect x="260" y="60" width="12" height="60" fill="#00FF9C" opacity="0.2" /><rect x="280" y="60" width="8" height="40" fill="#00FF9C" opacity="0.15" /><rect x="320" y="90" width="10" height="30" fill="#00FF9C" opacity="0.25" /><rect x="340" y="90" width="8" height="20" fill="#00FF9C" opacity="0.15" />
+          <rect x="430" y="50" width="14" height="70" fill="#00FF9C" opacity="0.2" /><rect x="450" y="50" width="10" height="45" fill="#00FF9C" opacity="0.3" /><rect x="500" y="70" width="8" height="50" fill="#00FF9C" opacity="0.15" /><rect x="520" y="70" width="10" height="30" fill="#00FF9C" opacity="0.2" />
+          <rect x="680" y="40" width="16" height="80" fill="#00FF9C" opacity="0.25" /><rect x="700" y="40" width="12" height="55" fill="#00FF9C" opacity="0.15" /><rect x="750" y="80" width="10" height="40" fill="#00FF9C" opacity="0.2" /><rect x="770" y="80" width="8" height="25" fill="#00FF9C" opacity="0.3" />
+          <rect x="850" y="60" width="14" height="60" fill="#00FF9C" opacity="0.15" /><rect x="870" y="60" width="10" height="40" fill="#00FF9C" opacity="0.2" /><rect x="970" y="50" width="12" height="70" fill="#00FF9C" opacity="0.25" /><rect x="990" y="50" width="8" height="50" fill="#00FF9C" opacity="0.15" />
+          <rect x="1150" y="120" width="10" height="20" fill="#00FF9C" opacity="0.2" /><rect x="1170" y="120" width="8" height="15" fill="#00FF9C" opacity="0.15" /><rect x="1240" y="80" width="14" height="40" fill="#00FF9C" opacity="0.2" /><rect x="1260" y="80" width="10" height="30" fill="#00FF9C" opacity="0.3" />
+          <rect x="1340" y="60" width="12" height="60" fill="#00FF9C" opacity="0.15" /><rect x="1360" y="60" width="8" height="40" fill="#00FF9C" opacity="0.25" />
+          <defs><linearGradient id="buildingGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stopColor="#00FF9C" stopOpacity="0" /><stop offset="100%" stopColor="#00FF9C" stopOpacity="0.15" /></linearGradient></defs>
+        </svg>
+      </div>
     {/* Ambient glow */}
     <div className="absolute top-1/4 -right-20 w-96 h-96 bg-blue-500/10 blur-[120px] rounded-full pointer-events-none" />
     <div className="absolute bottom-1/4 -left-20 w-80 h-80 bg-[#00FF9C]/5 blur-[100px] rounded-full pointer-events-none" />
