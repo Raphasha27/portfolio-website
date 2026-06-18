@@ -5,6 +5,84 @@ import { Icon } from './Icons';
 
 const projects = [
   {
+    title: "AI Business Engine",
+    tagline: "Zero-Capital AI Businesses",
+    desc: "5 playbooks for SA entrepreneurs. Pricing calculator, income stack, and live trial.",
+    tech: ["nextjs", "react", "vercel"],
+    icon: "zap",
+    role: "Business Architect",
+    color: "from-yellow-500/20 to-[#00FF9C]/20",
+    featured: true,
+    latest: true,
+    link: "https://github.com/Raphasha27/AI-Business-Engine",
+    liveUrl: "https://web-gamma-nine-c2cqi2h058.vercel.app",
+    status: "live"
+  },
+  {
+    title: "Mzansi AgriAI",
+    tagline: "AI Advisory for Farmers",
+    desc: "Crop advisor, weather alerts, pest detection, and market prices for SA small-scale farmers.",
+    tech: ["html", "css", "javascript", "vercel"],
+    icon: "globe",
+    role: "AgriTech Dev",
+    color: "from-green-500/20 to-emerald-500/20",
+    featured: true,
+    link: "https://github.com/Raphasha27/Mzansi-AgriAI",
+    liveUrl: "https://mzansi-agriai-demo.vercel.app",
+    status: "live"
+  },
+  {
+    title: "EskomSense AI",
+    tagline: "Load Shedding Predictor",
+    desc: "ML-powered load shedding prediction, battery optimizer, and area selector for SA homes.",
+    tech: ["html", "css", "javascript", "vercel"],
+    icon: "zap",
+    role: "Energy AI Lead",
+    color: "from-yellow-500/20 to-orange-500/20",
+    featured: true,
+    link: "https://github.com/Raphasha27/EskomSense-AI",
+    liveUrl: "https://eskomsense-ai-demo.vercel.app",
+    status: "live"
+  },
+  {
+    title: "NoShowIQ",
+    tagline: "Healthcare No-Show Prediction",
+    desc: "Fullstack app predicting patient appointment no-shows using ML models.",
+    tech: ["nextjs", "python", "fastapi", "vercel"],
+    icon: "brain",
+    role: "ML Specialist",
+    color: "from-emerald-400/20 to-cyan-500/20",
+    featured: true,
+    link: "https://github.com/Raphasha27/NoShowIQ",
+    liveUrl: "https://noshowiq-fullstack.vercel.app",
+    status: "live"
+  },
+  {
+    title: "Sumbandila App",
+    tagline: "Landing Page",
+    desc: "Professional landing page for the Sumbandila platform.",
+    tech: ["nextjs", "tailwindcss", "vercel"],
+    icon: "globe",
+    role: "Frontend Dev",
+    color: "from-blue-500/20 to-purple-500/20",
+    link: "https://github.com/Raphasha27/Sumbandila-App",
+    liveUrl: "https://landing-five-orcin-61.vercel.app",
+    status: "live"
+  },
+  {
+    title: "Kirov Dynamics",
+    tagline: "Portfolio Hub",
+    desc: "This portfolio. Systems architecture, AI engineering, and full-stack development showcase.",
+    tech: ["react", "vite", "framer", "vercel"],
+    icon: "code",
+    role: "Full Stack Dev",
+    color: "from-purple-500/20 to-pink-500/20",
+    featured: true,
+    link: "https://github.com/Raphasha27/Portfolio",
+    liveUrl: "https://portfolio-iota-eight-90.vercel.app",
+    status: "live"
+  },
+  {
     title: "DevForge AI",
     tagline: "Autonomous Workflow Engine",
     desc: "AI-powered development workflow engine with automated scaffolding, static analysis, and self-healing infrastructure orchestration.",
@@ -13,8 +91,6 @@ const projects = [
     role: "AI Systems Dev",
     color: "from-[#00FF9C]/20 to-emerald-400/20",
     bgImage: "project-os.png",
-    featured: true,
-    latest: true,
     link: "https://github.com/Raphasha27/devforge-ai"
   },
   {
@@ -37,16 +113,6 @@ const projects = [
     role: "SOC Engineer",
     color: "from-[#00FF9C]/20 to-cyan-500/20",
     link: "https://github.com/Raphasha27/cybershield_soc"
-  },
-  {
-    title: "NoShowIQ",
-    tagline: "Healthcare AI · No-Show Prediction",
-    desc: "AI-driven healthcare platform predicting appointment no-shows using ML models, reducing clinic inefficiency at scale.",
-    tech: ["python", "pytorch", "zap", "react"],
-    icon: "brain",
-    role: "ML Specialist",
-    color: "from-emerald-400/20 to-cyan-500/20",
-    link: "https://github.com/Raphasha27/NoShowIQ"
   },
   {
     title: "SupportHive-C",
@@ -318,8 +384,16 @@ const Projects = () => {
                       <Icon name={p.icon} size={20} />
                     </div>
                   </div>
-                  <div>
-                    <h3 className="text-sm font-bold text-white transition-colors drop-shadow-lg group-hover:text-blue-400">{p.title}</h3>
+                  <div className="flex-1">
+                    <div className="flex items-center gap-2">
+                      <h3 className="text-sm font-bold text-white transition-colors drop-shadow-lg group-hover:text-blue-400">{p.title}</h3>
+                      {p.status === 'live' && (
+                        <span className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-green-500/10 border border-green-500/30">
+                          <div className="w-1 h-1 rounded-full bg-green-400 animate-pulse" />
+                          <span className="text-[7px] text-green-400 font-bold uppercase tracking-wider">Live</span>
+                        </span>
+                      )}
+                    </div>
                     <div className="text-[8px] uppercase font-bold tracking-wider text-blue-400/80">{p.tagline}</div>
                   </div>
                 </div>
@@ -328,34 +402,54 @@ const Projects = () => {
                 </div>
               </div>
               
-              <p className="relative z-10 text-[11px] text-white/90 font-medium mb-6 line-clamp-3 leading-relaxed group-hover:text-white transition-colors drop-shadow-md flex-1">
+              <p className="relative z-10 text-[11px] text-white/90 font-medium mb-4 line-clamp-3 leading-relaxed group-hover:text-white transition-colors drop-shadow-md flex-1">
                 {p.desc}
               </p>
+
+              {/* Tech Stack */}
+              <div className="relative z-10 flex gap-2 mb-4">
+                {p.tech.slice(0, 4).map((t, j) => (
+                  <span key={j} className="text-[7px] px-2 py-1 rounded-sm bg-white/5 border border-white/10 text-white/80 group-hover:border-white/30 transition-colors flex items-center gap-1.5 uppercase font-bold tracking-wider">
+                    <Icon name={t.toLowerCase()} size={10} />
+                    {t}
+                  </span>
+                ))}
+              </div>
               
-              <div className="relative z-10 flex justify-between items-center mt-auto">
-                <div className="flex gap-2">
-                  {p.tech.slice(0, 3).map((t, j) => (
-                    <span key={j} className="text-[7px] px-2 py-1 rounded-sm bg-white/5 border border-white/10 text-white/80 group-hover:border-white/30 transition-colors flex items-center gap-1.5 uppercase font-bold tracking-wider">
-                      <Icon name={t.toLowerCase()} size={10} />
-                      {t}
-                    </span>
-                  ))}
-                </div>
-                <div className="flex gap-4">
-                  <button 
-                    onClick={() => {
-                      const url = `${window.location.origin}${window.location.pathname}#project-${i}`;
-                      navigator.clipboard.writeText(url);
-                    }}
-                    className="text-white/40 hover:text-blue-400 transition-colors"
-                    title="Copy Link"
+              {/* Action Buttons */}
+              <div className="relative z-10 flex gap-2 mt-auto">
+                {p.liveUrl && (
+                  <a 
+                    href={p.liveUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-green-600/20 hover:bg-green-600/30 border border-green-500/30 hover:border-green-500/50 text-green-400 font-bold text-[10px] uppercase tracking-wider transition-all hover:shadow-[0_0_20px_rgba(74,222,128,0.3)] group/btn"
                   >
-                    <Icon name="share" size={14} />
-                  </button>
-                  <a href={p.link || "https://github.com/Raphasha27"} target="_blank" className="text-[#00FF9C] hover:text-white transition-colors">
-                    <Icon name="externallink" size={14} />
+                    <Icon name="globe" size={12} />
+                    <span>Live Demo</span>
+                    <Icon name="externallink" size={10} className="group-hover/btn:translate-x-0.5 transition-transform" />
                   </a>
-                </div>
+                )}
+                <a 
+                  href={p.link || "https://github.com/Raphasha27"} 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`${p.liveUrl ? 'flex-none' : 'flex-1'} flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#00FF9C]/30 text-white/70 hover:text-[#00FF9C] font-bold text-[10px] uppercase tracking-wider transition-all group/btn`}
+                >
+                  <Icon name="github" size={12} />
+                  {!p.liveUrl && <span>View Code</span>}
+                  <Icon name="externallink" size={10} className="group-hover/btn:translate-x-0.5 transition-transform" />
+                </a>
+                <button 
+                  onClick={() => {
+                    const url = `${window.location.origin}${window.location.pathname}#project-${i}`;
+                    navigator.clipboard.writeText(url);
+                  }}
+                  className="flex-none w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-blue-500/10 border border-white/10 hover:border-blue-500/30 text-white/40 hover:text-blue-400 transition-all"
+                  title="Copy Link"
+                >
+                  <Icon name="share" size={14} />
+                </button>
               </div>
             </TiltCard>
           ))}

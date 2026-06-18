@@ -38,9 +38,21 @@ function App() {
     <div className="bg-[#050d12] text-[#e0f2f1] min-h-screen selection:bg-blue-500/30 selection:text-blue-200 relative overflow-x-hidden">
       <motion.div 
         className="fixed inset-0 pointer-events-none z-[0] opacity-[0.15] bg-center bg-cover bg-no-repeat" 
-        style={{ backgroundImage: `url(${cyberBg})`, y: bgY }} 
+        style={{ backgroundImage: `url(${cyberBg})`, y: bgY }}
+        animate={{
+          scale: [1, 1.05, 1],
+        }}
+        transition={{
+          duration: 20,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
       />
       <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-[9999] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+      
+      {/* Animated gradient orbs */}
+      <div className="fixed top-20 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none animate-pulse z-[1]" />
+      <div className="fixed bottom-20 right-10 w-96 h-96 bg-green-500/10 rounded-full blur-3xl pointer-events-none animate-pulse z-[1]" style={{ animationDelay: '1s' }} />
       
       <CustomCursor />
       <Navbar setCmdOpen={setCmdOpen} />
