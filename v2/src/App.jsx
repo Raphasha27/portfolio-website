@@ -13,6 +13,7 @@ const Roles = lazy(() => import('./components/Roles'));
 const Skills = lazy(() => import('./components/Skills'));
 const Certifications = lazy(() => import('./components/Certifications'));
 const Projects = lazy(() => import('./components/Projects'));
+const CIStatus = lazy(() => import('./components/CIStatus'));
 const Contact = lazy(() => import('./components/Contact'));
 const Testimonials = lazy(() => import('./components/Testimonials'));
 const ChatAssistant = lazy(() => import('./components/ChatAssistant'));
@@ -120,6 +121,16 @@ function App() {
             className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto py-16 sm:py-24"
           >
             <Projects />
+          </motion.section>
+
+          <motion.section 
+            initial={{ opacity: 0, y: 50 }} 
+            whileInView={{ opacity: 1, y: 0 }} 
+            viewport={{ once: true, margin: "-100px" }} 
+            transition={{ duration: 0.8 }}
+            className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto pb-16 sm:pb-24"
+          >
+            <CIStatus />
           </motion.section>
 
           <section className="px-4 sm:px-6 lg:px-12 pb-16 sm:pb-24">
