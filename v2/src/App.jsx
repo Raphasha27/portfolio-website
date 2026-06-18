@@ -36,11 +36,42 @@ function App() {
 
   return (
     <div className="bg-[#050d12] text-[#e0f2f1] min-h-screen selection:bg-blue-500/30 selection:text-blue-200 relative overflow-x-hidden">
+      {/* Enhanced layered background system */}
       <motion.div 
-        className="fixed inset-0 pointer-events-none z-[0] opacity-[0.15] bg-center bg-cover bg-no-repeat" 
+        className="fixed inset-0 pointer-events-none z-[0] opacity-[0.2] bg-center bg-cover bg-no-repeat" 
         style={{ backgroundImage: `url(${cyberBg})`, y: bgY }}
         animate={{
-          scale: [1, 1.05, 1],
+          scale: [1, 1.1, 1],
+        }}
+        transition={{
+          duration: 30,
+          repeat: Infinity,
+          ease: "easeInOut"
+        }}
+      />
+      
+      {/* Animated mesh gradient overlay */}
+      <div className="fixed inset-0 pointer-events-none z-[1] opacity-30">
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: `
+              radial-gradient(circle at 20% 20%, rgba(0, 255, 156, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%),
+              radial-gradient(circle at 40% 60%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
+              linear-gradient(135deg, rgba(0, 255, 156, 0.05) 0%, transparent 50%, rgba(59, 130, 246, 0.05) 100%)
+            `
+          }}
+        />
+      </div>
+      
+      {/* Dynamic gradient orbs with motion */}
+      <motion.div 
+        className="fixed top-20 left-10 w-[500px] h-[500px] bg-gradient-to-br from-blue-500/20 via-cyan-500/10 to-transparent rounded-full blur-3xl pointer-events-none z-[1]"
+        animate={{
+          x: [0, 50, 0],
+          y: [0, 30, 0],
+          scale: [1, 1.2, 1],
         }}
         transition={{
           duration: 20,
@@ -48,11 +79,68 @@ function App() {
           ease: "easeInOut"
         }}
       />
-      <div className="fixed inset-0 pointer-events-none opacity-[0.03] z-[9999] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+      <motion.div 
+        className="fixed bottom-20 right-10 w-[500px] h-[500px] bg-gradient-to-tl from-green-500/20 via-emerald-500/10 to-transparent rounded-full blur-3xl pointer-events-none z-[1]"
+        animate={{
+          x: [0, -50, 0],
+          y: [0, -30, 0],
+          scale: [1, 1.3, 1],
+        }}
+        transition={{
+          duration: 25,
+          repeat: Infinity,
+          ease: "easeInOut",
+          delay: 1
+        }}
+      />
+      <motion.div 
+        className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-r from-purple-500/10 via-pink-500/5 to-transparent rounded-full blur-3xl pointer-events-none z-[1]"
+        animate={{
+          rotate: [0, 180, 360],
+          scale: [1, 1.1, 1],
+        }}
+        transition={{
+          duration: 40,
+          repeat: Infinity,
+          ease: "linear"
+        }}
+      />
       
-      {/* Animated gradient orbs */}
-      <div className="fixed top-20 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none animate-pulse z-[1]" />
-      <div className="fixed bottom-20 right-10 w-96 h-96 bg-green-500/10 rounded-full blur-3xl pointer-events-none animate-pulse z-[1]" style={{ animationDelay: '1s' }} />
+      {/* Grid overlay with perspective */}
+      <div className="fixed inset-0 pointer-events-none z-[2] opacity-[0.08]">
+        <div 
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(0, 255, 156, 0.3) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(0, 255, 156, 0.3) 1px, transparent 1px)
+            `,
+            backgroundSize: '50px 50px',
+            transform: 'perspective(1000px) rotateX(60deg)',
+            transformOrigin: 'center top'
+          }}
+        />
+      </div>
+      
+      {/* Noise texture */}
+      <div className="fixed inset-0 pointer-events-none opacity-[0.04] z-[3] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]" />
+      
+      {/* Scanline effect */}
+      <motion.div
+        className="fixed inset-0 pointer-events-none z-[4] opacity-[0.03]"
+        style={{
+          backgroundImage: 'linear-gradient(transparent 50%, rgba(0, 255, 156, 0.1) 50%)',
+          backgroundSize: '100% 4px'
+        }}
+        animate={{
+          y: [0, 8, 0]
+        }}
+        transition={{
+          duration: 0.1,
+          repeat: Infinity,
+          ease: "linear"
+        }}
+      />
       
       <CustomCursor />
       <Navbar setCmdOpen={setCmdOpen} />
