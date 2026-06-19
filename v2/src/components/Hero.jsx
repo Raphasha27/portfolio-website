@@ -285,94 +285,78 @@ const Hero = () => (
           </div>
         </motion.div>
 
-        {/* ── RIGHT: Profile — orange ring BEHIND image ── */}
+        {/* ── RIGHT: Profile — Grafik-style clean oval ── */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.2 }}
           className="relative order-1 lg:order-2 flex flex-col items-center"
         >
-          {/* Main image + ring wrapper */}
-          <div className="relative flex items-end justify-center"
-            style={{ width: '340px', height: '420px' }}>
+          {/* Outer decorative chevrons */}
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-20">
+            <Chevron size={26} opacity={0.55} style={{ transform: 'rotate(180deg)' }} />
+            <Chevron size={18} opacity={0.25} style={{ transform: 'rotate(180deg)' }} />
+          </div>
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 flex flex-col gap-3 z-20">
+            <Chevron size={26} opacity={0.55} />
+            <Chevron size={18} opacity={0.25} />
+          </div>
 
-            {/* Outer decorative chevrons */}
-            <div className="absolute left-[-10px] top-1/2 -translate-y-1/2 flex flex-col gap-3 z-20">
-              <Chevron size={28} opacity={0.6} style={{ transform: 'rotate(180deg)' }} />
-              <Chevron size={20} opacity={0.3} style={{ transform: 'rotate(180deg)' }} />
-            </div>
-            <div className="absolute right-[-10px] top-1/2 -translate-y-1/2 flex flex-col gap-3 z-20">
-              <Chevron size={28} opacity={0.6} />
-              <Chevron size={20} opacity={0.3} />
-            </div>
+          {/* Profile picture wrapper */}
+          <div className="relative flex items-end justify-center"
+            style={{ width: '320px', height: '400px' }}>
 
             {/* Corner brackets */}
-            <div className="absolute top-4 left-4 w-7 h-7 z-20" style={{ borderTop: '2px solid rgba(255,107,43,0.6)', borderLeft: '2px solid rgba(255,107,43,0.6)' }} />
-            <div className="absolute top-4 right-4 w-7 h-7 z-20" style={{ borderTop: '2px solid rgba(255,107,43,0.6)', borderRight: '2px solid rgba(255,107,43,0.6)' }} />
-            <div className="absolute bottom-4 left-4 w-7 h-7 z-20" style={{ borderBottom: '2px solid rgba(255,107,43,0.6)', borderLeft: '2px solid rgba(255,107,43,0.6)' }} />
-            <div className="absolute bottom-4 right-4 w-7 h-7 z-20" style={{ borderBottom: '2px solid rgba(255,107,43,0.6)', borderRight: '2px solid rgba(255,107,43,0.6)' }} />
+            <div className="absolute top-2 left-6 w-6 h-6 z-20" style={{ borderTop: '2px solid rgba(255,107,43,0.55)', borderLeft: '2px solid rgba(255,107,43,0.55)' }} />
+            <div className="absolute top-2 right-6 w-6 h-6 z-20" style={{ borderTop: '2px solid rgba(255,107,43,0.55)', borderRight: '2px solid rgba(255,107,43,0.55)' }} />
+            <div className="absolute bottom-2 left-6 w-6 h-6 z-20" style={{ borderBottom: '2px solid rgba(255,107,43,0.55)', borderLeft: '2px solid rgba(255,107,43,0.55)' }} />
+            <div className="absolute bottom-2 right-6 w-6 h-6 z-20" style={{ borderBottom: '2px solid rgba(255,107,43,0.55)', borderRight: '2px solid rgba(255,107,43,0.55)' }} />
 
-            {/* ★ ORANGE GLOW RING — behind person ★ */}
-            {/* Outermost large glow */}
-            <div className="absolute left-1/2 -translate-x-1/2 rounded-full z-0"
+            {/* ★ GRAFIK-STYLE OVAL — behind person, dark charcoal ★ */}
+            <div
+              className="absolute left-1/2 -translate-x-1/2 z-0"
               style={{
-                bottom: '30px',
-                width: '300px',
-                height: '300px',
-                background: 'radial-gradient(circle, rgba(255,80,20,0.08) 0%, transparent 70%)',
-                border: '1px solid rgba(255,107,43,0.15)',
-              }} />
+                bottom: '20px',
+                width: '260px',
+                height: '310px',
+                borderRadius: '50%',
+                background: 'linear-gradient(170deg, #1c1410 0%, #110c08 60%, #0d0906 100%)',
+                border: '2px solid rgba(255,107,43,0.45)',
+                boxShadow: '0 0 0 6px rgba(255,107,43,0.07), 0 20px 60px rgba(0,0,0,0.5)',
+              }}
+            />
 
-            {/* Main orange circle ring */}
-            <div className="absolute left-1/2 -translate-x-1/2 rounded-full z-0"
-              style={{
-                bottom: '42px',
-                width: '268px',
-                height: '268px',
-                background: 'transparent',
-                border: '3px solid transparent',
-                backgroundClip: 'padding-box',
-                boxShadow: '0 0 0 3px rgba(200,60,10,0.85), 0 0 50px rgba(255,80,20,0.35), 0 0 100px rgba(255,60,10,0.15), inset 0 0 60px rgba(255,40,0,0.08)',
-              }} />
-
-            {/* Inner darker fill */}
-            <div className="absolute left-1/2 -translate-x-1/2 rounded-full z-0"
-              style={{
-                bottom: '50px',
-                width: '252px',
-                height: '252px',
-                background: 'radial-gradient(circle, rgba(30,10,5,0.9) 0%, rgba(20,8,4,0.95) 100%)',
-              }} />
-
-            {/* Rotating dashed accent ring */}
+            {/* Subtle outer glow ring */}
             <motion.div
               animate={{ rotate: 360 }}
-              transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
-              className="absolute left-1/2 -translate-x-1/2 rounded-full z-0"
+              transition={{ duration: 30, repeat: Infinity, ease: 'linear' }}
+              className="absolute left-1/2 -translate-x-1/2 z-0"
               style={{
-                bottom: '18px',
-                width: '316px',
-                height: '316px',
-                border: '1px dashed rgba(255,107,43,0.2)',
-              }} />
+                bottom: '8px',
+                width: '284px',
+                height: '334px',
+                borderRadius: '50%',
+                border: '1px dashed rgba(255,107,43,0.18)',
+              }}
+            />
 
-            {/* ★ PERSON IMAGE — in front of ring ★ */}
+            {/* ★ PERSON IMAGE — sits IN FRONT of oval, extends above it ★ */}
             <img
               src={koketsoSuit}
               alt="Koketso Raphasha - AI Engineer"
               className="relative z-10 object-contain"
               style={{
-                width: '86%',
+                width: '82%',
                 height: 'auto',
-                maxHeight: '410px',
+                maxHeight: '395px',
                 objectPosition: 'bottom',
-                filter: 'drop-shadow(0 0 30px rgba(255,80,20,0.25))',
+                filter: 'drop-shadow(0 8px 24px rgba(0,0,0,0.6)) drop-shadow(0 0 40px rgba(255,90,20,0.15))',
               }}
             />
           </div>
 
           {/* Name + title */}
-          <div className="text-center w-full max-w-[320px] mt-3">
+          <div className="text-center w-full max-w-[320px] mt-2">
             <div className="text-lg sm:text-2xl font-bold text-white tracking-wide">Koketso Raphasha</div>
             <div className="text-[10px] sm:text-xs font-mono uppercase tracking-[0.2em] font-bold mt-1 flex items-center justify-center gap-2"
               style={{ color: '#FF6B2B' }}>
