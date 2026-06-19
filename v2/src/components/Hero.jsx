@@ -176,31 +176,31 @@ const Hero = () => (
           </p>
 
           {/* CTA buttons */}
-          <div className="flex flex-wrap gap-3 pt-1">
+          <div className="grid grid-cols-3 sm:flex sm:flex-wrap gap-2 sm:gap-3 pt-1 w-full">
             <a
               href="#projects"
-              className="px-5 sm:px-6 py-3 bg-[#00FF9C] text-[#050d12] font-bold rounded-xl hover:bg-[#00e089] transition-all active:scale-95 shadow-[0_0_20px_rgba(0,255,156,0.4)] text-xs sm:text-sm hover:shadow-[0_0_35px_rgba(0,255,156,0.6)]"
+              className="flex items-center justify-center px-1 sm:px-6 py-2.5 sm:py-3 bg-[#00FF9C] text-[#050d12] font-bold rounded-xl hover:bg-[#00e089] transition-all active:scale-95 shadow-[0_0_15px_rgba(0,255,156,0.3)] sm:shadow-[0_0_20px_rgba(0,255,156,0.4)] text-[10px] sm:text-sm hover:shadow-[0_0_35px_rgba(0,255,156,0.6)] text-center whitespace-nowrap"
             >
               VIEW REPOS
             </a>
             <a
               href="/Koketso_Raphasha_CV.pdf"
               download
-              className="px-5 sm:px-6 py-3 bg-[#0d1117] border border-[#00FF9C]/40 text-white font-bold rounded-xl hover:bg-[#00FF9C]/5 transition-all active:scale-95 text-xs sm:text-sm flex items-center gap-2 hover:border-[#00FF9C]"
+              className="flex items-center justify-center px-1 sm:px-6 py-2.5 sm:py-3 bg-[#0d1117] border border-[#00FF9C]/40 text-white font-bold rounded-xl hover:bg-[#00FF9C]/5 transition-all active:scale-95 text-[10px] sm:text-sm gap-1 hover:border-[#00FF9C] whitespace-nowrap"
             >
-              <Icon name="download" size={16} /> DOWNLOAD CV
+              <Icon name="download" size={14} className="hidden sm:block" /> CV
             </a>
             <a
               href="#contact"
-              className="px-5 sm:px-6 py-3 bg-blue-600/20 border border-blue-500/30 text-blue-400 font-bold rounded-xl hover:bg-blue-600/30 transition-all active:scale-95 text-xs sm:text-sm flex items-center gap-2"
+              className="flex items-center justify-center px-1 sm:px-6 py-2.5 sm:py-3 bg-blue-600/20 border border-blue-500/30 text-blue-400 font-bold rounded-xl hover:bg-blue-600/30 transition-all active:scale-95 text-[10px] sm:text-sm gap-1.5 whitespace-nowrap"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" /> HIRE ME
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse shrink-0" /> HIRE ME
             </a>
           </div>
 
           {/* Social links */}
-          <div className="flex flex-wrap items-center gap-3 pt-2 border-t border-white/5">
-            <span className="text-[8px] font-bold text-white/30 uppercase tracking-[0.2em] mr-1">Connect</span>
+          <div className="grid grid-cols-6 sm:flex sm:flex-wrap items-center gap-2 sm:gap-3 pt-3 border-t border-white/5 w-full">
+            <span className="hidden sm:inline-block text-[8px] font-bold text-white/30 uppercase tracking-[0.2em] mr-1">Connect</span>
             {socialLinks.map((s, i) => (
               <motion.a
                 key={i}
@@ -210,9 +210,9 @@ const Hero = () => (
                 aria-label={s.name}
                 whileHover={{ scale: 1.15, y: -2 }}
                 whileTap={{ scale: 0.9 }}
-                className={`w-9 h-9 glass rounded-xl flex items-center justify-center text-white/50 ${s.color} transition-all border border-white/5 hover:border-current`}
+                className={`w-full aspect-square sm:w-9 sm:h-9 glass rounded-lg sm:rounded-xl flex items-center justify-center text-white/50 ${s.color} transition-all border border-white/5 hover:border-current`}
               >
-                <Icon name={s.icon} size={18} />
+                <Icon name={s.icon} size={16} />
               </motion.a>
             ))}
           </div>
@@ -246,13 +246,22 @@ const Hero = () => (
           transition={{ duration: 1, delay: 0.2 }}
           className="relative order-1 lg:order-2 flex flex-col items-center"
         >
-          {/* The image already has the glowing ring and tech aesthetic built-in */}
-          <div className="relative w-full max-w-[320px] lg:max-w-[380px]">
-            <img 
-              src="/profile-enhanced.jpg" 
-              alt="Koketso Raphasha - AI Engineer" 
-              className="w-full h-auto drop-shadow-2xl"
-            />
+          {/* Custom glowing circle with corner brackets */}
+          <div className="relative w-[280px] h-[280px] lg:w-[340px] lg:h-[340px] flex items-center justify-center p-6">
+            {/* Corner brackets */}
+            <div className="absolute top-0 left-0 w-8 h-8 lg:w-10 lg:h-10 border-t-2 border-l-2 border-[#00FF9C]/70"></div>
+            <div className="absolute top-0 right-0 w-8 h-8 lg:w-10 lg:h-10 border-t-2 border-r-2 border-[#00FF9C]/70"></div>
+            <div className="absolute bottom-0 left-0 w-8 h-8 lg:w-10 lg:h-10 border-b-2 border-l-2 border-[#00FF9C]/70"></div>
+            <div className="absolute bottom-0 right-0 w-8 h-8 lg:w-10 lg:h-10 border-b-2 border-r-2 border-[#00FF9C]/70"></div>
+
+            {/* Circle Container */}
+            <div className="relative w-full h-full rounded-full bg-black border-[3px] border-[#00ffcc] shadow-[0_0_35px_rgba(0,255,204,0.5),inset_0_0_35px_rgba(0,255,204,0.2)] flex items-end justify-center overflow-hidden">
+              <img 
+                src={koketsoSuit} 
+                alt="Koketso Raphasha - AI Engineer" 
+                className="w-[85%] h-auto object-cover relative z-10 translate-y-[5%] drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]"
+              />
+            </div>
           </div>
 
           {/* Name + title */}
@@ -262,10 +271,6 @@ const Hero = () => (
               Autonomous AI Engineer
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00ffcc] opacity-75" />
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00ffcc]" />
-              </span>
-            </div>
-          </div>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-[#00ffcc]" />
               </span>
             </div>
