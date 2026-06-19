@@ -37,9 +37,9 @@ function App() {
 
   return (
     <div className="bg-[#050d12] text-[#e0f2f1] min-h-screen selection:bg-blue-500/30 selection:text-blue-200 relative overflow-x-hidden">
-      {/* Base cyber background layer */}
+      {/* Base cyber background layer - Enhanced Visibility */}
       <motion.div 
-        className="fixed inset-0 pointer-events-none z-[0] opacity-[0.25] bg-center bg-cover bg-no-repeat" 
+        className="fixed inset-0 pointer-events-none z-[0] opacity-[0.85] mix-blend-screen bg-center bg-cover bg-no-repeat" 
         style={{ backgroundImage: `url(${cyberBg})`, y: bgY }}
         animate={{
           scale: [1, 1.15, 1],
