@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Icon } from './Icons';
 import ParticleCanvas from './ParticleCanvas';
+import koketsoSuit from '../assets/koketso_samsung_profile.jpg';
 
 
 /* ── Typewriter cycling through roles ── */
