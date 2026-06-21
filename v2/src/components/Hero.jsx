@@ -102,12 +102,12 @@ const Hero = () => (
           className="space-y-6 order-2 lg:order-1 flex flex-col justify-center mt-8 lg:mt-0"
         >
           {/* Heading */}
-          <div className="space-y-3">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1] uppercase">
+          <div className="space-y-4">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] uppercase">
               SYSTEMS ARCHITECT &<br />
               <Typewriter />
             </h1>
-            <div className="text-[10px] sm:text-xs font-mono text-[#00FF9C] uppercase tracking-[0.2em] font-bold">
+            <div className="text-[9px] sm:text-[11px] font-mono text-cyan-400 uppercase tracking-[0.3em] font-bold">
               SOVEREIGN INFRASTRUCTURE • AUTONOMOUS AI • TECH CO-FOUNDER
             </div>
           </div>
@@ -120,25 +120,25 @@ const Hero = () => (
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap items-center gap-4 pt-2">
+          <div className="flex flex-wrap items-center gap-4 pt-4">
             <a
               href="#projects"
-              className="flex items-center justify-center px-6 py-3 bg-[#00FF9C] text-[#050d12] font-bold rounded-lg hover:bg-[#00e089] transition-all active:scale-95 text-sm whitespace-nowrap shadow-[0_0_15px_rgba(0,255,156,0.3)]"
+              className="flex items-center justify-center px-8 py-3.5 bg-[#00FF9C] text-[#050d12] font-bold rounded-xl hover:bg-[#00e089] transition-all active:scale-95 text-[13px] whitespace-nowrap shadow-[0_0_20px_rgba(0,255,156,0.2)]"
             >
               VIEW REPOS
             </a>
             <a
               href="/Koketso_Raphasha_CV.pdf"
               download
-              className="flex items-center justify-center gap-2 px-6 py-3 bg-transparent border border-[#00FF9C]/40 text-white font-bold rounded-lg hover:bg-[#00FF9C]/10 transition-all active:scale-95 text-sm whitespace-nowrap"
+              className="flex items-center justify-center gap-2 px-8 py-3.5 bg-[#050d12] border border-[#00FF9C]/30 text-white font-bold rounded-xl hover:bg-[#00FF9C]/10 transition-all active:scale-95 text-[13px] whitespace-nowrap"
             >
-              <Icon name="download" size={16} /> DOWNLOAD CV
+              <Icon name="download" size={16} className="text-blue-400" /> DOWNLOAD CV
             </a>
             <a
               href="#contact"
-              className="flex items-center justify-center gap-2 px-6 py-3 bg-[#0a192f] border border-blue-500/20 text-white font-bold rounded-lg hover:bg-[#0a192f]/80 hover:border-blue-500/40 transition-all active:scale-95 text-sm whitespace-nowrap"
+              className="flex items-center justify-center gap-2 px-8 py-3.5 bg-[#020b1a] border border-blue-500/10 text-blue-500 font-bold rounded-xl hover:bg-[#051329] transition-all active:scale-95 text-[13px] whitespace-nowrap"
             >
-              <span className="w-2 h-2 rounded-full bg-blue-500 shrink-0 shadow-[0_0_8px_rgba(59,130,246,0.8)]" /> HIRE ME
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0 shadow-[0_0_8px_rgba(59,130,246,0.8)]" /> HIRE ME
             </a>
           </div>
 
@@ -162,19 +162,19 @@ const Hero = () => (
           </div>
 
           {/* Stats Boxes */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 w-full">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 w-full">
             {STATS.map((s, i) => (
               <div
                 key={i}
-                className="bg-[#050d12]/50 p-4 rounded-xl border border-white/5 flex flex-col items-center justify-center text-center gap-2 hover:border-[#00FF9C]/20 transition-colors"
+                className="bg-[#020810]/80 p-5 rounded-2xl border border-white/5 flex flex-col items-center justify-center text-center gap-3 hover:border-white/10 transition-colors"
               >
-                <div className="text-blue-400">
-                  <Icon name={s.icon} size={18} />
+                <div className="text-blue-500">
+                  <Icon name={s.icon} size={20} />
                 </div>
-                <div className="text-xl sm:text-2xl font-bold text-white leading-none">
+                <div className="text-2xl sm:text-3xl font-extrabold text-white leading-none">
                   <CountUp to={s.val} />{s.suffix}
                 </div>
-                <div className="text-[9px] font-mono text-gray-500 uppercase tracking-widest">{s.label}</div>
+                <div className="text-[8px] font-bold text-gray-500 uppercase tracking-widest">{s.label}</div>
               </div>
             ))}
           </div>

@@ -41,27 +41,27 @@ const Navbar = ({ setCmdOpen }) => {
         <div className="flex items-center gap-6">
           <button
             onClick={() => scrollTo('home')}
-            className="flex items-center gap-2 text-[#00FF9C] font-bold hover:opacity-80 transition-opacity"
+            className="flex items-center gap-2 font-bold hover:opacity-80 transition-opacity"
           >
-            <Icon name="code" size={20} />
-            <span className="text-[10px] sm:text-sm tracking-tighter truncate max-w-[80px] sm:max-w-none">
+            <span className="text-[#00FF9C] text-lg font-bold">{'< >'}</span>
+            <span className="text-[10px] sm:text-[15px] text-[#00FF9C] tracking-tight truncate max-w-[120px] sm:max-w-none">
               Koketso_Raphasha_Portfolio_Dev
             </span>
           </button>
-          <div className="flex items-center gap-1.5 sm:gap-2 px-2 sm:px-3 py-1 rounded-full bg-white/5 border border-white/10 text-[7px] sm:text-[9px] font-bold text-text-dim shrink-0">
-            <span className="w-1 h-1 sm:w-1.5 sm:h-1.5 rounded-full bg-[#00FF9C] animate-pulse"></span>
-            <span className="whitespace-nowrap">SYSTEM HEALTH: OPTIMAL</span>
+          <div className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#050d12] border border-white/5 text-[9px] font-bold text-white/80 shrink-0">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00FF9C] shadow-[0_0_8px_rgba(0,255,156,0.6)]"></span>
+            <span className="whitespace-nowrap uppercase tracking-widest text-[8px]">System Health: Optimal</span>
           </div>
         </div>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex gap-8 text-[10px] font-bold text-text-dim uppercase tracking-widest">
+        <div className="hidden md:flex gap-8 text-[13px] font-bold text-white/90 capitalize tracking-wide">
           {navItems.map((item) => (
             <button
               key={item}
               onClick={() => scrollTo(item)}
               aria-label={`Scroll to ${item} section`}
-              className="hover:text-[#00FF9C] transition-all capitalize"
+              className="hover:text-[#00FF9C] transition-colors"
             >
               {item}
             </button>
@@ -69,29 +69,31 @@ const Navbar = ({ setCmdOpen }) => {
         </div>
 
         {/* Actions */}
-        <div className="flex items-center gap-2 md:gap-4">
+        <div className="flex items-center gap-3 md:gap-5">
           <button
             onClick={handleShare}
-            className="w-10 h-10 glass hidden sm:flex items-center justify-center text-text-dim hover:text-[#00FF9C] transition-all relative rounded-lg"
+            className="w-9 h-9 border border-white/10 hidden sm:flex items-center justify-center text-blue-500 hover:text-[#00FF9C] hover:border-[#00FF9C]/30 transition-all rounded-lg bg-[#050d12]"
             title="Share Link"
           >
-            <Icon name={copied ? 'check' : 'share'} size={18} />
+            <Icon name={copied ? 'check' : 'share'} size={15} />
           </button>
 
           {/* Command Palette Trigger */}
           <button
             onClick={() => setCmdOpen && setCmdOpen(true)}
-            className="hidden sm:flex items-center gap-2 px-3 py-2 bg-white/5 border border-white/10 rounded-lg text-xs font-mono text-white/50 hover:text-white hover:bg-white/10 transition-all"
+            className="hidden sm:flex items-center justify-between w-48 px-3 py-2 bg-[#050d12] border border-white/5 rounded-xl text-xs font-medium text-gray-500 hover:border-white/20 transition-all"
             title="Open Command Palette"
           >
-            <Icon name="search" size={14} />
-            <span className="hidden md:inline">Search...</span>
-            <kbd className="hidden md:inline bg-white/10 px-1.5 py-0.5 rounded text-[10px] ml-2">⌘K</kbd>
+            <div className="flex items-center gap-2">
+              <Icon name="search" size={14} className="text-blue-500" />
+              <span>Search...</span>
+            </div>
+            <kbd className="bg-white/10 px-1.5 py-0.5 rounded text-[10px] font-mono text-gray-400">⌘K</kbd>
           </button>
 
           <button
             onClick={() => scrollTo('contact')}
-            className="hidden sm:flex px-6 py-2 bg-[#00FF9C]/10 border border-[#00FF9C]/20 text-[#00FF9C] text-xs font-bold rounded-lg hover:bg-[#00FF9C] hover:text-[#050d12] transition-all items-center gap-2"
+            className="hidden sm:flex px-6 py-2.5 bg-[#002b1f] border border-[#00FF9C]/30 text-[#00FF9C] text-[13px] font-bold rounded-xl hover:bg-[#004a35] transition-all items-center gap-2"
           >
             Hire Me <Icon name="arrowRight" size={14} />
           </button>
