@@ -208,15 +208,20 @@ const Hero = () => (
             {/* ★ Blue halo ring ★ */}
             <BlueHalo />
 
-            {/* Green circle frame + photo */}
+            {/* Verified Badge */}
+            <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-5 h-5 sm:w-8 sm:h-8 rounded-full bg-[#00FF9C] flex items-center justify-center z-30 shadow-[0_0_15px_rgba(0,255,156,0.6)]">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#050d12" strokeWidth="3" className="w-3 h-3 sm:w-5 sm:h-5">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </div>
+
+            {/* Green frame + photo (border removed per user request) */}
             <div
-              className="relative w-full h-full rounded-full flex items-end justify-center overflow-hidden"
+              className="relative w-full h-full rounded-[24px] sm:rounded-[32px] flex items-end justify-center overflow-hidden"
               style={{
                 zIndex: 10,
                 background: 'rgba(0, 0, 0, 0.65)',
                 backdropFilter: 'blur(4px)',
-                border: '2px solid #00ffcc',
-                boxShadow: '0 0 25px rgba(0,255,204,0.4), inset 0 0 25px rgba(0,255,204,0.1)',
               }}
             >
               <img
