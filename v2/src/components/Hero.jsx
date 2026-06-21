@@ -85,41 +85,7 @@ const SOCIALS = [
   { name: 'Kaggle',   icon: 'kaggle',   link: 'https://kaggle.com/Raphasha27',             color: 'hover:text-cyan-400'   },
 ];
 
-const STATS = [
-  { label: 'YEARS EXP.',      val: 3,   suffix: '+', icon: 'activity'      },
-  { label: 'CERTIFICATIONS',  val: 10,  suffix: '+', icon: 'graduationcap' },
-  { label: 'TECH ECOSYSTEMS', val: 4,   suffix: '+', icon: 'cpu'           },
-  { label: 'DELIVERY',        val: 100, suffix: '%', icon: 'shield'        },
-];
 
-/* ─────────────────────────────────────────────
-   Hero
-───────────────────────────────────────────── */
-/* ─────────────────────────────────────────────
-   Tech Arsenal data
-───────────────────────────────────────────── */
-const ROW1_TECH = ['docker', 'kubernetes', 'nextjs', 'fastapi'];
-const ROW2_TECH = ['tailwindcss', 'pytorch', 'langchain', 'go'];
-
-/* Single pill with logo + label */
-const TechPill = ({ name }) => (
-  <div
-    className="flex items-center gap-2 px-3 py-1.5 rounded-lg shrink-0"
-    style={{
-      background: 'rgba(5,13,18,0.9)',
-      border: '1px solid rgba(255,255,255,0.07)',
-      backdropFilter: 'blur(6px)',
-    }}
-  >
-    <Icon name={name} size={16} />
-    <span
-      className="text-[10px] font-semibold text-white/60 capitalize whitespace-nowrap"
-      style={{ fontFamily: "'Inter', sans-serif" }}
-    >
-      {name.charAt(0).toUpperCase() + name.slice(1)}
-    </span>
-  </div>
-);
 
 const Hero = () => (
   <div
@@ -137,7 +103,7 @@ const Hero = () => (
     <div className="w-full px-5 sm:px-8 lg:px-16 max-w-screen-xl mx-auto flex-1 flex flex-col justify-center relative z-10"
       style={{ paddingTop: 'var(--nav-h)' }}
     >
-      <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] xl:grid-cols-[1fr_460px] gap-10 xl:gap-16 items-center w-full py-8 lg:py-0">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] xl:grid-cols-[1fr_460px] gap-10 xl:gap-16 items-center w-full py-8 lg:py-0 -mt-12 lg:-mt-20">
 
         {/* ══════════════ LEFT ══════════════ */}
         <motion.div
@@ -157,15 +123,15 @@ const Hero = () => (
             </h1>
 
             {/* Sub-tagline */}
-            <p className="text-[9px] sm:text-[10px] font-mono font-bold tracking-[0.28em] uppercase text-cyan-400/80 mt-1">
+            <p className="text-[9px] sm:text-[10px] font-mono font-bold tracking-[0.28em] uppercase text-[#00FF9C] mt-1" style={{ textShadow: '0 2px 10px rgba(0,0,0,0.8)' }}>
               SOVEREIGN INFRASTRUCTURE &nbsp;·&nbsp; AUTONOMOUS AI &nbsp;·&nbsp; TECH CO-FOUNDER
             </p>
           </div>
 
           {/* Description */}
-          <p className="text-[#8a9bac] text-[13px] sm:text-sm leading-relaxed max-w-[480px]">
-            I am <span className="text-white font-semibold">Koketso Raphasha</span>, a{' '}
-            <span className="text-blue-400 font-semibold">Systems Architect</span>, AI Engineer, and
+          <p className="text-gray-200 text-[14px] sm:text-[16px] leading-relaxed max-w-[600px] mt-2" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.9)' }}>
+            I am <span className="text-white font-bold">Koketso Raphasha</span>, a{' '}
+            <span className="text-[#00FF9C] font-bold">Systems Architect</span>, AI Engineer, and
             Co-founder of Kirov Dynamics Technology based in Johannesburg, South Africa. Building
             self-healing, scalable, and highly efficient systems that bridge the gap between
             ambitious technical strategy and production-ready deployments.
@@ -207,9 +173,9 @@ const Hero = () => (
           </div>
 
           {/* Social links */}
-          <div className="flex items-center gap-4">
-            <span className="text-[9px] font-bold text-white/30 uppercase tracking-[0.2em]">CONNECT</span>
-            <div className="flex items-center gap-2.5">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5 mt-4">
+            <span className="text-[10px] font-bold text-white/30 uppercase tracking-[0.2em]">CONNECT</span>
+            <div className="flex items-center gap-3 flex-wrap">
               {SOCIALS.map((s, i) => (
                 <a
                   key={i}
@@ -217,36 +183,12 @@ const Hero = () => (
                   target="_blank"
                   rel="noopener noreferrer"
                   title={s.name}
-                  className={`w-8 h-8 flex items-center justify-center rounded text-white/40 ${s.color} transition-colors`}
+                  className={`w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 text-white/50 hover:scale-110 ${s.color} transition-all`}
                 >
-                  <Icon name={s.icon} size={17} />
+                  <Icon name={s.icon} size={22} />
                 </a>
               ))}
             </div>
-          </div>
-
-          {/* Stats row */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-1">
-            {STATS.map((s, i) => (
-              <div
-                key={i}
-                className="flex flex-col items-center justify-center gap-2 py-5 px-3 rounded-2xl text-center"
-                style={{ background: 'rgba(2,8,16,0.85)', border: '1px solid rgba(255,255,255,0.05)' }}
-              >
-                <div className="text-blue-500/80">
-                  <Icon name={s.icon} size={18} />
-                </div>
-                <div
-                  className="text-2xl sm:text-3xl font-extrabold text-white leading-none"
-                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
-                >
-                  <CountUp to={s.val} />{s.suffix}
-                </div>
-                <div className="text-[7.5px] font-bold text-white/30 uppercase tracking-widest leading-none">
-                  {s.label}
-                </div>
-              </div>
-            ))}
           </div>
         </motion.div>
 
@@ -284,25 +226,6 @@ const Hero = () => (
             </div>
           </div>
 
-          {/* ── Tech Stack Grid ── */}
-          <div className="mt-8 lg:mt-10 w-full flex flex-col items-center">
-            {/* Label */}
-            <div className="flex items-center gap-3 mb-4 w-full max-w-[360px]">
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent to-white/20" />
-              <span className="text-[9px] font-bold tracking-[0.2em] uppercase text-white/40 shrink-0">TECH ARSENAL</span>
-              <div className="h-px flex-1 bg-gradient-to-l from-transparent to-white/20" />
-            </div>
-
-            {/* Grid of 8 pills */}
-            <div className="flex flex-col gap-3 items-center w-full max-w-[380px]">
-              <div className="flex justify-center gap-3 flex-wrap w-full">
-                {ROW1_TECH.map((t, i) => <TechPill key={`r1-${i}`} name={t} />)}
-              </div>
-              <div className="flex justify-center gap-3 flex-wrap w-full">
-                {ROW2_TECH.map((t, i) => <TechPill key={`r2-${i}`} name={t} />)}
-              </div>
-            </div>
-          </div>
         </motion.div>
 
       </div>

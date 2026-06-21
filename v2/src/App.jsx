@@ -40,7 +40,7 @@ function App() {
       {/* Base cyber background layer - Enhanced Visibility */}
       {/* Base cyber background layer - Enhanced Visibility */}
       <motion.div 
-        className="fixed inset-0 pointer-events-none z-[0] opacity-[0.85] mix-blend-screen bg-center bg-cover bg-no-repeat" 
+        className="fixed inset-0 pointer-events-none z-[0] opacity-[0.25] mix-blend-screen bg-center bg-cover bg-no-repeat" 
         style={{ backgroundImage: `url(${cyberBg})`, y: bgY }}
         animate={{
           scale: [1, 1.15, 1],
@@ -56,7 +56,7 @@ function App() {
       <AdvancedBackground />
       
       {/* Enhanced mesh gradient overlay */}
-      <div className="fixed inset-0 pointer-events-none z-[2] opacity-40">
+      <div className="fixed inset-0 pointer-events-none z-[2] opacity-20">
         <div 
           className="absolute inset-0"
           style={{
