@@ -271,69 +271,20 @@ const Hero = () => (
               background: 'radial-gradient(ellipse at 50% 50%, rgba(0,255,156,0.07) 0%, transparent 70%)',
             }} />
 
-            {/* Main card */}
-            <div
-              className="relative rounded-2xl overflow-visible"
-              style={{
-                background: 'linear-gradient(145deg, #071a14 0%, #050d12 60%, #071520 100%)',
-                border: '1.5px solid rgba(0,255,156,0.55)',
-                boxShadow: [
-                  '0 0 0 1px rgba(0,255,156,0.08)',
-                  '0 0 25px rgba(0,255,156,0.12)',
-                  '0 0 60px rgba(0,255,156,0.05)',
-                  'inset 0 0 40px rgba(0,255,156,0.03)',
-                ].join(', '),
-              }}
-            >
-              {/* Corner accent lines — top-left */}
-              <div className="absolute top-0 left-0 pointer-events-none z-10" style={{ width: 28, height: 28 }}>
-                <div style={{ position: 'absolute', top: -1, left: -1, width: 14, height: 2, background: '#00FF9C' }} />
-                <div style={{ position: 'absolute', top: -1, left: -1, width: 2, height: 14, background: '#00FF9C' }} />
-              </div>
-              {/* Corner accent lines — top-right */}
-              <div className="absolute top-0 right-0 pointer-events-none z-10" style={{ width: 28, height: 28 }}>
-                <div style={{ position: 'absolute', top: -1, right: -1, width: 14, height: 2, background: '#00FF9C' }} />
-                <div style={{ position: 'absolute', top: -1, right: -1, width: 2, height: 14, background: '#00FF9C' }} />
-              </div>
-              {/* Corner accent lines — bottom-left */}
-              <div className="absolute bottom-0 left-0 pointer-events-none z-10" style={{ width: 28, height: 28 }}>
-                <div style={{ position: 'absolute', bottom: -1, left: -1, width: 14, height: 2, background: '#00FF9C' }} />
-                <div style={{ position: 'absolute', bottom: -1, left: -1, width: 2, height: 14, background: '#00FF9C' }} />
-              </div>
-              {/* Corner accent lines — bottom-right */}
-              <div className="absolute bottom-0 right-0 pointer-events-none z-10" style={{ width: 28, height: 28 }}>
-                <div style={{ position: 'absolute', bottom: -1, right: -1, width: 14, height: 2, background: '#00FF9C' }} />
-                <div style={{ position: 'absolute', bottom: -1, right: -1, width: 2, height: 14, background: '#00FF9C' }} />
-              </div>
-
-              {/* Photo — fills card, no padding */}
-              <div className="rounded-2xl overflow-hidden bg-[#050d12] flex items-center justify-center">
+            {/* Main card - borderless */}
+            <div className="relative rounded-2xl overflow-visible">
+              {/* Photo */}
+              <div className="rounded-2xl overflow-hidden flex items-center justify-center">
                 <img
                   src={koketsoSuit}
                   alt="Koketso Raphasha"
                   className="w-full h-auto block object-cover"
+                  style={{
+                    WebkitMaskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)',
+                    maskImage: 'linear-gradient(to bottom, black 85%, transparent 100%)'
+                  }}
                 />
               </div>
-            </div>
-
-            {/* Verification badge — solid green circle, top-right corner */}
-            <div
-              className="absolute flex items-center justify-center"
-              style={{
-                top: '-15px',
-                right: '-15px',
-                width: '38px',
-                height: '38px',
-                borderRadius: '50%',
-                background: 'linear-gradient(135deg, #00FF9C, #00C97A)',
-                border: '2.5px solid #050d12',
-                boxShadow: '0 0 0 1.5px #00FF9C, 0 0 16px rgba(0,255,156,0.5)',
-                zIndex: 30,
-              }}
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3.2" style={{ width: '16px', height: '16px' }}>
-                <polyline points="20 6 9 17 4 12" />
-              </svg>
             </div>
           </div>
 
