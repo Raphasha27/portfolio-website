@@ -4,8 +4,11 @@ import { Icon } from './Icons';
 import ParticleCanvas from './ParticleCanvas';
 import koketsoSuit from '../assets/koketso_samsung_profile.jpg';
 
-/* ── Typewriter cycling through roles ── */
+/* ─────────────────────────────────────────────
+   Typewriter — cycles through roles
+───────────────────────────────────────────── */
 const ROLES = ['SYSTEMS |', 'AI ENGINEER |', 'CO-FOUNDER |', 'FULL STACK DEV |'];
+
 const Typewriter = () => {
   const [roleIdx, setRoleIdx] = useState(0);
   const [displayed, setDisplayed] = useState('');
@@ -29,50 +32,57 @@ const Typewriter = () => {
         return () => clearTimeout(t);
       } else {
         setDeleting(false);
-        setRoleIdx((i) => (i + 1) % ROLES.length);
+        setRoleIdx(i => (i + 1) % ROLES.length);
       }
     }
   }, [displayed, deleting, paused, roleIdx]);
 
   return (
-    <span className="text-[#00FF9C] drop-shadow-[0_0_30px_rgba(0,255,156,0.4)]">
+    <span className="text-[#00FF9C]" style={{ textShadow: '0 0 30px rgba(0,255,156,0.35)' }}>
       {displayed}
       <motion.span
         animate={{ opacity: [1, 0] }}
-        transition={{ duration: 0.6, repeat: Infinity, repeatType: 'reverse' }}
-        className="inline-block w-[3px] h-[0.9em] bg-[#00FF9C] ml-1 align-middle rounded-sm"
+        transition={{ duration: 0.55, repeat: Infinity, repeatType: 'reverse' }}
+        className="inline-block w-[3px] h-[0.85em] bg-[#00FF9C] ml-1 align-middle rounded-sm"
       />
     </span>
   );
 };
 
-/* ── Animated stat counter ── */
+/* ─────────────────────────────────────────────
+   Animated count-up
+───────────────────────────────────────────── */
 const CountUp = ({ to, duration = 2 }) => {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-50px' });
+  const inView = useInView(ref, { once: true, margin: '-50px' });
+
   useEffect(() => {
-    if (!isInView) return;
-    let start = 0;
-    const increment = to / (duration * 60);
+    if (!inView) return;
+    let n = 0;
+    const step = to / (duration * 60);
     const timer = setInterval(() => {
-      start += increment;
-      if (start >= to) { setCount(to); clearInterval(timer); }
-      else setCount(Math.floor(start));
+      n += step;
+      if (n >= to) { setCount(to); clearInterval(timer); }
+      else setCount(Math.floor(n));
     }, 1000 / 60);
     return () => clearInterval(timer);
-  }, [to, duration, isInView]);
+  }, [to, duration, inView]);
+
   return <span ref={ref}>{count}</span>;
 };
 
-const socialLinks = [
-  { name: 'GitHub',   icon: 'github',   link: 'https://github.com/raphasha27',            color: 'hover:text-white' },
-  { name: 'LinkedIn', icon: 'linkedin', link: 'https://linkedin.com/in/koketso-raphasha', color: 'hover:text-blue-400' },
-  { name: 'Twitter',  icon: 'twitter',  link: 'https://twitter.com/raphasha27',            color: 'hover:text-sky-400' },
-  { name: 'WhatsApp', icon: 'whatsapp', link: 'https://wa.me/27781172470',                 color: 'hover:text-green-400' },
-  { name: 'YouTube',  icon: 'youtube',  link: 'https://youtube.com/@raphasha27',           color: 'hover:text-red-500' },
-  { name: 'Email',    icon: 'mail',     link: 'mailto:k.raphasha@kirovdynamics.com',       color: 'hover:text-blue-300' },
-  { name: 'Kaggle',   icon: 'kaggle',   link: 'https://kaggle.com/Raphasha27',             color: 'hover:text-blue-300' },
+/* ─────────────────────────────────────────────
+   Data
+───────────────────────────────────────────── */
+const SOCIALS = [
+  { name: 'GitHub',   icon: 'github',   link: 'https://github.com/raphasha27',            color: 'hover:text-white'      },
+  { name: 'LinkedIn', icon: 'linkedin', link: 'https://linkedin.com/in/koketso-raphasha', color: 'hover:text-blue-400'   },
+  { name: 'Twitter',  icon: 'twitter',  link: 'https://twitter.com/raphasha27',            color: 'hover:text-sky-400'    },
+  { name: 'WhatsApp', icon: 'whatsapp', link: 'https://wa.me/27781172470',                 color: 'hover:text-green-400'  },
+  { name: 'YouTube',  icon: 'youtube',  link: 'https://youtube.com/@raphasha27',           color: 'hover:text-red-500'    },
+  { name: 'Email',    icon: 'mail',     link: 'mailto:k.raphasha@kirovdynamics.com',       color: 'hover:text-blue-300'   },
+  { name: 'Kaggle',   icon: 'kaggle',   link: 'https://kaggle.com/Raphasha27',             color: 'hover:text-cyan-400'   },
 ];
 
 const STATS = [
@@ -82,132 +92,187 @@ const STATS = [
   { label: 'DELIVERY',        val: 100, suffix: '%', icon: 'shield'        },
 ];
 
+/* ─────────────────────────────────────────────
+   Hero
+───────────────────────────────────────────── */
 const Hero = () => (
-  <div id="home" className="relative min-h-[100dvh] flex flex-col overflow-x-hidden bg-transparent">
+  <div
+    id="home"
+    className="relative min-h-[100dvh] flex flex-col overflow-x-hidden bg-transparent"
+  >
     <ParticleCanvas />
 
-    {/* Ambient glow orbs */}
-    <div className="absolute top-1/4 -right-20 w-96 h-96 bg-[#00FF9C]/5 blur-[120px] rounded-full pointer-events-none" />
-    <div className="absolute bottom-1/4 -left-20 w-80 h-80 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
+    {/* Subtle right-side glow */}
+    <div className="absolute top-0 right-0 w-[45%] h-full pointer-events-none"
+      style={{ background: 'radial-gradient(ellipse at 80% 50%, rgba(0,255,156,0.04) 0%, transparent 65%)' }}
+    />
 
-    {/* Main Content Container */}
-    <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10 mt-20 lg:mt-0 lg:my-auto pb-8 lg:pb-0 max-w-7xl mx-auto flex-1 flex flex-col justify-center">
-      <div className="grid grid-cols-1 lg:grid-cols-[1.3fr_0.7fr] gap-8 sm:gap-12 items-center w-full">
+    {/* ── Main content ── */}
+    <div className="w-full px-5 sm:px-8 lg:px-16 max-w-screen-xl mx-auto flex-1 flex flex-col justify-center relative z-10"
+      style={{ paddingTop: 'var(--nav-h)' }}
+    >
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_420px] xl:grid-cols-[1fr_460px] gap-10 xl:gap-16 items-center w-full py-8 lg:py-0">
 
-        {/* ── LEFT: Text content ── */}
+        {/* ══════════════ LEFT ══════════════ */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
+          initial={{ opacity: 0, x: -24 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.5 }}
-          className="space-y-6 order-2 lg:order-1 flex flex-col justify-center mt-8 lg:mt-0"
+          transition={{ duration: 0.55, ease: 'easeOut' }}
+          className="flex flex-col gap-5 order-2 lg:order-1"
         >
           {/* Heading */}
-          <div className="space-y-4">
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-[1.1] uppercase">
-              SYSTEMS ARCHITECT &<br />
+          <div className="flex flex-col gap-2">
+            <h1
+              className="text-4xl sm:text-5xl lg:text-[3.4rem] xl:text-[3.8rem] font-extrabold tracking-tight text-white leading-[1.08] uppercase"
+              style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+            >
+              SYSTEMS ARCHITECT &amp;<br />
               <Typewriter />
             </h1>
-            <div className="text-[9px] sm:text-[11px] font-mono text-cyan-400 uppercase tracking-[0.3em] font-bold">
-              SOVEREIGN INFRASTRUCTURE • AUTONOMOUS AI • TECH CO-FOUNDER
-            </div>
+
+            {/* Sub-tagline */}
+            <p className="text-[9px] sm:text-[10px] font-mono font-bold tracking-[0.28em] uppercase text-cyan-400/80 mt-1">
+              SOVEREIGN INFRASTRUCTURE &nbsp;·&nbsp; AUTONOMOUS AI &nbsp;·&nbsp; TECH CO-FOUNDER
+            </p>
           </div>
 
           {/* Description */}
-          <p className="text-[#a0abb8] text-sm sm:text-base leading-relaxed max-w-2xl">
-            I am <span className="text-white font-bold">Koketso Raphasha</span>, a{' '}
-            <span className="text-blue-400 font-bold">Systems Architect</span>, AI Engineer, and Co-founder of
-            Kirov Dynamics Technology based in Johannesburg, South Africa. Building self-healing, scalable, and highly efficient systems that bridge the gap between ambitious technical strategy and production-ready deployments.
+          <p className="text-[#8a9bac] text-[13px] sm:text-sm leading-relaxed max-w-[480px]">
+            I am <span className="text-white font-semibold">Koketso Raphasha</span>, a{' '}
+            <span className="text-blue-400 font-semibold">Systems Architect</span>, AI Engineer, and
+            Co-founder of Kirov Dynamics Technology based in Johannesburg, South Africa. Building
+            self-healing, scalable, and highly efficient systems that bridge the gap between
+            ambitious technical strategy and production-ready deployments.
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-wrap items-center gap-4 pt-4">
+          <div className="flex flex-wrap items-center gap-3">
+            {/* VIEW REPOS */}
             <a
               href="#projects"
-              className="flex items-center justify-center px-8 py-3.5 bg-[#00FF9C] text-[#050d12] font-bold rounded-xl hover:bg-[#00e089] transition-all active:scale-95 text-[13px] whitespace-nowrap shadow-[0_0_20px_rgba(0,255,156,0.2)]"
+              className="flex items-center justify-center px-7 py-3 bg-[#00FF9C] text-[#030d08] text-[13px] font-black rounded-lg hover:brightness-110 active:scale-95 transition-all whitespace-nowrap"
+              style={{ boxShadow: '0 0 18px rgba(0,255,156,0.18)' }}
             >
               VIEW REPOS
             </a>
+
+            {/* DOWNLOAD CV */}
             <a
               href="/Koketso_Raphasha_CV.pdf"
               download
-              className="flex items-center justify-center gap-2 px-8 py-3.5 bg-[#050d12] border border-[#00FF9C]/30 text-white font-bold rounded-xl hover:bg-[#00FF9C]/10 transition-all active:scale-95 text-[13px] whitespace-nowrap"
+              className="flex items-center justify-center gap-2 px-7 py-3 bg-[#050d12] border border-[#00FF9C]/25 text-white text-[13px] font-bold rounded-lg hover:border-[#00FF9C]/50 hover:bg-[#071510] active:scale-95 transition-all whitespace-nowrap"
             >
-              <Icon name="download" size={16} className="text-blue-400" /> DOWNLOAD CV
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="w-4 h-4 text-blue-400">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" x2="12" y1="15" y2="3" />
+              </svg>
+              DOWNLOAD CV
             </a>
+
+            {/* HIRE ME */}
             <a
               href="#contact"
-              className="flex items-center justify-center gap-2 px-8 py-3.5 bg-[#020b1a] border border-blue-500/10 text-blue-500 font-bold rounded-xl hover:bg-[#051329] transition-all active:scale-95 text-[13px] whitespace-nowrap"
+              className="flex items-center justify-center gap-2 px-7 py-3 bg-[#020814] border border-blue-500/12 text-blue-500 text-[13px] font-bold rounded-lg hover:border-blue-500/30 hover:bg-[#03101f] active:scale-95 transition-all whitespace-nowrap"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0 shadow-[0_0_8px_rgba(59,130,246,0.8)]" /> HIRE ME
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0" style={{ boxShadow: '0 0 7px rgba(59,130,246,0.9)' }} />
+              HIRE ME
             </a>
           </div>
 
-          {/* Socials Row */}
-          <div className="flex items-center gap-4 pt-4">
-            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">CONNECT</span>
-            <div className="flex items-center gap-3">
-              {socialLinks.map((s, i) => (
+          {/* Social links */}
+          <div className="flex items-center gap-4">
+            <span className="text-[9px] font-bold text-white/30 uppercase tracking-[0.2em]">CONNECT</span>
+            <div className="flex items-center gap-2.5">
+              {SOCIALS.map((s, i) => (
                 <a
                   key={i}
                   href={s.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`w-8 h-8 rounded flex items-center justify-center text-gray-400 ${s.color} transition-colors`}
                   title={s.name}
+                  className={`w-8 h-8 flex items-center justify-center rounded text-white/40 ${s.color} transition-colors`}
                 >
-                  <Icon name={s.icon} size={18} />
+                  <Icon name={s.icon} size={17} />
                 </a>
               ))}
             </div>
           </div>
 
-          {/* Stats Boxes */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 w-full">
+          {/* Stats row */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-1">
             {STATS.map((s, i) => (
               <div
                 key={i}
-                className="bg-[#020810]/80 p-5 rounded-2xl border border-white/5 flex flex-col items-center justify-center text-center gap-3 hover:border-white/10 transition-colors"
+                className="flex flex-col items-center justify-center gap-2 py-5 px-3 rounded-2xl text-center"
+                style={{ background: 'rgba(2,8,16,0.85)', border: '1px solid rgba(255,255,255,0.05)' }}
               >
-                <div className="text-blue-500">
-                  <Icon name={s.icon} size={20} />
+                <div className="text-blue-500/80">
+                  <Icon name={s.icon} size={18} />
                 </div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-white leading-none">
+                <div
+                  className="text-2xl sm:text-3xl font-extrabold text-white leading-none"
+                  style={{ fontFamily: "'Space Grotesk', sans-serif" }}
+                >
                   <CountUp to={s.val} />{s.suffix}
                 </div>
-                <div className="text-[8px] font-bold text-gray-500 uppercase tracking-widest">{s.label}</div>
+                <div className="text-[7.5px] font-bold text-white/30 uppercase tracking-widest leading-none">
+                  {s.label}
+                </div>
               </div>
             ))}
           </div>
-
         </motion.div>
 
-        {/* ── RIGHT: Portrait ── */}
+        {/* ══════════════ RIGHT — Portrait ══════════════ */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="relative order-1 lg:order-2 flex flex-col items-center lg:items-end w-full"
+          transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }}
+          className="relative order-1 lg:order-2 flex justify-center lg:justify-end"
         >
-          <div className="relative w-full max-w-[320px] sm:max-w-[380px] lg:max-w-[420px]">
-            {/* The Green Outline Frame */}
-            <div className="relative w-full rounded-2xl border border-[#00FF9C] shadow-[0_0_30px_rgba(0,255,156,0.1)]">
-              
-              {/* Photo */}
-              <div className="relative w-full overflow-hidden rounded-2xl">
-                <img
-                  src={koketsoSuit}
-                  alt="Koketso Raphasha"
-                  className="w-full h-auto object-cover relative z-10 block"
-                />
-              </div>
-              
-              {/* Verification Badge */}
-              <div className="absolute -top-3 -right-3 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#00FF9C]/20 border border-[#00FF9C] flex items-center justify-center z-30 shadow-[0_0_15px_rgba(0,255,156,0.2)] backdrop-blur-md">
-                <svg viewBox="0 0 24 24" fill="none" stroke="#00FF9C" strokeWidth="3" className="w-4 h-4 sm:w-5 sm:h-5">
-                  <polyline points="20 6 9 17 4 12" />
-                </svg>
-              </div>
+          {/* Subtle green glow behind image */}
+          <div
+            className="absolute inset-0 rounded-2xl pointer-events-none"
+            style={{ background: 'radial-gradient(ellipse at 50% 60%, rgba(0,255,156,0.08) 0%, transparent 70%)' }}
+          />
 
+          {/* Frame */}
+          <div
+            className="relative rounded-2xl overflow-hidden"
+            style={{
+              border: '1.5px solid #00FF9C',
+              boxShadow: '0 0 0 1px rgba(0,255,156,0.08), 0 0 40px rgba(0,255,156,0.06)',
+              maxWidth: '420px',
+              width: '100%',
+            }}
+          >
+            {/* Photo */}
+            <img
+              src={koketsoSuit}
+              alt="Koketso Raphasha"
+              className="w-full h-auto block object-cover"
+              style={{ display: 'block' }}
+            />
+
+            {/* Verification badge — top-right */}
+            <div
+              className="absolute flex items-center justify-center"
+              style={{
+                top: '-14px',
+                right: '-14px',
+                width: '36px',
+                height: '36px',
+                borderRadius: '50%',
+                background: '#00C97A',
+                border: '2px solid #00FF9C',
+                boxShadow: '0 0 14px rgba(0,255,156,0.35)',
+                zIndex: 20,
+              }}
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3.5" style={{ width: '16px', height: '16px' }}>
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
             </div>
           </div>
         </motion.div>
