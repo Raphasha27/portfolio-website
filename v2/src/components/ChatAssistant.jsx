@@ -237,16 +237,30 @@ const ChatAssistant = () => {
         )}
       </AnimatePresence>
 
-      {/* FAB Button */}
-      <motion.button
-        onClick={() => setIsOpen(!isOpen)}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        className="w-14 h-14 rounded-full bg-[#00FF9C] text-[#000814] flex items-center justify-center shadow-[0_0_30px_rgba(0,255,156,0.5)] relative ring-4 ring-[#00FF9C]/20"
-      >
-        <div className="absolute inset-0 rounded-full bg-[#00FF9C] opacity-25 animate-ping" />
-        <Icon name={isOpen ? 'close' : 'chat'} size={24} />
-      </motion.button>
+      {/* FAB Button with tag */}
+      <div className="flex items-center gap-2">
+        <AnimatePresence>
+          {!isOpen && (
+            <motion.div
+              initial={{ opacity: 0, x: 10 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 10 }}
+              className="glass px-3 py-1.5 rounded-xl border border-[#00FF9C]/20 text-[10px] font-mono text-white/70 whitespace-nowrap shadow-[0_0_20px_rgba(0,255,156,0.1)]"
+            >
+              How can I help you? →
+            </motion.div>
+          )}
+        </AnimatePresence>
+        <motion.button
+          onClick={() => setIsOpen(!isOpen)}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          className="w-14 h-14 rounded-full bg-[#00FF9C] text-[#000814] flex items-center justify-center shadow-[0_0_30px_rgba(0,255,156,0.5)] relative ring-4 ring-[#00FF9C]/20 shrink-0"
+        >
+          <div className="absolute inset-0 rounded-full bg-[#00FF9C] opacity-25 animate-ping" />
+          <Icon name={isOpen ? 'close' : 'chat'} size={24} />
+        </motion.button>
+      </div>
     </div>
   );
 };
