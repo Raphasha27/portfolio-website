@@ -68,7 +68,7 @@ const getLocalReply = (text) => {
 const CHIPS = ['Tech Stack', 'Latest Project', 'Hire Me', 'Contact Info'];
 
 const ChatAssistant = () => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
     { role: 'bot', text: "Hey! I'm Koketso's Digital Twin AI 🤖\nAsk me about his projects, tech stack, or how to hire him!" }
   ]);
