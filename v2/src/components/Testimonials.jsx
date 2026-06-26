@@ -10,7 +10,7 @@ const testimonials = [
     tag: "Client"
   },
   {
-    name: "Thabo Molefe",
+    name: "Rajesh Kumar",
     role: "Senior Dev @ Kirov Dynamics",
     text: "As a teammate, Koketso brings a level of technical depth that's rare. Their ability to architect complex agentic systems while keeping the codebase clean and maintainable is inspiring.",
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
