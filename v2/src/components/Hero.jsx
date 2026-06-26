@@ -209,12 +209,7 @@ const Hero = () => (
     <div className="absolute top-0 -right-20 w-96 h-96 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
     <div className="absolute bottom-0 -left-20 w-80 h-80 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
 
-    {/* Sliding Tech Banner */}
-    <div className="w-full relative z-10 mt-[var(--nav-h)]">
-      <HeroBanner />
-    </div>
-
-    <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10 max-w-7xl mx-auto pt-4 sm:pt-6 lg:pt-10 pb-8 sm:pb-12">
+    <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10 max-w-7xl mx-auto pt-[var(--nav-h)] flex-1 flex flex-col justify-center">
       <div className="flex flex-col lg:flex-row items-center lg:items-start gap-4 sm:gap-6 lg:gap-12 w-full">
 
         {/* Profile Column */}

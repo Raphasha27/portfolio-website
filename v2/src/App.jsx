@@ -6,6 +6,7 @@ import Navbar from './components/Navbar';
 import CustomCursor from './components/CustomCursor';
 import ErrorBoundary from './components/ErrorBoundary';
 import CommandPalette from './components/CommandPalette';
+import TechMarquee from './components/TechMarquee';
 
 const Terminal = lazy(() => import('./components/Terminal'));
 const Experience = lazy(() => import('./components/Experience'));
