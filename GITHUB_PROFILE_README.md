@@ -1,4 +1,4 @@
-# 👨‍💻 Koketso Raphasha | AI Engineer & Systems Architect
+# 👨‍💻 Koketso Raphasha | Software Engineer & Systems Architect
 
 <div align="center">
 

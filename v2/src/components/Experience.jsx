@@ -4,7 +4,6 @@ import { Icon } from './Icons';
 
 // Logo Assets
 import yesBadge from '../assets/yes-badge.png';
-import capacitiLogo from '../assets/capaciti-logo.png';
 import wtcLogo from '../assets/wethinkcode-logo.png';
 import richfieldLogo from '../assets/richfield-logo-new.png';
 
@@ -18,7 +17,8 @@ const experiences = [
     logo: null,
     logoBg: "bg-transparent",
     logoPadding: "p-0",
-    logoFit: "object-cover"
+    logoFit: "object-cover",
+    cardBg: "from-emerald-500/10 via-emerald-400/5 to-transparent"
   },
   {
     period: "2024 – PRESENT",
@@ -29,7 +29,8 @@ const experiences = [
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
     logoBg: "bg-white",
     logoPadding: "p-4",
-    logoFit: "object-contain"
+    logoFit: "object-contain",
+    cardBg: "from-purple-500/10 via-purple-400/5 to-transparent"
   },
   {
     period: "2024 – 2025",
@@ -39,18 +40,8 @@ const experiences = [
     icon: "graduationCap",
     logo: yesBadge,
     logoBg: "bg-white",
-    logoPadding: "p-4"
-  },
-  {
-    period: "2025 – 2026",
-    role: "Tech Accelerator Graduate",
-    company: "CAPACITI · Digital Skills Accelerator",
-    desc: "Completed an intensive digital skills accelerator focused on cloud computing, agile development, and enterprise software delivery. Ranked in top cohort for technical output.",
-    icon: "rocket",
-    logo: "https://ab4ir.org/wp-content/uploads/2021/06/Naspers-Labs_blue-2.png",
-    logoBg: "bg-white",
-    logoPadding: "p-2",
-    logoFit: "object-contain"
+    logoPadding: "p-4",
+    cardBg: "from-blue-500/10 via-blue-400/5 to-transparent"
   },
   {
     period: "2025 – 2026",
@@ -61,7 +52,8 @@ const experiences = [
     logo: "https://th.bing.com/th/id/R.e8ae1deef5cd53a7f446b6bfe1791e4d?rik=Xlnu%2f30pV2GYyg&pid=ImgRaw&r=0",
     logoBg: "bg-white",
     logoPadding: "p-3",
-    logoFit: "object-contain"
+    logoFit: "object-contain",
+    cardBg: "from-orange-500/10 via-orange-400/5 to-transparent"
   },
   {
     period: "2023 – 2024",
@@ -71,7 +63,8 @@ const experiences = [
     icon: "code",
     logo: wtcLogo,
     logoBg: "bg-white",
-    logoPadding: "p-4"
+    logoPadding: "p-4",
+    cardBg: "from-pink-500/10 via-pink-400/5 to-transparent"
   },
   {
     period: "2022 – 2025",
@@ -82,7 +75,8 @@ const experiences = [
     logo: richfieldLogo,
     logoBg: "bg-[#003087]",
     logoPadding: "p-2",
-    logoFit: "object-contain"
+    logoFit: "object-contain",
+    cardBg: "from-yellow-500/10 via-yellow-400/5 to-transparent"
   }
 ];
 
@@ -147,9 +141,11 @@ const Experience = () => {
                 </div>
 
                 {/* Content Card */}
-                <div className="glass flex-1 p-5 lg:p-8 border border-white/5 group-hover:border-[#00FF9C]/20 transition-[border-color] duration-500 relative overflow-hidden rounded-2xl lg:rounded-[32px] w-full">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#00FF9C]/5 blur-[100px] rounded-full -mr-32 -mt-32 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" style={{ willChange: 'opacity' }} />
-                  <div className="relative z-10">
+                <div className="glass flex-1 lg:flex lg:items-center p-5 lg:p-8 border border-white/5 group-hover:border-[#00FF9C]/20 transition-[border-color] duration-500 relative overflow-hidden rounded-2xl lg:rounded-[32px] w-full">
+                  <div className={`absolute inset-0 bg-gradient-to-br ${exp.cardBg || 'from-transparent to-transparent'} opacity-60 group-hover:opacity-80 transition-opacity duration-500 pointer-events-none`} />
+                  
+                  {/* Main Content Section */}
+                  <div className="relative z-10 lg:flex-1 lg:pr-8">
                     <div className="flex flex-col gap-2 mb-3 sm:mb-6">
                       <div className="max-w-full overflow-hidden">
                         <h3 className="text-base sm:text-2xl font-bold text-white group-hover:text-[#00FF9C] transition-[color] duration-300 tracking-tight break-words">{exp.role}</h3>
@@ -159,10 +155,15 @@ const Experience = () => {
                         [{exp.period}]
                       </div>
                     </div>
-                    <p className="text-text-dim text-xs sm:text-base leading-relaxed max-w-3xl font-light opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+                    <p className="text-text-dim text-xs sm:text-base leading-relaxed font-light opacity-80 group-hover:opacity-100 transition-opacity duration-300">
                       {exp.desc}
                     </p>
                   </div>
+
+                  {/* No illustration - clean text layout */}
+                  
+                  {/* Background effects */}
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-[#00FF9C]/5 blur-[100px] rounded-full -mr-32 -mt-32 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" style={{ willChange: 'opacity' }} />
                 </div>
               </motion.div>
             ))}

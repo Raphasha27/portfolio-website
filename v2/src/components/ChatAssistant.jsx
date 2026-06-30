@@ -3,11 +3,11 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icons';
 
 // ── Rich knowledge base (used as system context + fallback) ──────────────────
-const SYSTEM_PROMPT = `You are the Digital Twin AI of Koketso Raphasha, an Autonomous AI Engineer and Software Engineer based in Johannesburg, South Africa.
+const SYSTEM_PROMPT = `You are the Digital Twin AI of Koketso Raphasha, a Software Engineer based in Johannesburg, South Africa.
 
 KEY FACTS:
 - Full name: Koketso Raphasha (Age 27)
-- Role: Autonomous AI Engineer | Software Engineer | Co-Founder of Kirov Dynamics Technology
+- Role: Software Engineer | Co-Founder of Kirov Dynamics Technology
 - Education: BSc Computer Science (Distinction) from Richfield Graduate Institute
 - Also trained at WeThinkCode_ (Johannesburg)
 - Internship: AI Intern at CAPACITI Digital Skills Accelerator (2025-2026)
@@ -155,8 +155,8 @@ const ChatAssistant = () => {
                   <div className="w-9 h-9 rounded-full bg-[#00FF9C]/20 border border-[#00FF9C] flex items-center justify-center text-[#00FF9C]">
                     <Icon name="terminal" size={16} />
                   </div>
-                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-[#00FF9C] rounded-full border-2 border-[#050d12] animate-ping" />
-                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-[#00FF9C] rounded-full border-2 border-[#050d12]" />
+                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-[#00FF9C] rounded-full border-2 border-[#000814] animate-ping" />
+                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-[#00FF9C] rounded-full border-2 border-[#000814]" />
                 </div>
                 <div>
                   <div className="text-xs font-bold text-white">Digital Twin AI</div>
@@ -172,12 +172,12 @@ const ChatAssistant = () => {
             </div>
 
             {/* Messages */}
-            <div ref={scrollRef} className="flex-1 p-4 overflow-y-auto space-y-3 text-xs bg-[#050d12]/60">
+            <div ref={scrollRef} className="flex-1 p-4 overflow-y-auto space-y-3 text-xs bg-[#000814]/60">
               {messages.map((m, i) => (
                 <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                   <div className={`max-w-[85%] p-3 rounded-xl text-[11px] leading-relaxed whitespace-pre-wrap ${
                     m.role === 'user'
-                      ? 'bg-[#00FF9C] text-[#050d12] font-semibold rounded-tr-sm shadow-[0_0_15px_rgba(0,255,156,0.2)]'
+                      ? 'bg-[#00FF9C] text-[#000814] font-semibold rounded-tr-sm shadow-[0_0_15px_rgba(0,255,156,0.2)]'
                       : 'bg-white/5 border border-white/10 text-white/90 rounded-tl-sm'
                   }`}>
                     {m.text}
@@ -201,7 +201,7 @@ const ChatAssistant = () => {
             </div>
 
             {/* Quick Chips */}
-            <div className="px-3 py-2 border-t border-white/5 flex gap-2 overflow-x-auto scrollbar-none shrink-0 bg-[#050d12]/40">
+            <div className="px-3 py-2 border-t border-white/5 flex gap-2 overflow-x-auto scrollbar-none shrink-0 bg-[#000814]/40">
               {CHIPS.map(chip => (
                 <button
                   key={chip}
@@ -214,7 +214,7 @@ const ChatAssistant = () => {
             </div>
 
             {/* Input */}
-            <div className="p-3 border-t border-white/5 bg-[#050d12]/80 backdrop-blur-md shrink-0">
+            <div className="p-3 border-t border-white/5 bg-[#000814]/80 backdrop-blur-md shrink-0">
               <div className="flex gap-2">
                 <input
                   type="text"
@@ -227,7 +227,7 @@ const ChatAssistant = () => {
                 <button
                   onClick={() => handleSend()}
                   disabled={!input.trim()}
-                  className="p-2.5 bg-[#00FF9C]/20 border border-[#00FF9C] text-[#00FF9C] rounded-xl hover:bg-[#00FF9C] hover:text-[#050d12] transition-all disabled:opacity-30 disabled:cursor-not-allowed shadow-[0_0_10px_rgba(0,255,156,0.2)]"
+                  className="p-2.5 bg-[#00FF9C]/20 border border-[#00FF9C] text-[#00FF9C] rounded-xl hover:bg-[#00FF9C] hover:text-[#000814] transition-all disabled:opacity-30 disabled:cursor-not-allowed shadow-[0_0_10px_rgba(0,255,156,0.2)]"
                 >
                   <Icon name="send" size={14} />
                 </button>
@@ -237,16 +237,46 @@ const ChatAssistant = () => {
         )}
       </AnimatePresence>
 
-      {/* FAB Button */}
-      <motion.button
-        onClick={() => setIsOpen(!isOpen)}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        className="w-14 h-14 rounded-full bg-[#00FF9C] text-[#050d12] flex items-center justify-center shadow-[0_0_30px_rgba(0,255,156,0.5)] relative ring-4 ring-[#00FF9C]/20"
-      >
-        <div className="absolute inset-0 rounded-full bg-[#00FF9C] opacity-25 animate-ping" />
-        <Icon name={isOpen ? 'close' : 'chat'} size={24} />
-      </motion.button>
+      {/* Scan indicator - mobile only */}
+      <div className="sm:hidden flex justify-end mb-1">
+        <div className="flex items-center gap-1.5 px-2 py-1 rounded-full bg-[#00FF9C]/5 border border-[#00FF9C]/20">
+          <div className="relative w-3 h-3">
+            <div className="absolute inset-0 rounded-full border border-[#00FF9C]/30" />
+            <motion.div
+              className="absolute inset-0 rounded-full border border-[#00FF9C]"
+              animate={{ scale: [1, 1.8, 1], opacity: [0.6, 0, 0.6] }}
+              transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+            />
+            <div className="absolute inset-[3px] rounded-full bg-[#00FF9C]" />
+          </div>
+          <span className="text-[8px] font-mono text-[#00FF9C]/60 uppercase tracking-widest">Scan</span>
+        </div>
+      </div>
+
+      {/* FAB Button with tag */}
+      <div className="flex items-center gap-2">
+        <AnimatePresence>
+          {!isOpen && (
+            <motion.div
+              initial={{ opacity: 0, x: 10 }}
+              animate={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: 10 }}
+              className="glass px-3 py-1.5 rounded-xl border border-[#00FF9C]/20 text-[10px] font-mono text-white/70 whitespace-nowrap shadow-[0_0_20px_rgba(0,255,156,0.1)]"
+            >
+              How can I help you? →
+            </motion.div>
+          )}
+        </AnimatePresence>
+        <motion.button
+          onClick={() => setIsOpen(!isOpen)}
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          className="w-14 h-14 rounded-full bg-[#00FF9C] text-[#000814] flex items-center justify-center shadow-[0_0_30px_rgba(0,255,156,0.5)] relative ring-4 ring-[#00FF9C]/20 shrink-0"
+        >
+          <div className="absolute inset-0 rounded-full bg-[#00FF9C] opacity-25 animate-ping" />
+          <Icon name={isOpen ? 'close' : 'chat'} size={24} />
+        </motion.button>
+      </div>
     </div>
   );
 };

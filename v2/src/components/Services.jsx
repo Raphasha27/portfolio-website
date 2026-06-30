@@ -34,19 +34,19 @@ const vercelProjects = [
     title: "NoShowIQ",
     subtitle: "Healthcare No-Show Prediction",
     desc: "Fullstack app predicting patient appointment no-shows using ML models.",
-    url: "https://noshowiq-fullstack.vercel.app",
+    url: "https://noshowiq.vercel.app",
     icon: "brain",
     color: "from-purple-500/20 to-pink-500/20",
     tech: ["Next.js", "Python", "FastAPI", "Vercel"]
   },
   {
-    title: "Sumbandila App",
-    subtitle: "Landing Page",
-    desc: "Professional landing page for the Sumbandila platform.",
+    title: "Sumbandila",
+    subtitle: "Identity Verification Platform",
+    desc: "Digital identity verification system with document authentication, biometric validation, and secure API integration for enterprise clients.",
     url: "https://landing-five-orcin-61.vercel.app",
-    icon: "globe",
+    icon: "shield",
     color: "from-[#00FF9C]/20 to-cyan-500/20",
-    tech: ["Next.js", "Tailwind", "Vercel"]
+    tech: ["Next.js", "Tailwind", "API Integration", "Vercel"]
   },
   {
     title: "Kirov Dynamics",

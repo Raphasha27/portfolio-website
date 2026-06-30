@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { GitHubCalendar } from 'react-github-calendar';
 import { Icon } from './Icons';
+import TechMarquee from './TechMarquee';
 
 const projects = [
   {
@@ -54,16 +55,16 @@ const projects = [
     color: "from-emerald-400/20 to-cyan-500/20",
     featured: true,
     link: "https://github.com/Raphasha27/NoShowIQ",
-    liveUrl: "https://noshowiq-fullstack.vercel.app",
+    liveUrl: "https://noshowiq.vercel.app",
     status: "live"
   },
   {
-    title: "Sumbandila App",
-    tagline: "Landing Page",
-    desc: "Professional landing page for the Sumbandila platform.",
-    tech: ["nextjs", "tailwindcss", "vercel"],
-    icon: "globe",
-    role: "Frontend Dev",
+    title: "Sumbandila",
+    tagline: "Identity Verification System",
+    desc: "Enterprise-grade digital identity verification platform with document authentication, biometric validation, and secure API infrastructure for government and financial institutions.",
+    tech: ["nextjs", "tailwindcss", "api-integration", "security"],
+    icon: "shield",
+    role: "Full Stack Dev",
     color: "from-blue-500/20 to-purple-500/20",
     link: "https://github.com/Raphasha27/Sumbandila-App",
     liveUrl: "https://landing-five-orcin-61.vercel.app",
@@ -99,7 +100,7 @@ const projects = [
     desc: "Premium analytics platform utilizing RAG and Vector Embeddings for real-time market trends, salary insights, and intelligent candidate matching.",
     tech: ["python", "fastapi", "react", "docker"],
     icon: "zap",
-    role: "AI Engineer",
+    role: "Software Engineer",
     color: "from-emerald-500/20 to-teal-500/20",
     bgImage: "project-finance.png",
     link: "https://github.com/Raphasha27/ai-job-market-intelligence"
@@ -259,43 +260,6 @@ const projects = [
 ];
 
 
-
-const bannerTechs = [
-  { name: "React",           id: "react"        },
-  { name: "C",               id: "c"            },
-  { name: "C++",             id: "cplusplus"    },
-  { name: "Python",          id: "python"       },
-  { name: "Java",            id: "java"         },
-  { name: "Go",              id: "go"           },
-  { name: "Rust",            id: "rust"         },
-  { name: "Swift",           id: "swift"        },
-  { name: "Node.js",         id: "node"         },
-  { name: "FastAPI",         id: "fastapi"      },
-  { name: "Expo",            id: "expo"         },
-  { name: "Android Studio",  id: "androidstudio"},
-  { name: "Streamlit",       id: "streamlit"    },
-  { name: "Kaggle",          id: "kaggle"       },
-  { name: "Jupyter",         id: "jupyter"      },
-  { name: "R",               id: "r"            },
-  { name: "PostgreSQL",      id: "postgres"     },
-  { name: "TypeScript",      id: "typescript"   },
-  { name: "Next.js",         id: "nextjs"       },
-  { name: "Docker",          id: "docker"       },
-  { name: "MongoDB",         id: "mongodb"      },
-  { name: "Tailwind CSS",    id: "tailwindcss"  },
-  { name: "GitHub Actions",  id: "githubactions" },
-  { name: "LangChain",       id: "langchain"    },
-  { name: "Redis",           id: "redis"        },
-  { name: "Framer Motion",   id: "framer"       },
-  { name: "TensorFlow",      id: "tensorflow"   },
-  { name: "PyTorch",         id: "pytorch"      },
-  { name: "Kubernetes",      id: "kubernetes"   },
-  { name: "Linux",           id: "linux"        },
-  { name: "Kali Linux",      id: "kalilinux"    },
-  { name: "Wireshark",       id: "wireshark"    },
-  { name: "Vite",            id: "vite"         },
-];
-
 const TiltCard = ({ children, className, id }) => {
   const x = useMotionValue(0);
   const y = useMotionValue(0);
@@ -332,7 +296,6 @@ const TiltCard = ({ children, className, id }) => {
 
 const Projects = () => {
   const [copied, setCopied] = useState(false);
-  const doubled = [...bannerTechs, ...bannerTechs];
 
   const handleShare = () => {
     const url = window.location.href;
@@ -366,10 +329,10 @@ const Projects = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 relative z-10">
           {projects.map((p, i) => (
             <TiltCard 
-              key={i} id={`project-${i}`} className="glass p-5 border-white/5 hover:border-[#00FF9C]/50 hover:shadow-[0_0_30px_rgba(0,255,156,0.2)] transition-all duration-300 group relative overflow-hidden rounded-2xl flex flex-col h-full"
+              key={i} id={`project-${i}`} className="glass p-5 border-white/5 hover:border-blue-500/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.2)] transition-all duration-300 group relative overflow-hidden rounded-2xl flex flex-col h-full"
             >
 
-              <div className="absolute inset-0 bg-gradient-to-t from-[#050d12] via-[#050d12]/40 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#000814] via-[#000814]/40 to-transparent pointer-events-none" />
               
               <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${p.color} blur-3xl opacity-20 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none`}></div>
               
@@ -380,15 +343,15 @@ const Projects = () => {
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="flex items-center gap-2 flex-wrap">
-                      <h3 className="text-sm font-bold text-white truncate group-hover:text-[#00FF9C] transition-colors">{p.title}</h3>
+                      <h3 className="text-sm font-bold text-white truncate group-hover:text-blue-400 transition-colors">{p.title}</h3>
                       {p.status === 'live' && (
-                        <span className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-[#00FF9C]/10 border border-[#00FF9C]/30 shrink-0">
-                          <div className="w-1 h-1 rounded-full bg-[#00FF9C] animate-pulse" />
-                          <span className="text-[7px] text-[#00FF9C] font-bold uppercase tracking-wider">Live</span>
+                        <span className="flex items-center gap-1 px-1.5 py-0.5 rounded bg-green-500/10 border border-green-500/30 shrink-0">
+                          <div className="w-1 h-1 rounded-full bg-green-400 animate-pulse" />
+                          <span className="text-[7px] text-green-400 font-bold uppercase tracking-wider">Live</span>
                         </span>
                       )}
                     </div>
-                    <div className="text-[8px] uppercase font-bold tracking-wider text-[#00FF9C]/80 truncate">{p.tagline}</div>
+                    <div className="text-[8px] uppercase font-bold tracking-wider text-blue-400/80 truncate">{p.tagline}</div>
                   </div>
                   <div className="text-[7px] px-2 py-0.5 rounded-sm border uppercase font-bold bg-[#00FF9C]/10 border-[#00FF9C]/30 text-[#00FF9C] hidden sm:block shrink-0">
                     {p.role}
@@ -414,7 +377,7 @@ const Projects = () => {
                       href={p.liveUrl} 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-[#00FF9C]/10 hover:bg-[#00FF9C]/20 border border-[#00FF9C]/30 hover:border-[#00FF9C]/50 text-[#00FF9C] font-bold text-[10px] uppercase tracking-wider transition-all hover:shadow-[0_0_20px_rgba(0,255,156,0.3)]"
+                      className="flex-1 flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-green-600/20 hover:bg-green-600/30 border border-green-500/30 hover:border-green-500/50 text-green-400 font-bold text-[10px] uppercase tracking-wider transition-all hover:shadow-[0_0_20px_rgba(74,222,128,0.3)]"
                     >
                       <Icon name="globe" size={12} />
                       <span>Live Demo</span>
@@ -434,7 +397,7 @@ const Projects = () => {
                       const url = `${window.location.origin}${window.location.pathname}#project-${i}`;
                       navigator.clipboard.writeText(url);
                     }}
-                    className="flex-none w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-[#00FF9C]/10 border border-white/10 hover:border-[#00FF9C]/30 text-white/40 hover:text-[#00FF9C] transition-all"
+                    className="flex-none w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 hover:bg-blue-500/10 border border-white/10 hover:border-blue-500/30 text-white/40 hover:text-blue-400 transition-all"
                     title="Copy Link"
                   >
                     <Icon name="share" size={14} />
