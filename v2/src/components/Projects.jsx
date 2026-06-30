@@ -79,7 +79,7 @@ const projects = [
     color: "from-purple-500/20 to-pink-500/20",
     featured: true,
     link: "https://github.com/Raphasha27/Portfolio",
-    liveUrl: "https://portfolio-iota-eight-90.vercel.app",
+    liveUrl: "https://koketso-raphasha.vercel.app",
     status: "live"
   },
   {
@@ -343,8 +343,8 @@ const Projects = () => {
   };
 
   return (
-    <div className="space-y-8 sm:space-y-12">
-      <div id="projects" className="glass p-5 sm:p-8 lg:p-10 flex flex-col border border-white/5 shadow-[0_0_20px_rgba(0,0,0,0.5)] relative overflow-hidden rounded-2xl sm:rounded-3xl">
+    <section className="space-y-8 sm:space-y-12">
+      <div id="projects" className="glass p-5 sm:p-8 lg:p-10 flex flex-col border border-white/5 shadow-[0_0_20px_rgba(0,0,0,0.5)] relative overflow-hidden rounded-2xl sm:rounded-3xl" aria-label="Projects section">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/5 to-transparent pointer-events-none" />
         <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]" />
 
@@ -501,7 +501,7 @@ const Projects = () => {
           ))}
         </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 

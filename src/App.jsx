@@ -12,88 +12,68 @@ const getAssetPath = (path) => {
 
 const projectsData = [
     {
-        name: 'DevForge AI',
-        description: 'Autonomous development workflow engine with AI-powered scaffolding, static analysis, and self-healing infrastructure orchestration.',
-        image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop',
-        tags: ['.NET 8', 'FastAPI', 'OpenTelemetry', 'Docker'],
-        github: 'https://github.com/Raphasha27/devforge-ai'
+        name: 'AI Business Engine',
+        subtitle: 'Zero-Capital AI Businesses',
+        role: 'Business Architect',
+        description: '5 playbooks for SA entrepreneurs. Pricing calculator, income stack, and live trial.',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2070&auto=format&fit=crop',
+        tags: ['Next.js', 'React', 'Vercel'],
+        github: 'https://github.com/Raphasha27/AI-Business-Engine',
+        demo: 'https://web-gamma-nine-c2cqi2h058.vercel.app',
+        testCredentials: 'demo / tryAI2026'
     },
     {
-        name: 'AI Agent Framework',
-        description: 'Autonomous agentic framework for cross-repository orchestration and self-improving infrastructure management with multi-service architecture.',
-        image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop',
-        tags: ['Python', 'FastAPI', 'Node.js', 'C (libuv)'],
-        github: 'https://github.com/Raphasha27/AI-Agent'
+        name: 'Mzansi AgriAI',
+        subtitle: 'AI Advisory for Farmers',
+        role: 'AgriTech Dev',
+        description: 'Crop advisor, weather alerts, pest detection, and market prices for SA small-scale farmers.',
+        image: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?q=80&w=2011&auto=format&fit=crop',
+        tags: ['HTML', 'CSS', 'JS', 'Vercel'],
+        github: 'https://github.com/Raphasha27/Mzansi-AgriAI',
+        demo: 'https://mzansi-agriai-demo.vercel.app',
+        testCredentials: 'farmer / agriSA'
     },
     {
-        name: 'AI Job Market Intelligence',
-        description: 'Premium analytics platform utilizing RAG and Vector Embeddings for real-time market trends and candidate matching.',
-        image: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?q=80&w=2070&auto=format&fit=crop',
-        tags: ['React', 'FastAPI', 'RAG', 'Vector Search'],
-        github: 'https://github.com/Raphasha27/ai-job-market-intelligence'
-    },
-    {
-        name: 'Kirov Security Core',
-        description: 'Unified authentication and authorization framework with 18-layer security, SSO, and role-based access control for enterprise microservices.',
-        image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2070&auto=format&fit=crop',
-        tags: ['Go', 'Rust', 'JWT', 'RBAC'],
-        github: 'https://github.com/Raphasha27/kirov-security-core'
-    },
-    {
-        name: 'CyberShield SOC',
-        description: 'Next-gen SOC dashboard handling thousands of security events per second via WebSockets, WebGL visualizations, and heuristic threat detection.',
-        image: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop',
-        tags: ['Angular', 'D3.js', 'WebSockets', 'CyberSec'],
-        github: 'https://github.com/Raphasha27/cybershield_soc'
-    },
-    {
-        name: 'InsightForge AI',
-        description: 'Advanced analytics engine with predictive modeling, trend forecasting, and self-improving intelligence pipelines for enterprise decision-making.',
-        image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2070&auto=format&fit=crop',
-        tags: ['Rust', 'Python', 'gRPC', 'P2P'],
-        github: 'https://github.com/Raphasha27/InsightForge-AI'
+        name: 'EskomSense AI',
+        subtitle: 'Load Shedding Predictor',
+        role: 'Energy AI Lead',
+        description: 'ML-powered load shedding prediction, battery optimizer, and area selector for SA homes.',
+        image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?q=80&w=2070&auto=format&fit=crop',
+        tags: ['HTML', 'CSS', 'JS', 'Vercel'],
+        github: 'https://github.com/Raphasha27/EskomSense-AI',
+        demo: 'https://eskomsense-ai-demo.vercel.app',
+        testCredentials: 'user / eskom123'
     },
     {
         name: 'NoShowIQ',
-        description: 'Predictive healthcare analytics platform using Machine Learning to forecast and mitigate patient appointment no-shows.',
+        subtitle: 'Healthcare No-Show Prediction',
+        role: 'ML Engineer',
+        description: 'Fullstack app predicting patient appointment no-shows using ML models.',
         image: 'https://images.unsplash.com/photo-1581056771107-24ca5f033842?q=80&w=2070&auto=format&fit=crop',
-        tags: ['ML', 'Healthcare', 'Predictive', 'Pandas'],
-        github: 'https://github.com/Raphasha27/NoShowIQ'
+        tags: ['Next.js', 'Python', 'FastAPI', 'Vercel'],
+        github: 'https://github.com/Raphasha27/noshowiq-fullstack',
+        demo: 'https://noshowiq.vercel.app',
+        testCredentials: 'admin / medic2026'
     },
     {
-        name: 'Go RAG System',
-        description: 'Production-ready Retrieval-Augmented Generation system built in Go, featuring vector embeddings, semantic search, and LLM integration.',
-        image: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=2070&auto=format&fit=crop',
-        tags: ['Go', 'RAG', 'Vector DB', 'LLM'],
-        github: 'https://github.com/Raphasha27/Go-RAG-System'
+        name: 'Sumbandila',
+        subtitle: 'Identity Verification Platform',
+        role: 'Security Architect',
+        description: 'Digital identity verification system with document authentication, biometric validation, and secure API integration for enterprise clients.',
+        image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2070&auto=format&fit=crop',
+        tags: ['Next.js', 'Tailwind', 'API Integration', 'Vercel'],
+        github: 'https://github.com/Raphasha27/sumbandila-identity',
+        demo: 'https://landing-five-orcin-61.vercel.app',
+        testCredentials: 'client / verifyme'
     },
     {
-        name: 'Aura Weather AI',
-        description: 'Hyper-visual weather forecasting application with climate impact risk assessments and atmospheric pattern analysis using heuristic AI.',
-        image: 'https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?q=80&w=2070&auto=format&fit=crop',
-        tags: ['Vite', 'Framer Motion', 'AI', 'Weather'],
-        github: 'https://github.com/Raphasha27/aura-weather-ai'
-    },
-    {
-        name: 'Titanic ML (Kaggle)',
-        description: 'End-to-end ML pipeline scoring 78.5% on Kaggle. 7 model versions with KNN imputation, interaction features, and tuned GradientBoosting/XGBoost ensemble.',
-        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
-        tags: ['Kaggle', 'scikit-learn', 'XGBoost', 'Feature Engineering'],
-        github: 'https://github.com/Raphasha27/Raphasha27/tree/main/projects/titanic-ml'
-    },
-    {
-        name: 'ETL Pipeline Suite',
-        description: 'Three production-grade data pipelines: CSV→PostgreSQL ETL, PySpark distributed processing, and REST API extraction with auto-pagination.',
-        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2070&auto=format&fit=crop',
-        tags: ['Python', 'PySpark', 'PostgreSQL', 'ETL'],
-        github: 'https://github.com/Raphasha27/data-engineering-kaggle'
-    },
-    {
-        name: 'Afro Fashion Mobile',
-        description: 'Premium mobile fashion hub for the African digital economy, featuring high-fidelity asset showcasing and seamless e-commerce integration.',
-        image: 'https://images.unsplash.com/photo-1558769132-cb1aea458c5e?q=80&w=2074&auto=format&fit=crop',
-        tags: ['Flutter', 'Dart', 'E-commerce', 'Mobile'],
-        github: 'https://github.com/Raphasha27/afro_fashion_mobile'
+        name: 'Kirov Dynamics',
+        subtitle: 'Portfolio Hub',
+        role: 'Systems Architect',
+        description: 'This portfolio. Systems architecture, AI engineering, and full-stack development showcase.',
+        image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop',
+        tags: ['React', 'Vite', 'Framer', 'Vercel'],
+        github: 'https://github.com/Raphasha27/Portfolio'
     }
 ];
 
@@ -210,22 +190,32 @@ const skillsData = [
 
 const testimonialsData = [
     {
-        name: 'Indigo Zulu',
-        role: 'AI Orchestrator @ Sovereign Systems',
-        content: 'Koketso is an exceptional developer who understands both the logic and the aesthetics of a product. His work on high-performance systems is truly impressive.',
-        avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&h=150&auto=format&fit=crop'
+        name: 'Amara Okoro',
+        role: 'Founder @ EcoStream',
+        type: 'Client',
+        content: "Koketso's insight into AI and data analytics helped us pivot our strategy with data-backed confidence. The results speak for themselves. Highly recommended!",
+        avatar: '/amara_okoro.png'
     },
     {
-        name: 'Jade Chen',
-        role: 'Systems Architect @ Neo-Tech',
-        content: 'The attention to detail in the CyberFlow platform was beyond our expectations. A reliable developer who delivers clean, scalable code.',
-        avatar: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=150&h=150&auto=format&fit=crop'
+        name: 'Thabo Molefe',
+        role: 'Senior Dev @ Kirov Dynamics',
+        type: 'Team Member',
+        content: "As a teammate, Koketso brings a level of technical depth that's rare. Their ability to architect complex agentic systems while keeping the codebase clean and maintainable is inspiring.",
+        avatar: '/thabo_molefe.png'
     },
     {
-        name: 'Amber Smith',
-        role: 'Tech Lead @ InnovateX',
-        content: 'One of the most diligent and proactive associates we\'ve had. His AI proficiency and problem-solving skills are top-tier.',
-        avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=150&h=150&auto=format&fit=crop'
+        name: 'Priya Sharma',
+        role: 'CTO @ Indus Cloud',
+        type: 'Client',
+        content: "The real-time tracking system Kirov Dynamics developed exceeded all our expectations. It's robust, scalable, and the UI is incredibly intuitive. A true professional.",
+        avatar: '/priya_sharma.png'
+    },
+    {
+        name: 'Arjun Mehta',
+        role: 'VP Engineering @ CloudBase',
+        type: 'Client',
+        content: "Working with Kirov was a game-changer. The autonomous infrastructure they built for us reduced our operational overhead by 40% in just three months. Precision engineering at its best!",
+        avatar: '/arjun_mehta.png'
     }
 ];
 
@@ -1137,29 +1127,44 @@ function App() {
                         </motion.div>
 
                         {projectsData.map((proj) => (
-                            <motion.div key={proj.name} variants={itemVariants} className="project-card">
-                                <div className="project-img-container">
-                                    <img 
-                                        src={proj.image} 
-                                        alt={proj.name} 
-                                        className="project-display-img" 
-                                        onError={(e) => {
-                                            e.target.src = 'https://via.placeholder.com/400x250?text=' + proj.name;
-                                        }}
-                                    />
-                                    <div className="project-overlay">
-                                        <a href={proj.github} target="_blank" rel="noreferrer" className="view-btn">View Code</a>
-                                    </div>
-                                </div>
-                                <div className="project-content">
-                                    <h3 className="project-name">{proj.name}</h3>
-                                    <p className="project-description">{proj.description}</p>
-                                    <div className="project-tags">
-                                        {proj.tags.map(t => <span key={t} className="project-tag">{t}</span>)}
-                                    </div>
-                                </div>
-                            </motion.div>
-                        ))}
+    <motion.div key={proj.name} variants={itemVariants} className="project-card">
+        <div className="project-img-container">
+            <img
+                src={proj.image}
+                alt={proj.name}
+                className="project-display-img"
+                onError={(e) => {
+                    e.target.src = 'https://via.placeholder.com/400x250?text=' + encodeURIComponent(proj.name);
+                }}
+            />
+            <div className="project-ip-badge" style={{position: 'absolute', bottom: '8px', left: '8px', background: 'rgba(0,0,0,0.75)', color: 'rgba(255,255,255,0.75)', fontSize: '10px', fontWeight: '600', padding: '3px 8px', borderRadius: '4px', backdropFilter: 'blur(4px)', zIndex: 2}}>? Koketso Raphasha ? Showcase Only</div>
+            <div className="project-overlay">
+                <div className="project-overlay-btns" style={{display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center'}}>
+                    <a href={proj.github} target="_blank" rel="noreferrer" className="view-btn">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                        View Code
+                    </a>
+                    {proj.demo && (
+                        <a href={proj.demo} target="_blank" rel="noreferrer" className="view-btn demo-btn" style={{background: 'linear-gradient(135deg, #6366f1, #8b5cf6)', borderColor: '#6366f1'}}>
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                            Live Demo
+                        </a>
+                    )}
+                </div>
+            </div>
+        </div>
+        <div className="project-content">
+            {proj.subtitle && <div className="project-subtitle-tag" style={{fontSize: '10px', fontWeight: '700', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#34d399', marginBottom: '4px'}}>{proj.subtitle}</div>}
+            <h3 className="project-name">{proj.name}</h3>
+            {proj.role && <div className="project-role-badge" style={{display: 'inline-block', fontSize: '11px', fontWeight: '600', color: 'rgba(255,255,255,0.5)', marginBottom: '8px', fontStyle: 'italic'}}>{proj.role}</div>}
+            {proj.testCredentials && <div className="project-test-creds" style={{background: 'rgba(99, 102, 241, 0.1)', border: '1px solid rgba(99, 102, 241, 0.3)', color: '#818cf8', padding: '6px 10px', borderRadius: '6px', fontSize: '11px', marginBottom: '10px', display: 'flex', alignItems: 'center', gap: '6px'}}><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg> Demo Login: <strong>{proj.testCredentials}</strong></div>}
+            <p className="project-description">{proj.description}</p>
+            <div className="project-tags">
+                {proj.tags.map(t => <span key={t} className="project-tag">{t}</span>)}
+            </div>
+        </div>
+    </motion.div>
+))}
                     </motion.div>
                 </div>
             </section>
@@ -1207,10 +1212,15 @@ function App() {
                                 whileInView={{ opacity: 1, scale: 1 }}
                                 className="testimonial-card"
                             >
+                                {t.type && (
+                                    <span className={`testimonial-badge ${t.type === 'Team Member' ? 'badge-team' : 'badge-client'}`}>
+                                        {t.type}
+                                    </span>
+                                )}
                                 <div className="quote-icon">“</div>
                                 <p className="testimonial-content">{t.content}</p>
                                 <div className="testimonial-author">
-                                    <img src={t.avatar} alt={t.name} className="author-avatar" />
+                                    <img src={t.avatar} alt={`${t.name} - ${t.role}`} className="author-avatar" onError={(e) => { e.target.style.display='none'; }} />
                                     <div className="author-info">
                                         <h4>{t.name}</h4>
                                         <p>{t.role}</p>
@@ -1433,7 +1443,7 @@ function App() {
                                     </div>
                                     <div className="qr-container" style={{ background: 'white', padding: '8px', borderRadius: '10px', boxShadow: '0 0 20px rgba(52, 211, 153, 0.2)' }}>
                                         <img 
-                                            src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://portfolio-iota-eight-90.vercel.app" 
+                                            src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://koketso-raphasha.vercel.app" 
                                             alt="Mobile QR" 
                                             style={{ width: '80px', height: '80px', display: 'block' }}
                                         />

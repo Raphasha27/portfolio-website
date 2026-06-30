@@ -87,8 +87,14 @@ const SOCIALS = [
 
 
 
+const MARQUEE_TECHS = [
+  'docker', 'kubernetes', 'nextjs', 'fastapi', 'tailwindcss', 'pytorch',
+  'langchain', 'go', 'python', 'react', 'typescript', 'postgresql',
+  'redis', 'nginx', 'linux', 'github', 'tensorflow', 'grafana',
+];
+
 const Hero = () => (
-  <div
+  <section
     id="home"
     className="relative min-h-[100dvh] flex flex-col overflow-x-hidden bg-transparent"
   >
@@ -226,11 +232,38 @@ const Hero = () => (
             </div>
           </div>
 
+          {/* ── Single-row scrolling tech strip ── */}
+          <div className="mt-6 w-full overflow-hidden" aria-label="Tech stack marquee">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent to-white/20" />
+              <span className="text-[8px] font-bold tracking-[0.2em] uppercase text-white/30 shrink-0 whitespace-nowrap">TECH ARSENAL</span>
+              <div className="h-px flex-1 bg-gradient-to-l from-transparent to-white/20" />
+            </div>
+            <div className="overflow-hidden w-full mask-sides">
+              <div className="hero-marquee flex gap-4 items-center">
+                {[...MARQUEE_TECHS, ...MARQUEE_TECHS].map((tech, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-2 px-3 py-1.5 rounded-lg shrink-0"
+                    style={{
+                      background: 'rgba(5,13,18,0.9)',
+                      border: '1px solid rgba(255,255,255,0.07)',
+                    }}
+                  >
+                    <Icon name={tech} size={15} />
+                    <span className="text-[9px] font-semibold text-white/50 capitalize whitespace-nowrap">
+                      {tech.charAt(0).toUpperCase() + tech.slice(1)}
+                    </span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
         </motion.div>
 
       </div>
     </div>
-  </div>
 );
 
 export default Hero;

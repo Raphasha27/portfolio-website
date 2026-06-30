@@ -307,7 +307,12 @@ export const Icon = ({ name, size = 16, className = "" }) => {
   }), []);
 
 
-  const techLogos = useMemo(() => ({
+    const techLogos = useMemo(() => ({
+    github:        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg",
+    linkedin:      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linkedin/linkedin-original.svg",
+    twitter:       "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/twitter/twitter-original.svg",
+    facebook:      "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/facebook/facebook-original.svg",
+    whop:          whopLogo,
     react:         "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
     python:        "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg",
     node:          nodeLogo,

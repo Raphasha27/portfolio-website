@@ -229,24 +229,20 @@ section {
   }
 }
 
-/* ── Hero tech-stack marquee ── */
-@keyframes hero-scroll {
+/* ── Hero tech-stack marquee — single row, RTL ── */
+@keyframes marquee-rtl {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
 
-.hero-marquee-row1 {
-  animation: hero-scroll 28s linear infinite;
+.hero-marquee {
+  animation: marquee-rtl 30s linear infinite;
   will-change: transform;
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
 }
 
-.hero-marquee-row2 {
-  animation: hero-scroll 36s linear infinite;
-  will-change: transform;
-}
-
-/* Pause on hover */
-.hero-marquee-row1:hover,
-.hero-marquee-row2:hover {
+.hero-marquee:hover {
   animation-play-state: paused;
 }

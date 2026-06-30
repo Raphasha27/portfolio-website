@@ -38,6 +38,7 @@ const Navbar = ({ setCmdOpen }) => {
           <button
             onClick={() => scrollTo('home')}
             className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+            aria-label="Scroll to top"
           >
             {/* Code bracket icon */}
             <svg viewBox="0 0 24 24" fill="none" stroke="#00FF9C" strokeWidth="2.2" className="w-5 h-5 shrink-0">
@@ -75,6 +76,7 @@ const Navbar = ({ setCmdOpen }) => {
           <button
             onClick={handleShare}
             title="Share"
+            aria-label="Share this portfolio"
             className="w-9 h-9 hidden sm:flex items-center justify-center rounded-lg bg-white/5 border border-white/8 text-white/50 hover:text-white hover:border-white/20 transition-all"
           >
             <Icon name={copied ? 'check' : 'share'} size={15} />
@@ -83,6 +85,7 @@ const Navbar = ({ setCmdOpen }) => {
           {/* Search / Command Palette */}
           <button
             onClick={() => setCmdOpen && setCmdOpen(true)}
+            aria-label="Open command palette"
             className="hidden sm:flex items-center justify-between gap-3 px-3 py-2 w-44 bg-[#0a0f18] border border-white/8 rounded-xl text-[12px] text-white/40 hover:border-white/20 hover:text-white/60 transition-all"
           >
             <div className="flex items-center gap-2">
@@ -95,6 +98,7 @@ const Navbar = ({ setCmdOpen }) => {
           {/* Hire Me CTA */}
           <button
             onClick={() => scrollTo('contact')}
+            aria-label="Scroll to contact section"
             className="hidden sm:flex items-center gap-2 px-5 py-2.5 bg-[#001a11] border border-[#00FF9C]/30 text-[#00FF9C] text-[13px] font-bold rounded-xl hover:bg-[#002d1e] hover:border-[#00FF9C]/60 transition-all"
           >
             Hire Me

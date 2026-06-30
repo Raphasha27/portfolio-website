@@ -12,7 +12,7 @@
 
 High-fidelity, cinematic React/Vite implementation of the Kirov Dynamics professional branding ecosystem — featuring 3D neural network visualizations, interactive AI elements, and sovereign infrastructure concepts.
 
-**Live:** [https://portfolio-iota-eight-90.vercel.app/](https://portfolio-iota-eight-90.vercel.app/)
+**Live:** [https://koketso-raphasha.vercel.app/](https://koketso-raphasha.vercel.app/)
 
 ## Features
 
