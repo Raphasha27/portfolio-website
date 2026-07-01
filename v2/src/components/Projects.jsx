@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { GitHubCalendar } from 'react-github-calendar';
 import { Icon } from './Icons';
+import { getTechInfo } from '../config/technologies';
 import TechMarquee from './TechMarquee';
 
 const projects = [
@@ -306,8 +307,8 @@ const Projects = () => {
   };
 
   return (
-    <div className="space-y-8 sm:space-y-12">
-      <div id="projects" className="glass p-5 sm:p-8 lg:p-10 flex flex-col border border-white/5 shadow-[0_0_20px_rgba(0,0,0,0.5)] relative overflow-hidden rounded-2xl sm:rounded-3xl">
+    <section className="space-y-8 sm:space-y-12">
+      <div id="projects" className="glass p-5 sm:p-8 lg:p-10 flex flex-col border border-white/5 shadow-[0_0_20px_rgba(0,0,0,0.5)] relative overflow-hidden rounded-2xl sm:rounded-3xl" aria-label="Projects section">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-900/5 to-transparent pointer-events-none" />
         <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]" />
 
@@ -363,12 +364,15 @@ const Projects = () => {
                 </p>
 
                 <div className="flex flex-wrap gap-1.5 mb-3">
-                  {p.tech.slice(0, 4).map((t, j) => (
-                    <span key={j} className="text-[7px] px-2 py-1 rounded-sm bg-white/5 border border-white/10 text-white/80 flex items-center gap-1 uppercase font-bold tracking-wider">
-                      <Icon name={t.toLowerCase()} size={10} />
-                      {t}
-                    </span>
-                  ))}
+                  {p.tech.slice(0, 4).map((t, j) => {
+                    const techInfo = getTechInfo(t);
+                    return (
+                      <span key={j} className="text-[7px] px-2 py-1 rounded-sm bg-white/5 border border-white/10 text-white/80 flex items-center gap-1 uppercase font-bold tracking-wider">
+                        <Icon name={techInfo.icon} size={10} />
+                        {techInfo.name}
+                      </span>
+                    );
+                  })}
                 </div>
               
                 <div className="flex gap-2 mt-auto pt-2 border-t border-white/5">
@@ -443,8 +447,28 @@ const Projects = () => {
         </div>
       </div>
 
-      <TechMarquee />
-    </div>
+      {/* Scrolling Tech Marquee — Moved from Hero */}
+      <div className="py-8 glass border-t border-b border-white/5 bg-black/20 backdrop-blur-md overflow-hidden rounded-3xl">
+        <motion.div 
+          initial={{ x: 0 }}
+          animate={{ x: "-50%" }}
+          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+          className="flex gap-20 items-center whitespace-nowrap"
+        >
+          {doubled.map((tech, i) => (
+            <div key={i} className="flex items-center gap-2.5 shrink-0 group">
+              <div className="w-7 h-7 opacity-80 group-hover:opacity-100 transition-opacity">
+                <Icon name={tech.id} size={28} />
+              </div>
+              <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/50 group-hover:text-white/90 transition-colors font-mono">
+                {tech.name}
+              </span>
+              <div className="w-1 h-1 rounded-full bg-[#00FF9C]/30 ml-4" />
+            </div>
+          ))}
+        </motion.div>
+      </div>
+    </section>
   );
 };
 

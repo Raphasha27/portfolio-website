@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Icon } from './Icons';
-import profileImg from '/profile-cutout.png';
+import { PRIORITY_TECHS, getTechInfo } from '../config/technologies';
+import profileImg from '/profile-enhanced.jpg';
 
 const Typewriter = () => {
   const titles = ['Software Engineer', 'Systems Architect', 'Co-Founder', 'Full Stack Dev'];
@@ -77,47 +78,27 @@ const STATS = [
   { label: 'Delivery',        val: 100, suffix: '%', icon: 'shield'        },
 ];
 
-const techArsenal = [
-  { name: 'React',          icon: 'react'         },
-  { name: 'Python',         icon: 'python'        },
-  { name: 'Rust',           icon: 'rust'          },
-  { name: 'Go',             icon: 'go'            },
-  { name: 'C#',             icon: 'csharp'        },
-  { name: 'FastAPI',        icon: 'fastapi'       },
-  { name: 'PyTorch',        icon: 'pytorch'       },
-  { name: 'Docker',         icon: 'docker'        },
-  { name: 'Kubernetes',     icon: 'kubernetes'    },
-  { name: 'AWS',            icon: 'aws'           },
-  { name: 'PostgreSQL',     icon: 'postgresql'    },
-  { name: 'Redis',          icon: 'redis'         },
-  { name: 'C',              icon: 'c'             },
-  { name: 'C++',            icon: 'cplusplus'     },
-  { name: 'Java',           icon: 'java'          },
-  { name: 'Swift',          icon: 'swift'         },
-  { name: 'Node.js',        icon: 'node'          },
-  { name: 'TypeScript',     icon: 'typescript'    },
-  { name: 'Next.js',        icon: 'nextjs'        },
-  { name: 'MongoDB',        icon: 'mongodb'       },
-  { name: 'Tailwind CSS',   icon: 'tailwindcss'   },
-  { name: 'GitHub Actions', icon: 'githubactions' },
-  { name: 'LangChain',      icon: 'langchain'     },
-  { name: 'Framer Motion',  icon: 'framer'        },
-  { name: 'TensorFlow',     icon: 'tensorflow'    },
-  { name: 'Linux',          icon: 'linux'         },
-  { name: 'Kali Linux',     icon: 'kalilinux'     },
-  { name: 'Wireshark',      icon: 'wireshark'     },
-  { name: 'Vite',           icon: 'vite'          },
-  { name: 'Streamlit',      icon: 'streamlit'     },
-  { name: 'Kaggle',         icon: 'kaggle'        },
-  { name: 'Jupyter',        icon: 'jupyter'       },
-  { name: 'R',              icon: 'r'             },
-  { name: 'Expo',           icon: 'expo'          },
-  { name: 'Android Studio', icon: 'androidstudio' },
-];
+// Generate tech arsenal from standardized config
+const techArsenal = PRIORITY_TECHS.map(techKey => {
+  const techInfo = getTechInfo(techKey);
+  return {
+    name: techInfo.name,
+    icon: techInfo.icon
+  };
+});
+
+// Generate banner techs from standardized config  
+const bannerTechs = PRIORITY_TECHS.slice(0, 16).map(techKey => {
+  const techInfo = getTechInfo(techKey);
+  return {
+    name: techInfo.name,
+    id: techInfo.icon
+  };
+});
 
 const slideTexts = [
   'Building sovereign AI infrastructure',
-  'Self-healing scalable systems',
+  'Self-healing scalable systems', 
   'Bridging data & human intuition',
   'Autonomous agentic frameworks',
 ];
@@ -146,37 +127,6 @@ const SlidingText = () => {
   );
 };
 
-const bannerTechs = [
-  { name: "React",           id: "react"        },
-  { name: "Python",          id: "python"       },
-  { name: "TypeScript",      id: "typescript"   },
-  { name: "Next.js",         id: "nextjs"       },
-  { name: "C",               id: "c"            },
-  { name: "C++",             id: "cplusplus"    },
-  { name: "Java",            id: "java"         },
-  { name: "Go",              id: "go"           },
-  { name: "Rust",            id: "rust"         },
-  { name: "Swift",           id: "swift"        },
-  { name: "Node.js",         id: "node"         },
-  { name: "FastAPI",         id: "fastapi"      },
-  { name: "PostgreSQL",      id: "postgres"     },
-  { name: "MongoDB",         id: "mongodb"      },
-  { name: "Redis",           id: "redis"        },
-  { name: "Docker",          id: "docker"       },
-  { name: "Kubernetes",      id: "kubernetes"   },
-  { name: "TensorFlow",      id: "tensorflow"   },
-  { name: "PyTorch",         id: "pytorch"      },
-  { name: "Tailwind CSS",    id: "tailwindcss"  },
-  { name: "Framer Motion",   id: "framer"       },
-  { name: "LangChain",       id: "langchain"    },
-  { name: "GitHub Actions",  id: "githubactions" },
-  { name: "Linux",           id: "linux"        },
-  { name: "Vite",            id: "vite"         },
-  { name: "Kali Linux",      id: "kalilinux"    },
-  { name: "Wireshark",       id: "wireshark"    },
-  { name: "Jupyter",         id: "jupyter"      },
-];
-
 const HeroBanner = () => {
   const doubled = [...bannerTechs, ...bannerTechs];
   return (
@@ -204,10 +154,18 @@ const HeroBanner = () => {
   );
 };
 
+const MARQUEE_TECHS = [
+  'docker', 'kubernetes', 'nextjs', 'fastapi', 'tailwindcss', 'pytorch',
+  'huggingface', 'langchain', 'go', 'python', 'react', 'typescript', 'postgresql',
+  'redis', 'nginx', 'linux', 'github', 'tensorflow', 'grafana',
+];
+
 const Hero = () => (
-  <div id="home" className="relative min-h-screen flex flex-col bg-transparent">
-    <div className="absolute top-0 -right-20 w-96 h-96 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
-    <div className="absolute bottom-0 -left-20 w-80 h-80 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
+  <section
+    id="home"
+    className="relative min-h-[100dvh] flex flex-col overflow-x-hidden bg-transparent"
+  >
+    <ParticleCanvas />
 
     <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10 mx-auto pt-[var(--nav-h)] flex-1 flex flex-col justify-start lg:justify-center lg:pt-24 lg:pb-24 lg:pb-32">
       <div className="flex flex-col lg:flex-row items-center lg:items-center justify-between gap-6 sm:gap-8 lg:gap-12 w-full">
@@ -347,25 +305,38 @@ const Hero = () => (
             </div>
           </div>
 
-          {/* Stats */}
-          <div className="grid grid-cols-4 gap-3 pt-4 border-t border-white/10 mt-2 w-full">
-            {STATS.map((s, i) => (
-              <div key={i} className="bg-white/5 p-2 rounded-lg flex flex-col items-center text-center gap-1">
-                <div className="text-[#00FF9C]/50">
-                  <Icon name={s.icon} size={14} />
-                </div>
-                <div className="text-sm sm:text-base font-semibold text-white leading-none">
-                  <CountUp to={s.val} />{s.suffix}
-                </div>
-                <div className="text-[8px] text-white/30 uppercase tracking-widest">{s.label}</div>
+          {/* ── Single-row scrolling tech strip ── */}
+          <div className="mt-6 w-full overflow-hidden" aria-label="Tech stack marquee">
+            <div className="flex items-center gap-2 mb-2">
+              <div className="h-px flex-1 bg-gradient-to-r from-transparent to-white/20" />
+              <span className="text-[8px] font-bold tracking-[0.2em] uppercase text-white/30 shrink-0 whitespace-nowrap">TECH ARSENAL</span>
+              <div className="h-px flex-1 bg-gradient-to-l from-transparent to-white/20" />
+            </div>
+            <div className="overflow-hidden w-full mask-sides">
+              <div className="hero-marquee flex gap-4 items-center">
+                {[...MARQUEE_TECHS, ...MARQUEE_TECHS].map((tech, i) => (
+                  <div
+                    key={i}
+                    className="flex items-center gap-2 px-3 py-1.5 rounded-lg shrink-0"
+                    style={{
+                      background: 'rgba(5,13,18,0.9)',
+                      border: '1px solid rgba(255,255,255,0.07)',
+                    }}
+                  >
+                    <Icon name={tech} size={15} />
+                    <span className="text-[9px] font-semibold text-white/50 capitalize whitespace-nowrap">
+                      {tech.charAt(0).toUpperCase() + tech.slice(1)}
+                    </span>
+                  </div>
+                ))}
               </div>
-            ))}
+            </div>
           </div>
+
         </motion.div>
 
       </div>
     </div>
-  </div>
 );
 
 export default Hero;
