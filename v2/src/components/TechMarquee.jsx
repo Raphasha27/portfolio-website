@@ -26,7 +26,7 @@ const TechMarquee = () => {
         {doubled.map((tech, i) => (
           <div key={i} className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <div className="w-3 h-3 sm:w-4 sm:h-4 opacity-60">
-              <Icon name={tech.id} size={window.innerWidth < 640 ? 12 : 16} />
+              <Icon name={tech.id} size={16} />
             </div>
             <span className="text-[8px] sm:text-[9px] font-medium text-white/40 font-mono">
               {tech.name}

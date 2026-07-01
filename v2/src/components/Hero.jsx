@@ -87,18 +87,9 @@ const techArsenal = PRIORITY_TECHS.map(techKey => {
   };
 });
 
-// Generate banner techs from standardized config  
-const bannerTechs = PRIORITY_TECHS.slice(0, 16).map(techKey => {
-  const techInfo = getTechInfo(techKey);
-  return {
-    name: techInfo.name,
-    id: techInfo.icon
-  };
-});
-
 const slideTexts = [
   'Building sovereign AI infrastructure',
-  'Self-healing scalable systems', 
+  'Self-healing scalable systems',
   'Bridging data & human intuition',
   'Autonomous agentic frameworks',
 ];
@@ -127,45 +118,10 @@ const SlidingText = () => {
   );
 };
 
-const HeroBanner = () => {
-  const doubled = [...bannerTechs, ...bannerTechs];
-  return (
-    <div className="w-full relative overflow-hidden border-y border-white/5 bg-gradient-to-r from-[#00FF9C]/8 via-blue-500/5 to-[#00FF9C]/8 backdrop-blur-sm">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_50%_-20%,rgba(0,255,156,0.08),transparent_60%)]" />
-      <motion.div
-        initial={{ x: 0 }}
-        animate={{ x: "-50%" }}
-        transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
-        className="flex gap-6 sm:gap-10 items-center whitespace-nowrap py-2.5 sm:py-3"
-      >
-        {doubled.map((tech, i) => (
-          <div key={i} className="flex items-center gap-2 shrink-0">
-            <div className="w-4 h-4 sm:w-5 sm:h-5 opacity-70 group-hover:opacity-100 transition-opacity">
-              <Icon name={tech.id} size={16} />
-            </div>
-            <span className="text-[9px] sm:text-[10px] font-medium text-white/50 font-mono tracking-wide">
-              {tech.name}
-            </span>
-            <div className="w-1 h-1 rounded-full bg-[#00FF9C]/30 ml-1" />
-          </div>
-        ))}
-      </motion.div>
-    </div>
-  );
-};
-
-const MARQUEE_TECHS = [
-  'docker', 'kubernetes', 'nextjs', 'fastapi', 'tailwindcss', 'pytorch',
-  'huggingface', 'langchain', 'go', 'python', 'react', 'typescript', 'postgresql',
-  'redis', 'nginx', 'linux', 'github', 'tensorflow', 'grafana',
-];
-
 const Hero = () => (
-  <section
-    id="home"
-    className="relative min-h-[100dvh] flex flex-col overflow-x-hidden bg-transparent"
-  >
-    <ParticleCanvas />
+  <div id="home" className="relative min-h-screen flex flex-col bg-transparent">
+    <div className="absolute top-0 -right-20 w-96 h-96 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
+    <div className="absolute bottom-0 -left-20 w-80 h-80 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
 
     <div className="w-full px-4 sm:px-6 lg:px-12 relative z-10 mx-auto pt-[var(--nav-h)] flex-1 flex flex-col justify-start lg:justify-center lg:pt-24 lg:pb-24 lg:pb-32">
       <div className="flex flex-col lg:flex-row items-center lg:items-center justify-between gap-6 sm:gap-8 lg:gap-12 w-full">
@@ -305,38 +261,25 @@ const Hero = () => (
             </div>
           </div>
 
-          {/* ── Single-row scrolling tech strip ── */}
-          <div className="mt-6 w-full overflow-hidden" aria-label="Tech stack marquee">
-            <div className="flex items-center gap-2 mb-2">
-              <div className="h-px flex-1 bg-gradient-to-r from-transparent to-white/20" />
-              <span className="text-[8px] font-bold tracking-[0.2em] uppercase text-white/30 shrink-0 whitespace-nowrap">TECH ARSENAL</span>
-              <div className="h-px flex-1 bg-gradient-to-l from-transparent to-white/20" />
-            </div>
-            <div className="overflow-hidden w-full mask-sides">
-              <div className="hero-marquee flex gap-4 items-center">
-                {[...MARQUEE_TECHS, ...MARQUEE_TECHS].map((tech, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center gap-2 px-3 py-1.5 rounded-lg shrink-0"
-                    style={{
-                      background: 'rgba(5,13,18,0.9)',
-                      border: '1px solid rgba(255,255,255,0.07)',
-                    }}
-                  >
-                    <Icon name={tech} size={15} />
-                    <span className="text-[9px] font-semibold text-white/50 capitalize whitespace-nowrap">
-                      {tech.charAt(0).toUpperCase() + tech.slice(1)}
-                    </span>
-                  </div>
-                ))}
+          {/* Stats */}
+          <div className="grid grid-cols-4 gap-3 pt-4 border-t border-white/10 mt-2 w-full">
+            {STATS.map((s, i) => (
+              <div key={i} className="bg-white/5 p-2 rounded-lg flex flex-col items-center text-center gap-1">
+                <div className="text-[#00FF9C]/50">
+                  <Icon name={s.icon} size={14} />
+                </div>
+                <div className="text-sm sm:text-base font-semibold text-white leading-none">
+                  <CountUp to={s.val} />{s.suffix}
+                </div>
+                <div className="text-[8px] text-white/30 uppercase tracking-widest">{s.label}</div>
               </div>
-            </div>
+            ))}
           </div>
-
         </motion.div>
 
       </div>
     </div>
+  </div>
 );
 
 export default Hero;
