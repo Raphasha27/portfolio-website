@@ -226,8 +226,10 @@ const Hero = () => (
             <div className="absolute inset-[3px] rounded-full shadow-[inset_0_0_20px_rgba(0,255,156,0.15)] overflow-hidden">
               <img
                 src={profileImg}
-                alt="Koketso Raphasha"
+                alt="Koketso Raphasha - Software Engineer & Co-Founder"
                 className="w-full h-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </div>
           </div>
@@ -244,7 +246,15 @@ const Hero = () => (
           {/* Social links - always visible */}
           <div className="flex items-center gap-1.5 sm:gap-2 mt-2 sm:mt-3 flex-wrap justify-center">
             {socialLinks.map((s, i) => (
-              <a key={i} href={s.link} target="_blank" rel="noopener noreferrer" className={`w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center text-white/40 ${s.color} transition-all rounded-lg border border-white/10 hover:border-current bg-white/5`}>
+              <a 
+                key={i} 
+                href={s.link} 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className={`w-7 h-7 sm:w-8 sm:h-8 flex items-center justify-center text-white/40 ${s.color} transition-all rounded-lg border border-white/10 hover:border-current bg-white/5`}
+                aria-label={`Visit my ${s.name} profile`}
+                title={`Connect with me on ${s.name}`}
+              >
                 <Icon name={s.icon} size={14} />
               </a>
             ))}
