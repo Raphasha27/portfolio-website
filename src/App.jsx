@@ -588,9 +588,9 @@ function App() {
                                 className="hero-contact-info"
                                 style={{ display: 'flex', gap: '20px', marginTop: '30px', flexWrap: 'wrap' }}
                             >
-                                <a href="mailto:raphashakoketso99@gmail.com" className="hero-contact-item" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#94a3b8', textDecoration: 'none', fontSize: '14px', transition: 'color 0.3s' }}>
+                                <a href="mailto:raphashakoketso69@gmail.com" className="hero-contact-item" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#94a3b8', textDecoration: 'none', fontSize: '14px', transition: 'color 0.3s' }}>
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-                                    <span>raphashakoketso99@gmail.com</span>
+                                    <span>raphashakoketso69@gmail.com</span>
                                 </a>
                                 <a href="tel:0781172470" className="hero-contact-item" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: '#94a3b8', textDecoration: 'none', fontSize: '14px', transition: 'color 0.3s' }}>
                                     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
@@ -1402,7 +1402,7 @@ function App() {
                                 </div>
                                 <div>
                                     <h4>Email</h4>
-                                    <p>raphashakoketso99@gmail.com</p>
+                                    <p>raphashakoketso69@gmail.com</p>
                                 </div>
                             </div>
 
@@ -1500,7 +1500,7 @@ function App() {
                         </div>
                         <div style={{ display: 'flex', gap: '20px', fontSize: '14px', color: 'var(--text-secondary)' }}>
                             <span>0781172470</span>
-                            <span>raphashakoketso99@gmail.com</span>
+                            <span>raphashakoketso69@gmail.com</span>
                         </div>
                     </div>
                 </div>
@@ -1548,7 +1548,7 @@ function App() {
                         } else if (input.includes('soft skills') || input.includes('problem solving')) {
                             reply = "Koketso approaches challenges with a methodical, first-principles mindset. He excels in strategic leadership, cross-functional collaboration, and adaptive thinking in fast-paced environments.";
                         } else if (input.includes('contact') || input.includes('hire') || input.includes('email') || input.includes('phone')) {
-                            reply = "Let's innovate together! You can reach Koketso at raphashakoketso99@gmail.com or call 0781172470. His GitHub (Raphasha27) is also open for collaboration.";
+                            reply = "Let's innovate together! You can reach Koketso at raphashakoketso69@gmail.com or call 0781172470. His GitHub (Raphasha27) is also open for collaboration.";
                         } else if (input.includes('hello') || input.includes('hi ') || input.includes('greet')) {
                             reply = "Hello! I am Koketso's digital twin. I can tell you about his 'Sovereign Intelligence' mission, technical arsenal, or his leadership at Kid of Dynamics. How can I help you today?";
                         } else {
