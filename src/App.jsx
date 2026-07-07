@@ -546,7 +546,7 @@ function App() {
                             <a href="#projects"   className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('projects'); }}>06. Projects</a>
                             <a href="#blog"       className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('blog'); }}>07. Blog</a>
                             <a href="#presence"   className="mobile-link presence-mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('presence'); }}>08. Presence</a>
-                            <a href="#contact"    className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('contact'); }}>07. Hire Me</a>
+                            <a href="#contact"    className="mobile-link" onClick={() => { setIsMenuOpen(false); scrollToSection('contact'); }}>09. Hire Me</a>
                         </div>
                     </motion.div>
                 )}
@@ -619,18 +619,18 @@ function App() {
                                         setIsLiked(!isLiked);
                                     }}
                                 >
-                                    <span className="icon">👍</span>
+                                    <span className="icon">🔥</span>
                                     <span className="label">{(likes / 1000).toFixed(1)}k</span>
                                 </button>
                                 <div className="hero-metric-btn border-box">
-                                    <span className="icon">❤️</span>
+                                    <span className="icon">👁️</span>
                                     <span className="label">{(views / 1000).toFixed(1)}k</span>
                                 </div>
                                 <button 
                                     className="hero-metric-btn border-box"
                                     onClick={() => setIsRateModalOpen(true)}
                                 >
-                                    <span className="icon">⭐</span>
+                                    <span className="icon">✦</span>
                                     <span className="label">4.9</span>
                                 </button>
                             </motion.div>
@@ -802,11 +802,11 @@ function App() {
                             transition={{ duration: 0.7, delay: 0.25 }}
                         >
                             {[
-                                { icon: '🌍', label: 'Remote Clients',  value: 'Global'           },
-                                { icon: '📍', label: 'Base Location',   value: 'Gauteng, ZA'      },
-                                { icon: '⏱️', label: 'Timezone',        value: 'UTC +2 (SAST)'    },
-                                { icon: '💬', label: 'Languages',       value: 'English · Sepedi'  },
-                                { icon: '🚀', label: 'Available for',   value: 'Remote & On-site' },
+                                { icon: '🌐', label: 'Remote Clients',  value: 'Global'           },
+                                { icon: '📌', label: 'Base Location',   value: 'Gauteng, ZA'      },
+                                { icon: '⚡', label: 'Timezone',        value: 'UTC +2 (SAST)'    },
+                                { icon: '🗣️', label: 'Languages',       value: 'English · Sepedi'  },
+                                { icon: '🛸', label: 'Available for',   value: 'Remote & On-site' },
                             ].map((item, i) => (
                                 <motion.div
                                     key={i}
@@ -1137,7 +1137,7 @@ function App() {
                     e.target.src = 'https://via.placeholder.com/400x250?text=' + encodeURIComponent(proj.name);
                 }}
             />
-            <div className="project-ip-badge" style={{position: 'absolute', bottom: '8px', left: '8px', background: 'rgba(0,0,0,0.75)', color: 'rgba(255,255,255,0.75)', fontSize: '10px', fontWeight: '600', padding: '3px 8px', borderRadius: '4px', backdropFilter: 'blur(4px)', zIndex: 2}}>? Koketso Raphasha ? Showcase Only</div>
+            <div className="project-ip-badge" style={{position: 'absolute', bottom: '8px', left: '8px', background: 'rgba(0,0,0,0.75)', color: 'rgba(255,255,255,0.75)', fontSize: '10px', fontWeight: '600', padding: '3px 8px', borderRadius: '4px', backdropFilter: 'blur(4px)', zIndex: 2}}>⚙️ Koketso Raphasha · Showcase Only</div>
             <div className="project-overlay">
                 <div className="project-overlay-btns" style={{display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center'}}>
                     <a href={proj.github} target="_blank" rel="noreferrer" className="view-btn">
@@ -1251,7 +1251,7 @@ function App() {
                         className="github-stats-grid"
                     >
                         <div className="github-stat-card">
-                            <div className="github-stat-icon">📦</div>
+                            <div className="github-stat-icon">🗂️</div>
                             <div className="github-stat-value">60+</div>
                             <div className="github-stat-label">Repositories</div>
                         </div>
@@ -1261,12 +1261,12 @@ function App() {
                             <div className="github-stat-label">Stars Earned</div>
                         </div>
                         <div className="github-stat-card">
-                            <div className="github-stat-icon">🍴</div>
+                            <div className="github-stat-icon">🔱</div>
                             <div className="github-stat-value">15+</div>
                             <div className="github-stat-label">Forks</div>
                         </div>
                         <div className="github-stat-card">
-                            <div className="github-stat-icon">🔀</div>
+                            <div className="github-stat-icon">⚡</div>
                             <div className="github-stat-value">500+</div>
                             <div className="github-stat-label">Contributions</div>
                         </div>
@@ -1341,7 +1341,7 @@ function App() {
                                     setHasLiked(!hasLiked);
                                 }}
                             >
-                                <div className="react-icon-box">👍</div>
+                                <div className="react-icon-box">🔥</div>
                                 <div className="react-label">
                                     <span className="react-count">{likesCount}</span>
                                     <span className="react-text">Likes</span>
@@ -1355,15 +1355,15 @@ function App() {
                                     setHasHearted(!hasHearted);
                                 }}
                             >
-                                <div className="react-icon-box">❤️</div>
+                                <div className="react-icon-box">💜</div>
                                 <div className="react-label">
                                     <span className="react-count">{heartsCount}</span>
-                                    <span className="react-text">Hearts</span>
+                                    <span className="react-text">Love</span>
                                 </div>
                             </div>
                             
                             <div className="reaction-btn">
-                                <div className="react-icon-box">⭐</div>
+                                <div className="react-icon-box">🏆</div>
                                 <div className="react-label">
                                     <span className="react-count">5.0</span>
                                     <span className="react-text">(16)</span>
