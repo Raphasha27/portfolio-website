@@ -10,10 +10,7 @@ export default defineConfig({
     chunkSizeWarningLimit: 600,
     rollupOptions: {
       output: {
-        manualChunks: {
-          vendor: ['react', 'react-dom'],
-          animations: ['framer-motion'],
-        },
+        // removed manualChunks to let Vite handle React 19 correctly
       },
     },
   },
