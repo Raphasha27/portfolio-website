@@ -16,8 +16,7 @@ const platformGroups = [
     title: "Freelance",
     icon: "briefcase",
     platforms: [
-      { name: "Upwork", url: "https://www.upwork.com/freelancers/~yourprofile", desc: "Full-stack & AI development" },
-      { name: "Fiverr", url: "https://www.fiverr.com/yourprofile", desc: "React, FastAPI, automation gigs" },
+      { name: "Email", url: "mailto:raphashakoketso99@gmail.com", desc: "Direct inquiries preferred" },
     ]
   }
 ];
