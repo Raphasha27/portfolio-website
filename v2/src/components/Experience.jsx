@@ -91,10 +91,23 @@ const experiences = [
   }
 ];
 
+import experienceBg from '../assets/experience-bg.png';
+
 const Experience = () => {
   return (
     <section id="experience" className="relative py-16 sm:py-24 overflow-hidden bg-transparent">
-      <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%]" />
+      {/* Background Image Layer */}
+      <div className="absolute inset-0 z-0">
+        <img 
+          src={experienceBg} 
+          alt="" 
+          className="w-full h-full object-cover opacity-[0.05] sm:opacity-[0.08]" 
+          loading="lazy" 
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#000814] via-[#000814]/80 to-[#000814]" />
+      </div>
+
+      <div className="absolute inset-0 pointer-events-none opacity-[0.03] bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_4px,3px_100%] z-0" />
       
       <div className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto relative z-10">
         {/* Header */}

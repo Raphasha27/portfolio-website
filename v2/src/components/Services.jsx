@@ -1,6 +1,13 @@
 import { motion } from 'framer-motion';
 import { Icon } from './Icons';
 
+import projAiBusiness from '../assets/proj-ai-business.png';
+import projAgriAi from '../assets/proj-agri-ai.png';
+import projEskom from '../assets/proj-eskom.png';
+import projNoshowiq from '../assets/proj-noshowiq.png';
+import projSumbandila from '../assets/proj-sumbandila.png';
+import projKirov from '../assets/proj-kirov.png';
+
 const vercelProjects = [
   {
     title: "AI Business Engine",
@@ -9,7 +16,8 @@ const vercelProjects = [
     url: "https://web-gamma-nine-c2cqi2h058.vercel.app",
     icon: "zap",
     color: "from-yellow-500/20 to-emerald-500/20",
-    tech: ["Next.js", "React", "Vercel"]
+    tech: ["Next.js", "React", "Vercel"],
+    imgUrl: projAiBusiness
   },
   {
     title: "Mzansi AgriAI",
@@ -18,7 +26,8 @@ const vercelProjects = [
     url: "https://mzansi-agriai-demo.vercel.app",
     icon: "globe",
     color: "from-green-500/20 to-emerald-500/20",
-    tech: ["HTML", "CSS", "JS", "Vercel"]
+    tech: ["HTML", "CSS", "JS", "Vercel"],
+    imgUrl: projAgriAi
   },
   {
     title: "EskomSense AI",
@@ -27,7 +36,8 @@ const vercelProjects = [
     url: "https://eskomsense-ai-demo.vercel.app",
     icon: "zap",
     color: "from-yellow-500/20 to-orange-500/20",
-    tech: ["HTML", "CSS", "JS", "Vercel"]
+    tech: ["HTML", "CSS", "JS", "Vercel"],
+    imgUrl: projEskom
   },
   {
     title: "NoShowIQ",
@@ -36,7 +46,8 @@ const vercelProjects = [
     url: "https://noshowiq.vercel.app",
     icon: "brain",
     color: "from-purple-500/20 to-pink-500/20",
-    tech: ["Next.js", "Python", "FastAPI", "Vercel"]
+    tech: ["Next.js", "Python", "FastAPI", "Vercel"],
+    imgUrl: projNoshowiq
   },
   {
     title: "Sumbandila",
@@ -45,7 +56,8 @@ const vercelProjects = [
     url: "https://landing-five-orcin-61.vercel.app",
     icon: "shield",
     color: "from-[#00FF9C]/20 to-cyan-500/20",
-    tech: ["Next.js", "Tailwind", "API Integration", "Vercel"]
+    tech: ["Next.js", "Tailwind", "API Integration", "Vercel"],
+    imgUrl: projSumbandila
   },
   {
     title: "Kirov Dynamics",
@@ -54,7 +66,8 @@ const vercelProjects = [
     url: "https://koketso-raphasha.vercel.app",
     icon: "cpu",
     color: "from-[#00FF9C]/20 to-emerald-500/20",
-    tech: ["React", "Vite", "Framer", "Vercel"]
+    tech: ["React", "Vite", "Framer", "Vercel"],
+    imgUrl: projKirov
   }
 ];
 
@@ -103,9 +116,23 @@ const VercelDeployments = () => {
               transition={{ duration: 0.6, delay: i * 0.1 }}
               className="group bg-[#0a161d] border border-white/10 rounded-[24px] overflow-hidden flex flex-col hover:border-[#00FF9C]/30 transition-all duration-500 shadow-2xl relative"
             >
-              <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${project.color} blur-3xl opacity-20 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none`} />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#000814] via-[#000814]/80 to-transparent pointer-events-none z-0" />
+              
+              {project.imgUrl && (
+                <div className="absolute inset-0 z-[-1]">
+                  <img
+                    src={project.imgUrl}
+                    alt={project.title}
+                    className="w-full h-full object-cover opacity-30 group-hover:opacity-50 group-hover:scale-105 transition-all duration-700"
+                    loading="lazy"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0a161d]" />
+                </div>
+              )}
 
-              <div className="relative z-10 p-6 sm:p-8 flex flex-col items-center text-center gap-4">
+              <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${project.color} blur-3xl opacity-20 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none z-0`} />
+
+              <div className="relative z-10 p-6 sm:p-8 flex flex-col items-center text-center gap-4 h-full">
                 <div className="w-14 h-14 rounded-2xl bg-[#00FF9C]/10 border border-[#00FF9C]/20 flex items-center justify-center text-[#00FF9C] group-hover:scale-110 transition-transform duration-300">
                   <Icon name={project.icon} size={28} />
                 </div>
