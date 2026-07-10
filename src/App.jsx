@@ -1,7 +1,5 @@
-/* eslint-disable no-unused-vars */
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-/* eslint-enable no-unused-vars */
 
 // Helper for resilient asset paths (GitHub Pages / Vercel compatibility)
 const getAssetPath = (path) => {
@@ -296,24 +294,21 @@ function App() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [currentTime, setCurrentTime] = useState('');
     const [currentDate, setCurrentDate] = useState('');
-    const [techNews, setTechNews] = useState([
+    const techNews = [
         "NVIDIA reveals next-gen Blackwell chips for AI scaling",
         "SpaceX successfully launches record-breaking satellite constellation",
         "Apple reportedly exploring home robotics as next big project",
         "OpenAI introduces new search capabilities to ChatGPT",
         "Microsoft hits $3T valuation amid AI expansion",
         "Tesla FSD v12 makes significant strides in urban navigation",
-        "Quantum computing breakthrough: Error correction at scale",
+        "Quantum breakthrough: Error correction at scale",
         "Cybersecurity: New zero-day patch released for global infrastructure"
-    ]);
+    ];
     const [currentNewsIdx, setCurrentNewsIdx] = useState(0);
     const [showScrollTop, setShowScrollTop] = useState(false);
     const [scrolled, setScrolled] = useState(false);
     const [likes, setLikes] = useState(1240);
-    const [views, setViews] = useState(12500);
     const [isLiked, setIsLiked] = useState(false);
-    const [weather, setWeather] = useState('Sunny 24°C');
-    const [formStatus, setFormStatus] = useState('');
     const [likesCount, setLikesCount] = useState(126);
     const [heartsCount, setHeartsCount] = useState(91);
     const [feedback, setFeedback] = useState('');
@@ -624,7 +619,7 @@ function App() {
                                 </button>
                                 <div className="hero-metric-btn border-box">
                                     <span className="icon">👁️</span>
-                                    <span className="label">{(views / 1000).toFixed(1)}k</span>
+                                    <span className="label">12.5k</span>
                                 </div>
                                 <button 
                                     className="hero-metric-btn border-box"
@@ -1102,7 +1097,7 @@ function App() {
                                 <div className="intelligence-grid-mini">
                                     <div className="intel-item">
                                         <span className="intel-label">Weather</span>
-                                        <span className="intel-value">{weather}</span>
+                                        <span className="intel-value">Sunny 24°C</span>
                                     </div>
                                     <div className="intel-item">
                                         <span className="intel-label">Status</span>
