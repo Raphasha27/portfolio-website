@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState, Fragment } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icons';
 import gautengMap from '../assets/gauteng-map.png';
@@ -233,7 +233,7 @@ const Contact = () => {
           className="flex gap-20 whitespace-nowrap items-center text-[10px] text-white/30 font-bold uppercase tracking-[0.3em] w-max"
         >
           {Array(3).fill(0).map((_, i) => (
-            <React.Fragment key={i}>
+            <Fragment key={i}>
               <div className="flex items-center gap-2 text-blue-400">
                 <Icon name="code" size={16} />
                 <span>Koketso_Raphasha_Portfolio_Dev</span>
@@ -246,7 +246,7 @@ const Contact = () => {
               </div>
               <div>© {new Date().getFullYear()} Kirov Dynamics · All Rights Reserved</div>
               <div className="w-2 h-2 rounded-full bg-blue-500/30" />
-            </React.Fragment>
+            </Fragment>
           ))}
         </motion.div>
       </div>

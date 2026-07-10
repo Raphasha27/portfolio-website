@@ -1,7 +1,6 @@
-import React, { useMemo } from 'react';
+import { useMemo } from 'react';
 import nodeLogo from '../assets/node-logo.svg';
 import mongodbLogo from '../assets/mongodb-logo.svg';
-import linkedinLogo from '../assets/linkedin-logo.svg';
 import whopLogo from '../assets/whop-logo.svg';
 
 export const Icon = ({ name, size = 16, className = "" }) => {

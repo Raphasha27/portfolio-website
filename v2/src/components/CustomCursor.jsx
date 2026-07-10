@@ -1,16 +1,14 @@
-import React, { useEffect, useState, useRef } from 'react';
-import { motion, AnimatePresence, useSpring, useMotionValue } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { motion } from 'framer-motion';
 
 const CursorTrail = () => {
   const [trail, setTrail] = useState([]);
-  const [isFine, setIsFine] = useState(false);
+  const isFine = window.matchMedia('(pointer: fine)').matches;
 
   useEffect(() => {
     const mq = window.matchMedia('(pointer: fine)');
-    setIsFine(mq.matches);
     if (!mq.matches) return;
 
-    let frame;
     const points = [];
     const TRAIL_LENGTH = 12;
 
@@ -23,7 +21,6 @@ const CursorTrail = () => {
     window.addEventListener('mousemove', onMove);
     return () => {
       window.removeEventListener('mousemove', onMove);
-      cancelAnimationFrame(frame);
     };
   }, []);
 
@@ -59,11 +56,10 @@ const CursorTrail = () => {
 const CustomCursor = () => {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovering, setIsHovering] = useState(false);
-  const [isTouchDevice, setIsTouchDevice] = useState(true);
+  const [isTouchDevice] = useState(() => !window.matchMedia('(pointer: fine)').matches);
 
   useEffect(() => {
     const mq = window.matchMedia('(pointer: fine)');
-    setIsTouchDevice(!mq.matches);
 
     const updateMousePosition = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });

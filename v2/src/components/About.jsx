@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Icon } from './Icons';
 import richfieldLogo from '../assets/richfield-logo-new.png';
@@ -24,7 +24,7 @@ const partners = [
 ];
 
 const CountUp = ({ to, duration = 2 }) => {
-  const [count, setCount] = React.useState(0);
+  const [count, setCount] = useState(0);
   return (
     <motion.span
       initial={{ opacity: 0 }}

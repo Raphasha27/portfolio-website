@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence, useMotionValue, useSpring, useTransform } from 'framer-motion';
+import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import { GitHubCalendar } from 'react-github-calendar';
 import { Icon } from './Icons';
-import { getTechInfo } from '../config/technologies';
-import TechMarquee from './TechMarquee';
+import { getTechInfo, PRIORITY_TECHS } from '../config/technologies';
 
 const projects = [
   {
@@ -296,15 +294,11 @@ const TiltCard = ({ children, className, id }) => {
 };
 
 const Projects = () => {
-  const [copied, setCopied] = useState(false);
-
-  const handleShare = () => {
-    const url = window.location.href;
-    navigator.clipboard.writeText(url).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
-  };
+  const bannerTechs = PRIORITY_TECHS.map(techKey => {
+    const techInfo = getTechInfo(techKey);
+    return { name: techInfo.name, id: techInfo.icon };
+  });
+  const doubled = [...bannerTechs, ...bannerTechs];
 
   return (
     <section className="space-y-8 sm:space-y-12">

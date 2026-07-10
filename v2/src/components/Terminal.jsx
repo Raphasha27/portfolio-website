@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // ─── Command Definitions ──────────────────────────────────────────────────────
@@ -297,9 +297,15 @@ const Terminal = () => {
 
   // autocomplete suggestion
   useEffect(() => {
-    if (!input.trim()) { setSuggestion(''); return; }
-    const match = ALL_CMD_NAMES.find(c => c.startsWith(input.trim().toLowerCase()) && c !== input.trim().toLowerCase());
-    setSuggestion(match ? match.slice(input.trim().length) : '');
+    const t = setTimeout(() => {
+      if (!input.trim()) {
+        setSuggestion('');
+        return;
+      }
+      const match = ALL_CMD_NAMES.find(c => c.startsWith(input.trim().toLowerCase()) && c !== input.trim().toLowerCase());
+      setSuggestion(match ? match.slice(input.trim().length) : '');
+    }, 0);
+    return () => clearTimeout(t);
   }, [input]);
 
   const execute = useCallback((raw) => {

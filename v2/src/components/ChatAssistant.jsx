@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icons';
 
@@ -74,14 +74,8 @@ const ChatAssistant = () => {
   ]);
   const [input, setInput] = useState('');
   const [isTyping, setIsTyping] = useState(false);
-  const [hasKey, setHasKey] = useState(false);
+  const hasKey = !!import.meta.env.VITE_GEMINI_API_KEY;
   const scrollRef = useRef();
-
-  useEffect(() => {
-    // Check if a Gemini key is available (set via env)
-    const key = import.meta.env.VITE_GEMINI_API_KEY;
-    setHasKey(!!key);
-  }, []);
 
   useEffect(() => {
     if (scrollRef.current) scrollRef.current.scrollTop = scrollRef.current.scrollHeight;

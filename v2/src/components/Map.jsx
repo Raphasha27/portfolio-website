@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
@@ -22,7 +22,7 @@ const MapController = () => {
 };
 
 const Map = () => {
-  const [ready, setReady] = React.useState(false);
+  const [ready, setReady] = useState(false);
 
   return (
     <section id="location" className="py-16 sm:py-24 relative overflow-hidden bg-transparent">

@@ -1,10 +1,18 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icons';
 
 const Navbar = ({ setCmdOpen }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
   const { scrollYProgress } = useScroll();
+
+  const handleShare = () => {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  };
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,

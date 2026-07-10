@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Icon } from './Icons';
 
@@ -162,19 +162,8 @@ const passingProjects = [
 
 const CIStatus = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
-  const [expandedProject, setExpandedProject] = useState(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    // Simulate data loading with error handling
-    try {
-      setIsLoading(false);
-    } catch (err) {
-      setError(err.message);
-      setIsLoading(false);
-    }
-  }, []);
+  const [isLoading] = useState(false);
+  const error = null;
 
   const categories = ['all', 'AI/ML', 'Platform', 'Security', 'IoT', 'Education', 'NLP', 'AgriTech', 'Business'];
   

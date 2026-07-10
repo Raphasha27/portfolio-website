@@ -1,5 +1,3 @@
-import React from 'react';
-import { motion } from 'framer-motion';
 import { Icon } from './Icons';
 
 const PORTFOLIO_URL = 'https://koketso-raphasha.vercel.app/';

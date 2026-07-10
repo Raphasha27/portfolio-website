@@ -1,46 +1,8 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { Icon } from './Icons';
 import { PRIORITY_TECHS, getTechInfo } from '../config/technologies';
 import profileImg from '/profile-enhanced.jpg';
-
-const Typewriter = () => {
-  const titles = ['Software Engineer', 'Systems Architect', 'Co-Founder', 'Full Stack Dev'];
-  const [text, setText] = useState('');
-  const [idx, setIdx] = useState(0);
-  const [deleting, setDeleting] = useState(false);
-
-  useEffect(() => {
-    const current = titles[idx];
-    let timer;
-    if (deleting) {
-      if (text.length > 0) {
-        timer = setTimeout(() => setText(text.slice(0, -1)), 40);
-      } else {
-        setDeleting(false);
-        setIdx((i) => (i + 1) % titles.length);
-      }
-    } else {
-      if (text.length < current.length) {
-        timer = setTimeout(() => setText(current.slice(0, text.length + 1)), 70);
-      } else {
-        timer = setTimeout(() => setDeleting(true), 2000);
-      }
-    }
-    return () => clearTimeout(timer);
-  }, [text, deleting, idx, titles]);
-
-  return (
-    <span>
-      {text}
-      <motion.span
-        animate={{ opacity: [1, 0] }}
-        transition={{ duration: 0.6, repeat: Infinity, repeatType: 'reverse' }}
-        className="inline-block w-[2px] h-[1em] bg-[#00FF9C] ml-1 align-middle"
-      />
-    </span>
-  );
-};
 
 const CountUp = ({ to, duration = 2 }) => {
   const [count, setCount] = useState(0);
