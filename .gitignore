@@ -56,3 +56,5 @@ __pycache__/
 .output
 .vercel/*
 !.vercel/project.json
+
+test.js
