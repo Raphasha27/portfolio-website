@@ -9,7 +9,7 @@
     "predeploy": "vite build --base=/Portfolio/",
     "deploy": "gh-pages -d dist",
     "build": "vite build",
-    "lint": "eslint .",
+    "lint": "eslint .",`n    "test": "vitest run",`n    "test:watch": "vitest",
     "preview": "vite preview",
     "test:watch": "vitest"
   },
@@ -50,3 +50,4 @@
     "vitest": "^4.1.10"
   }
 }
+
