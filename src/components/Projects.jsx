@@ -16,7 +16,8 @@ const projects = [
     latest: true,
     link: "https://github.com/Raphasha27/AI-Business-Engine",
     liveUrl: "https://web-gamma-nine-c2cqi2h058.vercel.app",
-    status: "live"
+    status: "live",
+    image: "/proj-ai-business.png"
   },
   {
     title: "Mzansi AgriAI",
@@ -29,7 +30,8 @@ const projects = [
     featured: true,
     link: "https://github.com/Raphasha27/Mzansi-AgriAI",
     liveUrl: "https://mzansi-agriai-demo.vercel.app",
-    status: "live"
+    status: "live",
+    image: "/proj-agri-ai.png"
   },
   {
     title: "EskomSense AI",
@@ -42,7 +44,8 @@ const projects = [
     featured: true,
     link: "https://github.com/Raphasha27/EskomSense-AI",
     liveUrl: "https://eskomsense-ai-demo.vercel.app",
-    status: "live"
+    status: "live",
+    image: "/proj-eskom.png"
   },
   {
     title: "NoShowIQ",
@@ -55,7 +58,8 @@ const projects = [
     featured: true,
     link: "https://github.com/Raphasha27/NoShowIQ",
     liveUrl: "https://noshowiq.vercel.app",
-    status: "live"
+    status: "live",
+    image: "/proj-noshowiq.png"
   },
   {
     title: "Sumbandila",
@@ -67,7 +71,8 @@ const projects = [
     color: "from-blue-500/20 to-purple-500/20",
     link: "https://github.com/Raphasha27/Sumbandila-App",
     liveUrl: "https://landing-five-orcin-61.vercel.app",
-    status: "live"
+    status: "live",
+    image: "/proj-sumbandila.png"
   },
   {
     title: "Kirov Dynamics",
@@ -80,7 +85,8 @@ const projects = [
     featured: true,
     link: "https://github.com/Raphasha27/Portfolio",
     liveUrl: "https://koketso-raphasha.vercel.app",
-    status: "live"
+    status: "live",
+    image: "/proj-kirov.png"
   },
   {
     title: "DevForge AI",
@@ -332,6 +338,11 @@ const Projects = () => {
               <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${p.color} blur-3xl opacity-20 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none`}></div>
               
               <div className="relative z-10 flex flex-col h-full">
+                {p.image && (
+                  <div className="w-full h-36 mb-4 rounded-xl overflow-hidden border border-white/10 shrink-0 bg-[#05080c]">
+                    <img src={p.image} alt={p.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100" />
+                  </div>
+                )}
                 <div className="flex items-start gap-3 mb-3">
                   <div className="w-10 h-10 rounded-xl border flex items-center justify-center shrink-0 bg-[#0a161d] border-[#00FF9C]/40 text-[#00FF9C] shadow-[0_0_20px_rgba(0,255,156,0.15)] group-hover:scale-110 transition-transform duration-500">
                     <Icon name={p.icon} size={20} />
