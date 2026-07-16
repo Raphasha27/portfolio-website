@@ -361,6 +361,11 @@ export const Icon = ({ name, size = 16, className = "" }) => {
     kalilinux:     "https://cdn.simpleicons.org/kalilinux/white",
     rust:          "https://cdn.simpleicons.org/rust/white",
     androidstudio: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/androidstudio/androidstudio-original.svg",
+    kaggle:        "https://cdn.simpleicons.org/kaggle/20BEFF",
+    streamlit:     "https://cdn.simpleicons.org/streamlit/FF4B4B",
+    whatsapp:      "https://cdn.simpleicons.org/whatsapp/25D366",
+    mail:          "https://cdn.simpleicons.org/gmail/EA4335",
+    devto:         "https://cdn.simpleicons.org/devdotto/white",
   }), []);
 
   // Priority 1: Brand Logos (Original Branding Colors)

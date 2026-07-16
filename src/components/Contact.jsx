@@ -102,17 +102,17 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Social Icons */}
-              <div className="flex flex-wrap gap-3">
+              {/* Social Links Grid */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {[
-                  { name: "GitHub",    icon: "github",    link: "https://github.com/raphasha27" },
-                  { name: "LinkedIn",  icon: "linkedin",  link: "https://linkedin.com/in/koketso-raphasha" },
-                  { name: "Facebook",  icon: "facebook",  link: "https://www.facebook.com/kirovdynamicstechnology" },
-                  { name: "Twitter",   icon: "twitter",   link: "https://twitter.com/raphasha27" },
-                  { name: "Kaggle",    icon: "kaggle",    link: "https://kaggle.com/Raphasha27" },
-                  { name: "Streamlit", icon: "streamlit", link: "https://share.streamlit.io/user/raphasha27" },
-                  { name: "WhatsApp",  icon: "whatsapp",  link: "https://wa.me/27781172470" },
-                  { name: "Email",     icon: "mail",      link: "mailto:raphashakoketso99@gmail.com" }
+                  { name: "GitHub",    handle: "Raphasha27",           icon: "github",    link: "https://github.com/Raphasha27" },
+                  { name: "WhatsApp",  handle: "0781172470",           icon: "whatsapp",  link: "https://wa.me/27781172470" },
+                  { name: "LinkedIn",  handle: "koketso-raphasha",     icon: "linkedin",  link: "https://linkedin.com/in/koketso-raphasha" },
+                  { name: "Email",     handle: "raphashakoketso99...", icon: "mail",      link: "mailto:raphashakoketso99@gmail.com" },
+                  { name: "Twitter",   handle: "raphasha27",           icon: "twitter",   link: "https://twitter.com/raphasha27" },
+                  { name: "Kaggle",    handle: "Raphasha27",           icon: "kaggle",    link: "https://kaggle.com/Raphasha27" },
+                  { name: "Streamlit", handle: "raphasha27",           icon: "streamlit", link: "https://share.streamlit.io/user/raphasha27" },
+                  { name: "Facebook",  handle: "kirovdynamics...",     icon: "facebook",  link: "https://www.facebook.com/kirovdynamicstechnology" },
                 ].map((social, i) => (
                   <a
                     key={i}
@@ -120,9 +120,15 @@ const Contact = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={`Visit my ${social.name} profile`}
-                    className="w-11 h-11 sm:w-12 sm:h-12 glass rounded-xl sm:rounded-2xl flex items-center justify-center text-white/70 hover:text-blue-400 hover:border-blue-500/50 transition-all hover:scale-110 active:scale-95 group shadow-lg"
+                    className="w-full glass rounded-xl sm:rounded-2xl p-3 flex items-center gap-3 text-white/70 hover:text-white hover:border-blue-500/50 transition-all hover:-translate-y-1 active:scale-95 group shadow-lg"
                   >
-                    <Icon name={social.icon} size={22} />
+                    <div className="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center shrink-0">
+                      <Icon name={social.icon} size={20} />
+                    </div>
+                    <div className="flex flex-col min-w-0">
+                      <span className="text-xs font-bold text-white uppercase tracking-wider">{social.name}</span>
+                      <span className="text-[10px] text-blue-400 font-mono truncate">{social.handle}</span>
+                    </div>
                   </a>
                 ))}
               </div>

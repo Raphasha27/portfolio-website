@@ -23,7 +23,7 @@ const CountUp = ({ to, duration = 2 }) => {
 };
 
 const socialLinks = [
-  { name: 'GitHub',    icon: 'github',     link: 'https://github.com/raphasha27',                    color: 'hover:text-white' },
+  { name: 'GitHub',    icon: 'github',     link: 'https://github.com/Raphasha27',                    color: 'hover:text-white' },
   { name: 'LinkedIn',  icon: 'linkedin',   link: 'https://linkedin.com/in/koketso-raphasha',         color: 'hover:text-blue-400' },
   { name: 'Facebook',  icon: 'facebook',   link: 'https://www.facebook.com/kirovdynamicstechnology',  color: 'hover:text-blue-500' },
   { name: 'Twitter',   icon: 'twitter',    link: 'https://twitter.com/raphasha27',                    color: 'hover:text-sky-400' },
