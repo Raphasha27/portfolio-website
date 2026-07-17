@@ -9,8 +9,8 @@
     "predeploy": "vite build --base=/Portfolio/",
     "deploy": "gh-pages -d dist",
     "build": "vite build",
-    "lint": "eslint .",`n    "test": "vitest run",`n    "test:watch": "vitest",
-    "preview": "vite preview",
+    "lint": "eslint .",
+    "test": "vitest run",
     "test:watch": "vitest"
   },
   "dependencies": {

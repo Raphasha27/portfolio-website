@@ -96,8 +96,8 @@ const projects = [
     icon: "globe",
     role: "AI Systems Dev",
     color: "from-[#00FF9C]/20 to-emerald-400/20",
-    bgImage: "project-os.png",
-    link: "https://github.com/Raphasha27/devforge-ai"
+    link: "https://github.com/Raphasha27/devforge-ai",
+    image: "/proj-kirov.png"
   },
   {
     title: "AI Job Market Intelligence",
@@ -107,8 +107,8 @@ const projects = [
     icon: "zap",
     role: "Software Engineer",
     color: "from-emerald-500/20 to-teal-500/20",
-    bgImage: "project-finance.png",
-    link: "https://github.com/Raphasha27/ai-job-market-intelligence"
+    link: "https://github.com/Raphasha27/ai-job-market-intelligence",
+    image: "/proj-ai-business.png"
   },
   {
     title: "CyberShield Modern",
@@ -118,7 +118,8 @@ const projects = [
     icon: "shield",
     role: "SOC Engineer",
     color: "from-[#00FF9C]/20 to-cyan-500/20",
-    link: "https://github.com/Raphasha27/cybershield_soc"
+    link: "https://github.com/Raphasha27/cybershield_soc",
+    image: "/proj-sumbandila.png"
   },
   {
     title: "SupportHive-C",
@@ -128,7 +129,8 @@ const projects = [
     icon: "terminal",
     role: "Systems Architect",
     color: "from-yellow-500/20 to-emerald-500/20",
-    link: "https://github.com/Raphasha27/Github-Harden/tree/main/SupportHive-C"
+    link: "https://github.com/Raphasha27/Github-Harden/tree/main/SupportHive-C",
+    image: "/proj-noshowiq.png"
   },
   {
     title: "Kirov Connect",
@@ -138,7 +140,8 @@ const projects = [
     icon: "building",
     role: "Civic Tech lead",
     color: "from-orange-500/20 to-[#00FF9C]/20",
-    link: "https://github.com/Raphasha27/Fire4s_Project1_Week1"
+    link: "https://github.com/Raphasha27/Fire4s_Project1_Week1",
+    image: "/proj-kirov.png"
   },
   {
     title: "RepoPulse",
@@ -148,7 +151,8 @@ const projects = [
     icon: "signal",
     role: "Observability Eng",
     color: "from-emerald-500/20 to-cyan-500/20",
-    link: "https://github.com/Raphasha27/Github-Harden"
+    link: "https://github.com/Raphasha27/Github-Harden",
+    image: "/proj-noshowiq.png"
   },
   {
     title: "Autonomous Dev Factory",
@@ -158,8 +162,8 @@ const projects = [
     icon: "ticket",
     role: "Platform Engineer",
     color: "from-red-500/20 to-[#00FF9C]/20",
-    bgImage: "project-logistics.png",
-    link: "https://github.com/Raphasha27/autonomous-dev-factory-v7"
+    link: "https://github.com/Raphasha27/autonomous-dev-factory-v7",
+    image: "/proj-ai-business.png"
   },
   {
     title: "Gauteng Transport Dashboard",
@@ -169,8 +173,8 @@ const projects = [
     icon: "graduationCap",
     role: "Data Engineer",
     color: "from-emerald-500/20 to-cyan-500/20",
-    bgImage: "project-edutech.png",
-    link: "https://github.com/Raphasha27/gauteng-transport-dashboard"
+    link: "https://github.com/Raphasha27/gauteng-transport-dashboard",
+    image: "/proj-noshowiq.png"
   },
   {
     title: "EskomSense AI",
@@ -180,7 +184,8 @@ const projects = [
     icon: "zap",
     role: "Energy AI Lead",
     color: "from-yellow-500/20 to-orange-500/20",
-    link: "https://github.com/Raphasha27/EskomSense-AI"
+    link: "https://github.com/Raphasha27/EskomSense-AI",
+    image: "/proj-eskom.png"
   },
   {
     title: "Townships Market AI",
@@ -190,7 +195,8 @@ const projects = [
     icon: "building",
     role: "Platform Architect",
     color: "from-emerald-500/20 to-[#00FF9C]/20",
-    link: "https://github.com/Raphasha27/Townships-Market-AI"
+    link: "https://github.com/Raphasha27/Townships-Market-AI",
+    image: "/proj-ai-business.png"
   },
   {
     title: "SA Language AI",
@@ -200,7 +206,8 @@ const projects = [
     icon: "globe",
     role: "NLP Engineer",
     color: "from-blue-500/20 to-purple-500/20",
-    link: "https://github.com/Raphasha27/SA-Language-AI"
+    link: "https://github.com/Raphasha27/SA-Language-AI",
+    image: "/proj-kirov.png"
   },
   {
     title: "WaterWatch SA",
@@ -210,7 +217,8 @@ const projects = [
     icon: "signal",
     role: "IoT Systems Eng",
     color: "from-cyan-500/20 to-blue-500/20",
-    link: "https://github.com/Raphasha27/WaterWatch-SA"
+    link: "https://github.com/Raphasha27/WaterWatch-SA",
+    image: "/proj-eskom.png"
   },
   {
     title: "Mzansi AgriAI",
@@ -220,7 +228,8 @@ const projects = [
     icon: "globe",
     role: "AgriTech Dev",
     color: "from-green-500/20 to-emerald-500/20",
-    link: "https://github.com/Raphasha27/Mzansi-AgriAI"
+    link: "https://github.com/Raphasha27/Mzansi-AgriAI",
+    image: "/proj-agri-ai.png"
   },
   {
     title: "YouthCode ZA",
@@ -230,7 +239,8 @@ const projects = [
     icon: "graduationCap",
     role: "EdTech Architect",
     color: "from-purple-500/20 to-pink-500/20",
-    link: "https://github.com/Raphasha27/YouthCode-ZA"
+    link: "https://github.com/Raphasha27/YouthCode-ZA",
+    image: "/proj-kirov.png"
   },
   {
     title: "AI Business Engine",
@@ -240,7 +250,8 @@ const projects = [
     icon: "zap",
     role: "Business Architect",
     color: "from-yellow-500/20 to-[#00FF9C]/20",
-    link: "https://github.com/Raphasha27/AI-Business-Engine"
+    link: "https://github.com/Raphasha27/AI-Business-Engine",
+    image: "/proj-ai-business.png"
   },
   {
     title: "Titanic ML (Kaggle)",
@@ -250,7 +261,8 @@ const projects = [
     icon: "brain",
     role: "Data Scientist",
     color: "from-[#00FF9C]/20 to-blue-500/20",
-    link: "https://github.com/Raphasha27/Raphasha27/tree/main/projects/titanic-ml"
+    link: "https://github.com/Raphasha27/Raphasha27/tree/main/projects/titanic-ml",
+    image: "/proj-noshowiq.png"
   },
   {
     title: "ETL Pipeline Suite",
@@ -260,7 +272,8 @@ const projects = [
     icon: "database",
     role: "Data Engineer",
     color: "from-emerald-500/20 to-purple-500/20",
-    link: "https://github.com/Raphasha27/data-engineering-kaggle"
+    link: "https://github.com/Raphasha27/data-engineering-kaggle",
+    image: "/proj-noshowiq.png"
   }
 ];
 
