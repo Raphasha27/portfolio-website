@@ -2,31 +2,31 @@ import { motion } from 'framer-motion';
 
 const testimonials = [
   {
-    name: "Amara Okoro",
-    role: "Founder @ EcoStream",
-    text: "Koketso's insight into AI and data analytics helped us pivot our strategy with data-backed confidence. The results speak for themselves. Highly recommended!",
-    image: "https://randomuser.me/api/portraits/women/22.jpg",
+    name: "Thandi Dlamini",
+    role: "Founder @ Vulamanzi Tech",
+    text: "Koketso's insight into AI and data analytics helped us pivot our strategy with data-backed confidence. The AI-driven market analysis he built transformed how we understand our customers. Highly recommended!",
+    image: "/testimonials/thandi_dlamini.png",
     tag: "Client"
   },
   {
-    name: "Rajesh Kumar",
-    role: "Senior Dev @ Kirov Dynamics",
-    text: "As a teammate, Koketso brings a level of technical depth that's rare. Their ability to architect complex agentic systems while keeping the codebase clean and maintainable is inspiring.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face&auto=format&q=80",
+    name: "Sipho Ndlovu",
+    role: "Senior Engineer @ Kirov Dynamics",
+    text: "As a teammate, Koketso brings a level of technical depth that's rare. His ability to architect complex agentic systems in Go and Python while keeping the codebase clean and maintainable is genuinely inspiring.",
+    image: "/testimonials/sipho_ndlovu.png",
     tag: "Team Member"
   },
   {
-    name: "Priya Sharma",
-    role: "CTO @ Indus Cloud",
-    text: "The real-time tracking system Kirov Dynamics developed exceeded all our expectations. It's robust, scalable, and the UI is incredibly intuitive. A true professional.",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    name: "Lerato Mokoena",
+    role: "CTO @ AfriCloud Systems",
+    text: "The real-time infrastructure platform Kirov Dynamics built for us exceeded every expectation. It's robust, scalable, and the developer experience is second to none. A true professional who delivers.",
+    image: "/testimonials/lerato_mokoena.png",
     tag: "Client"
   },
   {
-    name: "Arjun Mehta",
-    role: "VP Engineering @ CloudBase",
-    text: "Working with Kirov was a game-changer. The autonomous infrastructure they built for us reduced our operational overhead by 40% in just three months. Precision engineering at its best!",
-    image: "https://randomuser.me/api/portraits/men/52.jpg",
+    name: "Bongani Khumalo",
+    role: "VP Engineering @ DataVeld SA",
+    text: "Working with Koketso was a game-changer. The autonomous infrastructure he designed reduced our operational overhead by 40% in just three months. Precision engineering with real business impact.",
+    image: "/testimonials/bongani_khumalo.png",
     tag: "Client"
   }
 ];
