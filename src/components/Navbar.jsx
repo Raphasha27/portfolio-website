@@ -35,13 +35,6 @@ const Navbar = ({ setCmdOpen }) => {
       />
 
       <div className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto flex justify-between items-center">
-        <button
-          onClick={() => scrollTo('home')}
-          className="flex items-center gap-2 text-[#00FF9C] font-bold hover:opacity-80 transition-opacity"
-        >
-          <span className="text-sm sm:text-base tracking-tight">Koketso Raphasha</span>
-        </button>
-
         {/* ── Logo + Health Badge ── */}
         <div className="flex items-center gap-4">
           <button
@@ -60,14 +53,14 @@ const Navbar = ({ setCmdOpen }) => {
           </button>
 
           {/* Health badge */}
-          <div className="hidden sm:flex items-center gap-2 px-3 py-1 rounded-full bg-[#0a1a12] border border-[#00FF9C]/20 text-[9px] font-bold uppercase tracking-[0.15em] text-white/70 shrink-0">
+          <div className="hidden xl:flex items-center gap-2 px-3 py-1 rounded-full bg-[#0a1a12] border border-[#00FF9C]/20 text-[9px] font-bold uppercase tracking-[0.15em] text-white/70 shrink-0">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00FF9C] shadow-[0_0_6px_rgba(0,255,156,0.8)] shrink-0" />
             System Health: Optimal
           </div>
         </div>
 
         {/* ── Desktop nav links ── */}
-        <div className="hidden md:flex gap-7 text-[13px] font-semibold text-white/70 capitalize">
+        <div className="hidden lg:flex gap-7 text-[13px] font-semibold text-white/70 capitalize">
           {navItems.map(item => (
             <button
               key={item}
@@ -110,7 +103,7 @@ const Navbar = ({ setCmdOpen }) => {
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden w-12 h-12 flex items-center justify-center text-[#00FF9C] rounded-xl bg-[#00FF9C]/10 border border-[#00FF9C]/40 shadow-[0_0_20px_rgba(0,255,156,0.3)] hover:bg-[#00FF9C]/20 transition-all active:scale-95"
+            className="lg:hidden w-12 h-12 flex items-center justify-center text-[#00FF9C] rounded-xl bg-[#00FF9C]/10 border border-[#00FF9C]/40 shadow-[0_0_20px_rgba(0,255,156,0.3)] hover:bg-[#00FF9C]/20 transition-all active:scale-95"
             aria-label="Toggle menu"
           >
             <Icon name={isMobileMenuOpen ? 'close' : 'menu'} size={28} />
@@ -125,7 +118,7 @@ const Navbar = ({ setCmdOpen }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: '-100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[70] bg-[#000814]/95 backdrop-blur-xl md:hidden flex flex-col p-6"
+            className="fixed inset-0 z-[70] bg-[#000814]/95 backdrop-blur-xl lg:hidden flex flex-col p-6"
           >
             <div className="flex justify-between items-center mb-12">
               <span className="text-[#00FF9C] font-bold text-sm">Koketso Raphasha</span>

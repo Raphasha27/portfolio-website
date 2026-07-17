@@ -1,5 +1,6 @@
-import Footer from './components/Footer'
-import { motion } from "framer-motion";
+import React, { useState, useEffect, Suspense, lazy } from 'react';
+import Footer from './components/Footer';
+import { motion, AnimatePresence } from "framer-motion";
 import Hero from './components/Hero';
 import About from './components/About';
 import Navbar from './components/Navbar';
