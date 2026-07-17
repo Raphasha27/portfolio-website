@@ -4,6 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 import viteCompression from 'vite-plugin-compression'
 
 export default defineConfig({
+  base: '/Portfolio/',
   plugins: [
     react(),
     viteCompression({
