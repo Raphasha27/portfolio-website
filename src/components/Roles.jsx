@@ -18,7 +18,7 @@ const Roles = () => {
     <div id="roles" className="relative py-10 sm:py-16 px-4 sm:px-6 lg:px-12 bg-transparent overflow-hidden rounded-2xl sm:rounded-[40px] border border-white/5">
       {/* Background Neural Network Overlay */}
       <div className="absolute inset-0 opacity-[0.08] pointer-events-none mix-blend-screen">
-        <img 
+        <img loading="lazy" decoding="async" 
           src="https://images.unsplash.com/photo-1620712943543-bcc4638ef80b?auto=format&fit=crop&q=80&w=1920" 
           alt="Neural Network" 
           className="w-full h-full object-cover"
@@ -54,7 +54,7 @@ const Roles = () => {
             <div className="glass p-0 border border-white/5 rounded-[24px] flex flex-col hover:border-blue-500/40 hover:shadow-[0_0_30px_rgba(37,99,235,0.15)] transition-all duration-500 h-full overflow-hidden bg-[#0a161d]">
               
               <div className="relative w-full h-32 sm:h-40 overflow-hidden shrink-0 bg-[#05080c]">
-                 <img
+                 <img loading="lazy" decoding="async"
                    src={role.image}
                    alt={role.title}
                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-70 group-hover:opacity-100 mix-blend-luminosity hover:mix-blend-normal"
@@ -88,3 +88,4 @@ const Roles = () => {
 };
 
 export default Roles;
+

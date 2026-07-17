@@ -1,4 +1,5 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
+import Lenis from 'lenis';
 import Footer from './components/Footer';
 import { motion, AnimatePresence } from "framer-motion";
 import Hero from './components/Hero';
@@ -26,10 +27,33 @@ function App() {
   const [cmdOpen, setCmdOpen] = useState(false);
 
   useEffect(() => {
+    // Initialize Lenis for buttery smooth scrolling
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      direction: 'vertical',
+      gestureDirection: 'vertical',
+      smooth: true,
+      mouseMultiplier: 1,
+      smoothTouch: false,
+      touchMultiplier: 2,
+      infinite: false,
+    });
+
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+
     if ('scrollRestoration' in history) {
       history.scrollRestoration = 'manual';
     }
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+
+    return () => {
+      lenis.destroy();
+    };
   }, []);
 
   return (
@@ -80,12 +104,9 @@ function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
-              className="relative py-16 sm:py-24 overflow-hidden"
+              className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto py-16 sm:py-24"
             >
-              <div className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto relative z-10 flex flex-col gap-16 sm:gap-24">
-                <TechMarquee />
-                <Roles />
-              </div>
+              <Services />
             </motion.section>
           </ErrorBoundary>
 
@@ -106,9 +127,12 @@ function App() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
-              className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto py-16 sm:py-24"
+              className="relative py-16 sm:py-24 overflow-hidden"
             >
-              <Services />
+              <div className="w-full px-4 sm:px-6 lg:px-12 max-w-7xl mx-auto relative z-10 flex flex-col gap-16 sm:gap-24">
+                <TechMarquee />
+                <Roles />
+              </div>
             </motion.section>
           </ErrorBoundary>
 

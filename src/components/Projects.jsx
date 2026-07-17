@@ -353,7 +353,7 @@ const Projects = () => {
               <div className="relative z-10 flex flex-col h-full">
                 {p.image && (
                   <div className="w-full h-36 mb-4 rounded-xl overflow-hidden border border-white/10 shrink-0 bg-[#05080c]">
-                    <img src={p.image} alt={p.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100" />
+                    <img loading="lazy" decoding="async" src={p.image} alt={p.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100" />
                   </div>
                 )}
                 <div className="flex items-start gap-3 mb-3">
@@ -491,3 +491,4 @@ const Projects = () => {
 };
 
 export default Projects;
+

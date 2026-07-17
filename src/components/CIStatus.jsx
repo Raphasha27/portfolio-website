@@ -276,7 +276,7 @@ const CIStatus = () => {
               {/* Image Background */}
               {project.image && (
                 <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none">
-                  <img src={project.image} alt="" className="w-full h-full object-cover mix-blend-luminosity" />
+                  <img loading="lazy" decoding="async" src={project.image} alt="" className="w-full h-full object-cover mix-blend-luminosity" />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0a161d] via-[#0a161d]/50 to-transparent" />
                 </div>
               )}
@@ -383,3 +383,4 @@ const CIStatus = () => {
 };
 
 export default CIStatus;
+
