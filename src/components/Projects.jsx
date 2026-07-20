@@ -348,12 +348,12 @@ const Projects = () => {
 
               <div className="absolute inset-0 bg-gradient-to-t from-[#000814] via-[#000814]/40 to-transparent pointer-events-none" />
               
-              <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${p.color} blur-3xl opacity-20 group-hover:opacity-60 transition-opacity duration-500 pointer-events-none`}></div>
+              <div className={`absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br ${p.color} blur-3xl opacity-40 transition-opacity duration-500 pointer-events-none`}></div>
               
               <div className="relative z-10 flex flex-col h-full">
                 {p.image && (
                   <div className="w-full h-36 mb-4 rounded-xl overflow-hidden border border-white/10 shrink-0 bg-[#05080c]">
-                    <img loading="lazy" decoding="async" src={p.image} alt={p.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100" />
+                    <img loading="lazy" decoding="async" src={p.image} alt={p.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                   </div>
                 )}
                 <div className="flex items-start gap-3 mb-3">
@@ -372,7 +372,7 @@ const Projects = () => {
                     </div>
                     <div className="text-[8px] uppercase font-bold tracking-wider text-blue-400/80 truncate">{p.tagline}</div>
                   </div>
-                  <div className="text-[7px] px-2 py-0.5 rounded-sm border uppercase font-bold bg-[#00FF9C]/10 border-[#00FF9C]/30 text-[#00FF9C] hidden sm:block shrink-0">
+                  <div className="text-[7px] px-2 py-0.5 rounded-sm border uppercase font-bold bg-[#00FF9C]/30 border-[#00FF9C]/60 text-[#00FF9C] hidden sm:block shrink-0">
                     {p.role}
                   </div>
                 </div>
@@ -385,7 +385,7 @@ const Projects = () => {
                   {p.tech.slice(0, 4).map((t, j) => {
                     const techInfo = getTechInfo(t);
                     return (
-                      <span key={j} className="text-[7px] px-2 py-1 rounded-sm bg-white/5 border border-white/10 text-white/80 flex items-center gap-1 uppercase font-bold tracking-wider">
+                      <span key={j} className="text-[7px] px-2 py-1 rounded-sm bg-white/20 border border-white/30 text-white/90 flex items-center gap-1 uppercase font-bold tracking-wider">
                         <Icon name={techInfo.icon} size={10} />
                         {techInfo.name}
                       </span>
