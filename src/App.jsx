@@ -28,15 +28,16 @@ function App() {
 
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 0.4,
+      duration: 0.3,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       direction: 'vertical',
       gestureDirection: 'vertical',
       smooth: true,
       mouseMultiplier: 1,
       smoothTouch: true,
-      touchMultiplier: 1,
+      touchMultiplier: 2.5,
       infinite: false,
+      wheelMultiplier: 1.5,
     });
 
     let rafId;
