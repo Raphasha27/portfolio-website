@@ -154,7 +154,7 @@ const HireMe = () => {
         <div className="text-center mb-10">
           <a
             href="mailto:raphashakoketso69@gmail.com?subject=Hiring%20Inquiry&body=Hi%20Koketso%2C%20I%27d%20like%20to%20discuss..."
-            className="inline-flex items-center gap-3 px-8 py-4 bg-green-600 hover:bg-green-500 text-white font-bold rounded-xl transition-all shadow-[0_0_30px_rgba(34,197,94,0.3)] group active:scale-95"
+            className="inline-flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white font-bold rounded-xl transition-all shadow-[0_0_30px_rgba(37,99,235,0.3)] group active:scale-95"
           >
             <Icon name="mail" size={18} />
             Hire Me Now

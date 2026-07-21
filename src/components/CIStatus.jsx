@@ -122,7 +122,7 @@ const passingProjects = [
     coverage: "93%",
     lastBuild: "3h ago",
     icon: "shield",
-    image: "https://images.unsplash.com/photo-1614064641913-6b714041d889?auto=format&fit=crop&w=400&q=80"
+    image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=400&q=80"
   },
   { 
     name: "Suspicious URL Checker", 

@@ -2,15 +2,15 @@ import { motion } from 'framer-motion';
 import { Icon } from './Icons';
 
 const roles = [
-  { num: "01", icon: "layout", title: "AI Systems Architect", project: "Sovereign-AI-Nexus", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" },
-  { num: "02", icon: "bot", title: "AI Agent Orchestrator", project: "Sovereign-AI-Nexus-v2", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" },
-  { num: "03", icon: "activity", title: "AI Product Builder", project: "NoShowIQ", image: "https://images.unsplash.com/photo-1558222218-b7b54eede3f3?auto=format&fit=crop&w=600&q=80" },
-  { num: "04", icon: "refreshCw", title: "AI Automation Strategist", project: "Kirov Connect", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80" },
-  { num: "05", icon: "zap", title: "AI Infrastructure Engineer", project: "FlowSentinel", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80" },
-  { num: "06", icon: "target", title: "AI Reliability Engineer", project: "SeatLock", image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80" },
-  { num: "07", icon: "scale", title: "AI Governance Specialist", project: "CyberShield", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=600&q=80" },
-  { num: "08", icon: "shield", title: "AI Security Specialist", project: "CyberShield SOC", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80" },
-  { num: "09", icon: "bookOpen", title: "AI Solutions Engineer", project: "EduStream-Pro-ICT", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" }
+  { num: "01", icon: "layout", title: "AI Systems Architect", project: "Sovereign-AI-Nexus", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=600&q=80" },
+  { num: "02", icon: "bot", title: "AI Agent Orchestrator", project: "Sovereign-AI-Nexus-v2", image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=600&q=80" },
+  { num: "03", icon: "activity", title: "AI Product Builder", project: "NoShowIQ", image: "https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=600&q=80" },
+  { num: "04", icon: "refreshCw", title: "AI Automation Strategist", project: "Kirov Connect", image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?auto=format&fit=crop&w=600&q=80" },
+  { num: "05", icon: "zap", title: "AI Infrastructure Engineer", project: "FlowSentinel", image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=600&q=80" },
+  { num: "06", icon: "target", title: "AI Reliability Engineer", project: "SeatLock", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" },
+  { num: "07", icon: "scale", title: "AI Governance Specialist", project: "CyberShield", image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&w=600&q=80" },
+  { num: "08", icon: "shield", title: "AI Security Specialist", project: "CyberShield SOC", image: "https://images.unsplash.com/photo-1563986768609-322da13575f2?auto=format&fit=crop&w=600&q=80" },
+  { num: "09", icon: "bookOpen", title: "AI Solutions Engineer", project: "EduStream-Pro-ICT", image: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=600&q=80" }
 ];
 
 const Roles = () => {

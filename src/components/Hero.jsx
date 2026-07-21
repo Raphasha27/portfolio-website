@@ -95,7 +95,7 @@ const Hero = () => (
           transition={{ duration: 0.6 }}
           className="flex flex-col items-center shrink-0 w-full max-w-[320px] lg:w-auto lg:order-2"
         >
-          <div className="relative w-[160px] h-[160px] xs:w-[180px] xs:h-[180px] sm:w-[220px] sm:h-[220px] lg:w-[280px] lg:h-[280px]">
+          <div className="relative w-[260px] h-[260px] xs:w-[300px] xs:h-[300px] sm:w-[360px] sm:h-[360px] lg:w-[460px] lg:h-[460px]">
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#00FF9C] via-blue-500 to-purple-600 p-[2px] animate-spin-slow shadow-[0_0_30px_rgba(0,255,156,0.3)]">
               <div className="w-full h-full rounded-full bg-[#000814]" />
             </div>
