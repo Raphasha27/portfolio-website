@@ -24,7 +24,7 @@ const Roles = () => {
           className="w-full h-full object-cover"
         />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-b from-[#000814] via-transparent to-[#000814] pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#000000] via-transparent to-[#000000] pointer-events-none" />
 
       {/* Section Header */}
       <div className="relative z-10 flex flex-col sm:flex-row justify-between items-start sm:items-center mb-10 sm:mb-16 gap-4">
@@ -61,7 +61,7 @@ const Roles = () => {
                  />
                  <div className="absolute inset-0 bg-gradient-to-t from-[#0a161d] via-[#0a161d]/50 to-transparent" />
                  
-                 <div className="absolute top-3 right-3 text-[10px] font-mono text-blue-400 font-bold bg-[#000814]/80 px-2 py-1 rounded border border-blue-500/30 backdrop-blur-sm">
+                 <div className="absolute top-3 right-3 text-[10px] font-mono text-blue-400 font-bold bg-[#000000]/80 px-2 py-1 rounded border border-blue-500/30 backdrop-blur-sm">
                     {role.num}
                  </div>
               </div>

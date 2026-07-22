@@ -72,7 +72,7 @@ html {
 }
 
 body {
-  background-color: #000814;
+  background-color: #000000;
   color: #e0f2f1;
   font-family: 'Inter', sans-serif;
   overflow-x: clip;
@@ -109,9 +109,9 @@ h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
 
 /* Scrollbar - cross browser */
 ::-webkit-scrollbar { width: 4px; }
-::-webkit-scrollbar-track { background: #000814; }
+::-webkit-scrollbar-track { background: #000000; }
 ::-webkit-scrollbar-thumb { background: #00FF9C; border-radius: 4px; }
-html { scrollbar-color: #00FF9C #000814; scrollbar-width: thin; }
+html { scrollbar-color: #00FF9C #000000; scrollbar-width: thin; }
 
 /* Dynamic viewport height for iOS Safari — prevents address-bar clipping */
 @supports (height: 100dvh) {

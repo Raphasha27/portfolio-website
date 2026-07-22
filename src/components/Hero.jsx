@@ -82,9 +82,6 @@ const SlidingText = () => {
 
 const Hero = () => (
   <div id="home" className="relative min-h-screen flex flex-col bg-transparent">
-    <div className="absolute top-0 -right-20 w-96 h-96 bg-emerald-500/5 blur-[120px] rounded-full pointer-events-none" />
-    <div className="absolute bottom-0 -left-20 w-80 h-80 bg-blue-500/5 blur-[100px] rounded-full pointer-events-none" />
-
     <div className="w-full max-w-7xl px-4 sm:px-6 lg:px-12 relative z-10 mx-auto pt-[var(--nav-h)] flex-1 flex flex-col justify-start lg:justify-center lg:pt-24 lg:pb-24 lg:pb-32">
       <div className="flex flex-col lg:flex-row items-center lg:items-center justify-between gap-6 sm:gap-8 lg:gap-12 w-full">
 
@@ -97,7 +94,7 @@ const Hero = () => (
         >
           <div className="relative w-[220px] h-[220px] xs:w-[250px] xs:h-[250px] sm:w-[300px] sm:h-[300px] lg:w-[360px] lg:h-[360px]">
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#00FF9C] via-blue-500 to-purple-600 p-[2px] animate-spin-slow shadow-[0_0_30px_rgba(0,255,156,0.3)]">
-              <div className="w-full h-full rounded-full bg-[#000814]" />
+              <div className="w-full h-full rounded-full bg-[#000000]" />
             </div>
             <div className="absolute inset-[3px] rounded-full shadow-[inset_0_0_20px_rgba(0,255,156,0.15)] overflow-hidden">
               <img
@@ -212,7 +209,7 @@ const Hero = () => (
             </div>
 
             <div className="flex flex-wrap gap-3 sm:gap-4 w-full">
-              <a href="#projects" className="px-5 sm:px-6 py-2.5 sm:py-3 bg-[#00FF9C] text-[#000814] font-semibold rounded-lg hover:bg-[#00e089] hover:shadow-[0_0_20px_rgba(0,255,156,0.4)] transition-all active:scale-[0.97] text-sm sm:text-base">
+              <a href="#projects" className="px-5 sm:px-6 py-2.5 sm:py-3 bg-[#00FF9C] text-[#000000] font-semibold rounded-lg hover:bg-[#00e089] hover:shadow-[0_0_20px_rgba(0,255,156,0.4)] transition-all active:scale-[0.97] text-sm sm:text-base">
                 View Projects →
               </a>
               <a href="/Koketso_Raphasha_CV.pdf" download className="px-5 sm:px-6 py-2.5 sm:py-3 border border-white/20 text-white/80 font-medium rounded-lg hover:bg-white/5 hover:border-white/40 hover:text-white transition-all active:scale-[0.97] text-sm sm:text-base flex items-center gap-2">

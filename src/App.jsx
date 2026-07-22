@@ -57,14 +57,7 @@ function App() {
   }, []);
 
   return (
-    <div className="bg-[#000814] text-[#e0f2f1] min-h-screen selection:bg-emerald-500/20 selection:text-emerald-200 relative overflow-x-clip">
-      {/* Subtle ambient gradient background */}
-      <div className="fixed inset-0 pointer-events-none z-[0]">
-        <div className="absolute inset-0 opacity-30" style={{
-          background: 'radial-gradient(ellipse at 20% 50%, rgba(0, 255, 156, 0.08) 0%, transparent 60%), radial-gradient(ellipse at 80% 50%, rgba(59, 130, 246, 0.06) 0%, transparent 60%)'
-        }} />
-      </div>
-
+    <div className="bg-[#000000] text-[#e0f2f1] min-h-screen selection:bg-emerald-500/20 selection:text-emerald-200 relative overflow-x-clip">
       <CustomCursor />
       <Navbar setCmdOpen={setCmdOpen} />
 

@@ -149,8 +149,8 @@ const ChatAssistant = () => {
                   <div className="w-9 h-9 rounded-full bg-[#00FF9C]/20 border border-[#00FF9C] flex items-center justify-center text-[#00FF9C]">
                     <Icon name="terminal" size={16} />
                   </div>
-                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-[#00FF9C] rounded-full border-2 border-[#000814] animate-ping" />
-                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-[#00FF9C] rounded-full border-2 border-[#000814]" />
+                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-[#00FF9C] rounded-full border-2 border-[#000000] animate-ping" />
+                  <div className="absolute top-0 right-0 w-2.5 h-2.5 bg-[#00FF9C] rounded-full border-2 border-[#000000]" />
                 </div>
                 <div>
                   <div className="text-xs font-bold text-white">Digital Twin AI</div>
@@ -166,12 +166,12 @@ const ChatAssistant = () => {
             </div>
 
             {/* Messages */}
-            <div ref={scrollRef} className="flex-1 p-4 overflow-y-auto space-y-3 text-xs bg-[#000814]/60">
+            <div ref={scrollRef} className="flex-1 p-4 overflow-y-auto space-y-3 text-xs bg-[#000000]/60">
               {messages.map((m, i) => (
                 <div key={i} className={`flex ${m.role === 'user' ? 'justify-end' : 'justify-start'}`}>
                   <div className={`max-w-[85%] p-3 rounded-xl text-[11px] leading-relaxed whitespace-pre-wrap ${
                     m.role === 'user'
-                      ? 'bg-[#00FF9C] text-[#000814] font-semibold rounded-tr-sm shadow-[0_0_15px_rgba(0,255,156,0.2)]'
+                      ? 'bg-[#00FF9C] text-[#000000] font-semibold rounded-tr-sm shadow-[0_0_15px_rgba(0,255,156,0.2)]'
                       : 'bg-white/5 border border-white/10 text-white/90 rounded-tl-sm'
                   }`}>
                     {m.text}
@@ -195,7 +195,7 @@ const ChatAssistant = () => {
             </div>
 
             {/* Quick Chips */}
-            <div className="px-3 py-2 border-t border-white/5 flex gap-2 overflow-x-auto scrollbar-none shrink-0 bg-[#000814]/40">
+            <div className="px-3 py-2 border-t border-white/5 flex gap-2 overflow-x-auto scrollbar-none shrink-0 bg-[#000000]/40">
               {CHIPS.map(chip => (
                 <button
                   key={chip}
@@ -208,7 +208,7 @@ const ChatAssistant = () => {
             </div>
 
             {/* Input */}
-            <div className="p-3 border-t border-white/5 bg-[#000814]/80 backdrop-blur-md shrink-0">
+            <div className="p-3 border-t border-white/5 bg-[#000000]/80 backdrop-blur-md shrink-0">
               <div className="flex gap-2">
                 <input
                   type="text"
@@ -221,7 +221,7 @@ const ChatAssistant = () => {
                 <button
                   onClick={() => handleSend()}
                   disabled={!input.trim()}
-                  className="p-2.5 bg-[#00FF9C]/20 border border-[#00FF9C] text-[#00FF9C] rounded-xl hover:bg-[#00FF9C] hover:text-[#000814] transition-all disabled:opacity-30 disabled:cursor-not-allowed shadow-[0_0_10px_rgba(0,255,156,0.2)]"
+                  className="p-2.5 bg-[#00FF9C]/20 border border-[#00FF9C] text-[#00FF9C] rounded-xl hover:bg-[#00FF9C] hover:text-[#000000] transition-all disabled:opacity-30 disabled:cursor-not-allowed shadow-[0_0_10px_rgba(0,255,156,0.2)]"
                 >
                   <Icon name="send" size={14} />
                 </button>
@@ -265,7 +265,7 @@ const ChatAssistant = () => {
           onClick={() => setIsOpen(!isOpen)}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="w-14 h-14 rounded-full bg-[#00FF9C] text-[#000814] flex items-center justify-center shadow-[0_0_30px_rgba(0,255,156,0.5)] relative ring-4 ring-[#00FF9C]/20 shrink-0"
+          className="w-14 h-14 rounded-full bg-[#00FF9C] text-[#000000] flex items-center justify-center shadow-[0_0_30px_rgba(0,255,156,0.5)] relative ring-4 ring-[#00FF9C]/20 shrink-0"
         >
           <div className="absolute inset-0 rounded-full bg-[#00FF9C] opacity-25 animate-ping" />
           <Icon name={isOpen ? 'close' : 'chat'} size={24} />
