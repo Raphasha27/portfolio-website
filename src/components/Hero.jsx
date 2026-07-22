@@ -90,9 +90,9 @@ const Hero = () => (
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="flex flex-col items-center shrink-0 w-full max-w-[320px] lg:w-auto lg:order-2"
+          className="flex flex-col items-center shrink-0 w-full max-w-[320px] sm:max-w-[360px] lg:w-auto lg:order-2"
         >
-          <div className="relative w-[280px] h-[280px] xs:w-[300px] xs:h-[300px] sm:w-[320px] sm:h-[320px] lg:w-[360px] lg:h-[360px] lg:-translate-x-12">
+          <div className="relative w-[300px] h-[300px] xs:w-[320px] xs:h-[320px] sm:w-[340px] sm:h-[340px] lg:w-[360px] lg:h-[360px] lg:-translate-x-12">
             <div className="absolute inset-0 rounded-full bg-gradient-to-br from-[#00FF9C] via-blue-500 to-purple-600 p-[2px] animate-spin-slow shadow-[0_0_30px_rgba(0,255,156,0.3)]">
               <div className="w-full h-full rounded-full bg-[#000000]" />
             </div>
@@ -101,7 +101,7 @@ const Hero = () => (
                 src={profileImg}
                 alt="Koketso Raphasha - Software Engineer & Co-Founder"
                 className="w-full h-full object-cover scale-110"
-                style={{ objectPosition: 'center 10%' }}
+                style={{ objectPosition: 'center 15%' }}
                 loading="eager"
                 decoding="async"
               />
